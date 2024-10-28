@@ -65,7 +65,7 @@ void button_send_event(uint8_t event, uint32_t button, uint8_t cnt)
     button_event.param = (void *)&msg;
     button_event.param_len = sizeof(msg);
 
-    os_msg_post(user_task_id, &button_event);
+//    os_msg_post(user_task_id, &button_event);
 
     pressed_cnt = 0;
 }

@@ -27,11 +27,11 @@ enum user_audio_event_t {
 };
 
 
-extern uint16_t user_task_id;
-extern uint16_t audio_task_id;
 
 
-void user_task_init(void);
+
+void motor_task_fun(void *arg);
+void beep_task_fun(void *arg);
 
 
 

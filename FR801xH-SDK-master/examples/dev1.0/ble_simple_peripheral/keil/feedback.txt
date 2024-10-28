@@ -1,8 +1,10 @@
-;#<FEEDBACK># ARM Linker, 5060750: Last Updated: Sat Oct 26 14:32:33 2024
+;#<FEEDBACK># ARM Linker, 5060750: Last Updated: Mon Oct 28 09:17:30 2024
 ;VERSION 0.2
 ;FILE adpcm_ima.o
 adpcm_decode_block <= USED 0
 ;FILE adpcm_ms.o
+adpcm_decode_frame <= USED 0
+adpcm_ms_expand_nibble <= USED 0
 ;FILE adv_check_mode.o
 __asm___16_adv_check_mode_c_9741a236____REV16 <= USED 0
 __asm___16_adv_check_mode_c_9741a236____REVSH <= USED 0
@@ -71,10 +73,19 @@ attmdb_svc_visibility_set <= USED 0
 __asm___23_ble_simple_peripheral_c_109906dc____REV16 <= USED 0
 __asm___23_ble_simple_peripheral_c_109906dc____REVSH <= USED 0
 __asm___23_ble_simple_peripheral_c_109906dc____RRX <= USED 0
+bsp_init <= USED 0
+io_init <= USED 0
 ;FILE button.o
+button_init <= USED 0
 button_int_isr <= USED 0
+button_send_event <= USED 0
 ;FILE capb18-001.o
 CAPB18_COFF_GET <= USED 0
+CAPB18_FIFO_STATE_GET <= USED 0
+CAPB18_I2C_init <= USED 0
+CAPB18_data_get <= USED 0
+CAPB18_measure <= USED 0
+CompForm2TrueForm <= USED 0
 __asm___12_capb18_001_c_e78bb4c0____REV16 <= USED 0
 __asm___12_capb18_001_c_e78bb4c0____REVSH <= USED 0
 __asm___12_capb18_001_c_e78bb4c0____RRX <= USED 0
@@ -87,9 +98,24 @@ __asm___14_core_cm3_isr_c_5a2a0181____RRX <= USED 0
 __asm___9_decoder_c_1d9ae074____REV16 <= USED 0
 __asm___9_decoder_c_1d9ae074____REVSH <= USED 0
 __asm___9_decoder_c_1d9ae074____RRX <= USED 0
+decoder_calc_adpcm_ms_frame_len <= USED 0
+decoder_end_func <= USED 0
+decoder_half_processed <= USED 0
+decoder_play_next_frame_handler <= USED 0
+decoder_start <= USED 0
+decoder_stop <= USED 0
 decoder_update_tot_data_len <= USED 0
+read_sbc_from_flash <= USED 0
+test_end_speaker <= USED 0
+test_speaker_from_flash <= USED 0
 ;FILE driver_codec.o
+audio_speaker_codec_init <= USED 0
 codec_adc_init <= USED 0
+codec_disable_adc <= USED 0
+codec_disable_dac <= USED 0
+codec_enable_adc <= USED 0
+codec_enable_dac <= USED 0
+codec_init <= USED 0
 codec_set_vol <= USED 0
 speaker_codec_init <= USED 0
 ;FILE driver_efuse.o
@@ -113,9 +139,13 @@ ext_int_set_type <= USED 0
 __asm___12_driver_i2s_c_i2s_reg____REV16 <= USED 0
 __asm___12_driver_i2s_c_i2s_reg____REVSH <= USED 0
 __asm___12_driver_i2s_c_i2s_reg____RRX <= USED 0
+i2s_clear_fifo <= USED 0
 i2s_get_data <= USED 0
 i2s_get_int_status <= USED 0
+i2s_init <= USED 0
 i2s_send_data <= USED 0
+i2s_start <= USED 0
+i2s_stop <= USED 0
 ;FILE driver_iic.o
 __asm___12_driver_iic_c_c86a542b____REV16 <= USED 0
 __asm___12_driver_iic_c_c86a542b____REVSH <= USED 0
@@ -123,8 +153,10 @@ __asm___12_driver_iic_c_c86a542b____RRX <= USED 0
 iic0_isr_ram <= USED 0
 iic1_isr_ram <= USED 0
 iic_get_status <= USED 0
+iic_init <= USED 0
 iic_int_disable <= USED 0
 iic_int_enable <= USED 0
+iic_read_byte <= USED 0
 iic_read_bytes <= USED 0
 iic_read_bytes_no_regaddr <= USED 0
 iic_write_byte <= USED 0
@@ -138,17 +170,23 @@ keyscan_test <= USED 0
 __asm___12_driver_pmu_c_62fa0f09____REV16 <= USED 0
 __asm___12_driver_pmu_c_62fa0f09____REVSH <= USED 0
 __asm___12_driver_pmu_c_62fa0f09____RRX <= USED 0
+pmu_codec_power_disable <= USED 0
+pmu_codec_power_enable <= USED 0
 pmu_disable_irq <= USED 0
 pmu_enable_charge <= USED 0
 pmu_get_gpio_port_value <= USED 0
 pmu_get_gpio_value <= USED 0
 pmu_otd_threshold_set <= USED 0
+pmu_port_wakeup_func_set <= USED 0
 pmu_set_aldo_voltage <= USED 0
 pmu_set_gpio_value <= USED 0
 pmu_set_led1_as_pwm <= USED 0
 pmu_set_led1_value <= USED 0
 pmu_set_led2_as_pwm <= USED 0
+pmu_set_led2_value <= USED 0
 pmu_set_lp_clk_src <= USED 0
+pmu_set_pin_dir <= USED 0
+pmu_set_pin_pull <= USED 0
 pmu_set_pin_to_CPU <= USED 0
 pmu_set_pin_to_PMU <= USED 0
 pmu_set_port_mux <= USED 0
@@ -177,9 +215,13 @@ ssp_disable_interrupt <= USED 0
 ssp_enable_interrupt <= USED 0
 ssp_get_data_ <= USED 0
 ssp_get_isr_status <= USED 0
+ssp_init_ <= USED 0
 ssp_put_data_to_fifo <= USED 0
 ssp_recv_data <= USED 0
+ssp_send_120Bytes <= USED 0
+ssp_send_byte <= USED 0
 ssp_send_bytes <= USED 0
+ssp_send_data <= USED 0
 ssp_send_then_recv <= USED 0
 ssp_wait_send_end <= USED 0
 ;FILE driver_timer.o
@@ -337,12 +379,30 @@ l2cc_dbg_pdu_unpack <= USED 0
 ;FILE l2cm.o
 ;FILE lcd.o
 Draw_Circle <= USED 0
+LCD_Address_Set <= USED 0
+LCD_Clear <= USED 0
+LCD_Clear_quick <= USED 0
+LCD_DisBWPic <= USED 0
+LCD_DisPIC <= USED 0
 LCD_DrawLine <= USED 0
+LCD_DrawPoint <= USED 0
 LCD_DrawPoint_big <= USED 0
 LCD_DrawRectangle <= USED 0
+LCD_DriverDelay <= USED 0
+LCD_DriverWriteDataBuf <= USED 0
+LCD_Fill <= USED 0
+LCD_ShowChar <= USED 0
+LCD_ShowChinese <= USED 0
+LCD_ShowString <= USED 0
+LCD_WR_DATA <= USED 0
+LCD_WR_DATA8 <= USED 0
+LCD_WR_REG <= USED 0
+Lcd_Init <= USED 0
 __asm___5_lcd_c_Hzk32____REV16 <= USED 0
 __asm___5_lcd_c_Hzk32____REVSH <= USED 0
 __asm___5_lcd_c_Hzk32____RRX <= USED 0
+demo_LCD_APP <= USED 0
+lcd_show_logo <= USED 0
 ;FILE m_al_activity.o
 gapm_activity_created_ind_handler <= USED 0
 gapm_activity_stopped_ind_handler <= USED 0
@@ -817,6 +877,9 @@ os_msg_send <= USED 0
 ke_task_delete <= USED 0
 ke_task_saved_update <= USED 0
 os_get_free_task_id_num <= USED 0
+os_get_free_task_type <= USED 0
+os_task_create <= USED 0
+os_task_create_x <= USED 0
 os_task_delete <= USED 0
 os_task_process_saved_msg <= USED 0
 os_user_loop_event_clear <= USED 0
@@ -870,7 +933,9 @@ __asm___11_proj_main_c_571a19f4____REV16 <= USED 0
 __asm___11_proj_main_c_571a19f4____REVSH <= USED 0
 __asm___11_proj_main_c_571a19f4____RRX <= USED 0
 ;FILE ringbuffer.o
+app_BlockRingBuf_flush <= USED 0
 app_BlockRingBuf_is_free <= USED 0
+app_blockRingBuf_setup <= USED 0
 ;FILE rwble_hl.o
 ;FILE sh2100.o
 SH2100_ADCReset <= USED 0
@@ -898,6 +963,7 @@ update_sensor_data <= USED 0
 ;FILE sh2100_driver.o
 clear_sport_num <= USED 0
 clear_sport_state <= USED 0
+get_skip_num <= USED 0
 gyroscope_init <= USED 0
 gyroscope_loop <= USED 0
 sh2100_get_acc_val <= USED 0
@@ -907,27 +973,53 @@ sh2100_set_offset <= USED 0
 demo_SHT3x_APP <= USED 0
 sht3x_enable_low_power_mode <= USED 0
 sht3x_get_configured_address <= USED 0
+sht3x_measure <= USED 0
+sht3x_measure_blocking_read <= USED 0
 sht3x_probe <= USED 0
+sht3x_read <= USED 0
 ;FILE sht3x_common.o
+sensirion_common_check_crc <= USED 0
+sensirion_common_generate_crc <= USED 0
+sensirion_fill_cmd_send_buf <= USED 0
 sensirion_i2c_delayed_read_cmd <= USED 0
+sensirion_i2c_read_bytes <= USED 0
 sensirion_i2c_read_cmd <= USED 0
+sensirion_i2c_read_words <= USED 0
+sensirion_i2c_write_cmd <= USED 0
 sensirion_i2c_write_cmd_with_args <= USED 0
 ;FILE sht3x_sw_i2c.o
+sensirion_i2c_init <= USED 0
+sensirion_i2c_read <= USED 0
 sensirion_i2c_release <= USED 0
+sensirion_i2c_write <= USED 0
 ;FILE sht3x_sw_i2c_implementation.o
 __asm___29_sht3x_sw_i2c_implementation_c_7faa2475____REV16 <= USED 0
 __asm___29_sht3x_sw_i2c_implementation_c_7faa2475____REVSH <= USED 0
 __asm___29_sht3x_sw_i2c_implementation_c_7faa2475____RRX <= USED 0
+sensirion_SCL_in <= USED 0
+sensirion_SCL_out <= USED 0
+sensirion_SCL_read <= USED 0
+sensirion_SDA_in <= USED 0
+sensirion_SDA_out <= USED 0
+sensirion_SDA_read <= USED 0
+sensirion_init_pins <= USED 0
 sensirion_release_pins <= USED 0
+sensirion_sleep_usec <= USED 0
 ;FILE simple_gatt_service.o
 ;FILE smpc.o
 ;FILE smpc_api.o
 ;FILE smpc_crypto.o
 ;FILE smpc_util.o
 ;FILE speaker.o
+PA_init_pins <= USED 0
+Test_Codec_demo <= USED 0
+Test_codec_demo_stop <= USED 0
 __asm___9_speaker_c_c7daf0a8____REV16 <= USED 0
 __asm___9_speaker_c_c7daf0a8____REVSH <= USED 0
 __asm___9_speaker_c_c7daf0a8____RRX <= USED 0
+speaker_init <= USED 0
+speaker_start_hw <= USED 0
+speaker_stop_hw <= USED 0
 ;FILE speaker_service.o
 ;FILE sys_utils.o
 Smoothing_Filter_destroy <= USED 0
@@ -965,6 +1057,6 @@ ble_bond_get_bond_info <= USED 0
 ble_bond_get_last_bond_idx <= USED 0
 gatt_load_peer_svc_from_flash <= USED 0
 ;FILE user_task.o
-__asm___11_user_task_c_b527fdeb____REV16 <= USED 0
-__asm___11_user_task_c_b527fdeb____REVSH <= USED 0
-__asm___11_user_task_c_b527fdeb____RRX <= USED 0
+__asm___11_user_task_c_39d1022b____REV16 <= USED 0
+__asm___11_user_task_c_39d1022b____REVSH <= USED 0
+__asm___11_user_task_c_39d1022b____RRX <= USED 0

@@ -230,7 +230,7 @@ void decoder_start(uint32_t start, uint32_t end, uint32_t tot_data_len, uint16_t
 	audio_event.event_id = DECODER_EVENT_PREPARE;
 	audio_event.param = &param;
 	audio_event.param_len = sizeof(param);
-    os_msg_post(audio_task_id,&audio_event);
+//    os_msg_post(audio_task_id,&audio_event);
 
     speaker_start_hw();
     decoder_hold_flag = false;
@@ -254,7 +254,7 @@ void decoder_play_next_frame(void)
 	audio_event.event_id = DECODER_EVENT_NEXT_FRAME;
 	audio_event.param = NULL;
 	audio_event.param_len = 0;
-    os_msg_post(audio_task_id,&audio_event);
+//    os_msg_post(audio_task_id,&audio_event);
 	DEC_LOG("decoder_play_next_frame\r\n");
 }
 
@@ -278,7 +278,7 @@ void decoder_stop(void)
 	audio_event.event_id = DECODER_EVENT_STOP;
 	audio_event.param = NULL;
 	audio_event.param_len = 0;
-   os_msg_post(audio_task_id,&audio_event);
+//   os_msg_post(audio_task_id,&audio_event);
 }
 
 /*********************************************************************

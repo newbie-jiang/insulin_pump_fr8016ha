@@ -28,3 +28,4 @@
 .\objects\user_task.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 .\objects\user_task.o: ..\code\ble_simple_peripheral.h
 .\objects\user_task.o: ..\..\..\..\components\ble\include\gap\gap_api.h
+.\objects\user_task.o: ..\..\..\..\components\modules\sys\include\sys_utils.h

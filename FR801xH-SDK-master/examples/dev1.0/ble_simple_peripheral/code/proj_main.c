@@ -210,13 +210,11 @@ void user_entry_before_ble_init(void)
  * @return  None.
  */
 void user_entry_after_ble_init(void)
-{
-    co_printf("BLE Peripheral\r\n");
-
-    // User task initialization, for buttons.
-    user_task_init();
-    
-    // Application layer initialization, can included bond manager init, 
-    // advertising parameters init, scanning parameter init, GATT service adding, etc.    
+{ 
     simple_peripheral_init();
 }
+
+
+
+
+

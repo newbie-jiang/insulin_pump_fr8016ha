@@ -38,3 +38,4 @@
 .\objects\ble_simple_peripheral.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 .\objects\ble_simple_peripheral.o: ..\..\..\..\components\modules\peripherals\gyro\gyro_alg.h
 .\objects\ble_simple_peripheral.o: ..\code\flash_usage_config.h
+.\objects\ble_simple_peripheral.o: ..\code\user_task.h
