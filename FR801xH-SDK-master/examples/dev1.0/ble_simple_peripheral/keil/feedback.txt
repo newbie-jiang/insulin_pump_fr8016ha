@@ -1,4 +1,4 @@
-;#<FEEDBACK># ARM Linker, 5060750: Last Updated: Mon Oct 28 09:17:30 2024
+;#<FEEDBACK># ARM Linker, 5060750: Last Updated: Mon Oct 28 16:23:55 2024
 ;VERSION 0.2
 ;FILE adpcm_ima.o
 adpcm_decode_block <= USED 0
@@ -73,8 +73,8 @@ attmdb_svc_visibility_set <= USED 0
 __asm___23_ble_simple_peripheral_c_109906dc____REV16 <= USED 0
 __asm___23_ble_simple_peripheral_c_109906dc____REVSH <= USED 0
 __asm___23_ble_simple_peripheral_c_109906dc____RRX <= USED 0
-bsp_init <= USED 0
-io_init <= USED 0
+key_init <= USED 0
+led_init <= USED 0
 ;FILE button.o
 button_init <= USED 0
 button_int_isr <= USED 0
@@ -108,6 +108,10 @@ decoder_update_tot_data_len <= USED 0
 read_sbc_from_flash <= USED 0
 test_end_speaker <= USED 0
 test_speaker_from_flash <= USED 0
+;FILE driver_adc.o
+__asm___12_driver_adc_c_15bb8007____REV16 <= USED 0
+__asm___12_driver_adc_c_15bb8007____REVSH <= USED 0
+__asm___12_driver_adc_c_15bb8007____RRX <= USED 0
 ;FILE driver_codec.o
 audio_speaker_codec_init <= USED 0
 codec_adc_init <= USED 0
@@ -183,13 +187,20 @@ pmu_set_gpio_value <= USED 0
 pmu_set_led1_as_pwm <= USED 0
 pmu_set_led1_value <= USED 0
 pmu_set_led2_as_pwm <= USED 0
-pmu_set_led2_value <= USED 0
 pmu_set_lp_clk_src <= USED 0
 pmu_set_pin_dir <= USED 0
 pmu_set_pin_pull <= USED 0
 pmu_set_pin_to_CPU <= USED 0
 pmu_set_pin_to_PMU <= USED 0
 pmu_set_port_mux <= USED 0
+;FILE driver_pmu_pwm.o
+__asm___16_driver_pmu_pwm_c_dcc31a5d____REV16 <= USED 0
+__asm___16_driver_pmu_pwm_c_dcc31a5d____REVSH <= USED 0
+__asm___16_driver_pmu_pwm_c_dcc31a5d____RRX <= USED 0
+pmu_pwm_init <= USED 0
+pmu_pwm_set_param <= USED 0
+pmu_pwm_start <= USED 0
+pmu_pwm_stop <= USED 0
 ;FILE driver_pmu_qdec.o
 pmu_qdec_autorest_cnt_flag <= USED 0
 pmu_qdec_init <= USED 0
@@ -197,6 +208,12 @@ pmu_qdec_set_debounce_cnt <= USED 0
 pmu_qdec_set_irq_type <= USED 0
 pmu_qdec_set_pin <= USED 0
 pmu_qdec_set_threshold <= USED 0
+;FILE driver_pwm.o
+__asm___12_driver_pwm_c_pwm_ctrl____REV16 <= USED 0
+__asm___12_driver_pwm_c_pwm_ctrl____REVSH <= USED 0
+__asm___12_driver_pwm_c_pwm_ctrl____RRX <= USED 0
+pwm_stop <= USED 0
+pwm_update <= USED 0
 ;FILE driver_rtc.o
 __asm___12_driver_rtc_c_rtc_init____REV16 <= USED 0
 __asm___12_driver_rtc_c_rtc_init____REVSH <= USED 0

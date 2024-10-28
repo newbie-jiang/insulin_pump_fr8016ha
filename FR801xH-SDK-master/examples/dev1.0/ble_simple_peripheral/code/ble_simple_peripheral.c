@@ -28,8 +28,8 @@
 #include "gyro_alg.h"
 #include "flash_usage_config.h"
 #include "user_task.h"
-
-
+#include "driver_pwm.h"
+#include "driver_adc.h"
 /*
  * MACROS
  */
@@ -76,12 +76,12 @@ static uint8_t scan_rsp_data[] =
  * GLOBAL VARIABLES 
  */
 
-os_timer_t timer_refresh;//
-os_timer_t motor_task;// 
+os_timer_t timer_refresh;
+os_timer_t motor_task;
 os_timer_t beep_task;
+os_timer_t electric_quantity_task;
 
-uint8_t App_Mode = PICTURE_UPDATE;//
-
+uint8_t App_Mode = PICTURE_UPDATE;
 /*
  * LOCAL VARIABLES 
  */
@@ -247,11 +247,10 @@ void motor_run_fun2(void)
 
 void motor_run_fun3(void)
 {
-  speed_set_flag = 3 ;	  
+    speed_set_flag = 3 ;	  
   os_timer_start(&motor_task,10,1);	
  	  
 }
-
 
 void pmu_pwm_stop(enum system_port_t port, enum system_port_bit_t bit);
 
@@ -263,25 +262,6 @@ void motor_stop_fun(void)
   gpio_set_pin_value(GPIO_PORT_D,GPIO_BIT_5,0);
 }
   
-
-
-void io_init(void)
-{   
-    system_set_port_mux(GPIO_PORT_D,GPIO_BIT_5,PORTD5_FUNC_D5);
-  
-    gpio_set_dir(GPIO_PORT_D, GPIO_BIT_5, GPIO_DIR_OUT);
-}
- 
-
-
-
-
-
-
-
-
-
-
 
 void ble_init(void)
 {
@@ -316,7 +296,7 @@ void ble_init(void)
 	speaker_gatt_add_service();	
 }
 
-//PD5
+// PD5 MOTOR Control
 void motor_io_init(void)
 {
   system_set_port_mux(GPIO_PORT_D,GPIO_BIT_5,PORTD5_FUNC_D5);
@@ -324,22 +304,82 @@ void motor_io_init(void)
   gpio_set_dir(GPIO_PORT_D, GPIO_BIT_5, GPIO_DIR_OUT);
 }
 
-//PA4
+// PA4 PWM
 void beep_init(void)
 {
+    system_set_port_mux(GPIO_PORT_A,GPIO_BIT_4,PORTD4_FUNC_PWM4);
 	
+    pwm_init(PWM_CHANNEL_4,2000,50); /* 2khz */
 	
-
+    pwm_start(PWM_CHANNEL_4);
+	
+//    co_delay_100us(100000);  //4K hz for 10s	
+//	
+//    pwm_stop(PWM_CHANNEL_4);  
 }
 
+// PA5 Key
+void key_init(void)
+{
+    system_set_port_pull(GPIO_PA5, true);
+	//PD7  PD6输入
+	system_set_port_mux(GPIO_PORT_A, GPIO_BIT_5, PORTD5_FUNC_D5 );
+	
+	gpio_set_dir(GPIO_PORT_A, GPIO_BIT_5, GPIO_DIR_IN);	  
+}
+
+// LED R
+void led_init(void)
+{
+   pmu_set_led2_value(0); 	//开启led	
+}
+
+//vbat_adc_init   return voltage(mv)
+float get_vbat_adc_val(void)
+{	
+	struct adc_cfg_t cfg;
+    uint16_t result, ref_vol;
+	float vbat_vol;
+	memset((void*)&cfg, 0, sizeof(cfg));
+	cfg.src = ADC_TRANS_SOURCE_VBAT;  //采样电压源
+	cfg.ref_sel = ADC_REFERENCE_INTERNAL;//采样基准源选择
+	cfg.int_ref_cfg = ADC_INTERNAL_REF_1_2;//内部基准源选择
+	cfg.clk_sel = ADC_SAMPLE_CLK_24M_DIV13;//时钟源选择
+	cfg.clk_div = 0x3f; //分频系数
+	adc_init(&cfg);
+	adc_enable(NULL, NULL, 0);
+	
+	adc_get_result(ADC_TRANS_SOURCE_VBAT, 0, &result);//获取基准源校准电压   1023
+	
+    ref_vol = adc_get_ref_voltage(ADC_REFERENCE_INTERNAL); //带分压1/4    1222左右
+	
+	vbat_vol = (float)(result * 3.3 * ref_vol) / 1024.0;
+		
+	return vbat_vol;
+}
+
+// PD4 high
+void bat_init(void)
+{
+  system_set_port_mux(GPIO_PORT_D,GPIO_BIT_4,PORTD4_FUNC_D4);
+  
+  gpio_set_dir(GPIO_PORT_D, GPIO_BIT_4, GPIO_DIR_OUT);
+	
+  gpio_set_pin_value(GPIO_PORT_D,GPIO_BIT_4,1);
+
+}
  
 
 void bsp_init(void)
 {
+   bat_init();
+	
    motor_io_init();
 	
-
-
+   beep_init();
+	
+   led_init();	
+	
 }
 
 /*********************************************************************
@@ -384,7 +424,10 @@ void simple_peripheral_init(void)
 	/* beep task */
 	os_timer_init(&beep_task,beep_task_fun,NULL);
 	os_timer_start(&beep_task,1000,1);
-
+	
+	/* electric quantity task */
+	os_timer_init(&electric_quantity_task,electric_quantity_task_fun,NULL);
+	os_timer_start(&electric_quantity_task,3000,1); /* 3s detection */
 
 }
 

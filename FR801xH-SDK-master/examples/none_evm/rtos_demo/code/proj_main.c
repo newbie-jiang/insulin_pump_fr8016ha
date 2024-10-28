@@ -344,6 +344,8 @@ void user_entry_after_ble_init(void)
         .sec_req = GAP_SEC1_NOAUTH_PAIR_ENC,
     };
 #endif
+
+
 #if 0
     gap_security_param_t param =
     {
@@ -355,6 +357,8 @@ void user_entry_after_ble_init(void)
         .password = 123456,
     };
 #endif
+
+
 #if 1
     gap_security_param_t param =
     {

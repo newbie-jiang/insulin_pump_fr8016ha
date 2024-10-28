@@ -1,0 +1,15 @@
+.\objects\time_rtc.o: ..\code\time_rtc.c
+.\objects\time_rtc.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\time_rtc.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\objects\time_rtc.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\objects\time_rtc.o: ..\..\..\..\components\modules\common\include\co_printf.h
+.\objects\time_rtc.o: ..\..\..\..\components\modules\os\include\os_timer.h
+.\objects\time_rtc.o: ..\..\..\..\components\driver\include\driver_system.h
+.\objects\time_rtc.o: ..\..\..\..\components\driver\include\driver_iomux.h
+.\objects\time_rtc.o: ..\..\..\..\components\driver\include\driver_pmu_regs.h
+.\objects\time_rtc.o: ..\..\..\..\components\modules\common\include\co_math.h
+.\objects\time_rtc.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\time_rtc.o: ..\..\..\..\components\modules\platform\include\compiler.h
+.\objects\time_rtc.o: ..\..\..\..\components\driver\include\driver_rtc.h
+.\objects\time_rtc.o: ..\..\..\..\components\driver\include\driver_pmu.h
+.\objects\time_rtc.o: ..\..\..\..\components\driver\include\driver_frspim.h

@@ -623,6 +623,21 @@
               <FileType>1</FileType>
               <FilePath>..\..\..\..\components\driver\driver_efuse.c</FilePath>
             </File>
+            <File>
+              <FileName>driver_pwm.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\components\driver\driver_pwm.c</FilePath>
+            </File>
+            <File>
+              <FileName>driver_pmu_pwm.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\components\driver\driver_pmu_pwm.c</FilePath>
+            </File>
+            <File>
+              <FileName>driver_adc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\components\driver\driver_adc.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
