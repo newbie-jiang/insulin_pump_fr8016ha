@@ -422,8 +422,7 @@ static uint16_t sp_gatt_msg_handler(gatt_msg_t *p_msg)
 					else if (p_msg->att_idx == SP_IDX_CHAR2_VALUE)
 					{
 						co_printf("char2_recv:");
-						
-						
+												
 						bluetooth_process(p_msg->param.msg.p_msg_data,p_msg->param.msg.msg_len,1);			
 						
 						show_reg(p_msg->param.msg.p_msg_data,p_msg->param.msg.msg_len,1);

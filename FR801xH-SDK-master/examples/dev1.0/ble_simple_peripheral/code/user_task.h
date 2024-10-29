@@ -33,9 +33,8 @@ enum user_audio_event_t {
 void motor_task_fun(void *arg);
 void beep_task_fun(void *arg);
 void electric_quantity_task_fun(void *arg);
-
-
-
+void key_scan_task_fun(void *arg);
+void led_task_fun(void *arg);
 
 #endif  // _USER_TASK_H
 

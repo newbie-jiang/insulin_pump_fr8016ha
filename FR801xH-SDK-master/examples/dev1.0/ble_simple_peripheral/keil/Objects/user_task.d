@@ -29,3 +29,8 @@
 .\objects\user_task.o: ..\code\ble_simple_peripheral.h
 .\objects\user_task.o: ..\..\..\..\components\ble\include\gap\gap_api.h
 .\objects\user_task.o: ..\..\..\..\components\modules\sys\include\sys_utils.h
+.\objects\user_task.o: ..\..\..\..\components\driver\include\driver_pmu.h
+.\objects\user_task.o: ..\..\..\..\components\modules\common\include\co_math.h
+.\objects\user_task.o: ..\..\..\..\components\driver\include\driver_pmu_regs.h
+.\objects\user_task.o: ..\..\..\..\components\driver\include\driver_frspim.h
+.\objects\user_task.o: ..\..\..\..\components\driver\include\driver_pwm.h

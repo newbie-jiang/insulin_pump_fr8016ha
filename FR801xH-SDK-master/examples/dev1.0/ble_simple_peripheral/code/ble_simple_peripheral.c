@@ -30,6 +30,8 @@
 #include "user_task.h"
 #include "driver_pwm.h"
 #include "driver_adc.h"
+
+
 /*
  * MACROS
  */
@@ -80,6 +82,8 @@ os_timer_t timer_refresh;
 os_timer_t motor_task;
 os_timer_t beep_task;
 os_timer_t electric_quantity_task;
+os_timer_t key_scan_task;
+os_timer_t led_task;
 
 uint8_t App_Mode = PICTURE_UPDATE;
 /*
@@ -248,7 +252,7 @@ void motor_run_fun2(void)
 void motor_run_fun3(void)
 {
     speed_set_flag = 3 ;	  
-  os_timer_start(&motor_task,10,1);	
+    os_timer_start(&motor_task,10,1);	
  	  
 }
 
@@ -309,13 +313,13 @@ void beep_init(void)
 {
     system_set_port_mux(GPIO_PORT_A,GPIO_BIT_4,PORTD4_FUNC_PWM4);
 	
-    pwm_init(PWM_CHANNEL_4,2000,50); /* 2khz */
+    pwm_init(PWM_CHANNEL_4,4000,50); /* 2khz */
 	
     pwm_start(PWM_CHANNEL_4);
 	
-//    co_delay_100us(100000);  //4K hz for 10s	
-//	
-//    pwm_stop(PWM_CHANNEL_4);  
+    co_delay_100us(5000);  //2K hz for 0.5s	
+	
+    pwm_stop(PWM_CHANNEL_4);  
 }
 
 // PA5 Key
@@ -327,6 +331,7 @@ void key_init(void)
 	
 	gpio_set_dir(GPIO_PORT_A, GPIO_BIT_5, GPIO_DIR_IN);	  
 }
+
 
 // LED R
 void led_init(void)
@@ -358,8 +363,8 @@ float get_vbat_adc_val(void)
 	return vbat_vol;
 }
 
-// PD4 high
-void bat_init(void)
+// PD4 high 该io输出高设备才通电
+void pwr_init(void)
 {
   system_set_port_mux(GPIO_PORT_D,GPIO_BIT_4,PORTD4_FUNC_D4);
   
@@ -372,14 +377,15 @@ void bat_init(void)
 
 void bsp_init(void)
 {
-   bat_init();
+   pwr_init(); 
 	
    motor_io_init();
 	
+   key_init();
+	
    beep_init();
 	
-   led_init();	
-	
+   led_init();		
 }
 
 /*********************************************************************
@@ -395,39 +401,29 @@ void bsp_init(void)
 void simple_peripheral_init(void)
 {	
 	co_printf("BLE Peripheral\r\n");
+	
 	ble_init();
-	  	
-//	pmu_set_pin_pull(GPIO_PORT_D, (1<<GPIO_BIT_6), true);
-//	pmu_set_pin_pull(GPIO_PORT_C, (1<<GPIO_BIT_5), true);
-//	pmu_port_wakeup_func_set(GPIO_PD6|GPIO_PC5);
-//	button_init(GPIO_PD6|GPIO_PC5);
-
-//	demo_LCD_APP();							            
-//	demo_CAPB18_APP();						            
-//	demo_SHT3x_APP();						           
-//	gyro_dev_init();	
-
-//  pmu_set_pin_dir(GPIO_PORT_D,(1<<GPIO_BIT_4),1);
-	
-//	demo_pmu_pwm();
-//	io_init();
-	//OS Timer
-//	os_timer_init(&timer_refresh,timer_refresh_fun,NULL);
-//	os_timer_start(&timer_refresh,1000,1);
-			
+	  			
 	bsp_init();
-	
+		
 	/* motor task */
     os_timer_init(&motor_task,motor_task_fun,NULL);
 	// os_timer_start(&motor_task,1000,1); 	
 	
 	/* beep task */
 	os_timer_init(&beep_task,beep_task_fun,NULL);
-	os_timer_start(&beep_task,1000,1);
+	os_timer_start(&beep_task,100,1);
 	
 	/* electric quantity task */
 	os_timer_init(&electric_quantity_task,electric_quantity_task_fun,NULL);
-	os_timer_start(&electric_quantity_task,3000,1); /* 3s detection */
+	os_timer_start(&electric_quantity_task,2000,1); /* 3s detection */
+	
+	os_timer_init(&key_scan_task,key_scan_task_fun,NULL);
+	os_timer_start(&key_scan_task,100,1); /* 100ms detection */
+	
+	/* led翻转会造成蓝牙连接不上 */
+//	os_timer_init(&led_task,led_task_fun,NULL);
+//	os_timer_start(&led_task,100,1); /* 100ms detection */	
 
 }
 

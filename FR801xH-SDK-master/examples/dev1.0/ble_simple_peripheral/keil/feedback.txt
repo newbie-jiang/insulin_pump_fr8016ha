@@ -1,4 +1,4 @@
-;#<FEEDBACK># ARM Linker, 5060750: Last Updated: Mon Oct 28 16:23:55 2024
+;#<FEEDBACK># ARM Linker, 5060750: Last Updated: Tue Oct 29 11:29:06 2024
 ;VERSION 0.2
 ;FILE adpcm_ima.o
 adpcm_decode_block <= USED 0
@@ -73,7 +73,6 @@ attmdb_svc_visibility_set <= USED 0
 __asm___23_ble_simple_peripheral_c_109906dc____REV16 <= USED 0
 __asm___23_ble_simple_peripheral_c_109906dc____REVSH <= USED 0
 __asm___23_ble_simple_peripheral_c_109906dc____RRX <= USED 0
-key_init <= USED 0
 led_init <= USED 0
 ;FILE button.o
 button_init <= USED 0
@@ -212,7 +211,6 @@ pmu_qdec_set_threshold <= USED 0
 __asm___12_driver_pwm_c_pwm_ctrl____REV16 <= USED 0
 __asm___12_driver_pwm_c_pwm_ctrl____REVSH <= USED 0
 __asm___12_driver_pwm_c_pwm_ctrl____RRX <= USED 0
-pwm_stop <= USED 0
 pwm_update <= USED 0
 ;FILE driver_rtc.o
 __asm___12_driver_rtc_c_rtc_init____REV16 <= USED 0
@@ -1077,3 +1075,4 @@ gatt_load_peer_svc_from_flash <= USED 0
 __asm___11_user_task_c_39d1022b____REV16 <= USED 0
 __asm___11_user_task_c_39d1022b____REVSH <= USED 0
 __asm___11_user_task_c_39d1022b____RRX <= USED 0
+led_task_fun <= USED 0
