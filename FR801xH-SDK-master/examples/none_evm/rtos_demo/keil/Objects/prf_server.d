@@ -1,0 +1,12 @@
+.\objects\prf_server.o: ..\code\prf_server.c
+.\objects\prf_server.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\prf_server.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\prf_server.o: ..\..\..\..\components\ble\include\gatt\gatt_api.h
+.\objects\prf_server.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\prf_server.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\objects\prf_server.o: ..\..\..\..\components\modules\os\include\os_msg_q.h
+.\objects\prf_server.o: ..\..\..\..\components\ble\include\gatt\gatt_sig_uuid.h
+.\objects\prf_server.o: ..\..\..\..\components\modules\sys\include\sys_utils.h
+.\objects\prf_server.o: ..\..\..\..\components\modules\common\include\co_printf.h
+.\objects\prf_server.o: ..\..\..\..\components\modules\platform\include\compiler.h
+.\objects\prf_server.o: ..\..\..\..\components\modules\os\include\os_timer.h

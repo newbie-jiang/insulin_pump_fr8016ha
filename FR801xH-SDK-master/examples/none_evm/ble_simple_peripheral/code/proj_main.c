@@ -201,6 +201,6 @@ void user_entry_after_ble_init(void)
     
     // Application layer initialization, can included bond manager init, 
     // advertising parameters init, scanning parameter init, GATT service adding, etc.    
-    simple_peripheral_init();
+    simple_peripheral_init();    
 	
 }

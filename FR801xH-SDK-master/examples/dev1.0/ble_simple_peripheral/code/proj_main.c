@@ -81,6 +81,7 @@ void user_custom_parameters(void)
     id_data.unique_id[5] |= 0xc0; // random addr->static addr type:the top two bit must be 1.
     memcpy(__jump_table.addr.addr,id_data.unique_id,6);
     __jump_table.system_clk = SYSTEM_SYS_CLK_48M;
+//	__jump_table.system_option &= (SYSTEM_OPTION_SLEEP_ENABLE);//ȡ��sleepģʽ
     __jump_table.system_option &= ~(SYSTEM_OPTION_SLEEP_ENABLE);//ȡ��sleepģʽ
     jump_table_set_static_keys_store_offset(JUMP_TABLE_STATIC_KEY_OFFSET);
     ble_set_addr_type(BLE_ADDR_TYPE_PUBLIC);
@@ -102,6 +103,7 @@ void user_custom_parameters(void)
  */
 __attribute__((section("ram_code"))) void user_entry_before_sleep_imp(void)
 {
+	co_printf(" start sleep \r\n");
 }
 
 /*********************************************************************
@@ -123,6 +125,8 @@ __attribute__((section("ram_code"))) void user_entry_after_sleep_imp(void)
     system_set_port_pull(GPIO_PA2, true);
     system_set_port_mux(GPIO_PORT_A, GPIO_BIT_2, PORTA2_FUNC_UART1_RXD);
     system_set_port_mux(GPIO_PORT_A, GPIO_BIT_3, PORTA3_FUNC_UART1_TXD);
+	
+	co_printf(" weak up sleep \r\n");
     
     system_sleep_disable();
 
@@ -188,13 +192,17 @@ void user_entry_before_ble_init(void)
         system_set_port_mux(GPIO_PORT_A, GPIO_BIT_5, PORTA5_FUNC_UART0_TXD);
     }
 
+	  
+	
     /* used for debug, reserve 3S for j-link once sleep is enabled. */
-    if(__jump_table.system_option & SYSTEM_OPTION_SLEEP_ENABLE)
-    {
-        co_delay_100us(10000);
-        co_delay_100us(10000);
-        co_delay_100us(10000);
-    }
+     
+//        printf(" a\r\n ");
+//        co_delay_100us(30000);
+//	    printf(" b\r\n ");
+//        co_delay_100us(30000);
+//	    printf(" c\r\n ");
+//        co_delay_100us(30000);
+    
 }
 
 /*********************************************************************

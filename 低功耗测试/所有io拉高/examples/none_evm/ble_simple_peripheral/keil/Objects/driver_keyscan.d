@@ -1,0 +1,13 @@
+.\objects\driver_keyscan.o: ..\..\..\..\components\driver\driver_keyscan.c
+.\objects\driver_keyscan.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\driver_keyscan.o: ..\..\..\..\components\modules\common\include\co_log.h
+.\objects\driver_keyscan.o: ..\..\..\..\components\modules\common\include\co_printf.h
+.\objects\driver_keyscan.o: ..\..\..\..\components\modules\common\include\co_math.h
+.\objects\driver_keyscan.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\objects\driver_keyscan.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\driver_keyscan.o: ..\..\..\..\components\modules\platform\include\compiler.h
+.\objects\driver_keyscan.o: ..\..\..\..\components\driver\include\driver_keyscan.h
+.\objects\driver_keyscan.o: ..\..\..\..\components\driver\include\driver_pmu.h
+.\objects\driver_keyscan.o: ..\..\..\..\components\driver\include\driver_iomux.h
+.\objects\driver_keyscan.o: ..\..\..\..\components\driver\include\driver_pmu_regs.h
+.\objects\driver_keyscan.o: ..\..\..\..\components\driver\include\driver_frspim.h

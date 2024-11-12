@@ -1,0 +1,13 @@
+.\objects\sht3x.o: ..\..\..\..\components\modules\peripherals\sht3x_temp_humi\sht3x.c
+.\objects\sht3x.o: ..\..\..\..\components\modules\peripherals\sht3x_temp_humi\sht3x.h
+.\objects\sht3x.o: ..\..\..\..\components\modules\peripherals\sht3x_temp_humi\sht3x_arch_config.h
+.\objects\sht3x.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\sht3x.o: ..\..\..\..\components\modules\peripherals\sht3x_temp_humi\sht3x_i2c.h
+.\objects\sht3x.o: ..\..\..\..\components\modules\peripherals\sht3x_temp_humi\sht3x_common.h
+.\objects\sht3x.o: ..\..\..\..\components\modules\peripherals\oled\lcd.h
+.\objects\sht3x.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\sht3x.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\sht3x.o: ..\..\..\..\components\modules\common\include\co_printf.h
+.\objects\sht3x.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\objects\sht3x.o: ..\..\..\..\components\modules\sys\include\sys_utils.h
+.\objects\sht3x.o: ..\..\..\..\components\modules\platform\include\compiler.h

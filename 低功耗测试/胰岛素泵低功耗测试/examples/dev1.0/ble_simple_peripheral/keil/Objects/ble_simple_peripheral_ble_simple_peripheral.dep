@@ -1,0 +1,599 @@
+Dependencies for Project 'ble_simple_peripheral', Target 'ble_simple_peripheral': (DO NOT MODIFY !)
+CompilerVersion: 5060750::V5.06 update 6 (build 750)::ARMCC
+F (..\code\proj_main.c)(0x67209C24)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I ..\..\..\..\components\ble\include -I ..\..\..\..\components\driver\include -I ..\..\..\..\components\modules\os\include -I ..\..\..\..\components\modules\sys\include -I ..\..\..\..\components\modules\platform\include -I ..\..\..\..\components\modules\common\include -I ..\..\..\..\components\modules\lowpow\include -I ..\..\..\..\components\modules\button -I ..\..\..\..\components\ble\include\gap -I ..\..\..\..\components\ble\include\gatt -I ..\..\..\..\components\ble\profiles\ble_simple_profile -I ..\code -I ..\..\..\..\components\modules\peripherals\capb18_air_pressure -I ..\..\..\..\components\modules\peripherals\oled -I ..\..\..\..\components\modules\peripherals\sht3x_temp_humi -I ..\..\..\..\components\ble\profiles\ble_audio_profile -I ..\..\..\..\components\modules\peripherals\audio -I ..\..\..\..\components\modules\decoder -I ..\..\..\..\components\modules\adpcm_ms -I ..\..\..\..\components\modules\peripherals\gyro -I ..\..\..\..\components\modules\ringbuffer -I ..\..\..\..\components\modules\adpcm_ima-IC:\Keil_v5\ARM\RV31\INC-D__UVISION_VERSION="541"-o .\objects\proj_main.o --omf_browse .\objects\proj_main.crf --depend .\objects\proj_main.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5CEB79E2)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEB79E2)
+I (..\..\..\..\components\ble\include\gap\gap_api.h)(0x67205E8A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5CEB79DE)
+I (..\..\..\..\components\ble\include\gatt\gatt_api.h)(0x67205E8A)
+I (..\..\..\..\components\modules\os\include\os_msg_q.h)(0x67205E8B)
+I (..\..\..\..\components\modules\os\include\os_timer.h)(0x67205E8B)
+I (..\..\..\..\components\modules\os\include\os_mem.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\compiler.h)(0x67205E8B)
+I (..\..\..\..\components\modules\sys\include\sys_utils.h)(0x67205E8B)
+I (..\..\..\..\components\modules\common\include\co_printf.h)(0x67205E8B)
+I (..\..\..\..\components\modules\button\button.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\jump_table.h)(0x67205E8B)
+I (..\..\..\..\components\modules\common\include\co_math.h)(0x67205E8B)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5CEB79E2)
+I (..\code\user_task.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_plf.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\core_cm3.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\cmsis_compiler.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\cmsis_armcc.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\ll.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_system.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_iomux.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_i2s.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_pmu.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_pmu_regs.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_frspim.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_uart.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_rtc.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_efuse.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_flash.h)(0x67205E8B)
+I (..\code\flash_usage_config.h)(0x67205E8B)
+I (..\code\ble_simple_peripheral.h)(0x67205E8B)
+I (..\..\..\..\components\ble\profiles\ble_simple_profile\simple_gatt_service.h)(0x67205E8B)
+I (..\..\..\..\components\ble\include\gatt\gatt_sig_uuid.h)(0x67205E8A)
+F (..\code\ble_simple_peripheral.h)(0x67205E8B)()
+F (..\code\ble_simple_peripheral.c)(0x67209D0F)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I ..\..\..\..\components\ble\include -I ..\..\..\..\components\driver\include -I ..\..\..\..\components\modules\os\include -I ..\..\..\..\components\modules\sys\include -I ..\..\..\..\components\modules\platform\include -I ..\..\..\..\components\modules\common\include -I ..\..\..\..\components\modules\lowpow\include -I ..\..\..\..\components\modules\button -I ..\..\..\..\components\ble\include\gap -I ..\..\..\..\components\ble\include\gatt -I ..\..\..\..\components\ble\profiles\ble_simple_profile -I ..\code -I ..\..\..\..\components\modules\peripherals\capb18_air_pressure -I ..\..\..\..\components\modules\peripherals\oled -I ..\..\..\..\components\modules\peripherals\sht3x_temp_humi -I ..\..\..\..\components\ble\profiles\ble_audio_profile -I ..\..\..\..\components\modules\peripherals\audio -I ..\..\..\..\components\modules\decoder -I ..\..\..\..\components\modules\adpcm_ms -I ..\..\..\..\components\modules\peripherals\gyro -I ..\..\..\..\components\modules\ringbuffer -I ..\..\..\..\components\modules\adpcm_ima-IC:\Keil_v5\ARM\RV31\INC-D__UVISION_VERSION="541"-o .\objects\ble_simple_peripheral.o --omf_browse .\objects\ble_simple_peripheral.crf --depend .\objects\ble_simple_peripheral.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5CEB79DE)
+I (..\..\..\..\components\ble\include\gap\gap_api.h)(0x67205E8A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5CEB79E2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (..\..\..\..\components\ble\include\gatt\gatt_api.h)(0x67205E8A)
+I (..\..\..\..\components\modules\os\include\os_msg_q.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_gpio.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_plf.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\compiler.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\core_cm3.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\cmsis_compiler.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\cmsis_armcc.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\ll.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_system.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_iomux.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_pmu.h)(0x67205E8B)
+I (..\..\..\..\components\modules\common\include\co_math.h)(0x67205E8B)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5CEB79E2)
+I (..\..\..\..\components\driver\include\driver_pmu_regs.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_frspim.h)(0x67205E8B)
+I (..\..\..\..\components\modules\button\button.h)(0x67205E8B)
+I (..\..\..\..\components\modules\os\include\os_timer.h)(0x67205E8B)
+I (..\..\..\..\components\ble\profiles\ble_audio_profile\speaker_service.h)(0x67205E8A)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEB79E2)
+I (..\..\..\..\components\ble\include\gatt\gatt_sig_uuid.h)(0x67205E8A)
+I (..\..\..\..\components\ble\profiles\ble_simple_profile\simple_gatt_service.h)(0x67205E8B)
+I (..\code\ble_simple_peripheral.h)(0x67205E8B)
+I (..\..\..\..\components\modules\sys\include\sys_utils.h)(0x67205E8B)
+I (..\..\..\..\components\modules\common\include\co_printf.h)(0x67205E8B)
+I (..\..\..\..\components\modules\peripherals\oled\lcd.h)(0x67205E8B)
+I (..\..\..\..\components\modules\peripherals\capb18_air_pressure\capb18-001.h)(0x67205E8B)
+I (..\..\..\..\components\modules\peripherals\sht3x_temp_humi\sht3x.h)(0x67205E8B)
+I (..\..\..\..\components\modules\peripherals\sht3x_temp_humi\sht3x_arch_config.h)(0x67205E8B)
+I (..\..\..\..\components\modules\peripherals\sht3x_temp_humi\sht3x_i2c.h)(0x67205E8B)
+I (..\..\..\..\components\modules\decoder\decoder.h)(0x67205E8B)
+I (..\..\..\..\components\modules\common\include\co_list.h)(0x67205E8B)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5CEB79E2)
+I (..\..\..\..\components\modules\peripherals\gyro\gyro_alg.h)(0x67205E8B)
+I (..\code\flash_usage_config.h)(0x67205E8B)
+I (..\code\user_task.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_pwm.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_adc.h)(0x67205E8B)
+F (..\code\user_task.c)(0x67208002)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I ..\..\..\..\components\ble\include -I ..\..\..\..\components\driver\include -I ..\..\..\..\components\modules\os\include -I ..\..\..\..\components\modules\sys\include -I ..\..\..\..\components\modules\platform\include -I ..\..\..\..\components\modules\common\include -I ..\..\..\..\components\modules\lowpow\include -I ..\..\..\..\components\modules\button -I ..\..\..\..\components\ble\include\gap -I ..\..\..\..\components\ble\include\gatt -I ..\..\..\..\components\ble\profiles\ble_simple_profile -I ..\code -I ..\..\..\..\components\modules\peripherals\capb18_air_pressure -I ..\..\..\..\components\modules\peripherals\oled -I ..\..\..\..\components\modules\peripherals\sht3x_temp_humi -I ..\..\..\..\components\ble\profiles\ble_audio_profile -I ..\..\..\..\components\modules\peripherals\audio -I ..\..\..\..\components\modules\decoder -I ..\..\..\..\components\modules\adpcm_ms -I ..\..\..\..\components\modules\peripherals\gyro -I ..\..\..\..\components\modules\ringbuffer -I ..\..\..\..\components\modules\adpcm_ima-IC:\Keil_v5\ARM\RV31\INC-D__UVISION_VERSION="541"-o .\objects\user_task.o --omf_browse .\objects\user_task.crf --depend .\objects\user_task.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (..\..\..\..\components\modules\os\include\os_task.h)(0x67205E8B)
+I (..\..\..\..\components\modules\os\include\os_msg_q.h)(0x67205E8B)
+I (..\..\..\..\components\modules\os\include\os_mem.h)(0x67205E8B)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEB79E2)
+I (..\..\..\..\components\modules\platform\include\compiler.h)(0x67205E8B)
+I (..\..\..\..\components\modules\common\include\co_printf.h)(0x67205E8B)
+I (..\code\user_task.h)(0x67205E8B)
+I (..\..\..\..\components\modules\button\button.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_gpio.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_plf.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\core_cm3.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\cmsis_compiler.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\cmsis_armcc.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\ll.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_system.h)(0x67205E8B)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5CEB79DE)
+I (..\..\..\..\components\driver\include\driver_iomux.h)(0x67205E8B)
+I (..\..\..\..\components\modules\peripherals\oled\lcd.h)(0x67205E8B)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5CEB79E2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5CEB79E2)
+I (..\..\..\..\components\modules\adpcm_ms\adpcm_ms.h)(0x67205E8B)
+I (..\..\..\..\components\modules\peripherals\audio\speaker.h)(0x67205E8B)
+I (..\..\..\..\components\modules\decoder\decoder.h)(0x67205E8B)
+I (..\..\..\..\components\modules\os\include\os_timer.h)(0x67205E8B)
+I (..\..\..\..\components\modules\common\include\co_list.h)(0x67205E8B)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5CEB79E2)
+I (..\code\ble_simple_peripheral.h)(0x67205E8B)
+I (..\..\..\..\components\ble\include\gap\gap_api.h)(0x67205E8A)
+I (..\..\..\..\components\modules\sys\include\sys_utils.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_pmu.h)(0x67205E8B)
+I (..\..\..\..\components\modules\common\include\co_math.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_pmu_regs.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_frspim.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_pwm.h)(0x67205E8B)
+F (..\..\..\..\components\modules\button\button.c)(0x67205E8B)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I ..\..\..\..\components\ble\include -I ..\..\..\..\components\driver\include -I ..\..\..\..\components\modules\os\include -I ..\..\..\..\components\modules\sys\include -I ..\..\..\..\components\modules\platform\include -I ..\..\..\..\components\modules\common\include -I ..\..\..\..\components\modules\lowpow\include -I ..\..\..\..\components\modules\button -I ..\..\..\..\components\ble\include\gap -I ..\..\..\..\components\ble\include\gatt -I ..\..\..\..\components\ble\profiles\ble_simple_profile -I ..\code -I ..\..\..\..\components\modules\peripherals\capb18_air_pressure -I ..\..\..\..\components\modules\peripherals\oled -I ..\..\..\..\components\modules\peripherals\sht3x_temp_humi -I ..\..\..\..\components\ble\profiles\ble_audio_profile -I ..\..\..\..\components\modules\peripherals\audio -I ..\..\..\..\components\modules\decoder -I ..\..\..\..\components\modules\adpcm_ms -I ..\..\..\..\components\modules\peripherals\gyro -I ..\..\..\..\components\modules\ringbuffer -I ..\..\..\..\components\modules\adpcm_ima-IC:\Keil_v5\ARM\RV31\INC-D__UVISION_VERSION="541"-o .\objects\button.o --omf_browse .\objects\button.crf --depend .\objects\button.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (..\..\..\..\components\modules\os\include\os_task.h)(0x67205E8B)
+I (..\..\..\..\components\modules\os\include\os_msg_q.h)(0x67205E8B)
+I (..\..\..\..\components\modules\os\include\os_timer.h)(0x67205E8B)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5CEB79DE)
+I (..\code\user_task.h)(0x67205E8B)
+I (..\..\..\..\components\modules\button\button.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_pmu.h)(0x67205E8B)
+I (..\..\..\..\components\modules\common\include\co_math.h)(0x67205E8B)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5CEB79E2)
+I (..\..\..\..\components\modules\platform\include\compiler.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_iomux.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_pmu_regs.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_frspim.h)(0x67205E8B)
+F (..\..\..\..\components\ble\profiles\ble_audio_profile\speaker_service.c)(0x67205E8A)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I ..\..\..\..\components\ble\include -I ..\..\..\..\components\driver\include -I ..\..\..\..\components\modules\os\include -I ..\..\..\..\components\modules\sys\include -I ..\..\..\..\components\modules\platform\include -I ..\..\..\..\components\modules\common\include -I ..\..\..\..\components\modules\lowpow\include -I ..\..\..\..\components\modules\button -I ..\..\..\..\components\ble\include\gap -I ..\..\..\..\components\ble\include\gatt -I ..\..\..\..\components\ble\profiles\ble_simple_profile -I ..\code -I ..\..\..\..\components\modules\peripherals\capb18_air_pressure -I ..\..\..\..\components\modules\peripherals\oled -I ..\..\..\..\components\modules\peripherals\sht3x_temp_humi -I ..\..\..\..\components\ble\profiles\ble_audio_profile -I ..\..\..\..\components\modules\peripherals\audio -I ..\..\..\..\components\modules\decoder -I ..\..\..\..\components\modules\adpcm_ms -I ..\..\..\..\components\modules\peripherals\gyro -I ..\..\..\..\components\modules\ringbuffer -I ..\..\..\..\components\modules\adpcm_ima-IC:\Keil_v5\ARM\RV31\INC-D__UVISION_VERSION="541"-o .\objects\speaker_service.o --omf_browse .\objects\speaker_service.crf --depend .\objects\speaker_service.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5CEB79E2)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEB79E2)
+I (..\..\..\..\components\modules\common\include\co_printf.h)(0x67205E8B)
+I (..\..\..\..\components\ble\include\gap\gap_api.h)(0x67205E8A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5CEB79DE)
+I (..\..\..\..\components\ble\include\gatt\gatt_api.h)(0x67205E8A)
+I (..\..\..\..\components\modules\os\include\os_msg_q.h)(0x67205E8B)
+I (..\..\..\..\components\ble\include\gatt\gatt_sig_uuid.h)(0x67205E8A)
+I (..\..\..\..\components\ble\profiles\ble_audio_profile\speaker_service.h)(0x67205E8A)
+I (..\..\..\..\components\driver\include\driver_flash.h)(0x67205E8B)
+F (..\..\..\..\components\ble\profiles\ble_audio_profile\speaker_service.h)(0x67205E8A)()
+F (..\..\..\..\components\ble\profiles\ble_simple_profile\simple_gatt_service.c)(0x67205E8B)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I ..\..\..\..\components\ble\include -I ..\..\..\..\components\driver\include -I ..\..\..\..\components\modules\os\include -I ..\..\..\..\components\modules\sys\include -I ..\..\..\..\components\modules\platform\include -I ..\..\..\..\components\modules\common\include -I ..\..\..\..\components\modules\lowpow\include -I ..\..\..\..\components\modules\button -I ..\..\..\..\components\ble\include\gap -I ..\..\..\..\components\ble\include\gatt -I ..\..\..\..\components\ble\profiles\ble_simple_profile -I ..\code -I ..\..\..\..\components\modules\peripherals\capb18_air_pressure -I ..\..\..\..\components\modules\peripherals\oled -I ..\..\..\..\components\modules\peripherals\sht3x_temp_humi -I ..\..\..\..\components\ble\profiles\ble_audio_profile -I ..\..\..\..\components\modules\peripherals\audio -I ..\..\..\..\components\modules\decoder -I ..\..\..\..\components\modules\adpcm_ms -I ..\..\..\..\components\modules\peripherals\gyro -I ..\..\..\..\components\modules\ringbuffer -I ..\..\..\..\components\modules\adpcm_ima-IC:\Keil_v5\ARM\RV31\INC-D__UVISION_VERSION="541"-o .\objects\simple_gatt_service.o --omf_browse .\objects\simple_gatt_service.crf --depend .\objects\simple_gatt_service.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5CEB79E2)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEB79E2)
+I (..\..\..\..\components\modules\common\include\co_printf.h)(0x67205E8B)
+I (..\..\..\..\components\ble\include\gap\gap_api.h)(0x67205E8A)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5CEB79DE)
+I (..\..\..\..\components\ble\include\gatt\gatt_api.h)(0x67205E8A)
+I (..\..\..\..\components\modules\os\include\os_msg_q.h)(0x67205E8B)
+I (..\..\..\..\components\ble\include\gatt\gatt_sig_uuid.h)(0x67205E8A)
+I (..\..\..\..\components\ble\profiles\ble_simple_profile\simple_gatt_service.h)(0x67205E8B)
+F (..\..\..\..\components\ble\profiles\ble_simple_profile\simple_gatt_service.h)(0x67205E8B)()
+F (..\..\..\..\components\modules\peripherals\oled\lcd.c)(0x67205E8B)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I ..\..\..\..\components\ble\include -I ..\..\..\..\components\driver\include -I ..\..\..\..\components\modules\os\include -I ..\..\..\..\components\modules\sys\include -I ..\..\..\..\components\modules\platform\include -I ..\..\..\..\components\modules\common\include -I ..\..\..\..\components\modules\lowpow\include -I ..\..\..\..\components\modules\button -I ..\..\..\..\components\ble\include\gap -I ..\..\..\..\components\ble\include\gatt -I ..\..\..\..\components\ble\profiles\ble_simple_profile -I ..\code -I ..\..\..\..\components\modules\peripherals\capb18_air_pressure -I ..\..\..\..\components\modules\peripherals\oled -I ..\..\..\..\components\modules\peripherals\sht3x_temp_humi -I ..\..\..\..\components\ble\profiles\ble_audio_profile -I ..\..\..\..\components\modules\peripherals\audio -I ..\..\..\..\components\modules\decoder -I ..\..\..\..\components\modules\adpcm_ms -I ..\..\..\..\components\modules\peripherals\gyro -I ..\..\..\..\components\modules\ringbuffer -I ..\..\..\..\components\modules\adpcm_ima-IC:\Keil_v5\ARM\RV31\INC-D__UVISION_VERSION="541"-o .\objects\lcd.o --omf_browse .\objects\lcd.crf --depend .\objects\lcd.d)
+I (..\..\..\..\components\modules\peripherals\oled\lcd.h)(0x67205E8B)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5CEB79E2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5CEB79E2)
+I (..\..\..\..\components\modules\peripherals\oled\oledfont.h)(0x67205E8B)
+I (..\..\..\..\components\modules\peripherals\oled\bmp.h)(0x67205E8B)
+I (..\..\..\..\components\modules\sys\include\sys_utils.h)(0x67205E8B)
+I (..\..\..\..\components\modules\common\include\co_printf.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\compiler.h)(0x67205E8B)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEB79E2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5CEB79DE)
+I (..\..\..\..\components\driver\include\driver_ssp.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_gpio.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_plf.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\core_cm3.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\cmsis_compiler.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\cmsis_armcc.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\ll.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_system.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_iomux.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_pmu.h)(0x67205E8B)
+I (..\..\..\..\components\modules\common\include\co_math.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_pmu_regs.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_frspim.h)(0x67205E8B)
+I (..\code\ie2.h)(0x67205E8B)
+F (..\..\..\..\components\modules\peripherals\audio\speaker.c)(0x67205E8B)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I ..\..\..\..\components\ble\include -I ..\..\..\..\components\driver\include -I ..\..\..\..\components\modules\os\include -I ..\..\..\..\components\modules\sys\include -I ..\..\..\..\components\modules\platform\include -I ..\..\..\..\components\modules\common\include -I ..\..\..\..\components\modules\lowpow\include -I ..\..\..\..\components\modules\button -I ..\..\..\..\components\ble\include\gap -I ..\..\..\..\components\ble\include\gatt -I ..\..\..\..\components\ble\profiles\ble_simple_profile -I ..\code -I ..\..\..\..\components\modules\peripherals\capb18_air_pressure -I ..\..\..\..\components\modules\peripherals\oled -I ..\..\..\..\components\modules\peripherals\sht3x_temp_humi -I ..\..\..\..\components\ble\profiles\ble_audio_profile -I ..\..\..\..\components\modules\peripherals\audio -I ..\..\..\..\components\modules\decoder -I ..\..\..\..\components\modules\adpcm_ms -I ..\..\..\..\components\modules\peripherals\gyro -I ..\..\..\..\components\modules\ringbuffer -I ..\..\..\..\components\modules\adpcm_ima-IC:\Keil_v5\ARM\RV31\INC-D__UVISION_VERSION="541"-o .\objects\speaker.o --omf_browse .\objects\speaker.crf --depend .\objects\speaker.d)
+I (..\..\..\..\components\modules\peripherals\audio\speaker.h)(0x67205E8B)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (..\..\..\..\components\driver\include\driver_codec.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_i2s.h)(0x67205E8B)
+I (..\..\..\..\components\modules\os\include\os_timer.h)(0x67205E8B)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5CEB79DE)
+I (..\..\..\..\components\modules\common\include\co_printf.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_plf.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\compiler.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\core_cm3.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\cmsis_compiler.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\cmsis_armcc.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\ll.h)(0x67205E8B)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5CEB79E2)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEB79E2)
+I (..\..\..\..\components\driver\include\driver_pmu.h)(0x67205E8B)
+I (..\..\..\..\components\modules\common\include\co_math.h)(0x67205E8B)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5CEB79E2)
+I (..\..\..\..\components\driver\include\driver_iomux.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_pmu_regs.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_frspim.h)(0x67205E8B)
+I (..\..\..\..\components\modules\decoder\decoder.h)(0x67205E8B)
+I (..\..\..\..\components\modules\common\include\co_list.h)(0x67205E8B)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5CEB79E2)
+I (..\..\..\..\components\modules\os\include\os_mem.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_system.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_gpio.h)(0x67205E8B)
+I (..\..\..\..\components\modules\ringbuffer\ringbuffer.h)(0x67205E8B)
+I (..\code\ble_simple_peripheral.h)(0x67205E8B)
+I (..\..\..\..\components\ble\include\gap\gap_api.h)(0x67205E8A)
+F (..\..\..\..\components\modules\adpcm_ms\adpcm_ms.c)(0x67205E8B)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I ..\..\..\..\components\ble\include -I ..\..\..\..\components\driver\include -I ..\..\..\..\components\modules\os\include -I ..\..\..\..\components\modules\sys\include -I ..\..\..\..\components\modules\platform\include -I ..\..\..\..\components\modules\common\include -I ..\..\..\..\components\modules\lowpow\include -I ..\..\..\..\components\modules\button -I ..\..\..\..\components\ble\include\gap -I ..\..\..\..\components\ble\include\gatt -I ..\..\..\..\components\ble\profiles\ble_simple_profile -I ..\code -I ..\..\..\..\components\modules\peripherals\capb18_air_pressure -I ..\..\..\..\components\modules\peripherals\oled -I ..\..\..\..\components\modules\peripherals\sht3x_temp_humi -I ..\..\..\..\components\ble\profiles\ble_audio_profile -I ..\..\..\..\components\modules\peripherals\audio -I ..\..\..\..\components\modules\decoder -I ..\..\..\..\components\modules\adpcm_ms -I ..\..\..\..\components\modules\peripherals\gyro -I ..\..\..\..\components\modules\ringbuffer -I ..\..\..\..\components\modules\adpcm_ima-IC:\Keil_v5\ARM\RV31\INC-D__UVISION_VERSION="541"-o .\objects\adpcm_ms.o --omf_browse .\objects\adpcm_ms.crf --depend .\objects\adpcm_ms.d)
+I (..\..\..\..\components\modules\adpcm_ms\adpcm_ms.h)(0x67205E8B)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5CEB79E2)
+F (..\..\..\..\components\modules\decoder\decoder.c)(0x67205E8B)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I ..\..\..\..\components\ble\include -I ..\..\..\..\components\driver\include -I ..\..\..\..\components\modules\os\include -I ..\..\..\..\components\modules\sys\include -I ..\..\..\..\components\modules\platform\include -I ..\..\..\..\components\modules\common\include -I ..\..\..\..\components\modules\lowpow\include -I ..\..\..\..\components\modules\button -I ..\..\..\..\components\ble\include\gap -I ..\..\..\..\components\ble\include\gatt -I ..\..\..\..\components\ble\profiles\ble_simple_profile -I ..\code -I ..\..\..\..\components\modules\peripherals\capb18_air_pressure -I ..\..\..\..\components\modules\peripherals\oled -I ..\..\..\..\components\modules\peripherals\sht3x_temp_humi -I ..\..\..\..\components\ble\profiles\ble_audio_profile -I ..\..\..\..\components\modules\peripherals\audio -I ..\..\..\..\components\modules\decoder -I ..\..\..\..\components\modules\adpcm_ms -I ..\..\..\..\components\modules\peripherals\gyro -I ..\..\..\..\components\modules\ringbuffer -I ..\..\..\..\components\modules\adpcm_ima-IC:\Keil_v5\ARM\RV31\INC-D__UVISION_VERSION="541"-o .\objects\decoder.o --omf_browse .\objects\decoder.crf --depend .\objects\decoder.d)
+I (..\..\..\..\components\modules\decoder\decoder.h)(0x67205E8B)
+I (..\..\..\..\components\modules\os\include\os_timer.h)(0x67205E8B)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5CEB79DE)
+I (..\..\..\..\components\modules\common\include\co_printf.h)(0x67205E8B)
+I (..\..\..\..\components\modules\common\include\co_list.h)(0x67205E8B)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5CEB79E2)
+I (..\..\..\..\components\modules\platform\include\compiler.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_plf.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\core_cm3.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\cmsis_compiler.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\cmsis_armcc.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\ll.h)(0x67205E8B)
+I (..\..\..\..\components\modules\os\include\os_task.h)(0x67205E8B)
+I (..\..\..\..\components\modules\os\include\os_msg_q.h)(0x67205E8B)
+I (..\..\..\..\components\modules\peripherals\audio\speaker.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_flash.h)(0x67205E8B)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEB79E2)
+I (..\..\..\..\components\modules\os\include\os_mem.h)(0x67205E8B)
+I (..\..\..\..\components\modules\adpcm_ms\adpcm_ms.h)(0x67205E8B)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5CEB79E2)
+I (..\..\..\..\components\modules\adpcm_ima\adpcm_ima.h)(0x67205E8B)
+I (..\code\user_task.h)(0x67205E8B)
+F (..\..\..\..\components\modules\RingBuffer\ringbuffer.c)(0x67205E8B)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I ..\..\..\..\components\ble\include -I ..\..\..\..\components\driver\include -I ..\..\..\..\components\modules\os\include -I ..\..\..\..\components\modules\sys\include -I ..\..\..\..\components\modules\platform\include -I ..\..\..\..\components\modules\common\include -I ..\..\..\..\components\modules\lowpow\include -I ..\..\..\..\components\modules\button -I ..\..\..\..\components\ble\include\gap -I ..\..\..\..\components\ble\include\gatt -I ..\..\..\..\components\ble\profiles\ble_simple_profile -I ..\code -I ..\..\..\..\components\modules\peripherals\capb18_air_pressure -I ..\..\..\..\components\modules\peripherals\oled -I ..\..\..\..\components\modules\peripherals\sht3x_temp_humi -I ..\..\..\..\components\ble\profiles\ble_audio_profile -I ..\..\..\..\components\modules\peripherals\audio -I ..\..\..\..\components\modules\decoder -I ..\..\..\..\components\modules\adpcm_ms -I ..\..\..\..\components\modules\peripherals\gyro -I ..\..\..\..\components\modules\ringbuffer -I ..\..\..\..\components\modules\adpcm_ima-IC:\Keil_v5\ARM\RV31\INC-D__UVISION_VERSION="541"-o .\objects\ringbuffer.o --omf_browse .\objects\ringbuffer.crf --depend .\objects\ringbuffer.d)
+I (..\..\..\..\components\modules\RingBuffer\ringbuffer.h)(0x67205E8B)
+I (..\..\..\..\components\modules\os\include\os_timer.h)(0x67205E8B)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5CEB79DE)
+I (..\..\..\..\components\modules\common\include\co_printf.h)(0x67205E8B)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEB79E2)
+F (..\..\..\..\components\modules\adpcm_ima\adpcm_ima.c)(0x67205E8B)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I ..\..\..\..\components\ble\include -I ..\..\..\..\components\driver\include -I ..\..\..\..\components\modules\os\include -I ..\..\..\..\components\modules\sys\include -I ..\..\..\..\components\modules\platform\include -I ..\..\..\..\components\modules\common\include -I ..\..\..\..\components\modules\lowpow\include -I ..\..\..\..\components\modules\button -I ..\..\..\..\components\ble\include\gap -I ..\..\..\..\components\ble\include\gatt -I ..\..\..\..\components\ble\profiles\ble_simple_profile -I ..\code -I ..\..\..\..\components\modules\peripherals\capb18_air_pressure -I ..\..\..\..\components\modules\peripherals\oled -I ..\..\..\..\components\modules\peripherals\sht3x_temp_humi -I ..\..\..\..\components\ble\profiles\ble_audio_profile -I ..\..\..\..\components\modules\peripherals\audio -I ..\..\..\..\components\modules\decoder -I ..\..\..\..\components\modules\adpcm_ms -I ..\..\..\..\components\modules\peripherals\gyro -I ..\..\..\..\components\modules\ringbuffer -I ..\..\..\..\components\modules\adpcm_ima-IC:\Keil_v5\ARM\RV31\INC-D__UVISION_VERSION="541"-o .\objects\adpcm_ima.o --omf_browse .\objects\adpcm_ima.crf --depend .\objects\adpcm_ima.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5CEB79E2)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEB79E2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+F (..\..\..\..\components\modules\peripherals\sht3x_temp_humi\sht3x.c)(0x67205E8B)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I ..\..\..\..\components\ble\include -I ..\..\..\..\components\driver\include -I ..\..\..\..\components\modules\os\include -I ..\..\..\..\components\modules\sys\include -I ..\..\..\..\components\modules\platform\include -I ..\..\..\..\components\modules\common\include -I ..\..\..\..\components\modules\lowpow\include -I ..\..\..\..\components\modules\button -I ..\..\..\..\components\ble\include\gap -I ..\..\..\..\components\ble\include\gatt -I ..\..\..\..\components\ble\profiles\ble_simple_profile -I ..\code -I ..\..\..\..\components\modules\peripherals\capb18_air_pressure -I ..\..\..\..\components\modules\peripherals\oled -I ..\..\..\..\components\modules\peripherals\sht3x_temp_humi -I ..\..\..\..\components\ble\profiles\ble_audio_profile -I ..\..\..\..\components\modules\peripherals\audio -I ..\..\..\..\components\modules\decoder -I ..\..\..\..\components\modules\adpcm_ms -I ..\..\..\..\components\modules\peripherals\gyro -I ..\..\..\..\components\modules\ringbuffer -I ..\..\..\..\components\modules\adpcm_ima-IC:\Keil_v5\ARM\RV31\INC-D__UVISION_VERSION="541"-o .\objects\sht3x.o --omf_browse .\objects\sht3x.crf --depend .\objects\sht3x.d)
+I (..\..\..\..\components\modules\peripherals\sht3x_temp_humi\sht3x.h)(0x67205E8B)
+I (..\..\..\..\components\modules\peripherals\sht3x_temp_humi\sht3x_arch_config.h)(0x67205E8B)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (..\..\..\..\components\modules\peripherals\sht3x_temp_humi\sht3x_i2c.h)(0x67205E8B)
+I (..\..\..\..\components\modules\peripherals\sht3x_temp_humi\sht3x_common.h)(0x67205E8B)
+I (..\..\..\..\components\modules\peripherals\oled\lcd.h)(0x67205E8B)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5CEB79E2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5CEB79E2)
+I (..\..\..\..\components\modules\common\include\co_printf.h)(0x67205E8B)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5CEB79DE)
+I (..\..\..\..\components\modules\sys\include\sys_utils.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\compiler.h)(0x67205E8B)
+F (..\..\..\..\components\modules\peripherals\sht3x_temp_humi\sht3x_sw_i2c.c)(0x67205E8B)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I ..\..\..\..\components\ble\include -I ..\..\..\..\components\driver\include -I ..\..\..\..\components\modules\os\include -I ..\..\..\..\components\modules\sys\include -I ..\..\..\..\components\modules\platform\include -I ..\..\..\..\components\modules\common\include -I ..\..\..\..\components\modules\lowpow\include -I ..\..\..\..\components\modules\button -I ..\..\..\..\components\ble\include\gap -I ..\..\..\..\components\ble\include\gatt -I ..\..\..\..\components\ble\profiles\ble_simple_profile -I ..\code -I ..\..\..\..\components\modules\peripherals\capb18_air_pressure -I ..\..\..\..\components\modules\peripherals\oled -I ..\..\..\..\components\modules\peripherals\sht3x_temp_humi -I ..\..\..\..\components\ble\profiles\ble_audio_profile -I ..\..\..\..\components\modules\peripherals\audio -I ..\..\..\..\components\modules\decoder -I ..\..\..\..\components\modules\adpcm_ms -I ..\..\..\..\components\modules\peripherals\gyro -I ..\..\..\..\components\modules\ringbuffer -I ..\..\..\..\components\modules\adpcm_ima-IC:\Keil_v5\ARM\RV31\INC-D__UVISION_VERSION="541"-o .\objects\sht3x_sw_i2c.o --omf_browse .\objects\sht3x_sw_i2c.crf --depend .\objects\sht3x_sw_i2c.d)
+I (..\..\..\..\components\modules\peripherals\sht3x_temp_humi\sht3x_arch_config.h)(0x67205E8B)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (..\..\..\..\components\modules\peripherals\sht3x_temp_humi\sht3x_common.h)(0x67205E8B)
+I (..\..\..\..\components\modules\peripherals\sht3x_temp_humi\sht3x_i2c.h)(0x67205E8B)
+I (..\..\..\..\components\modules\peripherals\sht3x_temp_humi\sht3x_sw_i2c_gpio.h)(0x67205E8B)
+I (..\..\..\..\components\modules\common\include\co_printf.h)(0x67205E8B)
+F (..\..\..\..\components\modules\peripherals\sht3x_temp_humi\sht3x_common.c)(0x67205E8B)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I ..\..\..\..\components\ble\include -I ..\..\..\..\components\driver\include -I ..\..\..\..\components\modules\os\include -I ..\..\..\..\components\modules\sys\include -I ..\..\..\..\components\modules\platform\include -I ..\..\..\..\components\modules\common\include -I ..\..\..\..\components\modules\lowpow\include -I ..\..\..\..\components\modules\button -I ..\..\..\..\components\ble\include\gap -I ..\..\..\..\components\ble\include\gatt -I ..\..\..\..\components\ble\profiles\ble_simple_profile -I ..\code -I ..\..\..\..\components\modules\peripherals\capb18_air_pressure -I ..\..\..\..\components\modules\peripherals\oled -I ..\..\..\..\components\modules\peripherals\sht3x_temp_humi -I ..\..\..\..\components\ble\profiles\ble_audio_profile -I ..\..\..\..\components\modules\peripherals\audio -I ..\..\..\..\components\modules\decoder -I ..\..\..\..\components\modules\adpcm_ms -I ..\..\..\..\components\modules\peripherals\gyro -I ..\..\..\..\components\modules\ringbuffer -I ..\..\..\..\components\modules\adpcm_ima-IC:\Keil_v5\ARM\RV31\INC-D__UVISION_VERSION="541"-o .\objects\sht3x_common.o --omf_browse .\objects\sht3x_common.crf --depend .\objects\sht3x_common.d)
+I (..\..\..\..\components\modules\peripherals\sht3x_temp_humi\sht3x_common.h)(0x67205E8B)
+I (..\..\..\..\components\modules\peripherals\sht3x_temp_humi\sht3x_arch_config.h)(0x67205E8B)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (..\..\..\..\components\modules\peripherals\sht3x_temp_humi\sht3x_i2c.h)(0x67205E8B)
+I (..\..\..\..\components\modules\common\include\co_printf.h)(0x67205E8B)
+F (..\..\..\..\components\modules\peripherals\sht3x_temp_humi\sht3x_sw_i2c_implementation.c)(0x67205E8B)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I ..\..\..\..\components\ble\include -I ..\..\..\..\components\driver\include -I ..\..\..\..\components\modules\os\include -I ..\..\..\..\components\modules\sys\include -I ..\..\..\..\components\modules\platform\include -I ..\..\..\..\components\modules\common\include -I ..\..\..\..\components\modules\lowpow\include -I ..\..\..\..\components\modules\button -I ..\..\..\..\components\ble\include\gap -I ..\..\..\..\components\ble\include\gatt -I ..\..\..\..\components\ble\profiles\ble_simple_profile -I ..\code -I ..\..\..\..\components\modules\peripherals\capb18_air_pressure -I ..\..\..\..\components\modules\peripherals\oled -I ..\..\..\..\components\modules\peripherals\sht3x_temp_humi -I ..\..\..\..\components\ble\profiles\ble_audio_profile -I ..\..\..\..\components\modules\peripherals\audio -I ..\..\..\..\components\modules\decoder -I ..\..\..\..\components\modules\adpcm_ms -I ..\..\..\..\components\modules\peripherals\gyro -I ..\..\..\..\components\modules\ringbuffer -I ..\..\..\..\components\modules\adpcm_ima-IC:\Keil_v5\ARM\RV31\INC-D__UVISION_VERSION="541"-o .\objects\sht3x_sw_i2c_implementation.o --omf_browse .\objects\sht3x_sw_i2c_implementation.crf --depend .\objects\sht3x_sw_i2c_implementation.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5CEB79DE)
+I (..\..\..\..\components\modules\peripherals\sht3x_temp_humi\sht3x_arch_config.h)(0x67205E8B)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (..\..\..\..\components\modules\peripherals\sht3x_temp_humi\sht3x_sw_i2c_gpio.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_gpio.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_plf.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\compiler.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\core_cm3.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\cmsis_compiler.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\cmsis_armcc.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\ll.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_system.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_iomux.h)(0x67205E8B)
+I (..\..\..\..\components\modules\common\include\co_printf.h)(0x67205E8B)
+I (..\..\..\..\components\modules\sys\include\sys_utils.h)(0x67205E8B)
+F (..\..\..\..\components\modules\peripherals\capb18_air_pressure\capb18-001.c)(0x67205E8B)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I ..\..\..\..\components\ble\include -I ..\..\..\..\components\driver\include -I ..\..\..\..\components\modules\os\include -I ..\..\..\..\components\modules\sys\include -I ..\..\..\..\components\modules\platform\include -I ..\..\..\..\components\modules\common\include -I ..\..\..\..\components\modules\lowpow\include -I ..\..\..\..\components\modules\button -I ..\..\..\..\components\ble\include\gap -I ..\..\..\..\components\ble\include\gatt -I ..\..\..\..\components\ble\profiles\ble_simple_profile -I ..\code -I ..\..\..\..\components\modules\peripherals\capb18_air_pressure -I ..\..\..\..\components\modules\peripherals\oled -I ..\..\..\..\components\modules\peripherals\sht3x_temp_humi -I ..\..\..\..\components\ble\profiles\ble_audio_profile -I ..\..\..\..\components\modules\peripherals\audio -I ..\..\..\..\components\modules\decoder -I ..\..\..\..\components\modules\adpcm_ms -I ..\..\..\..\components\modules\peripherals\gyro -I ..\..\..\..\components\modules\ringbuffer -I ..\..\..\..\components\modules\adpcm_ima-IC:\Keil_v5\ARM\RV31\INC-D__UVISION_VERSION="541"-o .\objects\capb18-001.o --omf_browse .\objects\capb18-001.crf --depend .\objects\capb18-001.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5CEB79DE)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5CEB79E2)
+I (..\..\..\..\components\modules\peripherals\capb18_air_pressure\capb18-001.h)(0x67205E8B)
+I (..\..\..\..\components\modules\common\include\co_printf.h)(0x67205E8B)
+I (..\..\..\..\components\modules\sys\include\sys_utils.h)(0x67205E8B)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (..\..\..\..\components\modules\platform\include\compiler.h)(0x67205E8B)
+I (..\..\..\..\components\modules\peripherals\oled\lcd.h)(0x67205E8B)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5CEB79E2)
+I (..\..\..\..\components\modules\os\include\os_mem.h)(0x67205E8B)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEB79E2)
+I (..\..\..\..\components\driver\include\driver_gpio.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_plf.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\core_cm3.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\cmsis_compiler.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\cmsis_armcc.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\ll.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_system.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_iomux.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_iic.h)(0x67205E8B)
+I (..\..\..\..\components\modules\os\include\os_timer.h)(0x67205E8B)
+F (..\..\..\..\components\modules\peripherals\gyro\gyro_driver.c)(0x67205E8B)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I ..\..\..\..\components\ble\include -I ..\..\..\..\components\driver\include -I ..\..\..\..\components\modules\os\include -I ..\..\..\..\components\modules\sys\include -I ..\..\..\..\components\modules\platform\include -I ..\..\..\..\components\modules\common\include -I ..\..\..\..\components\modules\lowpow\include -I ..\..\..\..\components\modules\button -I ..\..\..\..\components\ble\include\gap -I ..\..\..\..\components\ble\include\gatt -I ..\..\..\..\components\ble\profiles\ble_simple_profile -I ..\code -I ..\..\..\..\components\modules\peripherals\capb18_air_pressure -I ..\..\..\..\components\modules\peripherals\oled -I ..\..\..\..\components\modules\peripherals\sht3x_temp_humi -I ..\..\..\..\components\ble\profiles\ble_audio_profile -I ..\..\..\..\components\modules\peripherals\audio -I ..\..\..\..\components\modules\decoder -I ..\..\..\..\components\modules\adpcm_ms -I ..\..\..\..\components\modules\peripherals\gyro -I ..\..\..\..\components\modules\ringbuffer -I ..\..\..\..\components\modules\adpcm_ima-IC:\Keil_v5\ARM\RV31\INC-D__UVISION_VERSION="541"-o .\objects\gyro_driver.o --omf_browse .\objects\gyro_driver.crf --depend .\objects\gyro_driver.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5CEB79E2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (..\..\..\..\components\modules\os\include\os_timer.h)(0x67205E8B)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5CEB79DE)
+I (..\..\..\..\components\driver\include\driver_iic.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_iomux.h)(0x67205E8B)
+I (..\..\..\..\components\modules\peripherals\gyro\gyro_alg.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_system.h)(0x67205E8B)
+I (..\..\..\..\components\modules\sys\include\sys_utils.h)(0x67205E8B)
+I (..\..\..\..\components\modules\common\include\co_printf.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\compiler.h)(0x67205E8B)
+F (..\..\..\..\components\modules\peripherals\gyro\gyro_alg.lib)(0x67205E8B)()
+F (..\..\..\..\components\driver\driver_iic.c)(0x67205E8B)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I ..\..\..\..\components\ble\include -I ..\..\..\..\components\driver\include -I ..\..\..\..\components\modules\os\include -I ..\..\..\..\components\modules\sys\include -I ..\..\..\..\components\modules\platform\include -I ..\..\..\..\components\modules\common\include -I ..\..\..\..\components\modules\lowpow\include -I ..\..\..\..\components\modules\button -I ..\..\..\..\components\ble\include\gap -I ..\..\..\..\components\ble\include\gatt -I ..\..\..\..\components\ble\profiles\ble_simple_profile -I ..\code -I ..\..\..\..\components\modules\peripherals\capb18_air_pressure -I ..\..\..\..\components\modules\peripherals\oled -I ..\..\..\..\components\modules\peripherals\sht3x_temp_humi -I ..\..\..\..\components\ble\profiles\ble_audio_profile -I ..\..\..\..\components\modules\peripherals\audio -I ..\..\..\..\components\modules\decoder -I ..\..\..\..\components\modules\adpcm_ms -I ..\..\..\..\components\modules\peripherals\gyro -I ..\..\..\..\components\modules\ringbuffer -I ..\..\..\..\components\modules\adpcm_ima-IC:\Keil_v5\ARM\RV31\INC-D__UVISION_VERSION="541"-o .\objects\driver_iic.o --omf_browse .\objects\driver_iic.crf --depend .\objects\driver_iic.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5CEB79DE)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5CEB79E2)
+I (..\..\..\..\components\driver\include\driver_iic.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_plf.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\compiler.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\core_cm3.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\cmsis_compiler.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\cmsis_armcc.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\ll.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_system.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_iomux.h)(0x67205E8B)
+I (..\..\..\..\components\modules\sys\include\sys_utils.h)(0x67205E8B)
+I (..\..\..\..\components\modules\common\include\co_printf.h)(0x67205E8B)
+F (..\..\..\..\components\driver\driver_pmu.c)(0x67205E8B)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I ..\..\..\..\components\ble\include -I ..\..\..\..\components\driver\include -I ..\..\..\..\components\modules\os\include -I ..\..\..\..\components\modules\sys\include -I ..\..\..\..\components\modules\platform\include -I ..\..\..\..\components\modules\common\include -I ..\..\..\..\components\modules\lowpow\include -I ..\..\..\..\components\modules\button -I ..\..\..\..\components\ble\include\gap -I ..\..\..\..\components\ble\include\gatt -I ..\..\..\..\components\ble\profiles\ble_simple_profile -I ..\code -I ..\..\..\..\components\modules\peripherals\capb18_air_pressure -I ..\..\..\..\components\modules\peripherals\oled -I ..\..\..\..\components\modules\peripherals\sht3x_temp_humi -I ..\..\..\..\components\ble\profiles\ble_audio_profile -I ..\..\..\..\components\modules\peripherals\audio -I ..\..\..\..\components\modules\decoder -I ..\..\..\..\components\modules\adpcm_ms -I ..\..\..\..\components\modules\peripherals\gyro -I ..\..\..\..\components\modules\ringbuffer -I ..\..\..\..\components\modules\adpcm_ima-IC:\Keil_v5\ARM\RV31\INC-D__UVISION_VERSION="541"-o .\objects\driver_pmu.o --omf_browse .\objects\driver_pmu.crf --depend .\objects\driver_pmu.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (..\..\..\..\components\modules\common\include\co_printf.h)(0x67205E8B)
+I (..\..\..\..\components\modules\common\include\co_math.h)(0x67205E8B)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5CEB79DE)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5CEB79E2)
+I (..\..\..\..\components\modules\platform\include\compiler.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\jump_table.h)(0x67205E8B)
+I (..\..\..\..\components\modules\sys\include\sys_utils.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_plf.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\core_cm3.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\cmsis_compiler.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\cmsis_armcc.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\ll.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_pmu.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_iomux.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_pmu_regs.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_frspim.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_adc.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_efuse.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_system.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_flash.h)(0x67205E8B)
+F (..\..\..\..\components\driver\driver_keyscan.c)(0x67205E8B)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I ..\..\..\..\components\ble\include -I ..\..\..\..\components\driver\include -I ..\..\..\..\components\modules\os\include -I ..\..\..\..\components\modules\sys\include -I ..\..\..\..\components\modules\platform\include -I ..\..\..\..\components\modules\common\include -I ..\..\..\..\components\modules\lowpow\include -I ..\..\..\..\components\modules\button -I ..\..\..\..\components\ble\include\gap -I ..\..\..\..\components\ble\include\gatt -I ..\..\..\..\components\ble\profiles\ble_simple_profile -I ..\code -I ..\..\..\..\components\modules\peripherals\capb18_air_pressure -I ..\..\..\..\components\modules\peripherals\oled -I ..\..\..\..\components\modules\peripherals\sht3x_temp_humi -I ..\..\..\..\components\ble\profiles\ble_audio_profile -I ..\..\..\..\components\modules\peripherals\audio -I ..\..\..\..\components\modules\decoder -I ..\..\..\..\components\modules\adpcm_ms -I ..\..\..\..\components\modules\peripherals\gyro -I ..\..\..\..\components\modules\ringbuffer -I ..\..\..\..\components\modules\adpcm_ima-IC:\Keil_v5\ARM\RV31\INC-D__UVISION_VERSION="541"-o .\objects\driver_keyscan.o --omf_browse .\objects\driver_keyscan.crf --depend .\objects\driver_keyscan.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (..\..\..\..\components\modules\common\include\co_log.h)(0x67205E8B)
+I (..\..\..\..\components\modules\common\include\co_printf.h)(0x67205E8B)
+I (..\..\..\..\components\modules\common\include\co_math.h)(0x67205E8B)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5CEB79DE)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5CEB79E2)
+I (..\..\..\..\components\modules\platform\include\compiler.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_keyscan.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_pmu.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_iomux.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_pmu_regs.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_frspim.h)(0x67205E8B)
+F (..\..\..\..\components\driver\driver_pmu_qdec.c)(0x67205E8B)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I ..\..\..\..\components\ble\include -I ..\..\..\..\components\driver\include -I ..\..\..\..\components\modules\os\include -I ..\..\..\..\components\modules\sys\include -I ..\..\..\..\components\modules\platform\include -I ..\..\..\..\components\modules\common\include -I ..\..\..\..\components\modules\lowpow\include -I ..\..\..\..\components\modules\button -I ..\..\..\..\components\ble\include\gap -I ..\..\..\..\components\ble\include\gatt -I ..\..\..\..\components\ble\profiles\ble_simple_profile -I ..\code -I ..\..\..\..\components\modules\peripherals\capb18_air_pressure -I ..\..\..\..\components\modules\peripherals\oled -I ..\..\..\..\components\modules\peripherals\sht3x_temp_humi -I ..\..\..\..\components\ble\profiles\ble_audio_profile -I ..\..\..\..\components\modules\peripherals\audio -I ..\..\..\..\components\modules\decoder -I ..\..\..\..\components\modules\adpcm_ms -I ..\..\..\..\components\modules\peripherals\gyro -I ..\..\..\..\components\modules\ringbuffer -I ..\..\..\..\components\modules\adpcm_ima-IC:\Keil_v5\ARM\RV31\INC-D__UVISION_VERSION="541"-o .\objects\driver_pmu_qdec.o --omf_browse .\objects\driver_pmu_qdec.crf --depend .\objects\driver_pmu_qdec.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (..\..\..\..\components\modules\common\include\co_printf.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_pmu_qdec.h)(0x67205E8B)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5CEB79DE)
+I (..\..\..\..\components\driver\include\driver_pmu.h)(0x67205E8B)
+I (..\..\..\..\components\modules\common\include\co_math.h)(0x67205E8B)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5CEB79E2)
+I (..\..\..\..\components\modules\platform\include\compiler.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_iomux.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_pmu_regs.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_frspim.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_system.h)(0x67205E8B)
+F (..\..\..\..\components\driver\driver_rtc.c)(0x67205E8B)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I ..\..\..\..\components\ble\include -I ..\..\..\..\components\driver\include -I ..\..\..\..\components\modules\os\include -I ..\..\..\..\components\modules\sys\include -I ..\..\..\..\components\modules\platform\include -I ..\..\..\..\components\modules\common\include -I ..\..\..\..\components\modules\lowpow\include -I ..\..\..\..\components\modules\button -I ..\..\..\..\components\ble\include\gap -I ..\..\..\..\components\ble\include\gatt -I ..\..\..\..\components\ble\profiles\ble_simple_profile -I ..\code -I ..\..\..\..\components\modules\peripherals\capb18_air_pressure -I ..\..\..\..\components\modules\peripherals\oled -I ..\..\..\..\components\modules\peripherals\sht3x_temp_humi -I ..\..\..\..\components\ble\profiles\ble_audio_profile -I ..\..\..\..\components\modules\peripherals\audio -I ..\..\..\..\components\modules\decoder -I ..\..\..\..\components\modules\adpcm_ms -I ..\..\..\..\components\modules\peripherals\gyro -I ..\..\..\..\components\modules\ringbuffer -I ..\..\..\..\components\modules\adpcm_ima-IC:\Keil_v5\ARM\RV31\INC-D__UVISION_VERSION="541"-o .\objects\driver_rtc.o --omf_browse .\objects\driver_rtc.crf --depend .\objects\driver_rtc.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (..\..\..\..\components\modules\common\include\co_math.h)(0x67205E8B)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5CEB79DE)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5CEB79E2)
+I (..\..\..\..\components\modules\platform\include\compiler.h)(0x67205E8B)
+I (..\..\..\..\components\modules\common\include\co_printf.h)(0x67205E8B)
+I (..\..\..\..\components\modules\sys\include\sys_utils.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_rtc.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_plf.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\core_cm3.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\cmsis_compiler.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\cmsis_armcc.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\ll.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_pmu.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_iomux.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_pmu_regs.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_frspim.h)(0x67205E8B)
+F (..\..\..\..\components\driver\driver_uart.c)(0x67205E8B)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I ..\..\..\..\components\ble\include -I ..\..\..\..\components\driver\include -I ..\..\..\..\components\modules\os\include -I ..\..\..\..\components\modules\sys\include -I ..\..\..\..\components\modules\platform\include -I ..\..\..\..\components\modules\common\include -I ..\..\..\..\components\modules\lowpow\include -I ..\..\..\..\components\modules\button -I ..\..\..\..\components\ble\include\gap -I ..\..\..\..\components\ble\include\gatt -I ..\..\..\..\components\ble\profiles\ble_simple_profile -I ..\code -I ..\..\..\..\components\modules\peripherals\capb18_air_pressure -I ..\..\..\..\components\modules\peripherals\oled -I ..\..\..\..\components\modules\peripherals\sht3x_temp_humi -I ..\..\..\..\components\ble\profiles\ble_audio_profile -I ..\..\..\..\components\modules\peripherals\audio -I ..\..\..\..\components\modules\decoder -I ..\..\..\..\components\modules\adpcm_ms -I ..\..\..\..\components\modules\peripherals\gyro -I ..\..\..\..\components\modules\ringbuffer -I ..\..\..\..\components\modules\adpcm_ima-IC:\Keil_v5\ARM\RV31\INC-D__UVISION_VERSION="541"-o .\objects\driver_uart.o --omf_browse .\objects\driver_uart.crf --depend .\objects\driver_uart.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (..\..\..\..\components\driver\include\driver_plf.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\compiler.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\core_cm3.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\cmsis_compiler.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\cmsis_armcc.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\ll.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_uart.h)(0x67205E8B)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5CEB79DE)
+F (..\..\..\..\components\driver\driver_wdt.c)(0x67205E8B)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I ..\..\..\..\components\ble\include -I ..\..\..\..\components\driver\include -I ..\..\..\..\components\modules\os\include -I ..\..\..\..\components\modules\sys\include -I ..\..\..\..\components\modules\platform\include -I ..\..\..\..\components\modules\common\include -I ..\..\..\..\components\modules\lowpow\include -I ..\..\..\..\components\modules\button -I ..\..\..\..\components\ble\include\gap -I ..\..\..\..\components\ble\include\gatt -I ..\..\..\..\components\ble\profiles\ble_simple_profile -I ..\code -I ..\..\..\..\components\modules\peripherals\capb18_air_pressure -I ..\..\..\..\components\modules\peripherals\oled -I ..\..\..\..\components\modules\peripherals\sht3x_temp_humi -I ..\..\..\..\components\ble\profiles\ble_audio_profile -I ..\..\..\..\components\modules\peripherals\audio -I ..\..\..\..\components\modules\decoder -I ..\..\..\..\components\modules\adpcm_ms -I ..\..\..\..\components\modules\peripherals\gyro -I ..\..\..\..\components\modules\ringbuffer -I ..\..\..\..\components\modules\adpcm_ima-IC:\Keil_v5\ARM\RV31\INC-D__UVISION_VERSION="541"-o .\objects\driver_wdt.o --omf_browse .\objects\driver_wdt.crf --depend .\objects\driver_wdt.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (..\..\..\..\components\modules\common\include\co_log.h)(0x67205E8B)
+I (..\..\..\..\components\modules\common\include\co_printf.h)(0x67205E8B)
+I (..\..\..\..\components\modules\sys\include\sys_utils.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\compiler.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_wdt.h)(0x67205E8B)
+I (..\..\..\..\components\modules\common\include\co_math.h)(0x67205E8B)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5CEB79DE)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5CEB79E2)
+I (..\..\..\..\components\driver\include\driver_pmu.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_iomux.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_pmu_regs.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_frspim.h)(0x67205E8B)
+F (..\..\..\..\components\driver\driver_i2s.c)(0x67205E8B)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I ..\..\..\..\components\ble\include -I ..\..\..\..\components\driver\include -I ..\..\..\..\components\modules\os\include -I ..\..\..\..\components\modules\sys\include -I ..\..\..\..\components\modules\platform\include -I ..\..\..\..\components\modules\common\include -I ..\..\..\..\components\modules\lowpow\include -I ..\..\..\..\components\modules\button -I ..\..\..\..\components\ble\include\gap -I ..\..\..\..\components\ble\include\gatt -I ..\..\..\..\components\ble\profiles\ble_simple_profile -I ..\code -I ..\..\..\..\components\modules\peripherals\capb18_air_pressure -I ..\..\..\..\components\modules\peripherals\oled -I ..\..\..\..\components\modules\peripherals\sht3x_temp_humi -I ..\..\..\..\components\ble\profiles\ble_audio_profile -I ..\..\..\..\components\modules\peripherals\audio -I ..\..\..\..\components\modules\decoder -I ..\..\..\..\components\modules\adpcm_ms -I ..\..\..\..\components\modules\peripherals\gyro -I ..\..\..\..\components\modules\ringbuffer -I ..\..\..\..\components\modules\adpcm_ima-IC:\Keil_v5\ARM\RV31\INC-D__UVISION_VERSION="541"-o .\objects\driver_i2s.o --omf_browse .\objects\driver_i2s.crf --depend .\objects\driver_i2s.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (..\..\..\..\components\driver\include\driver_i2s.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_system.h)(0x67205E8B)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5CEB79DE)
+I (..\..\..\..\components\driver\include\driver_iomux.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_plf.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\compiler.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\core_cm3.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\cmsis_compiler.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\cmsis_armcc.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\ll.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_uart.h)(0x67205E8B)
+F (..\..\..\..\components\driver\driver_ssp.c)(0x67205E8B)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I ..\..\..\..\components\ble\include -I ..\..\..\..\components\driver\include -I ..\..\..\..\components\modules\os\include -I ..\..\..\..\components\modules\sys\include -I ..\..\..\..\components\modules\platform\include -I ..\..\..\..\components\modules\common\include -I ..\..\..\..\components\modules\lowpow\include -I ..\..\..\..\components\modules\button -I ..\..\..\..\components\ble\include\gap -I ..\..\..\..\components\ble\include\gatt -I ..\..\..\..\components\ble\profiles\ble_simple_profile -I ..\code -I ..\..\..\..\components\modules\peripherals\capb18_air_pressure -I ..\..\..\..\components\modules\peripherals\oled -I ..\..\..\..\components\modules\peripherals\sht3x_temp_humi -I ..\..\..\..\components\ble\profiles\ble_audio_profile -I ..\..\..\..\components\modules\peripherals\audio -I ..\..\..\..\components\modules\decoder -I ..\..\..\..\components\modules\adpcm_ms -I ..\..\..\..\components\modules\peripherals\gyro -I ..\..\..\..\components\modules\ringbuffer -I ..\..\..\..\components\modules\adpcm_ima-IC:\Keil_v5\ARM\RV31\INC-D__UVISION_VERSION="541"-o .\objects\driver_ssp.o --omf_browse .\objects\driver_ssp.crf --depend .\objects\driver_ssp.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (..\..\..\..\components\driver\include\driver_ssp.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_plf.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\compiler.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\core_cm3.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\cmsis_compiler.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\cmsis_armcc.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\ll.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_system.h)(0x67205E8B)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5CEB79DE)
+I (..\..\..\..\components\driver\include\driver_iomux.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_gpio.h)(0x67205E8B)
+F (..\..\..\..\components\driver\driver_codec.c)(0x67205E8B)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I ..\..\..\..\components\ble\include -I ..\..\..\..\components\driver\include -I ..\..\..\..\components\modules\os\include -I ..\..\..\..\components\modules\sys\include -I ..\..\..\..\components\modules\platform\include -I ..\..\..\..\components\modules\common\include -I ..\..\..\..\components\modules\lowpow\include -I ..\..\..\..\components\modules\button -I ..\..\..\..\components\ble\include\gap -I ..\..\..\..\components\ble\include\gatt -I ..\..\..\..\components\ble\profiles\ble_simple_profile -I ..\code -I ..\..\..\..\components\modules\peripherals\capb18_air_pressure -I ..\..\..\..\components\modules\peripherals\oled -I ..\..\..\..\components\modules\peripherals\sht3x_temp_humi -I ..\..\..\..\components\ble\profiles\ble_audio_profile -I ..\..\..\..\components\modules\peripherals\audio -I ..\..\..\..\components\modules\decoder -I ..\..\..\..\components\modules\adpcm_ms -I ..\..\..\..\components\modules\peripherals\gyro -I ..\..\..\..\components\modules\ringbuffer -I ..\..\..\..\components\modules\adpcm_ima-IC:\Keil_v5\ARM\RV31\INC-D__UVISION_VERSION="541"-o .\objects\driver_codec.o --omf_browse .\objects\driver_codec.crf --depend .\objects\driver_codec.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (..\..\..\..\components\driver\include\driver_codec.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_frspim.h)(0x67205E8B)
+F (..\..\..\..\components\driver\driver_exti.c)(0x67205E8B)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I ..\..\..\..\components\ble\include -I ..\..\..\..\components\driver\include -I ..\..\..\..\components\modules\os\include -I ..\..\..\..\components\modules\sys\include -I ..\..\..\..\components\modules\platform\include -I ..\..\..\..\components\modules\common\include -I ..\..\..\..\components\modules\lowpow\include -I ..\..\..\..\components\modules\button -I ..\..\..\..\components\ble\include\gap -I ..\..\..\..\components\ble\include\gatt -I ..\..\..\..\components\ble\profiles\ble_simple_profile -I ..\code -I ..\..\..\..\components\modules\peripherals\capb18_air_pressure -I ..\..\..\..\components\modules\peripherals\oled -I ..\..\..\..\components\modules\peripherals\sht3x_temp_humi -I ..\..\..\..\components\ble\profiles\ble_audio_profile -I ..\..\..\..\components\modules\peripherals\audio -I ..\..\..\..\components\modules\decoder -I ..\..\..\..\components\modules\adpcm_ms -I ..\..\..\..\components\modules\peripherals\gyro -I ..\..\..\..\components\modules\ringbuffer -I ..\..\..\..\components\modules\adpcm_ima-IC:\Keil_v5\ARM\RV31\INC-D__UVISION_VERSION="541"-o .\objects\driver_exti.o --omf_browse .\objects\driver_exti.crf --depend .\objects\driver_exti.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (..\..\..\..\components\driver\include\driver_exti.h)(0x67205E8B)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5CEB79DE)
+I (..\..\..\..\components\driver\include\driver_plf.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\compiler.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\core_cm3.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\cmsis_compiler.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\cmsis_armcc.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\ll.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_system.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_iomux.h)(0x67205E8B)
+I (..\..\..\..\components\modules\common\include\co_printf.h)(0x67205E8B)
+F (..\..\..\..\components\driver\driver_timer.c)(0x67205E8B)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I ..\..\..\..\components\ble\include -I ..\..\..\..\components\driver\include -I ..\..\..\..\components\modules\os\include -I ..\..\..\..\components\modules\sys\include -I ..\..\..\..\components\modules\platform\include -I ..\..\..\..\components\modules\common\include -I ..\..\..\..\components\modules\lowpow\include -I ..\..\..\..\components\modules\button -I ..\..\..\..\components\ble\include\gap -I ..\..\..\..\components\ble\include\gatt -I ..\..\..\..\components\ble\profiles\ble_simple_profile -I ..\code -I ..\..\..\..\components\modules\peripherals\capb18_air_pressure -I ..\..\..\..\components\modules\peripherals\oled -I ..\..\..\..\components\modules\peripherals\sht3x_temp_humi -I ..\..\..\..\components\ble\profiles\ble_audio_profile -I ..\..\..\..\components\modules\peripherals\audio -I ..\..\..\..\components\modules\decoder -I ..\..\..\..\components\modules\adpcm_ms -I ..\..\..\..\components\modules\peripherals\gyro -I ..\..\..\..\components\modules\ringbuffer -I ..\..\..\..\components\modules\adpcm_ima-IC:\Keil_v5\ARM\RV31\INC-D__UVISION_VERSION="541"-o .\objects\driver_timer.o --omf_browse .\objects\driver_timer.crf --depend .\objects\driver_timer.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5CEB79DE)
+I (..\..\..\..\components\modules\common\include\co_printf.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_system.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_iomux.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_timer.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_plf.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\compiler.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\core_cm3.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\cmsis_compiler.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\cmsis_armcc.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\ll.h)(0x67205E8B)
+F (..\..\..\..\components\driver\driver_efuse.c)(0x67205E8B)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I ..\..\..\..\components\ble\include -I ..\..\..\..\components\driver\include -I ..\..\..\..\components\modules\os\include -I ..\..\..\..\components\modules\sys\include -I ..\..\..\..\components\modules\platform\include -I ..\..\..\..\components\modules\common\include -I ..\..\..\..\components\modules\lowpow\include -I ..\..\..\..\components\modules\button -I ..\..\..\..\components\ble\include\gap -I ..\..\..\..\components\ble\include\gatt -I ..\..\..\..\components\ble\profiles\ble_simple_profile -I ..\code -I ..\..\..\..\components\modules\peripherals\capb18_air_pressure -I ..\..\..\..\components\modules\peripherals\oled -I ..\..\..\..\components\modules\peripherals\sht3x_temp_humi -I ..\..\..\..\components\ble\profiles\ble_audio_profile -I ..\..\..\..\components\modules\peripherals\audio -I ..\..\..\..\components\modules\decoder -I ..\..\..\..\components\modules\adpcm_ms -I ..\..\..\..\components\modules\peripherals\gyro -I ..\..\..\..\components\modules\ringbuffer -I ..\..\..\..\components\modules\adpcm_ima-IC:\Keil_v5\ARM\RV31\INC-D__UVISION_VERSION="541"-o .\objects\driver_efuse.o --omf_browse .\objects\driver_efuse.crf --depend .\objects\driver_efuse.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEB79E2)
+I (..\..\..\..\components\driver\include\driver_efuse.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_plf.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\compiler.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\core_cm3.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\cmsis_compiler.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\cmsis_armcc.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\ll.h)(0x67205E8B)
+I (..\..\..\..\components\modules\common\include\co_math.h)(0x67205E8B)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5CEB79DE)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5CEB79E2)
+F (..\..\..\..\components\driver\driver_pwm.c)(0x67205E8B)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I ..\..\..\..\components\ble\include -I ..\..\..\..\components\driver\include -I ..\..\..\..\components\modules\os\include -I ..\..\..\..\components\modules\sys\include -I ..\..\..\..\components\modules\platform\include -I ..\..\..\..\components\modules\common\include -I ..\..\..\..\components\modules\lowpow\include -I ..\..\..\..\components\modules\button -I ..\..\..\..\components\ble\include\gap -I ..\..\..\..\components\ble\include\gatt -I ..\..\..\..\components\ble\profiles\ble_simple_profile -I ..\code -I ..\..\..\..\components\modules\peripherals\capb18_air_pressure -I ..\..\..\..\components\modules\peripherals\oled -I ..\..\..\..\components\modules\peripherals\sht3x_temp_humi -I ..\..\..\..\components\ble\profiles\ble_audio_profile -I ..\..\..\..\components\modules\peripherals\audio -I ..\..\..\..\components\modules\decoder -I ..\..\..\..\components\modules\adpcm_ms -I ..\..\..\..\components\modules\peripherals\gyro -I ..\..\..\..\components\modules\ringbuffer -I ..\..\..\..\components\modules\adpcm_ima-IC:\Keil_v5\ARM\RV31\INC-D__UVISION_VERSION="541"-o .\objects\driver_pwm.o --omf_browse .\objects\driver_pwm.crf --depend .\objects\driver_pwm.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (..\..\..\..\components\driver\include\driver_plf.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\compiler.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\core_cm3.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\cmsis_compiler.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\cmsis_armcc.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\ll.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_system.h)(0x67205E8B)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5CEB79DE)
+I (..\..\..\..\components\driver\include\driver_iomux.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_pwm.h)(0x67205E8B)
+F (..\..\..\..\components\driver\driver_pmu_pwm.c)(0x67205E8B)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I ..\..\..\..\components\ble\include -I ..\..\..\..\components\driver\include -I ..\..\..\..\components\modules\os\include -I ..\..\..\..\components\modules\sys\include -I ..\..\..\..\components\modules\platform\include -I ..\..\..\..\components\modules\common\include -I ..\..\..\..\components\modules\lowpow\include -I ..\..\..\..\components\modules\button -I ..\..\..\..\components\ble\include\gap -I ..\..\..\..\components\ble\include\gatt -I ..\..\..\..\components\ble\profiles\ble_simple_profile -I ..\code -I ..\..\..\..\components\modules\peripherals\capb18_air_pressure -I ..\..\..\..\components\modules\peripherals\oled -I ..\..\..\..\components\modules\peripherals\sht3x_temp_humi -I ..\..\..\..\components\ble\profiles\ble_audio_profile -I ..\..\..\..\components\modules\peripherals\audio -I ..\..\..\..\components\modules\decoder -I ..\..\..\..\components\modules\adpcm_ms -I ..\..\..\..\components\modules\peripherals\gyro -I ..\..\..\..\components\modules\ringbuffer -I ..\..\..\..\components\modules\adpcm_ima-IC:\Keil_v5\ARM\RV31\INC-D__UVISION_VERSION="541"-o .\objects\driver_pmu_pwm.o --omf_browse .\objects\driver_pmu_pwm.crf --depend .\objects\driver_pmu_pwm.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5CEB79DE)
+I (..\..\..\..\components\driver\include\driver_system.h)(0x67205E8B)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (..\..\..\..\components\driver\include\driver_iomux.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_pmu.h)(0x67205E8B)
+I (..\..\..\..\components\modules\common\include\co_math.h)(0x67205E8B)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5CEB79E2)
+I (..\..\..\..\components\modules\platform\include\compiler.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_pmu_regs.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_frspim.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_gpio.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_plf.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\core_cm3.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\cmsis_compiler.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\cmsis_armcc.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\ll.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_pmu_pwm.h)(0x67205E8B)
+F (..\..\..\..\components\driver\driver_adc.c)(0x67205E8B)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I ..\..\..\..\components\ble\include -I ..\..\..\..\components\driver\include -I ..\..\..\..\components\modules\os\include -I ..\..\..\..\components\modules\sys\include -I ..\..\..\..\components\modules\platform\include -I ..\..\..\..\components\modules\common\include -I ..\..\..\..\components\modules\lowpow\include -I ..\..\..\..\components\modules\button -I ..\..\..\..\components\ble\include\gap -I ..\..\..\..\components\ble\include\gatt -I ..\..\..\..\components\ble\profiles\ble_simple_profile -I ..\code -I ..\..\..\..\components\modules\peripherals\capb18_air_pressure -I ..\..\..\..\components\modules\peripherals\oled -I ..\..\..\..\components\modules\peripherals\sht3x_temp_humi -I ..\..\..\..\components\ble\profiles\ble_audio_profile -I ..\..\..\..\components\modules\peripherals\audio -I ..\..\..\..\components\modules\decoder -I ..\..\..\..\components\modules\adpcm_ms -I ..\..\..\..\components\modules\peripherals\gyro -I ..\..\..\..\components\modules\ringbuffer -I ..\..\..\..\components\modules\adpcm_ima-IC:\Keil_v5\ARM\RV31\INC-D__UVISION_VERSION="541"-o .\objects\driver_adc.o --omf_browse .\objects\driver_adc.crf --depend .\objects\driver_adc.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEB79E2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5CEB79DE)
+I (..\..\..\..\components\modules\sys\include\sys_utils.h)(0x67205E8B)
+I (..\..\..\..\components\modules\common\include\co_printf.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\compiler.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_adc.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_flash.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_plf.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\core_cm3.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\cmsis_compiler.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\cmsis_armcc.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\ll.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_efuse.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_pmu.h)(0x67205E8B)
+I (..\..\..\..\components\modules\common\include\co_math.h)(0x67205E8B)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5CEB79E2)
+I (..\..\..\..\components\driver\include\driver_iomux.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_pmu_regs.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_frspim.h)(0x67205E8B)
+F (..\..\..\..\components\modules\platform\source\core_cm3_isr.c)(0x67205E8B)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I ..\..\..\..\components\ble\include -I ..\..\..\..\components\driver\include -I ..\..\..\..\components\modules\os\include -I ..\..\..\..\components\modules\sys\include -I ..\..\..\..\components\modules\platform\include -I ..\..\..\..\components\modules\common\include -I ..\..\..\..\components\modules\lowpow\include -I ..\..\..\..\components\modules\button -I ..\..\..\..\components\ble\include\gap -I ..\..\..\..\components\ble\include\gatt -I ..\..\..\..\components\ble\profiles\ble_simple_profile -I ..\code -I ..\..\..\..\components\modules\peripherals\capb18_air_pressure -I ..\..\..\..\components\modules\peripherals\oled -I ..\..\..\..\components\modules\peripherals\sht3x_temp_humi -I ..\..\..\..\components\ble\profiles\ble_audio_profile -I ..\..\..\..\components\modules\peripherals\audio -I ..\..\..\..\components\modules\decoder -I ..\..\..\..\components\modules\adpcm_ms -I ..\..\..\..\components\modules\peripherals\gyro -I ..\..\..\..\components\modules\ringbuffer -I ..\..\..\..\components\modules\adpcm_ima-IC:\Keil_v5\ARM\RV31\INC-D__UVISION_VERSION="541"-o .\objects\core_cm3_isr.o --omf_browse .\objects\core_cm3_isr.crf --depend .\objects\core_cm3_isr.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5CEB79E2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (..\..\..\..\components\modules\common\include\co_printf.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_wdt.h)(0x67205E8B)
+I (..\..\..\..\components\modules\common\include\co_math.h)(0x67205E8B)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5CEB79DE)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5CEB79E2)
+I (..\..\..\..\components\modules\platform\include\compiler.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_pmu.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_iomux.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_pmu_regs.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_frspim.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_plf.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\core_cm3.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\cmsis_compiler.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\cmsis_armcc.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\ll.h)(0x67205E8B)
+I (..\..\..\..\components\modules\sys\include\sys_utils.h)(0x67205E8B)
+F (..\..\..\..\components\modules\platform\source\app_boot_vectors.s)(0x67205E8B)(--cpu Cortex-M3 --li -g --apcs=interwork --pd "__MICROLIB SETA 1"-IC:\Keil_v5\ARM\RV31\INC--pd "__UVISION_VERSION SETA 541"--list .\listings\app_boot_vectors.lst --xref -o .\objects\app_boot_vectors.o --depend .\objects\app_boot_vectors.d)
+F (..\..\..\..\components\modules\patch\patch.c)(0x67205E8B)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I ..\..\..\..\components\ble\include -I ..\..\..\..\components\driver\include -I ..\..\..\..\components\modules\os\include -I ..\..\..\..\components\modules\sys\include -I ..\..\..\..\components\modules\platform\include -I ..\..\..\..\components\modules\common\include -I ..\..\..\..\components\modules\lowpow\include -I ..\..\..\..\components\modules\button -I ..\..\..\..\components\ble\include\gap -I ..\..\..\..\components\ble\include\gatt -I ..\..\..\..\components\ble\profiles\ble_simple_profile -I ..\code -I ..\..\..\..\components\modules\peripherals\capb18_air_pressure -I ..\..\..\..\components\modules\peripherals\oled -I ..\..\..\..\components\modules\peripherals\sht3x_temp_humi -I ..\..\..\..\components\ble\profiles\ble_audio_profile -I ..\..\..\..\components\modules\peripherals\audio -I ..\..\..\..\components\modules\decoder -I ..\..\..\..\components\modules\adpcm_ms -I ..\..\..\..\components\modules\peripherals\gyro -I ..\..\..\..\components\modules\ringbuffer -I ..\..\..\..\components\modules\adpcm_ima-IC:\Keil_v5\ARM\RV31\INC-D__UVISION_VERSION="541"-o .\objects\patch.o --omf_browse .\objects\patch.crf --depend .\objects\patch.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (..\..\..\..\components\modules\platform\include\jump_table.h)(0x67205E8B)
+I (..\..\..\..\components\modules\common\include\co_math.h)(0x67205E8B)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5CEB79DE)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5CEB79E2)
+I (..\..\..\..\components\modules\platform\include\compiler.h)(0x67205E8B)
+I (..\..\..\..\components\modules\lowpow\include\low_power.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_system.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_iomux.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_uart.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_plf.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\core_cm3.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\cmsis_compiler.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\cmsis_armcc.h)(0x67205E8B)
+I (..\..\..\..\components\modules\platform\include\ll.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_pmu.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_pmu_regs.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_frspim.h)(0x67205E8B)
+I (..\..\..\..\components\driver\include\driver_flash.h)(0x67205E8B)
+I (..\code\flash_usage_config.h)(0x67205E8B)
+F (..\..\..\..\components\ble\library\fr8010h_stack.lib)(0x67205E8A)()

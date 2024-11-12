@@ -337,6 +337,7 @@ void key_init(void)
 void led_init(void)
 {
    pmu_set_led2_value(0); 	//开启led	
+//	pmu_set_led2_value(1); 	//关闭led	
 }
 
 //vbat_adc_init   return voltage(mv)
@@ -358,7 +359,7 @@ float get_vbat_adc_val(void)
 	
     ref_vol = adc_get_ref_voltage(ADC_REFERENCE_INTERNAL); //带分压1/4    1222左右
 	
-	vbat_vol = (float)(result * 3.3 * ref_vol) / 1024.0;
+	vbat_vol = (float)(result * 4.0 * ref_vol) / 1024.0;
 		
 	return vbat_vol;
 }
@@ -371,7 +372,6 @@ void pwr_init(void)
   gpio_set_dir(GPIO_PORT_D, GPIO_BIT_4, GPIO_DIR_OUT);
 	
   gpio_set_pin_value(GPIO_PORT_D,GPIO_BIT_4,1);
-
 }
  
 
@@ -421,7 +421,7 @@ void simple_peripheral_init(void)
 	os_timer_init(&key_scan_task,key_scan_task_fun,NULL);
 	os_timer_start(&key_scan_task,100,1); /* 100ms detection */
 	
-	/* led翻转会造成蓝牙连接不上 */
+//	/* led翻转会造成蓝牙连接不上 */
 //	os_timer_init(&led_task,led_task_fun,NULL);
 //	os_timer_start(&led_task,100,1); /* 100ms detection */	
 

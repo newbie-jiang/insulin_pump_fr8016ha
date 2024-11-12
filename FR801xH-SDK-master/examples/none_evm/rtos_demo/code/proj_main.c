@@ -295,11 +295,11 @@ void user_entry_before_ble_init(void)
     if(__jump_table.system_option & SYSTEM_OPTION_SLEEP_ENABLE)
     {
         co_printf("\r\na");
-        //co_delay_100us(10000);
+        co_delay_100us(10000);
         co_printf("\r\nb");
-        //co_delay_100us(10000);
+        co_delay_100us(10000);
         co_printf("\r\nc");
-        //co_delay_100us(10000);
+        co_delay_100us(10000);
         co_printf("\r\nd");
     }
 

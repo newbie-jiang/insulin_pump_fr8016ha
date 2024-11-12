@@ -1,0 +1,392 @@
+Dependencies for Project 'ble_drivers_demo', Target 'drivers_demo': (DO NOT MODIFY !)
+CompilerVersion: 5060750::V5.06 update 6 (build 750)::ARMCC
+F (..\code\proj_main.c)(0x66A1C502)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I ..\..\..\..\components\ble\include -I ..\..\..\..\components\driver\include -I ..\..\..\..\components\modules\os\include -I ..\..\..\..\components\modules\sys\include -I ..\..\..\..\components\modules\platform\include -I ..\..\..\..\components\modules\common\include -I ..\..\..\..\components\modules\lowpow\include -I ..\..\..\..\components\modules\button -I ..\..\..\..\components\ble\include\gap -I ..\..\..\..\components\ble\include\gatt -I ..\..\..\..\components\ble\profiles\ble_ota -I ..\code-IC:\Keil_v5\ARM\RV31\INC-D__UVISION_VERSION="541" -DCFG_ADV_MEM_ALLOOC_NEW -DCFG_SIMPLE_PRINTF-o .\objects\proj_main.o --omf_browse .\objects\proj_main.crf --depend .\objects\proj_main.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5CEB79E2)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEB79E2)
+I (..\..\..\..\components\ble\include\gap\gap_api.h)(0x66A1C502)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5CEB79DE)
+I (..\..\..\..\components\ble\include\gatt\gatt_api.h)(0x66A1C502)
+I (..\..\..\..\components\modules\os\include\os_msg_q.h)(0x66A1C502)
+I (..\..\..\..\components\modules\os\include\os_timer.h)(0x66A1C502)
+I (..\..\..\..\components\modules\os\include\os_mem.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\compiler.h)(0x66A1C502)
+I (..\..\..\..\components\modules\sys\include\sys_utils.h)(0x66A1C502)
+I (..\..\..\..\components\modules\common\include\co_printf.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\jump_table.h)(0x66A1C502)
+I (..\..\..\..\components\modules\common\include\co_math.h)(0x66A1C502)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5CEB79E2)
+I (..\..\..\..\components\driver\include\driver_system.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_iomux.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_uart.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_plf.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\core_cm3.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\cmsis_compiler.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\cmsis_armcc.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\ll.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_pmu.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_pmu_regs.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_frspim.h)(0x66A1C502)
+I (..\code\demo_peripheral.h)(0x66A1C502)
+F (..\code\demo_peripheral.c)(0x66F9264E)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I ..\..\..\..\components\ble\include -I ..\..\..\..\components\driver\include -I ..\..\..\..\components\modules\os\include -I ..\..\..\..\components\modules\sys\include -I ..\..\..\..\components\modules\platform\include -I ..\..\..\..\components\modules\common\include -I ..\..\..\..\components\modules\lowpow\include -I ..\..\..\..\components\modules\button -I ..\..\..\..\components\ble\include\gap -I ..\..\..\..\components\ble\include\gatt -I ..\..\..\..\components\ble\profiles\ble_ota -I ..\code-IC:\Keil_v5\ARM\RV31\INC-D__UVISION_VERSION="541" -DCFG_ADV_MEM_ALLOOC_NEW -DCFG_SIMPLE_PRINTF-o .\objects\demo_peripheral.o --omf_browse .\objects\demo_peripheral.crf --depend .\objects\demo_peripheral.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5CEB79E2)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEB79E2)
+I (..\code\demo_peripheral.h)(0x66A1C502)
+I (..\..\..\..\components\modules\common\include\co_printf.h)(0x66A1C502)
+I (..\..\..\..\components\modules\sys\include\sys_utils.h)(0x66A1C502)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (..\..\..\..\components\modules\platform\include\compiler.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_ssp.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_system.h)(0x66A1C502)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5CEB79DE)
+I (..\..\..\..\components\driver\include\driver_iomux.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_plf.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\core_cm3.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\cmsis_compiler.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\cmsis_armcc.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\ll.h)(0x66A1C502)
+F (..\code\time_rtc.c)(0x66A1C502)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I ..\..\..\..\components\ble\include -I ..\..\..\..\components\driver\include -I ..\..\..\..\components\modules\os\include -I ..\..\..\..\components\modules\sys\include -I ..\..\..\..\components\modules\platform\include -I ..\..\..\..\components\modules\common\include -I ..\..\..\..\components\modules\lowpow\include -I ..\..\..\..\components\modules\button -I ..\..\..\..\components\ble\include\gap -I ..\..\..\..\components\ble\include\gatt -I ..\..\..\..\components\ble\profiles\ble_ota -I ..\code-IC:\Keil_v5\ARM\RV31\INC-D__UVISION_VERSION="541" -DCFG_ADV_MEM_ALLOOC_NEW -DCFG_SIMPLE_PRINTF-o .\objects\time_rtc.o --omf_browse .\objects\time_rtc.crf --depend .\objects\time_rtc.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5CEB79DE)
+I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x5CEB79E2)
+I (..\..\..\..\components\modules\common\include\co_printf.h)(0x66A1C502)
+I (..\..\..\..\components\modules\os\include\os_timer.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_system.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_iomux.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_pmu_regs.h)(0x66A1C502)
+I (..\..\..\..\components\modules\common\include\co_math.h)(0x66A1C502)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5CEB79E2)
+I (..\..\..\..\components\modules\platform\include\compiler.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_rtc.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_pmu.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_frspim.h)(0x66A1C502)
+F (..\..\..\..\components\ble\profiles\ble_ota\ota.c)(0x66A1C502)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I ..\..\..\..\components\ble\include -I ..\..\..\..\components\driver\include -I ..\..\..\..\components\modules\os\include -I ..\..\..\..\components\modules\sys\include -I ..\..\..\..\components\modules\platform\include -I ..\..\..\..\components\modules\common\include -I ..\..\..\..\components\modules\lowpow\include -I ..\..\..\..\components\modules\button -I ..\..\..\..\components\ble\include\gap -I ..\..\..\..\components\ble\include\gatt -I ..\..\..\..\components\ble\profiles\ble_ota -I ..\code-IC:\Keil_v5\ARM\RV31\INC-D__UVISION_VERSION="541" -DCFG_ADV_MEM_ALLOOC_NEW -DCFG_SIMPLE_PRINTF-o .\objects\ota.o --omf_browse .\objects\ota.crf --depend .\objects\ota.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5CEB79E2)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEB79E2)
+I (..\..\..\..\components\modules\platform\include\jump_table.h)(0x66A1C502)
+I (..\..\..\..\components\modules\common\include\co_math.h)(0x66A1C502)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5CEB79DE)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5CEB79E2)
+I (..\..\..\..\components\modules\platform\include\compiler.h)(0x66A1C502)
+I (..\..\..\..\components\modules\os\include\os_mem.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_plf.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\core_cm3.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\cmsis_compiler.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\cmsis_armcc.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\ll.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_system.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_iomux.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_flash.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_wdt.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_pmu.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_pmu_regs.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_frspim.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_uart.h)(0x66A1C502)
+I (..\..\..\..\components\ble\include\gatt\gatt_api.h)(0x66A1C502)
+I (..\..\..\..\components\modules\os\include\os_msg_q.h)(0x66A1C502)
+I (..\..\..\..\components\ble\include\gap\gap_api.h)(0x66A1C502)
+I (..\..\..\..\components\modules\sys\include\sys_utils.h)(0x66A1C502)
+I (..\..\..\..\components\modules\common\include\co_printf.h)(0x66A1C502)
+I (..\..\..\..\components\ble\profiles\ble_ota\ota.h)(0x66A1C502)
+I (..\..\..\..\components\ble\profiles\ble_ota\ota_service.h)(0x66A1C502)
+I (..\code\flash_usage_config.h)(0x66A1C502)
+I (..\..\..\..\components\modules\os\include\os_timer.h)(0x66A1C502)
+F (..\..\..\..\components\ble\profiles\ble_ota\ota_service.c)(0x66A1C502)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I ..\..\..\..\components\ble\include -I ..\..\..\..\components\driver\include -I ..\..\..\..\components\modules\os\include -I ..\..\..\..\components\modules\sys\include -I ..\..\..\..\components\modules\platform\include -I ..\..\..\..\components\modules\common\include -I ..\..\..\..\components\modules\lowpow\include -I ..\..\..\..\components\modules\button -I ..\..\..\..\components\ble\include\gap -I ..\..\..\..\components\ble\include\gatt -I ..\..\..\..\components\ble\profiles\ble_ota -I ..\code-IC:\Keil_v5\ARM\RV31\INC-D__UVISION_VERSION="541" -DCFG_ADV_MEM_ALLOOC_NEW -DCFG_SIMPLE_PRINTF-o .\objects\ota_service.o --omf_browse .\objects\ota_service.crf --depend .\objects\ota_service.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5CEB79E2)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEB79E2)
+I (..\..\..\..\components\ble\include\gap\gap_api.h)(0x66A1C502)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5CEB79DE)
+I (..\..\..\..\components\ble\include\gatt\gatt_api.h)(0x66A1C502)
+I (..\..\..\..\components\modules\os\include\os_msg_q.h)(0x66A1C502)
+I (..\..\..\..\components\ble\include\gatt\gatt_sig_uuid.h)(0x66A1C502)
+I (..\..\..\..\components\modules\sys\include\sys_utils.h)(0x66A1C502)
+I (..\..\..\..\components\modules\common\include\co_printf.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\compiler.h)(0x66A1C502)
+I (..\..\..\..\components\ble\profiles\ble_ota\ota.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_plf.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\core_cm3.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\cmsis_compiler.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\cmsis_armcc.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\ll.h)(0x66A1C502)
+I (..\..\..\..\components\ble\profiles\ble_ota\ota_service.h)(0x66A1C502)
+F (..\..\..\..\components\driver\driver_iic.c)(0x66A1C502)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I ..\..\..\..\components\ble\include -I ..\..\..\..\components\driver\include -I ..\..\..\..\components\modules\os\include -I ..\..\..\..\components\modules\sys\include -I ..\..\..\..\components\modules\platform\include -I ..\..\..\..\components\modules\common\include -I ..\..\..\..\components\modules\lowpow\include -I ..\..\..\..\components\modules\button -I ..\..\..\..\components\ble\include\gap -I ..\..\..\..\components\ble\include\gatt -I ..\..\..\..\components\ble\profiles\ble_ota -I ..\code-IC:\Keil_v5\ARM\RV31\INC-D__UVISION_VERSION="541" -DCFG_ADV_MEM_ALLOOC_NEW -DCFG_SIMPLE_PRINTF-o .\objects\driver_iic.o --omf_browse .\objects\driver_iic.crf --depend .\objects\driver_iic.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5CEB79DE)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5CEB79E2)
+I (..\..\..\..\components\driver\include\driver_iic.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_plf.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\compiler.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\core_cm3.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\cmsis_compiler.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\cmsis_armcc.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\ll.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_system.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_iomux.h)(0x66A1C502)
+I (..\..\..\..\components\modules\sys\include\sys_utils.h)(0x66A1C502)
+I (..\..\..\..\components\modules\common\include\co_printf.h)(0x66A1C502)
+F (..\..\..\..\components\driver\driver_pmu.c)(0x66F914EB)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I ..\..\..\..\components\ble\include -I ..\..\..\..\components\driver\include -I ..\..\..\..\components\modules\os\include -I ..\..\..\..\components\modules\sys\include -I ..\..\..\..\components\modules\platform\include -I ..\..\..\..\components\modules\common\include -I ..\..\..\..\components\modules\lowpow\include -I ..\..\..\..\components\modules\button -I ..\..\..\..\components\ble\include\gap -I ..\..\..\..\components\ble\include\gatt -I ..\..\..\..\components\ble\profiles\ble_ota -I ..\code-IC:\Keil_v5\ARM\RV31\INC-D__UVISION_VERSION="541" -DCFG_ADV_MEM_ALLOOC_NEW -DCFG_SIMPLE_PRINTF-o .\objects\driver_pmu.o --omf_browse .\objects\driver_pmu.crf --depend .\objects\driver_pmu.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (..\..\..\..\components\modules\common\include\co_printf.h)(0x66A1C502)
+I (..\..\..\..\components\modules\common\include\co_math.h)(0x66A1C502)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5CEB79DE)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5CEB79E2)
+I (..\..\..\..\components\modules\platform\include\compiler.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\jump_table.h)(0x66A1C502)
+I (..\..\..\..\components\modules\sys\include\sys_utils.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_plf.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\core_cm3.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\cmsis_compiler.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\cmsis_armcc.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\ll.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_pmu.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_iomux.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_pmu_regs.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_frspim.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_adc.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_efuse.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_system.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_flash.h)(0x66A1C502)
+F (..\..\..\..\components\driver\driver_pmu_pwm.c)(0x66A1C502)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I ..\..\..\..\components\ble\include -I ..\..\..\..\components\driver\include -I ..\..\..\..\components\modules\os\include -I ..\..\..\..\components\modules\sys\include -I ..\..\..\..\components\modules\platform\include -I ..\..\..\..\components\modules\common\include -I ..\..\..\..\components\modules\lowpow\include -I ..\..\..\..\components\modules\button -I ..\..\..\..\components\ble\include\gap -I ..\..\..\..\components\ble\include\gatt -I ..\..\..\..\components\ble\profiles\ble_ota -I ..\code-IC:\Keil_v5\ARM\RV31\INC-D__UVISION_VERSION="541" -DCFG_ADV_MEM_ALLOOC_NEW -DCFG_SIMPLE_PRINTF-o .\objects\driver_pmu_pwm.o --omf_browse .\objects\driver_pmu_pwm.crf --depend .\objects\driver_pmu_pwm.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5CEB79DE)
+I (..\..\..\..\components\driver\include\driver_system.h)(0x66A1C502)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (..\..\..\..\components\driver\include\driver_iomux.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_pmu.h)(0x66A1C502)
+I (..\..\..\..\components\modules\common\include\co_math.h)(0x66A1C502)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5CEB79E2)
+I (..\..\..\..\components\modules\platform\include\compiler.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_pmu_regs.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_frspim.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_gpio.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_plf.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\core_cm3.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\cmsis_compiler.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\cmsis_armcc.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\ll.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_pmu_pwm.h)(0x66A1C502)
+F (..\..\..\..\components\driver\driver_pmu_qdec.c)(0x66A1C502)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I ..\..\..\..\components\ble\include -I ..\..\..\..\components\driver\include -I ..\..\..\..\components\modules\os\include -I ..\..\..\..\components\modules\sys\include -I ..\..\..\..\components\modules\platform\include -I ..\..\..\..\components\modules\common\include -I ..\..\..\..\components\modules\lowpow\include -I ..\..\..\..\components\modules\button -I ..\..\..\..\components\ble\include\gap -I ..\..\..\..\components\ble\include\gatt -I ..\..\..\..\components\ble\profiles\ble_ota -I ..\code-IC:\Keil_v5\ARM\RV31\INC-D__UVISION_VERSION="541" -DCFG_ADV_MEM_ALLOOC_NEW -DCFG_SIMPLE_PRINTF-o .\objects\driver_pmu_qdec.o --omf_browse .\objects\driver_pmu_qdec.crf --depend .\objects\driver_pmu_qdec.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (..\..\..\..\components\modules\common\include\co_printf.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_pmu_qdec.h)(0x66A1C502)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5CEB79DE)
+I (..\..\..\..\components\driver\include\driver_pmu.h)(0x66A1C502)
+I (..\..\..\..\components\modules\common\include\co_math.h)(0x66A1C502)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5CEB79E2)
+I (..\..\..\..\components\modules\platform\include\compiler.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_iomux.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_pmu_regs.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_frspim.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_system.h)(0x66A1C502)
+F (..\..\..\..\components\driver\driver_timer.c)(0x66A1C502)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I ..\..\..\..\components\ble\include -I ..\..\..\..\components\driver\include -I ..\..\..\..\components\modules\os\include -I ..\..\..\..\components\modules\sys\include -I ..\..\..\..\components\modules\platform\include -I ..\..\..\..\components\modules\common\include -I ..\..\..\..\components\modules\lowpow\include -I ..\..\..\..\components\modules\button -I ..\..\..\..\components\ble\include\gap -I ..\..\..\..\components\ble\include\gatt -I ..\..\..\..\components\ble\profiles\ble_ota -I ..\code-IC:\Keil_v5\ARM\RV31\INC-D__UVISION_VERSION="541" -DCFG_ADV_MEM_ALLOOC_NEW -DCFG_SIMPLE_PRINTF-o .\objects\driver_timer.o --omf_browse .\objects\driver_timer.crf --depend .\objects\driver_timer.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5CEB79DE)
+I (..\..\..\..\components\modules\common\include\co_printf.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_system.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_iomux.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_timer.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_plf.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\compiler.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\core_cm3.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\cmsis_compiler.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\cmsis_armcc.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\ll.h)(0x66A1C502)
+F (..\..\..\..\components\driver\driver_ssp.c)(0x66A1C502)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I ..\..\..\..\components\ble\include -I ..\..\..\..\components\driver\include -I ..\..\..\..\components\modules\os\include -I ..\..\..\..\components\modules\sys\include -I ..\..\..\..\components\modules\platform\include -I ..\..\..\..\components\modules\common\include -I ..\..\..\..\components\modules\lowpow\include -I ..\..\..\..\components\modules\button -I ..\..\..\..\components\ble\include\gap -I ..\..\..\..\components\ble\include\gatt -I ..\..\..\..\components\ble\profiles\ble_ota -I ..\code-IC:\Keil_v5\ARM\RV31\INC-D__UVISION_VERSION="541" -DCFG_ADV_MEM_ALLOOC_NEW -DCFG_SIMPLE_PRINTF-o .\objects\driver_ssp.o --omf_browse .\objects\driver_ssp.crf --depend .\objects\driver_ssp.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (..\..\..\..\components\driver\include\driver_ssp.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_plf.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\compiler.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\core_cm3.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\cmsis_compiler.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\cmsis_armcc.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\ll.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_system.h)(0x66A1C502)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5CEB79DE)
+I (..\..\..\..\components\driver\include\driver_iomux.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_gpio.h)(0x66A1C502)
+F (..\..\..\..\components\driver\driver_keyscan.c)(0x66A1C502)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I ..\..\..\..\components\ble\include -I ..\..\..\..\components\driver\include -I ..\..\..\..\components\modules\os\include -I ..\..\..\..\components\modules\sys\include -I ..\..\..\..\components\modules\platform\include -I ..\..\..\..\components\modules\common\include -I ..\..\..\..\components\modules\lowpow\include -I ..\..\..\..\components\modules\button -I ..\..\..\..\components\ble\include\gap -I ..\..\..\..\components\ble\include\gatt -I ..\..\..\..\components\ble\profiles\ble_ota -I ..\code-IC:\Keil_v5\ARM\RV31\INC-D__UVISION_VERSION="541" -DCFG_ADV_MEM_ALLOOC_NEW -DCFG_SIMPLE_PRINTF-o .\objects\driver_keyscan.o --omf_browse .\objects\driver_keyscan.crf --depend .\objects\driver_keyscan.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (..\..\..\..\components\modules\common\include\co_log.h)(0x66A1C502)
+I (..\..\..\..\components\modules\common\include\co_printf.h)(0x66A1C502)
+I (..\..\..\..\components\modules\common\include\co_math.h)(0x66A1C502)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5CEB79DE)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5CEB79E2)
+I (..\..\..\..\components\modules\platform\include\compiler.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_keyscan.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_pmu.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_iomux.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_pmu_regs.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_frspim.h)(0x66A1C502)
+F (..\..\..\..\components\driver\driver_wdt.c)(0x66A1C502)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I ..\..\..\..\components\ble\include -I ..\..\..\..\components\driver\include -I ..\..\..\..\components\modules\os\include -I ..\..\..\..\components\modules\sys\include -I ..\..\..\..\components\modules\platform\include -I ..\..\..\..\components\modules\common\include -I ..\..\..\..\components\modules\lowpow\include -I ..\..\..\..\components\modules\button -I ..\..\..\..\components\ble\include\gap -I ..\..\..\..\components\ble\include\gatt -I ..\..\..\..\components\ble\profiles\ble_ota -I ..\code-IC:\Keil_v5\ARM\RV31\INC-D__UVISION_VERSION="541" -DCFG_ADV_MEM_ALLOOC_NEW -DCFG_SIMPLE_PRINTF-o .\objects\driver_wdt.o --omf_browse .\objects\driver_wdt.crf --depend .\objects\driver_wdt.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (..\..\..\..\components\modules\common\include\co_log.h)(0x66A1C502)
+I (..\..\..\..\components\modules\common\include\co_printf.h)(0x66A1C502)
+I (..\..\..\..\components\modules\sys\include\sys_utils.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\compiler.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_wdt.h)(0x66A1C502)
+I (..\..\..\..\components\modules\common\include\co_math.h)(0x66A1C502)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5CEB79DE)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5CEB79E2)
+I (..\..\..\..\components\driver\include\driver_pmu.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_iomux.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_pmu_regs.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_frspim.h)(0x66A1C502)
+F (..\..\..\..\components\driver\driver_i2s.c)(0x66A1C502)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I ..\..\..\..\components\ble\include -I ..\..\..\..\components\driver\include -I ..\..\..\..\components\modules\os\include -I ..\..\..\..\components\modules\sys\include -I ..\..\..\..\components\modules\platform\include -I ..\..\..\..\components\modules\common\include -I ..\..\..\..\components\modules\lowpow\include -I ..\..\..\..\components\modules\button -I ..\..\..\..\components\ble\include\gap -I ..\..\..\..\components\ble\include\gatt -I ..\..\..\..\components\ble\profiles\ble_ota -I ..\code-IC:\Keil_v5\ARM\RV31\INC-D__UVISION_VERSION="541" -DCFG_ADV_MEM_ALLOOC_NEW -DCFG_SIMPLE_PRINTF-o .\objects\driver_i2s.o --omf_browse .\objects\driver_i2s.crf --depend .\objects\driver_i2s.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (..\..\..\..\components\driver\include\driver_i2s.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_system.h)(0x66A1C502)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5CEB79DE)
+I (..\..\..\..\components\driver\include\driver_iomux.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_plf.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\compiler.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\core_cm3.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\cmsis_compiler.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\cmsis_armcc.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\ll.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_uart.h)(0x66A1C502)
+F (..\..\..\..\components\driver\driver_codec.c)(0x66A1C502)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I ..\..\..\..\components\ble\include -I ..\..\..\..\components\driver\include -I ..\..\..\..\components\modules\os\include -I ..\..\..\..\components\modules\sys\include -I ..\..\..\..\components\modules\platform\include -I ..\..\..\..\components\modules\common\include -I ..\..\..\..\components\modules\lowpow\include -I ..\..\..\..\components\modules\button -I ..\..\..\..\components\ble\include\gap -I ..\..\..\..\components\ble\include\gatt -I ..\..\..\..\components\ble\profiles\ble_ota -I ..\code-IC:\Keil_v5\ARM\RV31\INC-D__UVISION_VERSION="541" -DCFG_ADV_MEM_ALLOOC_NEW -DCFG_SIMPLE_PRINTF-o .\objects\driver_codec.o --omf_browse .\objects\driver_codec.crf --depend .\objects\driver_codec.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (..\..\..\..\components\driver\include\driver_codec.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_frspim.h)(0x66A1C502)
+F (..\..\..\..\components\driver\driver_efuse.c)(0x66A1C502)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I ..\..\..\..\components\ble\include -I ..\..\..\..\components\driver\include -I ..\..\..\..\components\modules\os\include -I ..\..\..\..\components\modules\sys\include -I ..\..\..\..\components\modules\platform\include -I ..\..\..\..\components\modules\common\include -I ..\..\..\..\components\modules\lowpow\include -I ..\..\..\..\components\modules\button -I ..\..\..\..\components\ble\include\gap -I ..\..\..\..\components\ble\include\gatt -I ..\..\..\..\components\ble\profiles\ble_ota -I ..\code-IC:\Keil_v5\ARM\RV31\INC-D__UVISION_VERSION="541" -DCFG_ADV_MEM_ALLOOC_NEW -DCFG_SIMPLE_PRINTF-o .\objects\driver_efuse.o --omf_browse .\objects\driver_efuse.crf --depend .\objects\driver_efuse.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEB79E2)
+I (..\..\..\..\components\driver\include\driver_efuse.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_plf.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\compiler.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\core_cm3.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\cmsis_compiler.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\cmsis_armcc.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\ll.h)(0x66A1C502)
+I (..\..\..\..\components\modules\common\include\co_math.h)(0x66A1C502)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5CEB79DE)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5CEB79E2)
+F (..\..\..\..\components\driver\driver_rtc.c)(0x66A1C502)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I ..\..\..\..\components\ble\include -I ..\..\..\..\components\driver\include -I ..\..\..\..\components\modules\os\include -I ..\..\..\..\components\modules\sys\include -I ..\..\..\..\components\modules\platform\include -I ..\..\..\..\components\modules\common\include -I ..\..\..\..\components\modules\lowpow\include -I ..\..\..\..\components\modules\button -I ..\..\..\..\components\ble\include\gap -I ..\..\..\..\components\ble\include\gatt -I ..\..\..\..\components\ble\profiles\ble_ota -I ..\code-IC:\Keil_v5\ARM\RV31\INC-D__UVISION_VERSION="541" -DCFG_ADV_MEM_ALLOOC_NEW -DCFG_SIMPLE_PRINTF-o .\objects\driver_rtc.o --omf_browse .\objects\driver_rtc.crf --depend .\objects\driver_rtc.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (..\..\..\..\components\modules\common\include\co_math.h)(0x66A1C502)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5CEB79DE)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5CEB79E2)
+I (..\..\..\..\components\modules\platform\include\compiler.h)(0x66A1C502)
+I (..\..\..\..\components\modules\common\include\co_printf.h)(0x66A1C502)
+I (..\..\..\..\components\modules\sys\include\sys_utils.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_rtc.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_plf.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\core_cm3.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\cmsis_compiler.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\cmsis_armcc.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\ll.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_pmu.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_iomux.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_pmu_regs.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_frspim.h)(0x66A1C502)
+F (..\..\..\..\components\driver\driver_uart.c)(0x66A1C502)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I ..\..\..\..\components\ble\include -I ..\..\..\..\components\driver\include -I ..\..\..\..\components\modules\os\include -I ..\..\..\..\components\modules\sys\include -I ..\..\..\..\components\modules\platform\include -I ..\..\..\..\components\modules\common\include -I ..\..\..\..\components\modules\lowpow\include -I ..\..\..\..\components\modules\button -I ..\..\..\..\components\ble\include\gap -I ..\..\..\..\components\ble\include\gatt -I ..\..\..\..\components\ble\profiles\ble_ota -I ..\code-IC:\Keil_v5\ARM\RV31\INC-D__UVISION_VERSION="541" -DCFG_ADV_MEM_ALLOOC_NEW -DCFG_SIMPLE_PRINTF-o .\objects\driver_uart.o --omf_browse .\objects\driver_uart.crf --depend .\objects\driver_uart.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (..\..\..\..\components\driver\include\driver_plf.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\compiler.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\core_cm3.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\cmsis_compiler.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\cmsis_armcc.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\ll.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_uart.h)(0x66A1C502)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5CEB79DE)
+F (..\..\..\..\components\driver\driver_pwm.c)(0x66A1C502)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I ..\..\..\..\components\ble\include -I ..\..\..\..\components\driver\include -I ..\..\..\..\components\modules\os\include -I ..\..\..\..\components\modules\sys\include -I ..\..\..\..\components\modules\platform\include -I ..\..\..\..\components\modules\common\include -I ..\..\..\..\components\modules\lowpow\include -I ..\..\..\..\components\modules\button -I ..\..\..\..\components\ble\include\gap -I ..\..\..\..\components\ble\include\gatt -I ..\..\..\..\components\ble\profiles\ble_ota -I ..\code-IC:\Keil_v5\ARM\RV31\INC-D__UVISION_VERSION="541" -DCFG_ADV_MEM_ALLOOC_NEW -DCFG_SIMPLE_PRINTF-o .\objects\driver_pwm.o --omf_browse .\objects\driver_pwm.crf --depend .\objects\driver_pwm.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (..\..\..\..\components\driver\include\driver_plf.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\compiler.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\core_cm3.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\cmsis_compiler.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\cmsis_armcc.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\ll.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_system.h)(0x66A1C502)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5CEB79DE)
+I (..\..\..\..\components\driver\include\driver_iomux.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_pwm.h)(0x66F90E89)
+F (..\..\..\..\components\driver\driver_exti.c)(0x66A1C502)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I ..\..\..\..\components\ble\include -I ..\..\..\..\components\driver\include -I ..\..\..\..\components\modules\os\include -I ..\..\..\..\components\modules\sys\include -I ..\..\..\..\components\modules\platform\include -I ..\..\..\..\components\modules\common\include -I ..\..\..\..\components\modules\lowpow\include -I ..\..\..\..\components\modules\button -I ..\..\..\..\components\ble\include\gap -I ..\..\..\..\components\ble\include\gatt -I ..\..\..\..\components\ble\profiles\ble_ota -I ..\code-IC:\Keil_v5\ARM\RV31\INC-D__UVISION_VERSION="541" -DCFG_ADV_MEM_ALLOOC_NEW -DCFG_SIMPLE_PRINTF-o .\objects\driver_exti.o --omf_browse .\objects\driver_exti.crf --depend .\objects\driver_exti.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (..\..\..\..\components\driver\include\driver_exti.h)(0x66A1C502)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5CEB79DE)
+I (..\..\..\..\components\driver\include\driver_plf.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\compiler.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\core_cm3.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\cmsis_compiler.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\cmsis_armcc.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\ll.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_system.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_iomux.h)(0x66A1C502)
+I (..\..\..\..\components\modules\common\include\co_printf.h)(0x66A1C502)
+F (..\..\..\..\components\driver\driver_pdm.c)(0x66A1C502)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I ..\..\..\..\components\ble\include -I ..\..\..\..\components\driver\include -I ..\..\..\..\components\modules\os\include -I ..\..\..\..\components\modules\sys\include -I ..\..\..\..\components\modules\platform\include -I ..\..\..\..\components\modules\common\include -I ..\..\..\..\components\modules\lowpow\include -I ..\..\..\..\components\modules\button -I ..\..\..\..\components\ble\include\gap -I ..\..\..\..\components\ble\include\gatt -I ..\..\..\..\components\ble\profiles\ble_ota -I ..\code-IC:\Keil_v5\ARM\RV31\INC-D__UVISION_VERSION="541" -DCFG_ADV_MEM_ALLOOC_NEW -DCFG_SIMPLE_PRINTF-o .\objects\driver_pdm.o --omf_browse .\objects\driver_pdm.crf --depend .\objects\driver_pdm.d)
+I (..\..\..\..\components\driver\include\driver_pdm.h)(0x66A1C502)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (..\..\..\..\components\driver\include\driver_plf.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\compiler.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\core_cm3.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\cmsis_compiler.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\cmsis_armcc.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\ll.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_system.h)(0x66A1C502)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5CEB79DE)
+I (..\..\..\..\components\driver\include\driver_iomux.h)(0x66A1C502)
+F (..\..\..\..\components\driver\driver_adc.c)(0x66A1C502)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I ..\..\..\..\components\ble\include -I ..\..\..\..\components\driver\include -I ..\..\..\..\components\modules\os\include -I ..\..\..\..\components\modules\sys\include -I ..\..\..\..\components\modules\platform\include -I ..\..\..\..\components\modules\common\include -I ..\..\..\..\components\modules\lowpow\include -I ..\..\..\..\components\modules\button -I ..\..\..\..\components\ble\include\gap -I ..\..\..\..\components\ble\include\gatt -I ..\..\..\..\components\ble\profiles\ble_ota -I ..\code-IC:\Keil_v5\ARM\RV31\INC-D__UVISION_VERSION="541" -DCFG_ADV_MEM_ALLOOC_NEW -DCFG_SIMPLE_PRINTF-o .\objects\driver_adc.o --omf_browse .\objects\driver_adc.crf --depend .\objects\driver_adc.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5CEB79E2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5CEB79DE)
+I (..\..\..\..\components\modules\sys\include\sys_utils.h)(0x66A1C502)
+I (..\..\..\..\components\modules\common\include\co_printf.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\compiler.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_adc.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_flash.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_plf.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\core_cm3.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\cmsis_compiler.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\cmsis_armcc.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\ll.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_efuse.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_pmu.h)(0x66A1C502)
+I (..\..\..\..\components\modules\common\include\co_math.h)(0x66A1C502)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5CEB79E2)
+I (..\..\..\..\components\driver\include\driver_iomux.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_pmu_regs.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_frspim.h)(0x66A1C502)
+F (..\..\..\..\components\modules\platform\source\core_cm3_isr.c)(0x66A1C502)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I ..\..\..\..\components\ble\include -I ..\..\..\..\components\driver\include -I ..\..\..\..\components\modules\os\include -I ..\..\..\..\components\modules\sys\include -I ..\..\..\..\components\modules\platform\include -I ..\..\..\..\components\modules\common\include -I ..\..\..\..\components\modules\lowpow\include -I ..\..\..\..\components\modules\button -I ..\..\..\..\components\ble\include\gap -I ..\..\..\..\components\ble\include\gatt -I ..\..\..\..\components\ble\profiles\ble_ota -I ..\code-IC:\Keil_v5\ARM\RV31\INC-D__UVISION_VERSION="541" -DCFG_ADV_MEM_ALLOOC_NEW -DCFG_SIMPLE_PRINTF-o .\objects\core_cm3_isr.o --omf_browse .\objects\core_cm3_isr.crf --depend .\objects\core_cm3_isr.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5CEB79E2)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (..\..\..\..\components\modules\common\include\co_printf.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_wdt.h)(0x66A1C502)
+I (..\..\..\..\components\modules\common\include\co_math.h)(0x66A1C502)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5CEB79DE)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5CEB79E2)
+I (..\..\..\..\components\modules\platform\include\compiler.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_pmu.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_iomux.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_pmu_regs.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_frspim.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_plf.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\core_cm3.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\cmsis_compiler.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\cmsis_armcc.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\ll.h)(0x66A1C502)
+I (..\..\..\..\components\modules\sys\include\sys_utils.h)(0x66A1C502)
+F (..\..\..\..\components\modules\platform\source\app_boot_vectors.s)(0x66A1C502)(--cpu Cortex-M3 --li -g --apcs=interwork --pd "__MICROLIB SETA 1"-IC:\Keil_v5\ARM\RV31\INC--pd "__UVISION_VERSION SETA 541"--list .\listings\app_boot_vectors.lst --xref -o .\objects\app_boot_vectors.o --depend .\objects\app_boot_vectors.d)
+F (..\..\..\..\components\modules\patch\patch.c)(0x66A1C502)(--c99 -c --cpu Cortex-M3 -D__MICROLIB --li -g -O3 --apcs=interwork --split_sections -I ..\..\..\..\components\ble\include -I ..\..\..\..\components\driver\include -I ..\..\..\..\components\modules\os\include -I ..\..\..\..\components\modules\sys\include -I ..\..\..\..\components\modules\platform\include -I ..\..\..\..\components\modules\common\include -I ..\..\..\..\components\modules\lowpow\include -I ..\..\..\..\components\modules\button -I ..\..\..\..\components\ble\include\gap -I ..\..\..\..\components\ble\include\gatt -I ..\..\..\..\components\ble\profiles\ble_ota -I ..\code-IC:\Keil_v5\ARM\RV31\INC-D__UVISION_VERSION="541" -DCFG_ADV_MEM_ALLOOC_NEW -DCFG_SIMPLE_PRINTF-o .\objects\patch.o --omf_browse .\objects\patch.crf --depend .\objects\patch.d)
+I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5CEB79E2)
+I (..\..\..\..\components\modules\platform\include\jump_table.h)(0x66A1C502)
+I (..\..\..\..\components\modules\common\include\co_math.h)(0x66A1C502)
+I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5CEB79DE)
+I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5CEB79E2)
+I (..\..\..\..\components\modules\platform\include\compiler.h)(0x66A1C502)
+I (..\..\..\..\components\modules\lowpow\include\low_power.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_system.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_iomux.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_uart.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_plf.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\core_cm3.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\cmsis_compiler.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\cmsis_armcc.h)(0x66A1C502)
+I (..\..\..\..\components\modules\platform\include\ll.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_pmu.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_pmu_regs.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_frspim.h)(0x66A1C502)
+I (..\..\..\..\components\driver\include\driver_flash.h)(0x66A1C502)
+I (..\code\flash_usage_config.h)(0x66A1C502)
+F (..\..\..\..\components\ble\library\fr8010h_stack.lib)(0x66A1C502)()

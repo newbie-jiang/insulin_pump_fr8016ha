@@ -33,7 +33,6 @@ extern uint32_t speed_set_flag;
 void motor_task_fun(void *arg)
 {	
     gpio_set_pin_value(GPIO_PORT_D,GPIO_BIT_5,0);
-
     if(speed_set_flag==1){
       co_delay_100us(50); //5ms
     }else if(speed_set_flag==2){

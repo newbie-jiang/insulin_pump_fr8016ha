@@ -1,0 +1,41 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: ¶ÃVision V5.41.0.0
+Copyright (C) 2024 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: 1 Admin, 1, LIC=LSNXV-PW6PN-30ANC-7IPQ2-NE0BI-J0H51
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Plus  Version: 5.41.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 6 (build 750)
+Assembler:       Armasm.exe V5.06 update 6 (build 750)
+Linker/Locator:  ArmLink.exe V5.06 update 6 (build 750)
+Library Manager: ArmAr.exe V5.06 update 6 (build 750)
+Hex Converter:   FromElf.exe V5.06 update 6 (build 750)
+CPU DLL:         SARMCM3.DLL V5.41.0.0
+Dialog DLL:      DCM.DLL V1.17.5.0
+Target DLL:      Segger\JL2CM3.dll V2.99.45.0
+Dialog DLL:      TCM.DLL V1.56.4.0
+ 
+<h2>Project:</h2>
+C:\Users\Administrator\Desktop\“»µ∫Àÿ±√\FR801xH-SDK-master\examples\none_evm\ble_drivers_demo\proj\ble_drivers_demo.uvproj
+Project File Date:  10/28/2024
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 6 (build 750)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
+Build target 'drivers_demo'
+linking...
+.\ble_5_0_host_app.sct(36): warning: L6314W: No section matches pattern *(stack_space).
+.\ble_5_0_host_app.sct(56): warning: L6314W: No section matches pattern *(heap_user).
+Program Size: Code=92360 RO-data=4288 RW-data=1028 ZI-data=3236  
+Finished: 0 information, 2 warning and 0 error messages.
+After Build - User command #1: fromelf.exe  --text  -c -o host_app.txt  Objects/ble_5_stack.axf
+After Build - User command #2: fromelf.exe  --bin -o host_app.bin  Objects/ble_5_stack.axf
+".\Objects\ble_5_stack.axf" - 0 Error(s), 2 Warning(s).
+Build Time Elapsed:  00:00:00
+</pre>
+</body>
+</html>
