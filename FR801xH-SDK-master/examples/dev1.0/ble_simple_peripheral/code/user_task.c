@@ -27,6 +27,9 @@
 #include "sys_utils.h"
 #include "driver_pmu.h"
 #include "driver_pwm.h"
+#include "driver_adc.h "
+
+
 
 extern uint32_t speed_set_flag;
 
@@ -121,6 +124,52 @@ void led_task_fun(void *arg)
      co_delay_100us(5000);//500ms 
      pmu_set_led2_value(1); 	//关闭led	
      co_delay_100us(5000);//500ms 	
+}
+
+
+//PD6 PD7 ADC   10bit adc
+void adc_task_fun(void *arg)
+{
+	struct adc_cfg_t cfg_pd6;
+    uint16_t  result_pd6;
+	float  vol_pd6;
+	
+    memset((void*)&cfg_pd6, 0, sizeof(cfg_pd6));
+    cfg_pd6.src = ADC_TRANS_SOURCE_PAD;
+    cfg_pd6.ref_sel = ADC_REFERENCE_AVDD;
+    cfg_pd6.channels = 0x04;  
+    cfg_pd6.route.pad_to_sample = 1;
+    cfg_pd6.clk_sel = ADC_SAMPLE_CLK_24M_DIV13;
+    cfg_pd6.clk_div = 0x3f;
+    adc_init(&cfg_pd6);
+    adc_enable(NULL, NULL, 0);
+    adc_get_result(ADC_TRANS_SOURCE_PAD, 0x04, &result_pd6);
+    adc_disable();
+    co_printf("pd6 adc val: %d\r\n",result_pd6);	
+	co_printf("pd6 adc vol: %d mv\r\n",(result_pd6 *33*100/1024)); // 计算中有小数会造成数据错误
+	
+//	vol_pd6 = (float)result_pd6 * 3.3/1023;
+//	co_printf("pd6 vol val: %f\r\n",vol_pd6);	
+	
+			
+//	struct adc_cfg_t cfg_pd7;
+//	uint16_t result_pd7;
+//	float  vol_pd7;
+//	
+//    memset((void*)&cfg_pd7, 0, sizeof(cfg_pd7));
+//    cfg_pd7.src = ADC_TRANS_SOURCE_PAD;
+//    cfg_pd7.ref_sel = ADC_REFERENCE_AVDD;
+//    cfg_pd7.channels = 0x04;  //
+//    cfg_pd7.route.pad_to_sample = 1;
+//    cfg_pd7.clk_sel = ADC_SAMPLE_CLK_24M_DIV13;
+//    cfg_pd7.clk_div = 0x3f;
+//    adc_init(&cfg_pd7);
+//    adc_enable(NULL, NULL, 0);
+//    adc_get_result(ADC_TRANS_SOURCE_PAD, 0x04, (uint16_t *)&result_pd7);
+//    adc_disable();
+//    co_printf("pd7 adc val: %d\r\n",result_pd7);	
+////	vol_pd7 = (float)result_pd7 * 3.3/1023;
+////	co_printf("pd7 vol val: %f\r\n",vol_pd7);	
 }
 
 

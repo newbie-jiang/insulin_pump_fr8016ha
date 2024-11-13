@@ -34,3 +34,4 @@
 .\objects\user_task.o: ..\..\..\..\components\driver\include\driver_pmu_regs.h
 .\objects\user_task.o: ..\..\..\..\components\driver\include\driver_frspim.h
 .\objects\user_task.o: ..\..\..\..\components\driver\include\driver_pwm.h
+.\objects\user_task.o: ..\..\..\..\components\driver\include\driver_adc.h 

@@ -84,6 +84,7 @@ os_timer_t beep_task;
 os_timer_t electric_quantity_task;
 os_timer_t key_scan_task;
 os_timer_t led_task;
+os_timer_t adc_task;
 
 uint8_t App_Mode = PICTURE_UPDATE;
 /*
@@ -373,11 +374,20 @@ void pwr_init(void)
   gpio_set_pin_value(GPIO_PORT_D,GPIO_BIT_4,1);
 
 }
+
+
+void external_adc_init(void)
+{
+	 system_set_port_mux(GPIO_PORT_D, GPIO_BIT_6, PORTD6_FUNC_ADC2);
+	 system_set_port_mux(GPIO_PORT_D, GPIO_BIT_7, PORTD7_FUNC_ADC3);
+}
  
 
 void bsp_init(void)
 {
    pwr_init(); 
+	
+   external_adc_init();
 	
    motor_io_init();
 	
@@ -423,8 +433,11 @@ void simple_peripheral_init(void)
 	
 	/* led翻转会造成蓝牙连接不上 */
 //	os_timer_init(&led_task,led_task_fun,NULL);
-//	os_timer_start(&led_task,100,1); /* 100ms detection */	
+//	os_timer_start(&led_task,100,1); /* 100ms detection */
 
+
+    os_timer_init(&adc_task,adc_task_fun,NULL);
+	os_timer_start(&adc_task,1000,1); /* 100ms detection */
 }
 
 
