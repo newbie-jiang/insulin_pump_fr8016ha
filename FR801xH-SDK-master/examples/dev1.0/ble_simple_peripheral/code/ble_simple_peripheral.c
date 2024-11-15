@@ -359,7 +359,7 @@ float get_vbat_adc_val(void)
 	
     ref_vol = adc_get_ref_voltage(ADC_REFERENCE_INTERNAL); //带分压1/4    1222左右
 	
-	vbat_vol = (float)(result * 3.3 * ref_vol) / 1024.0;
+	vbat_vol = (float)(result * 4 * ref_vol) / 1024.0;
 		
 	return vbat_vol;
 }

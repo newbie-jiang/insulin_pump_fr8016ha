@@ -1,14 +1,4 @@
-/**
- * Copyright (c) 2019, Freqchip
- * 
- * All rights reserved.
- * 
- * 
- */
 
-/*
- * INCLUDES
- */
 #include <stdint.h>
 
 #include "os_task.h"
@@ -87,6 +77,33 @@ void beep_task_fun(void *arg)
 }
 
 
+
+/*************************** 低电量检测报警 ********************************/
+uint8_t is_lopowre;
+
+void lopowre_callback(void)
+{
+	static int buzzer_pwm_started = 0; // 标记 buzzer pwm 是否已经启动
+	
+	 if(is_lopowre==1) //低电量报警
+	 {
+	  	  if (!buzzer_pwm_started)
+        {
+            pwm_start(PWM_CHANNEL_4); // 开启 buzzer pwm
+            buzzer_pwm_started = 1;   // 标记 buzzer pwm 已经启动
+        }		
+	
+	 }else{
+		  if (buzzer_pwm_started)
+        {
+            pwm_stop(PWM_CHANNEL_4); // 关闭 buzzer pwm
+            buzzer_pwm_started = 0;  // 重置标记
+        }		
+     }
+}
+
+
+
 extern float get_vbat_adc_val(void);
 
 /* electric quantity detection */ 
@@ -94,10 +111,23 @@ void electric_quantity_task_fun(void *arg)
 {
 	static  int  vol_val;
 	
-    vol_val = get_vbat_adc_val();	
-//    co_printf("vol_val = %dmV \r\n",vol_val);	
+    vol_val = get_vbat_adc_val();
+		
+	if(vol_val<2500){ 
+		
+		is_lopowre =1;	
+	    lopowre_callback();	
+		
+	}else if(vol_val>2600){
+		
+		is_lopowre = 0;
+	    lopowre_callback();		
+	}	
+  co_printf("vol_val = %dmV \r\n",vol_val);		
 }
 
+
+/*****************************************************************************/
 
 
 
@@ -197,12 +227,11 @@ int median_filter(int new_adc_value) {
             }
         }
     }
-
     // 计算并返回中值（中间位置的数值）
     return sorted_history[WINDOW_SIZE / 2];  // 中位数是排序后数组的中间元素
 }
 
-#define HISTORY_SIZE 5
+
 
 //// 用于存储最近5个ADC值的数组
 //static int adc__history[HISTORY_SIZE] = {0};
@@ -233,6 +262,33 @@ int median_filter(int new_adc_value) {
 //}
 
 
+/********************************** 电位器检测 ******************************************/
+
+// 电位器阻塞报警
+void potentiometer_block(uint8_t block_state)
+{
+	static int buzzer_pwm_started = 0; // 标记 buzzer pwm 是否已经启动
+
+	if(block_state) // block -> buzzer on
+	{
+		  if (!buzzer_pwm_started)
+        {
+            pwm_start(PWM_CHANNEL_4); // 开启 buzzer pwm
+            buzzer_pwm_started = 1;   // 标记 buzzer pwm 已经启动
+        }		
+	}else{    // buzzer off
+		
+		 if (buzzer_pwm_started)
+        {
+            pwm_stop(PWM_CHANNEL_4); // 关闭 buzzer pwm
+            buzzer_pwm_started = 0;  // 重置标记
+        }	
+	}
+}
+
+
+#define HISTORY_SIZE 6
+
 // 用于存储最近5个ADC值的数组
 static int adc__history[HISTORY_SIZE] = {0};
 
@@ -241,6 +297,8 @@ static int history_index = 0;
 
 // 用于记录有效数据的数量
 static int data_count = 0;
+
+uint8_t is_potentiometer;
 
 // 每秒钟调用的采集回调函数
 void adc_manage_callback(int adc_val)
@@ -258,11 +316,17 @@ void adc_manage_callback(int adc_val)
 
         // 如果数据5 大于或等于 数据1，打印"motor block"
         if (data5 >= data1) {
+			is_potentiometer = 1;
             printf("motor block\r\n");
-        }
+			potentiometer_block(is_potentiometer); //电位器阻塞
+        }else{
+			
+		    is_potentiometer = 0;	
+            potentiometer_block(is_potentiometer); //电位器阻塞			
+		}
     } else {
-        // 如果数据量还没达到5个，则增加数据量计数
-        data_count++;
+           // 如果数据量还没达到5个，则增加数据量计数
+           data_count++;
     }
 }
 
@@ -288,17 +352,14 @@ void adc_task_fun(void *arg)
     adc_get_result(ADC_TRANS_SOURCE_PAD, 0x04, &result_pd6);
     adc_disable();
 //  co_printf("pd6 adc val: %d\r\n",result_pd6);	
-	int smoothing_result = median_filter(result_pd6); //中值滤波
-	
+	int smoothing_result = median_filter(result_pd6); //中值滤波	
 	//打印时间函数
 	
 	co_printf("adc smoothing val: %d\r\n",smoothing_result);	
-	
-	
+		
 //	co_printf("pd6 adc vol: %d mv\r\n",(result_pd6 *33*100/1024)); // 电压 计算中有小数会造成数据错误
 	adc_manage_callback(smoothing_result);
-	
-			
+				
 //	 struct adc_cfg_t cfg_pd7;
 //	 uint16_t result_pd7;
 //	 float  vol_pd7;
@@ -319,5 +380,5 @@ void adc_task_fun(void *arg)
 ////	co_printf("pd7 vol val: %f\r\n",vol_pd7);	
 
 }
-
+/******************************************************************************************/
 

@@ -28,20 +28,19 @@ Project File Date:  11/12/2024
 *** Using Compiler 'V5.06 update 6 (build 750)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'ble_simple_peripheral'
 compiling user_task.c...
-..\code\user_task.c(93): warning:  #550-D: variable "vol_val"  was set but never used
-  	static  int  vol_val;
-..\code\user_task.c(275): warning:  #177-D: variable "vol_pd6"  was declared but never referenced
+..\code\user_task.c(341): warning:  #177-D: variable "vol_pd6"  was declared but never referenced
   	float  vol_pd6;
-..\code\user_task.c(147): warning:  #177-D: variable "index"  was declared but never referenced
+..\code\user_task.c(179): warning:  #177-D: variable "index"  was declared but never referenced
   static int index = 0;  // 当前数据插入位置
-..\code\user_task.c(148): warning:  #177-D: variable "sum"  was declared but never referenced
+..\code\user_task.c(180): warning:  #177-D: variable "sum"  was declared but never referenced
   static int sum = 0;    // 存储窗口数据的累积和
-..\code\user_task.c: 4 warnings, 0 errors
+..\code\user_task.c: 3 warnings, 0 errors
+compiling ble_simple_peripheral.c...
 linking...
-Program Size: Code=99812 RO-data=4164 RW-data=1108 ZI-data=5484  
+Program Size: Code=99708 RO-data=4164 RW-data=1108 ZI-data=5480  
 After Build - User command #1: fromelf.exe  --text  -c -o Output/ble_simple_peripheral.txt  Objects/ble_simple_peripheral.axf
 After Build - User command #2: fromelf.exe  --bin -o Output/ble_simple_peripheral.bin  Objects/ble_simple_peripheral.axf
-".\Objects\ble_simple_peripheral.axf" - 0 Error(s), 4 Warning(s).
+".\Objects\ble_simple_peripheral.axf" - 0 Error(s), 3 Warning(s).
 Build Time Elapsed:  00:00:01
 </pre>
 </body>
