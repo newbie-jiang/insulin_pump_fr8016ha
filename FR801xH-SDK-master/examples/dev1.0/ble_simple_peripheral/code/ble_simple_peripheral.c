@@ -271,7 +271,7 @@ void motor_stop_fun(void)
 void ble_init(void)
 {
 	    // set local device name
-	uint8_t local_name[] = "Simple Peripheral";
+	uint8_t local_name[] = "_Simple Peripheral";
 	gap_set_dev_name(local_name, sizeof(local_name));
 
 	// Initialize security related settings.
@@ -436,8 +436,8 @@ void simple_peripheral_init(void)
 //	os_timer_start(&led_task,100,1); /* 100ms detection */
 
 
-    os_timer_init(&adc_task,adc_task_fun,NULL);
-	os_timer_start(&adc_task,1000,1); /* 100ms detection */
+//    os_timer_init(&adc_task,adc_task_fun,NULL);
+//	os_timer_start(&adc_task,500,1); /* 100ms detection */
 }
 
 

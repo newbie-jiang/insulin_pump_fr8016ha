@@ -1,0 +1,13 @@
+.\objects\ble_simple_central.o: ..\code\ble_simple_central.c
+.\objects\ble_simple_central.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\ble_simple_central.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\ble_simple_central.o: ..\..\..\..\components\ble\include\gap\gap_api.h
+.\objects\ble_simple_central.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\ble_simple_central.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\objects\ble_simple_central.o: ..\..\..\..\components\ble\include\gatt\gatt_api.h
+.\objects\ble_simple_central.o: ..\..\..\..\components\modules\os\include\os_msg_q.h
+.\objects\ble_simple_central.o: ..\..\..\..\components\ble\include\gatt\gatt_sig_uuid.h
+.\objects\ble_simple_central.o: ..\..\..\..\components\modules\sys\include\sys_utils.h
+.\objects\ble_simple_central.o: ..\..\..\..\components\modules\common\include\co_printf.h
+.\objects\ble_simple_central.o: ..\..\..\..\components\modules\platform\include\compiler.h
+.\objects\ble_simple_central.o: ..\code\flash_usage_config.h
