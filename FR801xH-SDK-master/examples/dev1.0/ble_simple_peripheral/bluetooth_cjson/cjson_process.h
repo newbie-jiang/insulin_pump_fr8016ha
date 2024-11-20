@@ -12,7 +12,7 @@ typedef struct pack_num{
   typedef struct basal_rate_information{
 	
 	char  basal_rate_num; //基础率段数
-	float basal_rate_speed;//基础率速度 扩大十倍
+	float basal_rate_speed;//基础率速度
 	
 	char basal_rate_start_tim_hh;  //起始时间hh
 	char basal_rate_start_tim_min; //起始时间min
@@ -25,6 +25,11 @@ typedef struct pack_num{
 
 //同步时间
  typedef struct sync_tim{
+	 
+	 uint16_t sync_tim_year;
+	 uint16_t sync_tim_month;
+	 uint16_t sync_tim_day;
+	 
 	 uint16_t sync_tim_hh;
 	 uint16_t sync_tim_min;
 	 uint16_t sync_tim_s;

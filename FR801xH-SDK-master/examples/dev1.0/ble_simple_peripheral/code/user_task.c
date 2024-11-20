@@ -515,23 +515,31 @@ void send_message_run(void)
 */
 
 
-
-
-
-
-
-
-
-
-
 /*******************************************************************************************/
 void rtc_tim_task_fun (void *arg)
-{
-	  uint16_t year, month, day;
-	    
+{	    
 	  clock_hdl();
 	
 	  co_printf("%04d-%02d-%02d ", clock_env.year, clock_env.month, clock_env.day);
 	  co_printf("%02d:%02d:%02d \r\n", clock_env.hour, clock_env.min, clock_env.sec);
+}
+
+/*
+   fun   :   获取睡眠时间
+   para1 ：  basal_rate:基础率
+   return：  睡眠时间 
+
+   0.1087计算结果如下：
+
+   停止1s，运动20ms，运动一圈用时  2min
+
+   运动一圈的步数为120/1.02 = 117步
+
+   12.72（一圈的量） / 117 = 0.1087U（一步的量）
+
+*/
+uint32_t get_sleep_tim_s(float basal_rate)
+{
+	return (3600/(basal_rate/0.1087));
 }
 

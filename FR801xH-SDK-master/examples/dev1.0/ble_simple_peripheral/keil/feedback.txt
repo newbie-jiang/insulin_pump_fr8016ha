@@ -1,4 +1,4 @@
-;#<FEEDBACK># ARM Linker, 5060750: Last Updated: Wed Nov 20 14:19:03 2024
+;#<FEEDBACK># ARM Linker, 5060750: Last Updated: Wed Nov 20 15:36:31 2024
 ;VERSION 0.2
 ;FILE adpcm_ima.o
 adpcm_decode_block <= USED 0
@@ -1156,5 +1156,6 @@ gatt_load_peer_svc_from_flash <= USED 0
 __asm___11_user_task_c_39d1022b____REV16 <= USED 0
 __asm___11_user_task_c_39d1022b____REVSH <= USED 0
 __asm___11_user_task_c_39d1022b____RRX <= USED 0
+get_sleep_tim_s <= USED 0
 led_task_fun <= USED 0
 potentiometer_block <= USED 0

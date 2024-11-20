@@ -168,12 +168,18 @@ void show_clock_func()
 
 
 void update_tim(sync_tim * p_sync_tim)
-{
-	 clock_env.hour = p_sync_tim->sync_tim_hh;
+{	
+	 clock_env.year  =  p_sync_tim->sync_tim_year;
 	
-	 clock_env.min  = p_sync_tim->sync_tim_min;
+	 clock_env.month =  p_sync_tim->sync_tim_month;
+	
+	 clock_env.day   =  p_sync_tim->sync_tim_day;
+		
+	 clock_env.hour  =  p_sync_tim->sync_tim_hh;
+	
+	 clock_env.min   =  p_sync_tim->sync_tim_min;
 
-     clock_env.sec  = p_sync_tim->sync_tim_s;
+     clock_env.sec   =  p_sync_tim->sync_tim_s;
 }
 
 
@@ -211,6 +217,8 @@ void demo_rtc_start_timer(void)
     os_timer_init(&demo_rtc_timer,demo_rtc_timer_func,NULL);
     os_timer_start(&demo_rtc_timer,500,1);
 }
+
+
 
 
 

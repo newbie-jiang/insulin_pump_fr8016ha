@@ -112,13 +112,72 @@ void basal_rate_cjson_process(uint8_t *data, uint32_t len, uint8_t dbg_on) {
 /*
 {
   "sync_tim": {      
-    "now_tim": "12:20:30"
+    "now_tim": "2024-11-20 12:20:30"
   }
 }   
 */
 
+//void sync_tim_cjson_process(uint8_t *data, uint32_t len, uint8_t dbg_on) {
+//	
+//    if (len == 0 || data == NULL) return;
+
+//    // 将接收的数据转为字符串
+//    char buffer[150] = {0};
+//    for (uint32_t i = 0; i < len && i < sizeof(buffer) - 1; i++) {
+//        buffer[i] = data[i];
+//    }
+//    buffer[len] = '\0'; // 确保字符串以 null 结尾
+
+//    // 打印接收到的 JSON 数据
+//    co_printf("Received JSON: %s\n", buffer);
+
+//    // 解析 JSON 数据
+//    cJSON *root = cJSON_Parse(buffer);
+//    if (root == NULL) {
+//        co_printf("JSON parsing failed!\n");
+//        return;
+//    }
+
+//    // 创建 sync_tim 结构体实例
+//    
+
+//    // 提取 "sync_tim" 对象
+//    cJSON *sync_tim_obj = cJSON_GetObjectItemCaseSensitive(root, "sync_tim");
+//    if (sync_tim_obj == NULL) {
+//        co_printf("sync_tim object not found!\n");
+//        cJSON_Delete(root);
+//        return;
+//    }else{
+//	
+//	 s_pack_num.cjson_instruct_num = 2;
+//		
+//	}
+
+//    // 提取 "now_tim"
+//    cJSON *now_tim = cJSON_GetObjectItemCaseSensitive(sync_tim_obj, "now_tim");
+//    if (cJSON_IsString(now_tim) && (now_tim->valuestring != NULL)) {
+//        // 分解时间信息
+//        sscanf(now_tim->valuestring, "%2hhd:%2hhd:%2hhd", 
+//               &current_time.sync_tim_hh, 
+//               &current_time.sync_tim_min, 
+//               &current_time.sync_tim_s);
+//    } else {
+//        co_printf("now_tim not found or invalid format!\n");
+//        cJSON_Delete(root);
+//        return;
+//    }
+
+//    // 打印解析结果
+//    co_printf("Parsed sync_tim:\n");
+//    co_printf("  Hours: %02d\n", current_time.sync_tim_hh);
+//    co_printf("  Minutes: %02d\n", current_time.sync_tim_min);
+//    co_printf("  Seconds: %02d\n", current_time.sync_tim_s);
+
+//    // 清理 JSON 内存
+//    cJSON_Delete(root);
+//}
+
 void sync_tim_cjson_process(uint8_t *data, uint32_t len, uint8_t dbg_on) {
-	
     if (len == 0 || data == NULL) return;
 
     // 将接收的数据转为字符串
@@ -129,7 +188,9 @@ void sync_tim_cjson_process(uint8_t *data, uint32_t len, uint8_t dbg_on) {
     buffer[len] = '\0'; // 确保字符串以 null 结尾
 
     // 打印接收到的 JSON 数据
-    co_printf("Received JSON: %s\n", buffer);
+    if (dbg_on) {
+        co_printf("Received JSON: %s\n", buffer);
+    }
 
     // 解析 JSON 数据
     cJSON *root = cJSON_Parse(buffer);
@@ -137,9 +198,6 @@ void sync_tim_cjson_process(uint8_t *data, uint32_t len, uint8_t dbg_on) {
         co_printf("JSON parsing failed!\n");
         return;
     }
-
-    // 创建 sync_tim 结构体实例
-    
 
     // 提取 "sync_tim" 对象
     cJSON *sync_tim_obj = cJSON_GetObjectItemCaseSensitive(root, "sync_tim");
@@ -150,32 +208,53 @@ void sync_tim_cjson_process(uint8_t *data, uint32_t len, uint8_t dbg_on) {
     }else{
 	
 	 s_pack_num.cjson_instruct_num = 2;
-		
 	}
 
     // 提取 "now_tim"
     cJSON *now_tim = cJSON_GetObjectItemCaseSensitive(sync_tim_obj, "now_tim");
     if (cJSON_IsString(now_tim) && (now_tim->valuestring != NULL)) {
         // 分解时间信息
-        sscanf(now_tim->valuestring, "%2hhd:%2hhd:%2hhd", 
-               &current_time.sync_tim_hh, 
-               &current_time.sync_tim_min, 
-               &current_time.sync_tim_s);
+        int result = sscanf(now_tim->valuestring, "%4hu-%2hu-%2hu %2hu:%2hu:%2hu", 
+                            &current_time.sync_tim_year, 
+                            &current_time.sync_tim_month, 
+                            &current_time.sync_tim_day, 
+                            &current_time.sync_tim_hh, 
+                            &current_time.sync_tim_min, 
+                            &current_time.sync_tim_s);
+
+        if (result == 6) {
+            // 打印解析结果
+            if (dbg_on) {
+                co_printf("Parsed sync_tim:\n");
+                co_printf("  Year: %04d\n", current_time.sync_tim_year);
+                co_printf("  Month: %02d\n", current_time.sync_tim_month);
+                co_printf("  Day: %02d\n", current_time.sync_tim_day);
+                co_printf("  Hours: %02d\n", current_time.sync_tim_hh);
+                co_printf("  Minutes: %02d\n", current_time.sync_tim_min);
+                co_printf("  Seconds: %02d\n", current_time.sync_tim_s);
+            }
+
+            // 可以在这里添加将 current_time 同步到系统时间的逻辑
+            // update_system_time(current_time); // 示例函数
+        } else {
+            co_printf("Invalid time format in now_tim!\n");
+        }
     } else {
         co_printf("now_tim not found or invalid format!\n");
-        cJSON_Delete(root);
-        return;
     }
-
-    // 打印解析结果
-    co_printf("Parsed sync_tim:\n");
-    co_printf("  Hours: %02d\n", current_time.sync_tim_hh);
-    co_printf("  Minutes: %02d\n", current_time.sync_tim_min);
-    co_printf("  Seconds: %02d\n", current_time.sync_tim_s);
 
     // 清理 JSON 内存
     cJSON_Delete(root);
 }
+
+
+
+
+
+
+
+
+
 
 
 //大剂量设定
@@ -328,7 +407,7 @@ void ack_basal_rate_cjson_process(basal_rate_information *p_basal_rate_info, cha
 }
 
 
-
+//时间同步ack
 void ack_sync_tim_cjson_process(sync_tim *p_sync_tim, char *output_buffer, uint32_t buffer_size) {
     if (p_sync_tim == NULL || output_buffer == NULL || buffer_size == 0) {
         co_printf("Invalid input parameter\n");
@@ -350,19 +429,24 @@ void ack_sync_tim_cjson_process(sync_tim *p_sync_tim, char *output_buffer, uint3
         return;
     }
 
-    // 将结构体数据转换为字符串格式 " hh:mm:ss "
-    char now_tim[10] = {0};
-    snprintf(now_tim, sizeof(now_tim), "%02d:%02d:%02d",
+    // 将结构体数据转换为字符串格式 "YYYY-MM-DD HH:MM:SS"
+    char now_tim[30] = {0};
+    snprintf(now_tim, sizeof(now_tim), "%04d-%02d-%02d %02d:%02d:%02d",
+             p_sync_tim->sync_tim_year,
+             p_sync_tim->sync_tim_month,
+             p_sync_tim->sync_tim_day,
              p_sync_tim->sync_tim_hh,
              p_sync_tim->sync_tim_min,
              p_sync_tim->sync_tim_s);
 
     // 添加字段到 JSON 对象
     cJSON_AddStringToObject(sync_tim_obj, "now_tim", now_tim);
+
+    // 将 "sync_tim" 对象添加到根对象中
     cJSON_AddItemToObject(root, "sync_tim", sync_tim_obj);
 
     // 转换为 JSON 字符串
-    char *json_str = cJSON_PrintUnformatted(root);
+    char *json_str = cJSON_PrintUnformatted(root);  // 使用无格式化版本以节省空间
     if (json_str == NULL) {
         co_printf("Failed to create JSON string\n");
         cJSON_Delete(root);
@@ -382,8 +466,9 @@ void ack_sync_tim_cjson_process(sync_tim *p_sync_tim, char *output_buffer, uint3
     cJSON_Delete(root);
 }
 
-/* 大剂量ack */
 
+
+/* 大剂量ack */
 void ack_large_dose_cjson_process(large_dose_information *p_large_dose_info, char *output_buffer, uint32_t buffer_size) {
     if (p_large_dose_info == NULL || output_buffer == NULL || buffer_size == 0) {
         co_printf("Invalid input parameter\n");
@@ -433,6 +518,7 @@ void ack_large_dose_cjson_process(large_dose_information *p_large_dose_info, cha
     } else {
         co_printf("Buffer size too small for JSON data\n");
     }
+	
 
     // 清理 JSON 字符串和对象内存
     cJSON_free(json_data);
