@@ -32,7 +32,7 @@
 #include "driver_adc.h"
 
 #include "cJSON.h"
-
+#include "driver_rtc.h"
 
 /*
  * MACROS
@@ -87,6 +87,7 @@ os_timer_t electric_quantity_task;
 os_timer_t key_scan_task;
 os_timer_t led_task;
 os_timer_t adc_task;
+os_timer_t rtc_tim_task;
 
 uint8_t App_Mode = PICTURE_UPDATE;
 /*
@@ -383,6 +384,22 @@ void external_adc_init(void)
 	 system_set_port_mux(GPIO_PORT_D, GPIO_BIT_6, PORTD6_FUNC_ADC2);
 	 system_set_port_mux(GPIO_PORT_D, GPIO_BIT_7, PORTD7_FUNC_ADC3);
 }
+
+/*
+  rtc定时器 配置
+
+  RTCA 用作 1s定时，维持时间
+  RTCB 用作 唤醒时间
+
+*/
+void rtc_timer_config(void)
+{
+	co_printf("rtc demo\r\n");
+    rtc_init();
+    rtc_alarm(RTC_A,1000000);    // 1s 定时器 时间定时器
+	
+    rtc_alarm(RTC_B,5000000);    // 默认值5s
+}
  
 
 void bsp_init(void)
@@ -397,7 +414,9 @@ void bsp_init(void)
 	
    beep_init();
 	
-   led_init();		
+   led_init();	
+
+   rtc_timer_config();	
 }
 
 
@@ -458,6 +477,12 @@ void simple_peripheral_init(void)
 
 //    os_timer_init(&adc_task,adc_task_fun,NULL);
 //	os_timer_start(&adc_task,500,1); /* 100ms detection */
+
+   //rtc
+     os_timer_init(&rtc_tim_task,rtc_tim_task_fun,NULL);
+	 os_timer_start(&rtc_tim_task,500,1); /* 100ms detection */
+	 
+	
 }
 
 

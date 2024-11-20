@@ -23,3 +23,5 @@
 .\objects\decoder.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 .\objects\decoder.o: ..\..\..\..\components\modules\adpcm_ima\adpcm_ima.h
 .\objects\decoder.o: ..\code\user_task.h
+.\objects\decoder.o: ..\code\time_rtc.h
+.\objects\decoder.o: ..\bluetooth_cjson\cjson_process.h

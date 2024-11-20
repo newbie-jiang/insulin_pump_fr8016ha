@@ -1,4 +1,4 @@
-;#<FEEDBACK># ARM Linker, 5060750: Last Updated: Wed Nov 20 11:10:58 2024
+;#<FEEDBACK># ARM Linker, 5060750: Last Updated: Wed Nov 20 14:19:03 2024
 ;VERSION 0.2
 ;FILE adpcm_ima.o
 adpcm_decode_block <= USED 0
@@ -287,10 +287,7 @@ pwm_update <= USED 0
 __asm___12_driver_rtc_c_rtc_init____REV16 <= USED 0
 __asm___12_driver_rtc_c_rtc_init____REVSH <= USED 0
 __asm___12_driver_rtc_c_rtc_init____RRX <= USED 0
-rtc_alarm <= USED 0
 rtc_disalarm <= USED 0
-rtc_get_value <= USED 0
-rtc_init <= USED 0
 ;FILE driver_ssp.o
 __asm___12_driver_ssp_c_1de10e88____REV16 <= USED 0
 __asm___12_driver_ssp_c_1de10e88____REVSH <= USED 0
@@ -1139,6 +1136,15 @@ val_to_str <= USED 0
 ;FILE test.o
 cjson_test <= USED 0
 parse_gallery_json <= USED 0
+;FILE time_rtc.o
+day_of_week <= USED 0
+days_of_year <= USED 0
+demo_rtc_start_timer <= USED 0
+demo_rtc_timer_func <= USED 0
+get_current_date <= USED 0
+get_days <= USED 0
+get_sec_from_2010_1_1 <= USED 0
+show_clock_func <= USED 0
 ;FILE user_bond_manage.o
 ble_bond_addr_check_result <= USED 0
 ble_bond_clr_info <= USED 0
@@ -1150,6 +1156,5 @@ gatt_load_peer_svc_from_flash <= USED 0
 __asm___11_user_task_c_39d1022b____REV16 <= USED 0
 __asm___11_user_task_c_39d1022b____REVSH <= USED 0
 __asm___11_user_task_c_39d1022b____RRX <= USED 0
-information_process <= USED 0
 led_task_fun <= USED 0
 potentiometer_block <= USED 0

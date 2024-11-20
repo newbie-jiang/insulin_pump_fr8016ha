@@ -20,7 +20,7 @@
 #include "driver_adc.h "
 
 #include "cJSON.h"
-
+#include "driver_rtc.h"
 
 //#define demo  
 
@@ -514,17 +514,24 @@ void send_message_run(void)
   }
 */
 
+
+
+
+
+
+
+
+
+
+
 /*******************************************************************************************/
-
-void information_process(void)
+void rtc_tim_task_fun (void *arg)
 {
+	  uint16_t year, month, day;
+	    
+	  clock_hdl();
 	
-   	
-	
-
-
-
-
-
+	  co_printf("%04d-%02d-%02d ", clock_env.year, clock_env.month, clock_env.day);
+	  co_printf("%02d:%02d:%02d \r\n", clock_env.hour, clock_env.min, clock_env.sec);
 }
 

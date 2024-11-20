@@ -14,6 +14,7 @@
 #define _USER_TASK_H
 
 #include "stdint.h"
+#include "time_rtc.h"
 
 enum user_event_t {
     USER_EVT_AT_COMMAND,
@@ -38,6 +39,7 @@ void electric_quantity_task_fun(void *arg);
 void key_scan_task_fun(void *arg);
 void led_task_fun(void *arg);
 void adc_task_fun(void *arg);
+void rtc_tim_task_fun (void *arg);
 
 
 enum infusion_state{
@@ -59,6 +61,7 @@ void send_message(enum infusion_state e_infusion_status);
 
 void send_message_stop(void);
 void send_message_run(void);
+
 
 #endif  // _USER_TASK_H
 

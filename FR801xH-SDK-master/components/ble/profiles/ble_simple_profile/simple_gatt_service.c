@@ -450,6 +450,7 @@ static uint16_t sp_gatt_msg_handler(gatt_msg_t *p_msg)
 						basal_rate_cjson_process(p_msg->param.msg.p_msg_data,p_msg->param.msg.msg_len,1);
 						//时间同步
 						sync_tim_cjson_process(p_msg->param.msg.p_msg_data,p_msg->param.msg.msg_len,1);
+						update_tim(&current_time);
 						//大剂量
 						large_dose_cjson_process(p_msg->param.msg.p_msg_data,p_msg->param.msg.msg_len,1);
 						

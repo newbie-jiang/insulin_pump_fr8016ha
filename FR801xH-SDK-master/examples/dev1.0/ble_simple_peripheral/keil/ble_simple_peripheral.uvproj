@@ -379,7 +379,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>..\..\..\..\components\ble\include;..\..\..\..\components\driver\include;..\..\..\..\components\modules\os\include;..\..\..\..\components\modules\sys\include;..\..\..\..\components\modules\platform\include;..\..\..\..\components\modules\common\include;..\..\..\..\components\modules\lowpow\include;..\..\..\..\components\modules\button;..\..\..\..\components\ble\include\gap;..\..\..\..\components\ble\include\gatt;..\..\..\..\components\ble\profiles\ble_simple_profile;..\code;..\..\..\..\components\modules\peripherals\capb18_air_pressure;..\..\..\..\components\modules\peripherals\oled;..\..\..\..\components\modules\peripherals\sht3x_temp_humi;..\..\..\..\components\ble\profiles\ble_audio_profile;..\..\..\..\components\modules\peripherals\audio;..\..\..\..\components\modules\decoder;..\..\..\..\components\modules\adpcm_ms;..\..\..\..\components\modules\peripherals\gyro;..\..\..\..\components\modules\ringbuffer;..\..\..\..\components\modules\adpcm_ima;..\cjson;..\bluetooth_cjson</IncludePath>
+              <IncludePath>..\..\..\..\components\ble\include;..\..\..\..\components\driver\include;..\..\..\..\components\modules\os\include;..\..\..\..\components\modules\sys\include;..\..\..\..\components\modules\platform\include;..\..\..\..\components\modules\common\include;..\..\..\..\components\modules\lowpow\include;..\..\..\..\components\modules\button;..\..\..\..\components\ble\include\gap;..\..\..\..\components\ble\include\gatt;..\..\..\..\components\ble\profiles\ble_simple_profile;..\code;..\..\..\..\components\modules\peripherals\capb18_air_pressure;..\..\..\..\components\modules\peripherals\oled;..\..\..\..\components\modules\peripherals\sht3x_temp_humi;..\..\..\..\components\ble\profiles\ble_audio_profile;..\..\..\..\components\modules\peripherals\audio;..\..\..\..\components\modules\decoder;..\..\..\..\components\modules\adpcm_ms;..\..\..\..\components\modules\peripherals\gyro;..\..\..\..\components\modules\ringbuffer;..\..\..\..\components\modules\adpcm_ima;..\cjson;..\bluetooth_cjson;..\code</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -447,6 +447,11 @@
               <FileName>button.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\..\..\components\modules\button\button.c</FilePath>
+            </File>
+            <File>
+              <FileName>time_rtc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\code\time_rtc.c</FilePath>
             </File>
           </Files>
         </Group>

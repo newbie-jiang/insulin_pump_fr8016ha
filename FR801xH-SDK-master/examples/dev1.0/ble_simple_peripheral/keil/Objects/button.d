@@ -5,6 +5,8 @@
 .\objects\button.o: ..\..\..\..\components\modules\os\include\os_timer.h
 .\objects\button.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
 .\objects\button.o: ..\code\user_task.h
+.\objects\button.o: ..\code\time_rtc.h
+.\objects\button.o: ..\bluetooth_cjson\cjson_process.h
 .\objects\button.o: ..\..\..\..\components\modules\button\button.h
 .\objects\button.o: ..\..\..\..\components\driver\include\driver_pmu.h
 .\objects\button.o: ..\..\..\..\components\modules\common\include\co_math.h

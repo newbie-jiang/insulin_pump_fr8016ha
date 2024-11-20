@@ -25,9 +25,9 @@ typedef struct pack_num{
 
 //同步时间
  typedef struct sync_tim{
-	 char sync_tim_hh;
-	 char sync_tim_min;
-	 char sync_tim_s;
+	 uint16_t sync_tim_hh;
+	 uint16_t sync_tim_min;
+	 uint16_t sync_tim_s;
 }sync_tim;
  
 

@@ -3,6 +3,7 @@
 ".\objects\ble_simple_peripheral.o"
 ".\objects\user_task.o"
 ".\objects\button.o"
+".\objects\time_rtc.o"
 ".\objects\speaker_service.o"
 ".\objects\simple_gatt_service.o"
 ".\objects\lcd.o"

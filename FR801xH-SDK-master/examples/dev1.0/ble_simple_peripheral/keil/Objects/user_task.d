@@ -7,6 +7,8 @@
 .\objects\user_task.o: ..\..\..\..\components\modules\platform\include\compiler.h
 .\objects\user_task.o: ..\..\..\..\components\modules\common\include\co_printf.h
 .\objects\user_task.o: ..\code\user_task.h
+.\objects\user_task.o: ..\code\time_rtc.h
+.\objects\user_task.o: ..\bluetooth_cjson\cjson_process.h
 .\objects\user_task.o: ..\..\..\..\components\modules\button\button.h
 .\objects\user_task.o: ..\..\..\..\components\driver\include\driver_gpio.h
 .\objects\user_task.o: ..\..\..\..\components\driver\include\driver_plf.h
@@ -36,3 +38,4 @@
 .\objects\user_task.o: ..\..\..\..\components\driver\include\driver_pwm.h
 .\objects\user_task.o: ..\..\..\..\components\driver\include\driver_adc.h 
 .\objects\user_task.o: ..\cjson\cJSON.h
+.\objects\user_task.o: ..\..\..\..\components\driver\include\driver_rtc.h

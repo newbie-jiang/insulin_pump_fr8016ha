@@ -16,6 +16,8 @@
 .\objects\proj_main.o: ..\..\..\..\components\modules\common\include\co_math.h
 .\objects\proj_main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 .\objects\proj_main.o: ..\code\user_task.h
+.\objects\proj_main.o: ..\code\time_rtc.h
+.\objects\proj_main.o: ..\bluetooth_cjson\cjson_process.h
 .\objects\proj_main.o: ..\..\..\..\components\driver\include\driver_plf.h
 .\objects\proj_main.o: ..\..\..\..\components\modules\platform\include\core_cm3.h
 .\objects\proj_main.o: ..\..\..\..\components\modules\platform\include\cmsis_compiler.h
