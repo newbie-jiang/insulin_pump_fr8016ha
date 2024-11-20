@@ -35,3 +35,4 @@
 .\objects\user_task.o: ..\..\..\..\components\driver\include\driver_frspim.h
 .\objects\user_task.o: ..\..\..\..\components\driver\include\driver_pwm.h
 .\objects\user_task.o: ..\..\..\..\components\driver\include\driver_adc.h 
+.\objects\user_task.o: ..\cjson\cJSON.h

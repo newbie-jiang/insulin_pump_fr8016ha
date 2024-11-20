@@ -18,15 +18,9 @@
 
 #include "simple_gatt_service.h"
 
-
-/*
- * MACROS (�궨��)
- */
-
-/*
- * CONSTANTS (��������)
- */
-
+#include "Cjson.h"
+#include "stdlib.h"
+#include "cjson_process.h"
 
 // Simple GATT Profile Service UUID: 0xFFF0
 const uint8_t sp_svc_uuid[] = UUID16_ARR(SP_SVC_UUID);
@@ -34,7 +28,7 @@ const uint8_t sp_svc_uuid[] = UUID16_ARR(SP_SVC_UUID);
 /******************************* Characteristic 1 defination *******************************/
 // Characteristic 1 UUID: 0xFFF1
 // Characteristic 1 data 
-#define SP_CHAR1_VALUE_LEN  20
+#define SP_CHAR1_VALUE_LEN  150
 uint8_t sp_char1_value[SP_CHAR1_VALUE_LEN] = {0};
 // Characteristic 1 User Description
 #define SP_CHAR1_DESC_LEN   17
@@ -43,7 +37,7 @@ const uint8_t sp_char1_desc[SP_CHAR1_DESC_LEN] = "Characteristic 1";
 /******************************* Characteristic 2 defination *******************************/
 // Characteristic 2 UUID: 0xFFF2
 // Characteristic 2 data 
-#define SP_CHAR2_VALUE_LEN  20
+#define SP_CHAR2_VALUE_LEN  150
 uint8_t sp_char2_value[SP_CHAR2_VALUE_LEN] = {0};
 // Characteristic 2 User Description
 #define SP_CHAR2_DESC_LEN   17
@@ -338,10 +332,9 @@ void bluetooth_process(uint8_t *data,uint32_t len,uint8_t dbg_on)
 	
    }
 
-
-
-
-
+   
+ 
+  
 /*********************************************************************
  * @fn      sp_gatt_msg_handler
  *
@@ -379,10 +372,38 @@ static uint16_t sp_gatt_msg_handler(gatt_msg_t *p_msg)
 					}
 					else if(p_msg->att_idx == SP_IDX_CHAR2_VALUE)
 					{
-						memcpy(p_msg->param.msg.p_msg_data, "CHAR2_VALUE", strlen("CHAR2_VALUE"));
-					
-						return strlen("CHAR2_VALUE");
+//						memcpy(p_msg->param.msg.p_msg_data, "CHAR2_VALUE", strlen("CHAR2_VALUE"));
+//					
+//						return strlen("CHAR2_VALUE");
 						
+		/************************************************* ACK ********************************************************/				
+						 char json_output[256] ={0}; // 定义足够大的缓冲区
+						 			
+						if(s_pack_num.cjson_instruct_num==1)
+	                   {
+	                        //基础率ack
+	                        ack_basal_rate_cjson_process(&rate_info,json_output, sizeof(json_output));
+						   	
+						}else if(s_pack_num.cjson_instruct_num == 2){
+							
+							//时间同步						
+							ack_sync_tim_cjson_process(&current_time,json_output,sizeof(json_output));
+											
+					    }else if(s_pack_num.cjson_instruct_num == 3){
+		
+	                        //大剂量
+	                        ack_large_dose_cjson_process(&large_dose_info,json_output,sizeof(json_output));
+		
+	                    }else{
+	
+	                        return 0;
+	                    }
+                            memcpy(p_msg->param.msg.p_msg_data, json_output, strlen(json_output));
+						
+						    return strlen(json_output);						
+						
+						
+					/********************************************************************************************************/			
 	
 					}
 					else if(p_msg->att_idx == SP_IDX_CHAR4_CFG)
@@ -423,11 +444,16 @@ static uint16_t sp_gatt_msg_handler(gatt_msg_t *p_msg)
 					{
 						co_printf("char2_recv:");
 												
-						bluetooth_process(p_msg->param.msg.p_msg_data,p_msg->param.msg.msg_len,1);			
+//						bluetooth_process(p_msg->param.msg.p_msg_data,p_msg->param.msg.msg_len,1);	
 						
-						show_reg(p_msg->param.msg.p_msg_data,p_msg->param.msg.msg_len,1);
+						//基础率
+						basal_rate_cjson_process(p_msg->param.msg.p_msg_data,p_msg->param.msg.msg_len,1);
+						//时间同步
+						sync_tim_cjson_process(p_msg->param.msg.p_msg_data,p_msg->param.msg.msg_len,1);
+						//大剂量
+						large_dose_cjson_process(p_msg->param.msg.p_msg_data,p_msg->param.msg.msg_len,1);
 						
-						
+//						show_reg(p_msg->param.msg.p_msg_data,p_msg->param.msg.msg_len,1);												
 					}
 					else if (p_msg->att_idx == SP_IDX_CHAR3_VALUE)
 					{

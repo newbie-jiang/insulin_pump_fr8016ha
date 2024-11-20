@@ -31,6 +31,8 @@
 #include "driver_pwm.h"
 #include "driver_adc.h"
 
+#include "cJSON.h"
+
 
 /*
  * MACROS
@@ -398,6 +400,9 @@ void bsp_init(void)
    led_init();		
 }
 
+
+
+
 /*********************************************************************
  * @fn      simple_peripheral_init
  *
@@ -410,12 +415,27 @@ void bsp_init(void)
  */
 void simple_peripheral_init(void)
 {	
-	co_printf("BLE Peripheral\r\n");
-	
+//	 float da = 3.14;  
+//	
+//	 co_printf("BLE Peripheral\r\n");
+//	
+//	 da = da * 3.14;  //9.8596
+//	 da = da *10000;  //98596
+//	
+//	 co_printf("\r\n..................... da = %d",(uint32_t)da);
+		
 	ble_init();
 	  			
 	bsp_init();
 		
+//	cjson_test(); //json
+	
+//	send_message(run);
+	
+	send_message_run();
+	
+	send_message_stop();
+			
 	/* motor task */
     os_timer_init(&motor_task,motor_task_fun,NULL);
 	// os_timer_start(&motor_task,1000,1); 	

@@ -8,7 +8,7 @@
 
 #include "driver_pmu.h"
 
-#define BUTTON_IDX_MAX              1
+#define BUTTON_IDX_MAX                     1
 
 #define BUTTON_SHORT_DURING             0x08        // x10ms
 #define BUTTON_LONG_DURING              0x14        // x100ms
@@ -65,8 +65,7 @@ void button_send_event(uint8_t event, uint32_t button, uint8_t cnt)
     button_event.param = (void *)&msg;
     button_event.param_len = sizeof(msg);
 
-//    os_msg_post(user_task_id, &button_event);
-
+//  os_msg_post(user_task_id, &button_event);
     pressed_cnt = 0;
 }
 

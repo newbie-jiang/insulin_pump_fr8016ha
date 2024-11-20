@@ -23,6 +23,12 @@
 ;   <o> Stack Size (in Bytes) <0x0-0xFFFFFFFF:8>
 ; </h>
 
+;IMPORT __heap_base
+;IMPORT __heap_limit
+;IMPORT __stack_top
+;IMPORT __stack_bottom
+
+
                 import Reset_Handler
                 import NMI_Handler
                 ;import HardFault_Handler

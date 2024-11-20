@@ -41,3 +41,5 @@
 .\objects\ble_simple_peripheral.o: ..\code\user_task.h
 .\objects\ble_simple_peripheral.o: ..\..\..\..\components\driver\include\driver_pwm.h
 .\objects\ble_simple_peripheral.o: ..\..\..\..\components\driver\include\driver_adc.h
+.\objects\ble_simple_peripheral.o: ..\cjson\cJSON.h
+.\objects\ble_simple_peripheral.o: ..\..\..\..\components\modules\os\include\os_mem.h

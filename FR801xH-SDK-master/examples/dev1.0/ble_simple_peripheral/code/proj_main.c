@@ -212,6 +212,9 @@ void user_entry_before_ble_init(void)
 void user_entry_after_ble_init(void)
 { 
     simple_peripheral_init();
+	
+	
+	
 }
 
 

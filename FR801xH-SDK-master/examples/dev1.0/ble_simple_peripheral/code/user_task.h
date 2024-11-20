@@ -13,6 +13,8 @@
 #ifndef _USER_TASK_H
 #define _USER_TASK_H
 
+#include "stdint.h"
+
 enum user_event_t {
     USER_EVT_AT_COMMAND,
     USER_EVT_BUTTON,
@@ -36,6 +38,27 @@ void electric_quantity_task_fun(void *arg);
 void key_scan_task_fun(void *arg);
 void led_task_fun(void *arg);
 void adc_task_fun(void *arg);
+
+
+enum infusion_state{
+	stop = 0,
+	run
+};
+
+typedef struct infusion_information{
+	
+	char * states;               //状态
+	uint32_t remainder_drug;     //剩余药量
+	uint32_t have_finished_drug; //已入药量
+	uint32_t basal_rate;         //基础率
+
+}infusion_information;
+
+
+void send_message(enum infusion_state e_infusion_status);
+
+void send_message_stop(void);
+void send_message_run(void);
 
 #endif  // _USER_TASK_H
 

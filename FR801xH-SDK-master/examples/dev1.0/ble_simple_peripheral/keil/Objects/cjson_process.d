@@ -1,0 +1,11 @@
+.\objects\cjson_process.o: ..\bluetooth_cjson\cjson_process.c
+.\objects\cjson_process.o: ..\bluetooth_cjson\cjson_process.h
+.\objects\cjson_process.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\cjson_process.o: ..\cjson\Cjson.h
+.\objects\cjson_process.o: ..\..\..\..\components\modules\os\include\os_mem.h
+.\objects\cjson_process.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\cjson_process.o: ..\..\..\..\components\modules\platform\include\compiler.h
+.\objects\cjson_process.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\objects\cjson_process.o: ..\..\..\..\components\modules\common\include\co_printf.h
+.\objects\cjson_process.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\cjson_process.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h

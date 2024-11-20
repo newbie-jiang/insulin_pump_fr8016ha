@@ -118,8 +118,8 @@ static void pmu_lvd_set_debounce_cnt(uint8_t cnt)
     ool_write(PMU_REG_LVD_BAT_DEB_CFG, ool_read(PMU_REG_LVD_BAT_DEB_CFG) & (~PMU_LVD_DEB_SEL));  // reset debounce block
 
     /* release reset when enable irq */
-    //co_delay_10us(12);
-    //ool_write(PMU_REG_LVD_BAT_DEB_CFG, ool_read(PMU_REG_LVD_BAT_DEB_CFG) | PMU_LVD_DEB_SEL);    //enalbe debounce
+    // co_delay_10us(12);
+    // ool_write(PMU_REG_LVD_BAT_DEB_CFG, ool_read(PMU_REG_LVD_BAT_DEB_CFG) | PMU_LVD_DEB_SEL);    //enalbe debounce
 }
 
 /*********************************************************************
@@ -234,7 +234,7 @@ void pmu_set_pin_dir(enum system_port_t port, uint8_t bits, uint8_t dir)
     if(dir == GPIO_DIR_OUT)
         ool_write(sel_reg, (ool_read(sel_reg) & (~bits)));
     else
-        ool_write(sel_reg, (ool_read(sel_reg) | bits));
+        ool_write(sel_reg, (ool_read(sel_reg) | bits)); 
 }
 
 /*********************************************************************

@@ -9,3 +9,9 @@
 .\objects\simple_gatt_service.o: ..\..\..\..\components\modules\os\include\os_msg_q.h
 .\objects\simple_gatt_service.o: ..\..\..\..\components\ble\include\gatt\gatt_sig_uuid.h
 .\objects\simple_gatt_service.o: ..\..\..\..\components\ble\profiles\ble_simple_profile\simple_gatt_service.h
+.\objects\simple_gatt_service.o: ..\cjson\Cjson.h
+.\objects\simple_gatt_service.o: ..\..\..\..\components\modules\os\include\os_mem.h
+.\objects\simple_gatt_service.o: ..\..\..\..\components\modules\platform\include\compiler.h
+.\objects\simple_gatt_service.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\objects\simple_gatt_service.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\simple_gatt_service.o: ..\bluetooth_cjson\cjson_process.h

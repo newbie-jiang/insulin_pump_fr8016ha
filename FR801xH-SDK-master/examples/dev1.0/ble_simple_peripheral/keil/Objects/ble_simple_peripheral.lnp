@@ -38,6 +38,9 @@
 ".\objects\app_boot_vectors.o"
 ".\objects\patch.o"
 "..\..\..\..\components\ble\library\fr8010h_stack.lib"
+".\objects\cjson.o"
+".\objects\test.o"
+".\objects\cjson_process.o"
 --library_type=microlib --strict --scatter ".\ble_5_0.sct"
 --feedback=feedback.txt ../../../../components/ble/library/syscall.txt --entry=app_main --keep=_jump_table_reserved --keep=_jump_table_version --keep=_jump_table_image --keep=_jump_table_middle --keep=_jump_table_last --datacompressor=off --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

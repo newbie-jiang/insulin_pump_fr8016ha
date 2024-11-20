@@ -1,4 +1,4 @@
-;#<FEEDBACK># ARM Linker, 5060750: Last Updated: Fri Nov 15 09:49:45 2024
+;#<FEEDBACK># ARM Linker, 5060750: Last Updated: Wed Nov 20 11:10:58 2024
 ;VERSION 0.2
 ;FILE adpcm_ima.o
 adpcm_decode_block <= USED 0
@@ -74,6 +74,10 @@ __asm___23_ble_simple_peripheral_c_109906dc____REV16 <= USED 0
 __asm___23_ble_simple_peripheral_c_109906dc____REVSH <= USED 0
 __asm___23_ble_simple_peripheral_c_109906dc____RRX <= USED 0
 led_init <= USED 0
+motor_run_fun1 <= USED 0
+motor_run_fun2 <= USED 0
+motor_run_fun3 <= USED 0
+motor_stop_fun <= USED 0
 ;FILE button.o
 button_init <= USED 0
 button_int_isr <= USED 0
@@ -89,6 +93,73 @@ __asm___12_capb18_001_c_e78bb4c0____REV16 <= USED 0
 __asm___12_capb18_001_c_e78bb4c0____REVSH <= USED 0
 __asm___12_capb18_001_c_e78bb4c0____RRX <= USED 0
 demo_CAPB18_APP <= USED 0
+;FILE cjson.o
+cJSON_AddArrayToObject <= USED 0
+cJSON_AddBoolToObject <= USED 0
+cJSON_AddFalseToObject <= USED 0
+cJSON_AddItemReferenceToArray <= USED 0
+cJSON_AddItemReferenceToObject <= USED 0
+cJSON_AddItemToArray <= USED 0
+cJSON_AddItemToObjectCS <= USED 0
+cJSON_AddNullToObject <= USED 0
+cJSON_AddNumberToObject <= USED 0
+cJSON_AddObjectToObject <= USED 0
+cJSON_AddRawToObject <= USED 0
+cJSON_AddTrueToObject <= USED 0
+cJSON_Compare <= USED 0
+cJSON_CreateArray <= USED 0
+cJSON_CreateArrayReference <= USED 0
+cJSON_CreateBool <= USED 0
+cJSON_CreateDoubleArray <= USED 0
+cJSON_CreateFalse <= USED 0
+cJSON_CreateFloatArray <= USED 0
+cJSON_CreateIntArray <= USED 0
+cJSON_CreateNull <= USED 0
+cJSON_CreateNumber <= USED 0
+cJSON_CreateObjectReference <= USED 0
+cJSON_CreateRaw <= USED 0
+cJSON_CreateStringArray <= USED 0
+cJSON_CreateStringReference <= USED 0
+cJSON_CreateTrue <= USED 0
+cJSON_DeleteItemFromArray <= USED 0
+cJSON_DeleteItemFromObject <= USED 0
+cJSON_DeleteItemFromObjectCaseSensitive <= USED 0
+cJSON_DetachItemFromArray <= USED 0
+cJSON_DetachItemFromObject <= USED 0
+cJSON_DetachItemFromObjectCaseSensitive <= USED 0
+cJSON_DetachItemViaPointer <= USED 0
+cJSON_Duplicate <= USED 0
+cJSON_GetArrayItem <= USED 0
+cJSON_GetArraySize <= USED 0
+cJSON_GetErrorPtr <= USED 0
+cJSON_GetNumberValue <= USED 0
+cJSON_GetObjectItem <= USED 0
+cJSON_GetStringValue <= USED 0
+cJSON_HasObjectItem <= USED 0
+cJSON_InitHooks <= USED 0
+cJSON_InsertItemInArray <= USED 0
+cJSON_IsArray <= USED 0
+cJSON_IsBool <= USED 0
+cJSON_IsFalse <= USED 0
+cJSON_IsInvalid <= USED 0
+cJSON_IsNull <= USED 0
+cJSON_IsNumber <= USED 0
+cJSON_IsObject <= USED 0
+cJSON_IsRaw <= USED 0
+cJSON_IsTrue <= USED 0
+cJSON_Minify <= USED 0
+cJSON_ParseWithLength <= USED 0
+cJSON_PrintBuffered <= USED 0
+cJSON_PrintPreallocated <= USED 0
+cJSON_ReplaceItemInArray <= USED 0
+cJSON_ReplaceItemInObject <= USED 0
+cJSON_ReplaceItemInObjectCaseSensitive <= USED 0
+cJSON_ReplaceItemViaPointer <= USED 0
+cJSON_SetNumberHelper <= USED 0
+cJSON_SetValuestring <= USED 0
+cJSON_Version <= USED 0
+cJSON_malloc <= USED 0
+;FILE cjson_process.o
 ;FILE core_cm3_isr.o
 __asm___14_core_cm3_isr_c_5a2a0181____REV16 <= USED 0
 __asm___14_core_cm3_isr_c_5a2a0181____REVSH <= USED 0
@@ -1021,6 +1092,7 @@ sensirion_init_pins <= USED 0
 sensirion_release_pins <= USED 0
 sensirion_sleep_usec <= USED 0
 ;FILE simple_gatt_service.o
+bluetooth_process <= USED 0
 ;FILE smpc.o
 ;FILE smpc_api.o
 ;FILE smpc_crypto.o
@@ -1064,6 +1136,9 @@ system_set_rf_power <= USED 0
 system_set_tx_power <= USED 0
 system_sleep_enable <= USED 0
 val_to_str <= USED 0
+;FILE test.o
+cjson_test <= USED 0
+parse_gallery_json <= USED 0
 ;FILE user_bond_manage.o
 ble_bond_addr_check_result <= USED 0
 ble_bond_clr_info <= USED 0
@@ -1075,4 +1150,6 @@ gatt_load_peer_svc_from_flash <= USED 0
 __asm___11_user_task_c_39d1022b____REV16 <= USED 0
 __asm___11_user_task_c_39d1022b____REVSH <= USED 0
 __asm___11_user_task_c_39d1022b____RRX <= USED 0
+information_process <= USED 0
 led_task_fun <= USED 0
+potentiometer_block <= USED 0

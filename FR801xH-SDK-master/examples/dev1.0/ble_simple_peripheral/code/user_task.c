@@ -19,8 +19,10 @@
 #include "driver_pwm.h"
 #include "driver_adc.h "
 
+#include "cJSON.h"
 
-#define demo
+
+//#define demo  
 
 
 extern uint32_t speed_set_flag;
@@ -34,7 +36,7 @@ void motor_task_fun(void *arg)
 	#endif
 
     if(speed_set_flag==1){
-      co_delay_100us(50); //5ms
+      co_delay_100us(200); //20ms     
     }else if(speed_set_flag==2){
       co_delay_100us(500);//50ms
     }else if(speed_set_flag ==3){
@@ -51,7 +53,6 @@ void motor_task_fun(void *arg)
 	
 	adc_task_fun(NULL);
 }
-
 
 
 void beep_task_fun(void *arg)
@@ -283,7 +284,7 @@ void potentiometer_block(uint8_t block_state)
             pwm_stop(PWM_CHANNEL_4); // 关闭 buzzer pwm
             buzzer_pwm_started = 0;  // 重置标记
         }	
-	}
+	}      
 }
 
 
@@ -318,11 +319,11 @@ void adc_manage_callback(int adc_val)
         if (data5 >= data1) {
 			is_potentiometer = 1;
             printf("motor block\r\n");
-			potentiometer_block(is_potentiometer); //电位器阻塞
+//			potentiometer_block(is_potentiometer); //电位器阻塞
         }else{
 			
 		    is_potentiometer = 0;	
-            potentiometer_block(is_potentiometer); //电位器阻塞			
+//            potentiometer_block(is_potentiometer); //电位器阻塞			
 		}
     } else {
            // 如果数据量还没达到5个，则增加数据量计数
@@ -381,4 +382,149 @@ void adc_task_fun(void *arg)
 
 }
 /******************************************************************************************/
+
+
+
+/**********************************Cjson发送数据***********************************************/
+void send_message_stop(void)
+{
+	
+	infusion_information infusion_inf = {
+		.states = "stop",
+		.remainder_drug = 100.0,
+		.have_finished_drug = 200.0,
+		.basal_rate = 1
+	};	
+	
+	
+	// 创建根对象
+    cJSON *root = cJSON_CreateObject();
+
+    // 创建 "running" 子对象
+    cJSON *stop = cJSON_CreateObject();
+	
+	 cJSON_AddItemToObject(root, "stop", stop);
+
+    // 添加数据到 "running"
+    cJSON_AddStringToObject(stop, "states", infusion_inf.states);
+
+    // 将浮点数转为格式化字符串，确保整数部分两位，小数部分一位
+    char remainder_str[6];
+    char finished_str[6];
+	char basal_rate_str[6]; 
+	  
+    snprintf(remainder_str, sizeof(remainder_str), "%d", infusion_inf.remainder_drug);
+    snprintf(finished_str, sizeof(finished_str), "%d", infusion_inf.have_finished_drug);
+    snprintf(basal_rate_str, sizeof(basal_rate_str), "%d", infusion_inf.basal_rate);  
+	  
+    cJSON_AddStringToObject(stop, "remainder drug", remainder_str);
+    cJSON_AddStringToObject(stop, "have finished drug", finished_str);
+    cJSON_AddStringToObject(stop, "basal rate", basal_rate_str);
+
+    // 将 JSON 转为字符串
+    char *json_string = cJSON_Print(root);
+    if (json_string != NULL) {
+        
+        co_printf("JSON data to send: %s\n", json_string);
+    }
+
+    // 清理内存
+    cJSON_Delete(root);
+    os_free(json_string);  
+}
+
+
+void send_message_run(void)	
+{
+	infusion_information infusion_inf = {
+		.states = "run",
+		.remainder_drug = 200.0,
+		.have_finished_drug = 100.0,
+		.basal_rate = 1
+	};	
+		
+	// 创建根对象
+    cJSON *root = cJSON_CreateObject();
+
+    // 创建 "running" 子对象
+    cJSON *running = cJSON_CreateObject();
+	
+	 cJSON_AddItemToObject(root, "running", running);
+
+    // 添加数据到 "running"
+    cJSON_AddStringToObject(running, "states", infusion_inf.states);
+
+    // 将浮点数转为格式化字符串，确保整数部分两位，小数部分一位
+    char remainder_str[6];
+    char finished_str[6];
+	char basal_rate_str[6]; 
+	  
+    snprintf(remainder_str, sizeof(remainder_str), "%d", infusion_inf.remainder_drug);
+    snprintf(finished_str, sizeof(finished_str), "%d", infusion_inf.have_finished_drug);
+    snprintf(basal_rate_str, sizeof(basal_rate_str), "%d", infusion_inf.basal_rate);  
+	  
+    cJSON_AddStringToObject(running, "remainder drug", remainder_str);
+    cJSON_AddStringToObject(running, "have finished drug", finished_str);
+    cJSON_AddStringToObject(running, "basal rate", basal_rate_str);
+
+    // 将 JSON 转为字符串
+    char *json_string = cJSON_Print(root);
+    if (json_string != NULL) {
+        
+        co_printf("JSON data to send: %s\n", json_string);
+    }
+
+    // 清理内存
+    cJSON_Delete(root);
+    os_free(json_string);  
+	
+}
+
+/*************************************Cjson接收数据*****************************************/
+
+
+//typedef struct basal_rate_information{
+//	
+//	char basal_rate_num; //基础率段数
+//	float basal_rate_speed;//基础率速度
+//	
+//	char basal_rate_start_tim_hh;
+//	char basal_rate_start_tim_min;
+//	char basal_rate_start_tim_s;
+//	
+//	char basal_rate_end_tim_hh;
+//	char basal_rate_end_tim_min;
+//	char basal_rate_end_tim_s;
+//	
+//}basal_rate_information;
+
+/*
+   "basal_rate":
+  {
+    "basal_rate_num":"x" //基础率数量(当前是第几段)
+    "speed":"xx.x" //基础率速度
+    "basal_rate_tim":"xx:xx:xx-xx:xx:xx"  
+  }
+
+ "basal_rate":
+  {
+    "basal_rate_num":"1" 
+    "speed":"5.0" 
+    "basal_rate_tim":"00:00:00-24:00:00"  
+  }
+*/
+
+/*******************************************************************************************/
+
+void information_process(void)
+{
+	
+   	
+	
+
+
+
+
+
+}
 
