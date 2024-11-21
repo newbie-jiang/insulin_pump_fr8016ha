@@ -66,6 +66,30 @@ __attribute__((section("ram_code"))) void pmu_gpio_isr_ram(void)
  *
  * @return  None.
  */
+//void user_custom_parameters(void)
+//{
+//    struct chip_unique_id_t id_data;
+
+//    efuse_get_chip_unique_id(&id_data);
+//    __jump_table.addr.addr[0] = 0xBD;
+//    __jump_table.addr.addr[1] = 0xAD;
+//    __jump_table.addr.addr[2] = 0xD0;
+//    __jump_table.addr.addr[3] = 0xF0;
+//    __jump_table.addr.addr[4] = 0x17;
+//    __jump_table.addr.addr[5] = 0xc0;
+//    
+//    id_data.unique_id[5] |= 0xc0; // random addr->static addr type:the top two bit must be 1.
+//    memcpy(__jump_table.addr.addr,id_data.unique_id,6);
+//    __jump_table.system_clk = SYSTEM_SYS_CLK_48M;
+////  __jump_table.system_option &= ~(SYSTEM_OPTION_SLEEP_ENABLE);//disable sleep
+////	__jump_table.system_option &= (SYSTEM_OPTION_SLEEP_ENABLE);//disable sleep
+//    jump_table_set_static_keys_store_offset(JUMP_TABLE_STATIC_KEY_OFFSET);
+//    ble_set_addr_type(BLE_ADDR_TYPE_PUBLIC);
+//    retry_handshake();
+//}
+
+
+
 void user_custom_parameters(void)
 {
     struct chip_unique_id_t id_data;
@@ -76,73 +100,46 @@ void user_custom_parameters(void)
     __jump_table.addr.addr[2] = 0xD0;
     __jump_table.addr.addr[3] = 0xF0;
     __jump_table.addr.addr[4] = 0x17;
-    __jump_table.addr.addr[5] = 0xc0;
+    __jump_table.addr.addr[5] = 0x20;
     
     id_data.unique_id[5] |= 0xc0; // random addr->static addr type:the top two bit must be 1.
     memcpy(__jump_table.addr.addr,id_data.unique_id,6);
     __jump_table.system_clk = SYSTEM_SYS_CLK_48M;
-    __jump_table.system_option &= ~(SYSTEM_OPTION_SLEEP_ENABLE);//ȡ��sleepģʽ
     jump_table_set_static_keys_store_offset(JUMP_TABLE_STATIC_KEY_OFFSET);
     ble_set_addr_type(BLE_ADDR_TYPE_PUBLIC);
     retry_handshake();
 }
 
-/*********************************************************************
- * @fn      user_entry_before_sleep_imp
- *
- * @brief   Before system goes to sleep mode, user_entry_before_sleep_imp()
- *          will be called, MCU peripherals can be configured properly before 
- *          system goes to sleep, for example, some MCU peripherals need to be
- *          used during the system is in sleep mode. 
- *
- * @param   None. 
- *       
- *
- * @return  None.
- */
+/* 进入睡眠前执行函数 */
 __attribute__((section("ram_code"))) void user_entry_before_sleep_imp(void)
 {
+	uart_putc_noint_no_wait(UART1, 's');
+		
+    rtc_init();//初始化rtc
+	
+	rtc_alarm(RTC_A,5000);//启动RTC定时器 5s	
+	
+	pmu_set_led2_value(1); 	//关闭led	
 }
 
-/*********************************************************************
- * @fn      user_entry_after_sleep_imp
- *
- * @brief   After system wakes up from sleep mode, user_entry_after_sleep_imp()
- *          will be called, MCU peripherals need to be initialized again, 
- *          this can be done in user_entry_after_sleep_imp(). MCU peripherals
- *          status will not be kept during the sleep. 
- *
- * @param   None. 
- *       
- *
- * @return  None.
- */
+
+
+ /* 出睡眠时执行函数 */
 __attribute__((section("ram_code"))) void user_entry_after_sleep_imp(void)
 {
-    /* set PA2 and PA3 for AT command interface */
-    system_set_port_pull(GPIO_PA2, true);
-    system_set_port_mux(GPIO_PORT_A, GPIO_BIT_2, PORTA2_FUNC_UART1_RXD);
     system_set_port_mux(GPIO_PORT_A, GPIO_BIT_3, PORTA3_FUNC_UART1_TXD);
-    
-    system_sleep_disable();
-
-    if(__jump_table.system_option & SYSTEM_OPTION_ENABLE_HCI_MODE)
-    {
-        system_set_port_pull(GPIO_PA4, true);
-        system_set_port_mux(GPIO_PORT_A, GPIO_BIT_4, PORTA4_FUNC_UART0_RXD);
-        system_set_port_mux(GPIO_PORT_A, GPIO_BIT_5, PORTA5_FUNC_UART0_TXD);
-        uart_init(UART0, BAUD_RATE_115200);
-        NVIC_EnableIRQ(UART0_IRQn);
-
-        system_sleep_disable();
-    }
-
-    uart_init(UART1, BAUD_RATE_115200);
-    NVIC_EnableIRQ(UART1_IRQn);
-
-    // Do some things here, can be uart print
-
+	
+    uart_init(UART1, BAUD_RATE_115200); 
+	
+    NVIC_EnableIRQ(UART1_IRQn);	
+		
+	uart_putc_noint_no_wait(UART1, 'w');
+	
     NVIC_EnableIRQ(PMU_IRQn);
+	
+	pmu_set_led2_value(0); 	//开启led	
+  
+//    system_sleep_disable();
 }
 
 /*********************************************************************
@@ -159,12 +156,11 @@ __attribute__((section("ram_code"))) void user_entry_after_sleep_imp(void)
  */
 void user_entry_before_ble_init(void)
 {    
-    /* set system power supply in BUCK mode */
+     /* set system power supply in BUCK mode */
     pmu_set_sys_power_mode(PMU_SYS_POW_BUCK);
 #ifdef FLASH_PROTECT
     flash_protect_enable(1);
 #endif
-
     pmu_enable_irq(PMU_ISR_BIT_ACOK
                    | PMU_ISR_BIT_ACOFF
                    | PMU_ISR_BIT_ONKEY_PO
@@ -174,27 +170,14 @@ void user_entry_before_ble_init(void)
                    | PMU_ISR_BIT_ONKEY_HIGH);
     NVIC_EnableIRQ(PMU_IRQn);
     
-    // Enable UART print.
-    system_set_port_pull(GPIO_PA2, true);
-    system_set_port_mux(GPIO_PORT_A, GPIO_BIT_2, PORTA2_FUNC_UART1_RXD);
     system_set_port_mux(GPIO_PORT_A, GPIO_BIT_3, PORTA3_FUNC_UART1_TXD);
-    uart_init(UART1, BAUD_RATE_115200);    
- 
-    if(__jump_table.system_option & SYSTEM_OPTION_ENABLE_HCI_MODE)
-    {
-        /* use PC4 and PC5 for HCI interface */
-        system_set_port_pull(GPIO_PA4, true);
-        system_set_port_mux(GPIO_PORT_A, GPIO_BIT_4, PORTA4_FUNC_UART0_RXD);
-        system_set_port_mux(GPIO_PORT_A, GPIO_BIT_5, PORTA5_FUNC_UART0_TXD);
-    }
+    uart_init(UART1, BAUD_RATE_115200);   
 
-    /* used for debug, reserve 3S for j-link once sleep is enabled. */
-    if(__jump_table.system_option & SYSTEM_OPTION_SLEEP_ENABLE)
-    {
-        co_delay_100us(10000);
-        co_delay_100us(10000);
-        co_delay_100us(10000);
-    }
+    system_set_port_mux(GPIO_PORT_D,GPIO_BIT_4,PORTD4_FUNC_D4);
+  
+    gpio_set_dir(GPIO_PORT_D, GPIO_BIT_4, GPIO_DIR_OUT);
+	
+    gpio_set_pin_value(GPIO_PORT_D,GPIO_BIT_4,1);	
 }
 
 /*********************************************************************
@@ -210,11 +193,59 @@ void user_entry_before_ble_init(void)
  * @return  None.
  */
 void user_entry_after_ble_init(void)
-{ 
-    simple_peripheral_init();
+{ 	
+	rtc_init();//初始化rtc
 	
+	rtc_alarm(RTC_A,5000);//启动RTC定时器 5s
 	
+#if 0
+//    system_sleep_disable();		//disable sleep 
+#else
+    if(__jump_table.system_option & SYSTEM_OPTION_SLEEP_ENABLE)  //if sleep is enalbed, delay 3s for JLINK 
+    {
+        co_printf("\r\na");
+        co_delay_100us(10000);       
+        co_printf("\r\nb");
+        co_delay_100us(10000);
+        co_printf("\r\nc");
+        co_delay_100us(10000);
+        co_printf("\r\nd");
+    }
+#endif
+		
 	
+    pmu_set_pin_pull(GPIO_PORT_D, (1<<GPIO_BIT_4)|(1<<GPIO_BIT_5), true);
+    pmu_port_wakeup_func_set(GPIO_PD4|GPIO_PD5);
+
+//    simple_peripheral_init();		
+}
+
+
+void rtc_isr_ram(uint8_t rtc_idx)
+{
+    if(rtc_idx == RTC_A)
+    {
+      //唤醒		
+	  system_set_port_mux(GPIO_PORT_A, GPIO_BIT_2, PORTA2_FUNC_UART1_RXD);
+      system_set_port_mux(GPIO_PORT_A, GPIO_BIT_3, PORTA3_FUNC_UART1_TXD);
+    
+      uart_init(UART1, BAUD_RATE_115200);
+		
+	  co_printf("\r\n rtc weak up \r\n");
+		
+	  ble_init();
+		
+//    system_sleep_disable();
+				
+//	  co_delay_100us(20000);
+		
+//	  system_sleep_enable();
+    }
+	
+    if(rtc_idx == RTC_B)
+    {
+        
+    }
 }
 
 

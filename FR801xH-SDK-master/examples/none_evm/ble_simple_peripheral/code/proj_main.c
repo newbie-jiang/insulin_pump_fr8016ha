@@ -124,7 +124,7 @@ __attribute__((section("ram_code"))) void user_entry_after_sleep_imp(void)
     
     uart_init(UART1, BAUD_RATE_115200);
     //NVIC_EnableIRQ(UART1_IRQn);
-		uart_putc_noint_no_wait(UART1, 'w');
+	uart_putc_noint_no_wait(UART1, 'w');
     // Do some things here, can be uart print
 
     NVIC_EnableIRQ(PMU_IRQn);

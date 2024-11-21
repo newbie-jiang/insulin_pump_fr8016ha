@@ -218,8 +218,10 @@ static void sp_start_adv(void)
     adv_param.adv_addr_type = GAP_ADDR_TYPE_PUBLIC;
     adv_param.adv_chnl_map = GAP_ADV_CHAN_ALL;
     adv_param.adv_filt_policy = GAP_ADV_ALLOW_SCAN_ANY_CON_ANY;
-    adv_param.adv_intv_min = 300;
-    adv_param.adv_intv_max = 300;
+//    adv_param.adv_intv_min = 300;
+//    adv_param.adv_intv_max = 300;
+	adv_param.adv_intv_min = 6000;
+    adv_param.adv_intv_max = 6000;
         
     gap_set_advertising_param(&adv_param);
     
@@ -228,7 +230,7 @@ static void sp_start_adv(void)
 	gap_set_advertising_rsp_data(scan_rsp_data, sizeof(scan_rsp_data));
     // Start advertising
 	co_printf("Start advertising...\r\n");
-	gap_start_advertising(0);
+	gap_start_advertising(0); //设置广播持续时间10ms
 }
 
 
@@ -273,7 +275,7 @@ void motor_stop_fun(void)
 
 void ble_init(void)
 {
-	    // set local device name
+	// set local device name
 	uint8_t local_name[] = "_Simple Peripheral";
 	gap_set_dev_name(local_name, sizeof(local_name));
 
@@ -293,15 +295,18 @@ void ble_init(void)
 	gap_set_cb_func(app_gap_evt_cb);
 
 	gap_bond_manager_init(BLE_BONDING_INFO_SAVE_ADDR, BLE_REMOTE_SERVICE_SAVE_ADDR, 8, true);
+	
 	gap_bond_manager_delete_all();
 
 	mac_addr_t addr;
+	
 	gap_address_get(&addr);
+	
 	co_printf("Local BDADDR: 0x%2X%2X%2X%2X%2X%2X\r\n", addr.addr[0], addr.addr[1], addr.addr[2], addr.addr[3], addr.addr[4], addr.addr[5]);
 
 	// Adding services to database
     sp_gatt_add_service();
-	speaker_gatt_add_service();	
+	speaker_gatt_add_service();		
 }
 
 // PD5 MOTOR Control
@@ -433,27 +438,14 @@ void bsp_init(void)
  * @return  None.
  */
 void simple_peripheral_init(void)
-{	
-//	 float da = 3.14;  
-//	
-//	 co_printf("BLE Peripheral\r\n");
-//	
-//	 da = da * 3.14;  //9.8596
-//	 da = da *10000;  //98596
-//	
-//	 co_printf("\r\n..................... da = %d",(uint32_t)da);
-		
+{			
 	ble_init();
 	  			
 	bsp_init();
 		
-//	cjson_test(); //json
-	
-//	send_message(run);
-	
-	send_message_run();
-	
-	send_message_stop();
+//	send_message_run();
+//	
+//	send_message_stop();
 			
 	/* motor task */
     os_timer_init(&motor_task,motor_task_fun,NULL);
@@ -478,11 +470,9 @@ void simple_peripheral_init(void)
 //    os_timer_init(&adc_task,adc_task_fun,NULL);
 //	os_timer_start(&adc_task,500,1); /* 100ms detection */
 
-   //rtc
+    //rtc
      os_timer_init(&rtc_tim_task,rtc_tim_task_fun,NULL);
-	 os_timer_start(&rtc_tim_task,500,1); /* 100ms detection */
-	 
-	
+	 os_timer_start(&rtc_tim_task,500,1); /* 100ms detection */	
 }
 
 

@@ -1,4 +1,4 @@
-;#<FEEDBACK># ARM Linker, 5060750: Last Updated: Wed Nov 20 15:36:31 2024
+;#<FEEDBACK># ARM Linker, 5060750: Last Updated: Thu Nov 21 15:21:44 2024
 ;VERSION 0.2
 ;FILE adpcm_ima.o
 adpcm_decode_block <= USED 0
@@ -73,11 +73,20 @@ attmdb_svc_visibility_set <= USED 0
 __asm___23_ble_simple_peripheral_c_109906dc____REV16 <= USED 0
 __asm___23_ble_simple_peripheral_c_109906dc____REVSH <= USED 0
 __asm___23_ble_simple_peripheral_c_109906dc____RRX <= USED 0
+beep_init <= USED 0
+bsp_init <= USED 0
+external_adc_init <= USED 0
+get_vbat_adc_val <= USED 0
+key_init <= USED 0
 led_init <= USED 0
+motor_io_init <= USED 0
 motor_run_fun1 <= USED 0
 motor_run_fun2 <= USED 0
 motor_run_fun3 <= USED 0
 motor_stop_fun <= USED 0
+pwr_init <= USED 0
+rtc_timer_config <= USED 0
+simple_peripheral_init <= USED 0
 ;FILE button.o
 button_init <= USED 0
 button_int_isr <= USED 0
@@ -149,6 +158,7 @@ cJSON_IsRaw <= USED 0
 cJSON_IsTrue <= USED 0
 cJSON_Minify <= USED 0
 cJSON_ParseWithLength <= USED 0
+cJSON_Print <= USED 0
 cJSON_PrintBuffered <= USED 0
 cJSON_PrintPreallocated <= USED 0
 cJSON_ReplaceItemInArray <= USED 0
@@ -182,6 +192,10 @@ test_speaker_from_flash <= USED 0
 __asm___12_driver_adc_c_15bb8007____REV16 <= USED 0
 __asm___12_driver_adc_c_15bb8007____REVSH <= USED 0
 __asm___12_driver_adc_c_15bb8007____RRX <= USED 0
+adc_enable <= USED 0
+adc_get_ref_voltage <= USED 0
+adc_get_result <= USED 0
+adc_init <= USED 0
 ;FILE driver_codec.o
 audio_speaker_codec_init <= USED 0
 codec_adc_init <= USED 0
@@ -251,7 +265,6 @@ pmu_enable_charge <= USED 0
 pmu_get_gpio_port_value <= USED 0
 pmu_get_gpio_value <= USED 0
 pmu_otd_threshold_set <= USED 0
-pmu_port_wakeup_func_set <= USED 0
 pmu_set_aldo_voltage <= USED 0
 pmu_set_gpio_value <= USED 0
 pmu_set_led1_as_pwm <= USED 0
@@ -259,7 +272,6 @@ pmu_set_led1_value <= USED 0
 pmu_set_led2_as_pwm <= USED 0
 pmu_set_lp_clk_src <= USED 0
 pmu_set_pin_dir <= USED 0
-pmu_set_pin_pull <= USED 0
 pmu_set_pin_to_CPU <= USED 0
 pmu_set_pin_to_PMU <= USED 0
 pmu_set_port_mux <= USED 0
@@ -282,12 +294,16 @@ pmu_qdec_set_threshold <= USED 0
 __asm___12_driver_pwm_c_pwm_ctrl____REV16 <= USED 0
 __asm___12_driver_pwm_c_pwm_ctrl____REVSH <= USED 0
 __asm___12_driver_pwm_c_pwm_ctrl____RRX <= USED 0
+pwm_init <= USED 0
+pwm_start <= USED 0
+pwm_stop <= USED 0
 pwm_update <= USED 0
 ;FILE driver_rtc.o
 __asm___12_driver_rtc_c_rtc_init____REV16 <= USED 0
 __asm___12_driver_rtc_c_rtc_init____REVSH <= USED 0
 __asm___12_driver_rtc_c_rtc_init____RRX <= USED 0
 rtc_disalarm <= USED 0
+rtc_get_value <= USED 0
 ;FILE driver_ssp.o
 __asm___12_driver_ssp_c_1de10e88____REV16 <= USED 0
 __asm___12_driver_ssp_c_1de10e88____REVSH <= USED 0
@@ -969,6 +985,7 @@ os_user_loop_event_clear <= USED 0
 os_user_loop_event_set <= USED 0
 ;FILE os_timer.o
 os_timer_destroy <= USED 0
+os_timer_init <= USED 0
 ;FILE patch.o
 __asm___7_patch_c_487891fc____REV16 <= USED 0
 __asm___7_patch_c_487891fc____REVSH <= USED 0
@@ -1131,19 +1148,23 @@ system_prevent_sleep_clear <= USED 0
 system_prevent_sleep_set <= USED 0
 system_set_rf_power <= USED 0
 system_set_tx_power <= USED 0
+system_sleep_disable <= USED 0
 system_sleep_enable <= USED 0
 val_to_str <= USED 0
 ;FILE test.o
 cjson_test <= USED 0
 parse_gallery_json <= USED 0
 ;FILE time_rtc.o
+clock_hdl <= USED 0
 day_of_week <= USED 0
+days_of_month <= USED 0
 days_of_year <= USED 0
 demo_rtc_start_timer <= USED 0
 demo_rtc_timer_func <= USED 0
 get_current_date <= USED 0
 get_days <= USED 0
 get_sec_from_2010_1_1 <= USED 0
+is_leap_year <= USED 0
 show_clock_func <= USED 0
 ;FILE user_bond_manage.o
 ble_bond_addr_check_result <= USED 0
@@ -1156,6 +1177,17 @@ gatt_load_peer_svc_from_flash <= USED 0
 __asm___11_user_task_c_39d1022b____REV16 <= USED 0
 __asm___11_user_task_c_39d1022b____REVSH <= USED 0
 __asm___11_user_task_c_39d1022b____RRX <= USED 0
+adc_manage_callback <= USED 0
+adc_task_fun <= USED 0
+beep_task_fun <= USED 0
+electric_quantity_task_fun <= USED 0
 get_sleep_tim_s <= USED 0
+key_scan_task_fun <= USED 0
 led_task_fun <= USED 0
+lopowre_callback <= USED 0
+median_filter <= USED 0
+motor_task_fun <= USED 0
 potentiometer_block <= USED 0
+rtc_tim_task_fun <= USED 0
+send_message_run <= USED 0
+send_message_stop <= USED 0
