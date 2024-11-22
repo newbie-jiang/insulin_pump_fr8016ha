@@ -1,0 +1,16 @@
+.\objects\sht3x_sw_i2c_implementation.o: ..\..\..\..\components\modules\peripherals\sht3x_temp_humi\sht3x_sw_i2c_implementation.c
+.\objects\sht3x_sw_i2c_implementation.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+.\objects\sht3x_sw_i2c_implementation.o: ..\..\..\..\components\modules\peripherals\sht3x_temp_humi\sht3x_arch_config.h
+.\objects\sht3x_sw_i2c_implementation.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\sht3x_sw_i2c_implementation.o: ..\..\..\..\components\modules\peripherals\sht3x_temp_humi\sht3x_sw_i2c_gpio.h
+.\objects\sht3x_sw_i2c_implementation.o: ..\..\..\..\components\driver\include\driver_gpio.h
+.\objects\sht3x_sw_i2c_implementation.o: ..\..\..\..\components\driver\include\driver_plf.h
+.\objects\sht3x_sw_i2c_implementation.o: ..\..\..\..\components\modules\platform\include\compiler.h
+.\objects\sht3x_sw_i2c_implementation.o: ..\..\..\..\components\modules\platform\include\core_cm3.h
+.\objects\sht3x_sw_i2c_implementation.o: ..\..\..\..\components\modules\platform\include\cmsis_compiler.h
+.\objects\sht3x_sw_i2c_implementation.o: ..\..\..\..\components\modules\platform\include\cmsis_armcc.h
+.\objects\sht3x_sw_i2c_implementation.o: ..\..\..\..\components\modules\platform\include\ll.h
+.\objects\sht3x_sw_i2c_implementation.o: ..\..\..\..\components\driver\include\driver_system.h
+.\objects\sht3x_sw_i2c_implementation.o: ..\..\..\..\components\driver\include\driver_iomux.h
+.\objects\sht3x_sw_i2c_implementation.o: ..\..\..\..\components\modules\common\include\co_printf.h
+.\objects\sht3x_sw_i2c_implementation.o: ..\..\..\..\components\modules\sys\include\sys_utils.h

@@ -1,0 +1,14 @@
+.\objects\cjson_utils.o: ..\cjson\cJSON_Utils.c
+.\objects\cjson_utils.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\ctype.h
+.\objects\cjson_utils.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\cjson_utils.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\cjson_utils.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\cjson_utils.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\limits.h
+.\objects\cjson_utils.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h
+.\objects\cjson_utils.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\float.h
+.\objects\cjson_utils.o: ..\cjson\cJSON_Utils.h
+.\objects\cjson_utils.o: ..\cjson\cJSON.h
+.\objects\cjson_utils.o: ..\..\..\..\components\modules\os\include\os_mem.h
+.\objects\cjson_utils.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\cjson_utils.o: ..\..\..\..\components\modules\platform\include\compiler.h
+.\objects\cjson_utils.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h

@@ -1,0 +1,50 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: ¶ÃVision V5.41.0.0
+Copyright (C) 2024 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: 1 Admin, 1, LIC=LSNXV-PW6PN-30ANC-7IPQ2-NE0BI-J0H51
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Plus  Version: 5.41.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 6 (build 750)
+Assembler:       Armasm.exe V5.06 update 6 (build 750)
+Linker/Locator:  ArmLink.exe V5.06 update 6 (build 750)
+Library Manager: ArmAr.exe V5.06 update 6 (build 750)
+Hex Converter:   FromElf.exe V5.06 update 6 (build 750)
+CPU DLL:         SARMCM3.DLL V5.41.0.0
+Dialog DLL:      DCM.DLL V1.17.5.0
+Target DLL:      Segger\JL2CM3.dll V2.99.45.0
+Dialog DLL:      TCM.DLL V1.56.4.0
+ 
+<h2>Project:</h2>
+C:\Users\Administrator\Desktop\“»µ∫Àÿ±√\FR801xH-SDK-master\examples\dev1.0\ble_simple_peripheral\keil\ble_simple_peripheral.uvproj
+Project File Date:  11/22/2024
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 6 (build 750)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
+Build target 'ble_simple_peripheral'
+compiling simple_gatt_service.c...
+..\..\..\..\components\ble\profiles\ble_simple_profile\simple_gatt_service.c(289): warning:  #177-D: variable "home_buffer"  was declared but never referenced
+  	 char home_buffer[] =  "ZK-HOME";	
+..\..\..\..\components\ble\profiles\ble_simple_profile\simple_gatt_service.c(291): warning:  #177-D: variable "speed_desc"  was declared but never referenced
+  	 char  speed_desc[3]  =  {0};
+..\..\..\..\components\ble\profiles\ble_simple_profile\simple_gatt_service.c(292): warning:  #177-D: variable "volume_desc"  was declared but never referenced
+  	 char  volume_desc[3] =  {0};
+..\..\..\..\components\ble\profiles\ble_simple_profile\simple_gatt_service.c(293): warning:  #177-D: variable "which_mode"  was declared but never referenced
+  	 char  which_mode[3]  =  {0};
+..\..\..\..\components\ble\profiles\ble_simple_profile\simple_gatt_service.c(295): warning:  #177-D: variable "int_which_mode"  was declared but never referenced
+  	 static int int_which_mode;
+..\..\..\..\components\ble\profiles\ble_simple_profile\simple_gatt_service.c: 5 warnings, 0 errors
+linking...
+Program Size: Code=112192 RO-data=4340 RW-data=1144 ZI-data=5492  
+After Build - User command #1: fromelf.exe  --text  -c -o Output/ble_simple_peripheral.txt  Objects/ble_simple_peripheral.axf
+After Build - User command #2: fromelf.exe  --bin -o Output/ble_simple_peripheral.bin  Objects/ble_simple_peripheral.axf
+".\Objects\ble_simple_peripheral.axf" - 0 Error(s), 5 Warning(s).
+Build Time Elapsed:  00:00:01
+</pre>
+</body>
+</html>
