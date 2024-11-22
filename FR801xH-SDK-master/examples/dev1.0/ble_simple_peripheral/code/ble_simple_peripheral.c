@@ -146,19 +146,25 @@ void app_gap_evt_cb(gap_event_t *p_event)
         }
         break;
 
-        case GAP_EVT_SLAVE_CONNECT:
+        case GAP_EVT_SLAVE_CONNECT: 
         {
             co_printf("slave[%d],connect. link_num:%d\r\n",p_event->param.slave_connect.conidx,gap_get_connect_num());
 			gatt_mtu_exchange_req(p_event->param.slave_connect.conidx);
             gap_conn_param_update(p_event->param.slave_connect.conidx, 6, 6, 0, 500);
+			
+			
         }
         break;
 
-        case GAP_EVT_DISCONNECT:
+        case GAP_EVT_DISCONNECT:  //断开连接
         {
             co_printf("Link[%d] disconnect,reason:0x%02X\r\n",p_event->param.disconnect.conidx
                       ,p_event->param.disconnect.reason);
             sp_start_adv();
+			
+			//开启睡眠模式
+			system_sleep_enable();
+			
 #ifdef USER_MEM_API_ENABLE
             show_mem_list();
             //show_msg_list();
@@ -220,8 +226,8 @@ static void sp_start_adv(void)
     adv_param.adv_filt_policy = GAP_ADV_ALLOW_SCAN_ANY_CON_ANY;
 //    adv_param.adv_intv_min = 300;
 //    adv_param.adv_intv_max = 300;
-	adv_param.adv_intv_min = 6000;
-    adv_param.adv_intv_max = 6000;
+	adv_param.adv_intv_min = 3000;
+    adv_param.adv_intv_max = 3000;
         
     gap_set_advertising_param(&adv_param);
     
@@ -467,12 +473,12 @@ void simple_peripheral_init(void)
 //	os_timer_start(&led_task,100,1); /* 100ms detection */
 
 
-//    os_timer_init(&adc_task,adc_task_fun,NULL);
+//  os_timer_init(&adc_task,adc_task_fun,NULL);
 //	os_timer_start(&adc_task,500,1); /* 100ms detection */
 
     //rtc
      os_timer_init(&rtc_tim_task,rtc_tim_task_fun,NULL);
-	 os_timer_start(&rtc_tim_task,500,1); /* 100ms detection */	
+	 os_timer_start(&rtc_tim_task,500,1); /* 500ms detection */	
 }
 
 

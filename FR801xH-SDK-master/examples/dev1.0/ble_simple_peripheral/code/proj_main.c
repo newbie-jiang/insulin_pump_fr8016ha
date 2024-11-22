@@ -120,6 +120,13 @@ __attribute__((section("ram_code"))) void user_entry_before_sleep_imp(void)
 	rtc_alarm(RTC_A,5000);//启动RTC定时器 5s	
 	
 	pmu_set_led2_value(1); 	//关闭led	
+	
+	if(gap_get_connect_status(0))
+	{
+	 rtc_disalarm(RTC_A); //停止rtcA 定时器
+	 system_sleep_disable(); //检测到处于连接状态时关闭睡眠模式
+	 
+	}
 }
 
 
@@ -217,7 +224,7 @@ void user_entry_after_ble_init(void)
     pmu_set_pin_pull(GPIO_PORT_D, (1<<GPIO_BIT_4)|(1<<GPIO_BIT_5), true);
     pmu_port_wakeup_func_set(GPIO_PD4|GPIO_PD5);
 
-//    simple_peripheral_init();		
+    //simple_peripheral_init();		
 }
 
 
@@ -235,6 +242,8 @@ void rtc_isr_ram(uint8_t rtc_idx)
 		
 	  ble_init();
 		
+	  //关闭rtc
+	  
 //    system_sleep_disable();
 				
 //	  co_delay_100us(20000);

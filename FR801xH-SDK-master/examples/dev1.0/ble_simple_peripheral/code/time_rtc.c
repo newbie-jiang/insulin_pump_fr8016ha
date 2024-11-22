@@ -153,7 +153,7 @@ void clock_hdl(void)
             }
         }//min hdl
         
-		co_printf("\r\n%02d:%02d:%02d\r\n",clock_env.hour,clock_env.min,clock_env.sec);
+//		co_printf("\r\n%02d:%02d:%02d\r\n",clock_env.hour,clock_env.min,clock_env.sec);
     }
 }
 
