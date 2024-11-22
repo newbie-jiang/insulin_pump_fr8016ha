@@ -245,6 +245,8 @@ const gatt_attribute_t simple_profile_att_table[SP_IDX_NB] =
                                                 },
 };
 
+
+
 static void show_reg(uint8_t *data,uint32_t len,uint8_t dbg_on)
 {
     uint32_t i=0;
@@ -255,6 +257,8 @@ static void show_reg(uint8_t *data,uint32_t len,uint8_t dbg_on)
     }
     co_printf("\r\n");
 }
+
+
 void ntf_data(uint8_t con_idx,uint8_t att_idx,uint8_t *data,uint16_t len)
 {
 		gatt_ntf_t ntf_att;
@@ -266,18 +270,12 @@ void ntf_data(uint8_t con_idx,uint8_t att_idx,uint8_t *data,uint16_t len)
 		gatt_notification(ntf_att);
 }
 
-
-
-
 extern void motor_run_fun1(void);
 extern void motor_run_fun2(void);
 extern void motor_run_fun3(void);
 
 
-
 extern void motor_stop_fun(void);
-
-
 
 
 void bluetooth_process(uint8_t *data,uint32_t len,uint8_t dbg_on)
@@ -301,7 +299,7 @@ void bluetooth_process(uint8_t *data,uint32_t len,uint8_t dbg_on)
      for(; i<len; i++)
     {	   
 		buffer[i]=data[i];
-//        co_printf("0x%02X,",data[i]); //????????????????????
+//      co_printf("0x%02X,",data[i]); //????????????????????
     }
 		
 	if (strncmp((char*)start_speed5_buffer, (char*)buffer, strlen((char*)start_speed5_buffer)) == 0) {
@@ -313,8 +311,7 @@ void bluetooth_process(uint8_t *data,uint32_t len,uint8_t dbg_on)
 
         co_printf("motor run fun2\r\n");	
         motor_run_fun2();	
-       
-     
+           
     }else if (strncmp((char*)start_speed500_buffer, (char*)buffer, strlen((char*)start_speed500_buffer)) == 0) {
 
         motor_run_fun3();		

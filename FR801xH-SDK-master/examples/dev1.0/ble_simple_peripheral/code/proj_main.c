@@ -55,40 +55,6 @@ __attribute__((section("ram_code"))) void pmu_gpio_isr_ram(void)
     ool_write32(PMU_REG_PORTA_LAST, gpio_value);
 }
 
-/*********************************************************************
- * @fn      user_custom_parameters
- *
- * @brief   initialize several parameters, this function will be called 
- *          at the beginning of the program. 
- *
- * @param   None. 
- *       
- *
- * @return  None.
- */
-//void user_custom_parameters(void)
-//{
-//    struct chip_unique_id_t id_data;
-
-//    efuse_get_chip_unique_id(&id_data);
-//    __jump_table.addr.addr[0] = 0xBD;
-//    __jump_table.addr.addr[1] = 0xAD;
-//    __jump_table.addr.addr[2] = 0xD0;
-//    __jump_table.addr.addr[3] = 0xF0;
-//    __jump_table.addr.addr[4] = 0x17;
-//    __jump_table.addr.addr[5] = 0xc0;
-//    
-//    id_data.unique_id[5] |= 0xc0; // random addr->static addr type:the top two bit must be 1.
-//    memcpy(__jump_table.addr.addr,id_data.unique_id,6);
-//    __jump_table.system_clk = SYSTEM_SYS_CLK_48M;
-////  __jump_table.system_option &= ~(SYSTEM_OPTION_SLEEP_ENABLE);//disable sleep
-////	__jump_table.system_option &= (SYSTEM_OPTION_SLEEP_ENABLE);//disable sleep
-//    jump_table_set_static_keys_store_offset(JUMP_TABLE_STATIC_KEY_OFFSET);
-//    ble_set_addr_type(BLE_ADDR_TYPE_PUBLIC);
-//    retry_handshake();
-//}
-
-
 
 void user_custom_parameters(void)
 {
@@ -117,15 +83,15 @@ __attribute__((section("ram_code"))) void user_entry_before_sleep_imp(void)
 		
     rtc_init();//初始化rtc
 	
-	rtc_alarm(RTC_A,5000);//启动RTC定时器 5s	
-	
+	rtc_alarm(RTC_A,5000);//启动RTCB定时器 5s	
+		
 	pmu_set_led2_value(1); 	//关闭led	
 	
 	if(gap_get_connect_status(0))
 	{
 	 rtc_disalarm(RTC_A); //停止rtcA 定时器
-	 system_sleep_disable(); //检测到处于连接状态时关闭睡眠模式
-	 
+				
+	 system_sleep_disable(); //检测到处于连接状态时关闭睡眠模式	 
 	}
 }
 
@@ -144,9 +110,14 @@ __attribute__((section("ram_code"))) void user_entry_after_sleep_imp(void)
 	
     NVIC_EnableIRQ(PMU_IRQn);
 	
-	pmu_set_led2_value(0); 	//开启led	
-  
-//    system_sleep_disable();
+	pmu_set_led2_value(0); 	//开启led		
+//  system_sleep_disable();	
+    //时间上增加3s
+	clock_hdl();
+    clock_hdl();
+	clock_hdl();
+	co_printf("%04d-%02d-%02d ", clock_env.year, clock_env.month, clock_env.day);
+	co_printf("%02d:%02d:%02d \r\n", clock_env.hour, clock_env.min, clock_env.sec);
 }
 
 /*********************************************************************
@@ -187,6 +158,9 @@ void user_entry_before_ble_init(void)
     gpio_set_pin_value(GPIO_PORT_D,GPIO_BIT_4,1);	
 }
 
+
+#define DISABLE_SLEEP 0
+
 /*********************************************************************
  * @fn      user_entry_after_ble_init
  *
@@ -201,9 +175,14 @@ void user_entry_before_ble_init(void)
  */
 void user_entry_after_ble_init(void)
 { 	
-	rtc_init();//初始化rtc
-	
-	rtc_alarm(RTC_A,5000);//启动RTC定时器 5s
+//	rtc_init();//初始化rtc
+//	
+//	rtc_alarm(RTC_A,5000);//启动RTC定时器 5s
+//	rtc_alarm(RTC_B,1000);//启动RTC定时器 1s
+			
+//	system_sleep_disable();
+//	
+//	simple_peripheral_init();		
 	
 #if 0
 //    system_sleep_disable();		//disable sleep 
@@ -219,10 +198,14 @@ void user_entry_after_ble_init(void)
         co_printf("\r\nd");
     }
 #endif
-		
 	
     pmu_set_pin_pull(GPIO_PORT_D, (1<<GPIO_BIT_4)|(1<<GPIO_BIT_5), true);
     pmu_port_wakeup_func_set(GPIO_PD4|GPIO_PD5);
+	
+//	clock_hdl();
+//	
+//	co_printf("%04d-%02d-%02d ", clock_env.year, clock_env.month, clock_env.day);
+//	co_printf("%02d:%02d:%02d \r\n", clock_env.hour, clock_env.min, clock_env.sec);
 
     //simple_peripheral_init();		
 }
@@ -252,8 +235,11 @@ void rtc_isr_ram(uint8_t rtc_idx)
     }
 	
     if(rtc_idx == RTC_B)
-    {
-        
+    {		
+//	  clock_hdl();
+//	
+//	  co_printf("%04d-%02d-%02d ", clock_env.year, clock_env.month, clock_env.day);
+//	  co_printf("%02d:%02d:%02d \r\n", clock_env.hour, clock_env.min, clock_env.sec);    
     }
 }
 

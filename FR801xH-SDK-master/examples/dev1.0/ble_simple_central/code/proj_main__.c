@@ -255,8 +255,8 @@ void user_entry_before_ble_init(void)
     }
 
     /* 
-     * È¡ÏûALDOµÄbypassÄ£Ê½£¬°ÑALDOÅäÖÃ³É×îÐ¡Öµ£¬ÕâÑùaldo¾Í²»»á¸úvbat bypass£¬·ñÔòÔÚÉäÆµ¹¤×÷Ê±»áÀ­µÍµç³Ø
-     * µçÑ¹£¬´Ó¶øÓ°ÏìALDOµÄÎÈ¶¨ÐÔ£¬½ø¶øÓ°ÏìcodecµÄ¹¤×÷
+     * È¡ï¿½ï¿½ALDOï¿½ï¿½bypassÄ£Ê½ï¿½ï¿½ï¿½ï¿½ALDOï¿½ï¿½ï¿½Ã³ï¿½ï¿½ï¿½Ð¡Öµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½aldoï¿½Í²ï¿½ï¿½ï¿½ï¿½vbat bypassï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æµï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½Íµï¿½ï¿½
+     * ï¿½ï¿½Ñ¹ï¿½ï¿½ï¿½Ó¶ï¿½Ó°ï¿½ï¿½ALDOï¿½ï¿½ï¿½È¶ï¿½ï¿½Ô£ï¿½ï¿½ï¿½ï¿½ï¿½Ó°ï¿½ï¿½codecï¿½Ä¹ï¿½ï¿½ï¿½
      */
     ool_write(PMU_REG_ADKEY_ALDO_CTRL, ool_read(PMU_REG_ADKEY_ALDO_CTRL) & (~(1<<3)));
     //ool_write(PMU_REG_ADKEY_ALDO_CTRL, (ool_read(PMU_REG_ADKEY_ALDO_CTRL)&0x0F));
@@ -271,12 +271,12 @@ void user_entry_after_ble_init(void)
     gap_bond_manager_init(BLE_BONDING_INFO_SAVE_ADDR,BLE_REMOTE_SERVICE_SAVE_ADDR,8,true);
     gap_bond_manager_delete_all();
     
-    /* ²âÊÔGPIOµÄ»½ÐÑ¹¦ÄÜ */
+    /* ï¿½ï¿½ï¿½ï¿½GPIOï¿½Ä»ï¿½ï¿½Ñ¹ï¿½ï¿½ï¿½ */
     pmu_set_pin_pull(GPIO_PORT_D, (1<<GPIO_BIT_4)|(1<<GPIO_BIT_5), true);
     pmu_port_wakeup_func_set(GPIO_PD4|GPIO_PD5);
     button_init(GPIO_PD4|GPIO_PD5);
 
-    /* ÓÃÓÚ²âÊÔËæ»úÊýÉúÌ¬µÄËæ»úÐÔ */
+    /* ï¿½ï¿½ï¿½Ú²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ì¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
     co_printf("random value is 0x%08x.\r\n", rand());
 
     gap_set_cb_func(proj_ble_gap_evt_func);

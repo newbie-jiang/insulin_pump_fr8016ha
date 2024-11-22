@@ -485,6 +485,7 @@ static uint16_t sp_gatt_msg_handler(gatt_msg_t *p_msg)
             break;
         case GATTC_MSG_LINK_CREATE:
 						co_printf("link_created\r\n");
+			                   
             break;
         case GATTC_MSG_LINK_LOST:
 						co_printf("link_lost\r\n");

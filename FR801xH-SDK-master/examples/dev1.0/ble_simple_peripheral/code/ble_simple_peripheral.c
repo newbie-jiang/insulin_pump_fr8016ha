@@ -105,6 +105,8 @@ static void sp_start_adv(void);
 uint8_t CAPB18_data_get(float *temperature,float *air_press);
 uint8_t demo_CAPB18_APP(void);
 
+void stop_task(void);
+
 /*
  * PUBLIC FUNCTIONS
  */
@@ -162,6 +164,8 @@ void app_gap_evt_cb(gap_event_t *p_event)
                       ,p_event->param.disconnect.reason);
             sp_start_adv();
 			
+			stop_task(); //销毁任务
+			
 			//开启睡眠模式
 			system_sleep_enable();
 			
@@ -181,7 +185,9 @@ void app_gap_evt_cb(gap_event_t *p_event)
         case GAP_EVT_LINK_PARAM_UPDATE:
             co_printf("Link[%d]param update,interval:%d,latency:%d,timeout:%d\r\n",p_event->param.link_update.conidx
                       ,p_event->param.link_update.con_interval,p_event->param.link_update.con_latency,p_event->param.link_update.sup_to);
-            break;
+            
+		              simple_peripheral_init();
+		break;
 
         case GAP_EVT_PEER_FEATURE:
             co_printf("peer[%d] feats ind\r\n",p_event->param.peer_feature.conidx);
@@ -226,8 +232,8 @@ static void sp_start_adv(void)
     adv_param.adv_filt_policy = GAP_ADV_ALLOW_SCAN_ANY_CON_ANY;
 //    adv_param.adv_intv_min = 300;
 //    adv_param.adv_intv_max = 300;
-	adv_param.adv_intv_min = 3000;
-    adv_param.adv_intv_max = 3000;
+	adv_param.adv_intv_min = 4800;  //实际测试唤醒时间在3s左右
+    adv_param.adv_intv_max = 4800;
         
     gap_set_advertising_param(&adv_param);
     
@@ -443,9 +449,10 @@ void bsp_init(void)
  *
  * @return  None.
  */
+
 void simple_peripheral_init(void)
 {			
-	ble_init();
+//	ble_init();
 	  			
 	bsp_init();
 		
@@ -477,8 +484,18 @@ void simple_peripheral_init(void)
 //	os_timer_start(&adc_task,500,1); /* 100ms detection */
 
     //rtc
-     os_timer_init(&rtc_tim_task,rtc_tim_task_fun,NULL);
-	 os_timer_start(&rtc_tim_task,500,1); /* 500ms detection */	
+    os_timer_init(&rtc_tim_task,rtc_tim_task_fun,NULL);
+	os_timer_start(&rtc_tim_task,1000,1); /* 1000ms detection */	
+}
+
+
+void stop_task(void)
+{
+	os_timer_destroy(&motor_task);
+	os_timer_destroy(&beep_task);
+	os_timer_destroy(&electric_quantity_task);
+	os_timer_destroy(&key_scan_task);
+	os_timer_destroy(&rtc_tim_task);
 }
 
 

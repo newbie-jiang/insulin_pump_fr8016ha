@@ -147,7 +147,7 @@
         <Bp>
           <Number>0</Number>
           <Type>0</Type>
-          <LineNumber>413</LineNumber>
+          <LineNumber>357</LineNumber>
           <EnabledFlag>1</EnabledFlag>
           <Address>0</Address>
           <ByteObject>0</ByteObject>
@@ -163,7 +163,7 @@
         <Bp>
           <Number>1</Number>
           <Type>0</Type>
-          <LineNumber>412</LineNumber>
+          <LineNumber>413</LineNumber>
           <EnabledFlag>1</EnabledFlag>
           <Address>0</Address>
           <ByteObject>0</ByteObject>
@@ -179,7 +179,7 @@
         <Bp>
           <Number>2</Number>
           <Type>0</Type>
-          <LineNumber>346</LineNumber>
+          <LineNumber>412</LineNumber>
           <EnabledFlag>1</EnabledFlag>
           <Address>0</Address>
           <ByteObject>0</ByteObject>
@@ -195,38 +195,6 @@
         <Bp>
           <Number>3</Number>
           <Type>0</Type>
-          <LineNumber>345</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>0</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>0</BreakIfRCount>
-          <Filename>..\..\..\..\components\ble\profiles\ble_simple_profile\simple_gatt_service.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression></Expression>
-        </Bp>
-        <Bp>
-          <Number>4</Number>
-          <Type>0</Type>
-          <LineNumber>356</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>0</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>0</BreakIfRCount>
-          <Filename>..\..\..\..\components\ble\profiles\ble_simple_profile\simple_gatt_service.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression></Expression>
-        </Bp>
-        <Bp>
-          <Number>5</Number>
-          <Type>0</Type>
           <LineNumber>428</LineNumber>
           <EnabledFlag>1</EnabledFlag>
           <Address>0</Address>
@@ -241,7 +209,7 @@
           <Expression></Expression>
         </Bp>
         <Bp>
-          <Number>6</Number>
+          <Number>4</Number>
           <Type>0</Type>
           <LineNumber>64</LineNumber>
           <EnabledFlag>1</EnabledFlag>
@@ -257,7 +225,7 @@
           <Expression>\\ble_simple_peripheral\../code/user_task.c\64</Expression>
         </Bp>
         <Bp>
-          <Number>7</Number>
+          <Number>5</Number>
           <Type>0</Type>
           <LineNumber>66</LineNumber>
           <EnabledFlag>1</EnabledFlag>
@@ -273,7 +241,7 @@
           <Expression>\\ble_simple_peripheral\../code/user_task.c\66</Expression>
         </Bp>
         <Bp>
-          <Number>8</Number>
+          <Number>6</Number>
           <Type>0</Type>
           <LineNumber>423</LineNumber>
           <EnabledFlag>1</EnabledFlag>
@@ -289,7 +257,7 @@
           <Expression>\\ble_simple_peripheral\../../../../components/ble/profiles/ble_simple_profile/simple_gatt_service.c\423</Expression>
         </Bp>
         <Bp>
-          <Number>9</Number>
+          <Number>7</Number>
           <Type>0</Type>
           <LineNumber>357</LineNumber>
           <EnabledFlag>1</EnabledFlag>
@@ -305,7 +273,7 @@
           <Expression>\\ble_simple_peripheral\../../../../components/ble/profiles/ble_simple_profile/simple_gatt_service.c\357</Expression>
         </Bp>
         <Bp>
-          <Number>10</Number>
+          <Number>8</Number>
           <Type>0</Type>
           <LineNumber>424</LineNumber>
           <EnabledFlag>1</EnabledFlag>
@@ -321,7 +289,7 @@
           <Expression>\\ble_simple_peripheral\../../../../components/ble/profiles/ble_simple_profile/simple_gatt_service.c\424</Expression>
         </Bp>
         <Bp>
-          <Number>11</Number>
+          <Number>9</Number>
           <Type>0</Type>
           <LineNumber>424</LineNumber>
           <EnabledFlag>1</EnabledFlag>
@@ -337,7 +305,7 @@
           <Expression>\\ble_simple_peripheral\../code/ble_simple_peripheral.c\424</Expression>
         </Bp>
         <Bp>
-          <Number>12</Number>
+          <Number>10</Number>
           <Type>0</Type>
           <LineNumber>426</LineNumber>
           <EnabledFlag>1</EnabledFlag>
@@ -353,7 +321,7 @@
           <Expression>\\ble_simple_peripheral\../code/ble_simple_peripheral.c\426</Expression>
         </Bp>
         <Bp>
-          <Number>13</Number>
+          <Number>11</Number>
           <Type>0</Type>
           <LineNumber>428</LineNumber>
           <EnabledFlag>1</EnabledFlag>
@@ -369,7 +337,7 @@
           <Expression>\\ble_simple_peripheral\../code/ble_simple_peripheral.c\428</Expression>
         </Bp>
         <Bp>
-          <Number>14</Number>
+          <Number>12</Number>
           <Type>0</Type>
           <LineNumber>420</LineNumber>
           <EnabledFlag>1</EnabledFlag>
@@ -385,7 +353,7 @@
           <Expression>\\ble_simple_peripheral\../code/ble_simple_peripheral.c\420</Expression>
         </Bp>
         <Bp>
-          <Number>15</Number>
+          <Number>13</Number>
           <Type>0</Type>
           <LineNumber>422</LineNumber>
           <EnabledFlag>1</EnabledFlag>
@@ -401,7 +369,7 @@
           <Expression>\\ble_simple_peripheral\../code/ble_simple_peripheral.c\422</Expression>
         </Bp>
         <Bp>
-          <Number>16</Number>
+          <Number>14</Number>
           <Type>0</Type>
           <LineNumber>424</LineNumber>
           <EnabledFlag>1</EnabledFlag>
@@ -417,7 +385,7 @@
           <Expression>\\ble_simple_peripheral\../code/ble_simple_peripheral.c\424</Expression>
         </Bp>
         <Bp>
-          <Number>17</Number>
+          <Number>15</Number>
           <Type>0</Type>
           <LineNumber>426</LineNumber>
           <EnabledFlag>1</EnabledFlag>
@@ -433,57 +401,41 @@
           <Expression>\\ble_simple_peripheral\../code/ble_simple_peripheral.c\426</Expression>
         </Bp>
         <Bp>
+          <Number>16</Number>
+          <Type>0</Type>
+          <LineNumber>409</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>0</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>0</BreakIfRCount>
+          <Filename>..\..\..\..\components\ble\profiles\ble_simple_profile\simple_gatt_service.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression></Expression>
+        </Bp>
+        <Bp>
+          <Number>17</Number>
+          <Type>0</Type>
+          <LineNumber>410</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>0</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>0</BreakIfRCount>
+          <Filename>..\..\..\..\components\ble\profiles\ble_simple_profile\simple_gatt_service.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression></Expression>
+        </Bp>
+        <Bp>
           <Number>18</Number>
           <Type>0</Type>
-          <LineNumber>348</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>0</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>0</BreakIfRCount>
-          <Filename>..\..\..\..\components\ble\profiles\ble_simple_profile\simple_gatt_service.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression></Expression>
-        </Bp>
-        <Bp>
-          <Number>19</Number>
-          <Type>0</Type>
-          <LineNumber>349</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>0</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>0</BreakIfRCount>
-          <Filename>..\..\..\..\components\ble\profiles\ble_simple_profile\simple_gatt_service.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression></Expression>
-        </Bp>
-        <Bp>
-          <Number>20</Number>
-          <Type>0</Type>
-          <LineNumber>359</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>0</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>0</BreakIfRCount>
-          <Filename>..\..\..\..\components\ble\profiles\ble_simple_profile\simple_gatt_service.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression></Expression>
-        </Bp>
-        <Bp>
-          <Number>21</Number>
-          <Type>0</Type>
-          <LineNumber>360</LineNumber>
+          <LineNumber>421</LineNumber>
           <EnabledFlag>1</EnabledFlag>
           <Address>0</Address>
           <ByteObject>0</ByteObject>
