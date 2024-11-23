@@ -392,7 +392,6 @@ void pwr_init(void)
   gpio_set_dir(GPIO_PORT_D, GPIO_BIT_4, GPIO_DIR_OUT);
 	
   gpio_set_pin_value(GPIO_PORT_D,GPIO_BIT_4,1);
-
 }
 
 
@@ -455,20 +454,16 @@ void simple_peripheral_init(void)
 //	ble_init();
 	  			
 	bsp_init();
-		
-//	send_message_run();
-//	
-//	send_message_stop();
-			
-	/* motor task */
+					
+//	/* motor task */
     os_timer_init(&motor_task,motor_task_fun,NULL);
-	// os_timer_start(&motor_task,1000,1); 	
-	
-	/* beep task */
+//	// os_timer_start(&motor_task,1000,1); 	
+//	
+//	/* beep task */
 	os_timer_init(&beep_task,beep_task_fun,NULL);
 	os_timer_start(&beep_task,100,1);
-	
-	/* electric quantity task */
+//	
+//	/* electric quantity task */
 	os_timer_init(&electric_quantity_task,electric_quantity_task_fun,NULL);
 	os_timer_start(&electric_quantity_task,2000,1); /* 3s detection */
 	
@@ -480,8 +475,8 @@ void simple_peripheral_init(void)
 //	os_timer_start(&led_task,100,1); /* 100ms detection */
 
 
-//  os_timer_init(&adc_task,adc_task_fun,NULL);
-//	os_timer_start(&adc_task,500,1); /* 100ms detection */
+    os_timer_init(&adc_task,adc_task_fun,NULL);
+	os_timer_start(&adc_task,500,1); /* 100ms detection */
 
     //rtc
     os_timer_init(&rtc_tim_task,rtc_tim_task_fun,NULL);
@@ -489,8 +484,16 @@ void simple_peripheral_init(void)
 }
 
 
+void deinit_bsp(void)
+{	
+	adc_disable();  //adc会导致在休眠时增加2-3mA功耗
+}
+
+
 void stop_task(void)
 {
+	deinit_bsp(); //销毁任务前解初始化外设
+	
 	os_timer_destroy(&motor_task);
 	os_timer_destroy(&beep_task);
 	os_timer_destroy(&electric_quantity_task);

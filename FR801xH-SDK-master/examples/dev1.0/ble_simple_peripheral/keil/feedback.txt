@@ -1,4 +1,4 @@
-;#<FEEDBACK># ARM Linker, 5060750: Last Updated: Fri Nov 22 17:43:33 2024
+;#<FEEDBACK># ARM Linker, 5060750: Last Updated: Sat Nov 23 09:15:49 2024
 ;VERSION 0.2
 ;FILE adpcm_ima.o
 adpcm_decode_block <= USED 0
@@ -73,6 +73,7 @@ attmdb_svc_visibility_set <= USED 0
 __asm___23_ble_simple_peripheral_c_109906dc____REV16 <= USED 0
 __asm___23_ble_simple_peripheral_c_109906dc____REVSH <= USED 0
 __asm___23_ble_simple_peripheral_c_109906dc____RRX <= USED 0
+deinit_bsp <= USED 0
 led_init <= USED 0
 motor_run_fun1 <= USED 0
 motor_run_fun2 <= USED 0
