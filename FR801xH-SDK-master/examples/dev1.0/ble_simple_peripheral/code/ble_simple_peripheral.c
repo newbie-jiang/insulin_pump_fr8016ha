@@ -154,9 +154,7 @@ void app_gap_evt_cb(gap_event_t *p_event)
         {
             co_printf("slave[%d],connect. link_num:%d\r\n",p_event->param.slave_connect.conidx,gap_get_connect_num());
 			gatt_mtu_exchange_req(p_event->param.slave_connect.conidx);
-            gap_conn_param_update(p_event->param.slave_connect.conidx, 6, 6, 0, 500);
-			
-			
+            gap_conn_param_update(p_event->param.slave_connect.conidx, 6, 6, 0, 500);						
         }
         break;
 
@@ -459,7 +457,7 @@ void simple_peripheral_init(void)
 					
 //	/* motor task */
     os_timer_init(&motor_task,motor_task_fun,NULL);
-//	// os_timer_start(&motor_task,1000,1); 	
+    os_timer_start(&motor_task,1000,1); 	
 //	
 //	/* beep task */
 	os_timer_init(&beep_task,beep_task_fun,NULL);
@@ -475,7 +473,6 @@ void simple_peripheral_init(void)
 	/* led翻转会造成蓝牙连接不上 */
 //	os_timer_init(&led_task,led_task_fun,NULL);
 //	os_timer_start(&led_task,100,1); /* 100ms detection */
-
 
     os_timer_init(&adc_task,adc_task_fun,NULL);
 	os_timer_start(&adc_task,500,1); /* 100ms detection */

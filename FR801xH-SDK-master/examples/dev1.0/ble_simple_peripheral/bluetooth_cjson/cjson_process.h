@@ -1,3 +1,8 @@
+#ifndef __CJSON_PROCESS_H
+#define __CJSON_PROCESS_H
+
+
+
 
 #include "stdint.h"
 /***************************设定基础率***********************************/ 
@@ -63,4 +68,4 @@ void ack_large_dose_cjson_process(large_dose_information * p_large_dose_info,cha
 
 void ack_process(void);
 
-
+#endif

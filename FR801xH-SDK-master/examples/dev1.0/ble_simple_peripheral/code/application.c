@@ -1,5 +1,5 @@
 #include "application.h"
-#include  "cjson_process.h"
+//#include  "cjson_process.h"
 #include  "co_printf.h"
 
 
@@ -60,7 +60,7 @@ uint32_t get_weak_up_tim_interval_s(void)
 void calculate_wake_up_times(  basal_rate_information * p_basal_rate_info,
                           	   uint32_t weak_up_tim_interval_s ,
 							   int max_size 
-						    )   
+						     )   
 {		
 	static uint16_t start_hh,start_min;
 	static uint16_t end_hh,end_min;	
@@ -85,10 +85,10 @@ void calculate_wake_up_times(  basal_rate_information * p_basal_rate_info,
     // 按间隔计算唤醒时间
     while (current_time_s <= end_time_s && count < max_size) {
         // 转换当前时间为 hh:mm:ss
-        uint32_t seconds_of_day = current_time_s % day_seconds; // 当前时间的当天秒数
-        wake_up_times[count].hh = seconds_of_day / 3600;
-        wake_up_times[count].min = (seconds_of_day % 3600) / 60;
-        wake_up_times[count].s = seconds_of_day % 60;
+//        uint32_t seconds_of_day = current_time_s % day_seconds; // 当前时间的当天秒数
+//        wake_up_times[count].hh = seconds_of_day / 3600;
+//        wake_up_times[count].min = (seconds_of_day % 3600) / 60;
+//        wake_up_times[count].s = seconds_of_day % 60;
         count++;
    
         // 增加时间
@@ -97,11 +97,11 @@ void calculate_wake_up_times(  basal_rate_information * p_basal_rate_info,
 		
 	/* 遍历唤醒时间 */
 	#if 1
-	co_printf("printf weak up tim\r\n");
-	for(int i=0 ; i<count; i++)
-	{
-	  co_printf("wakeup_time[%d]---%02d:%02d:%02d\r\n",i,wake_up_times[i].hh,wake_up_times[i].min,wake_up_times[i].s);	
-	}
+//	co_printf("printf weak up tim\r\n");
+//	for(int i=0 ; i<count; i++)
+//	{
+//	  co_printf("wakeup_time[%d]---%02d:%02d:%02d\r\n",i,wake_up_times[i].hh,wake_up_times[i].min,wake_up_times[i].s);	
+//	}
 	#endif
 	
 	co_printf("calculate_wake_up_times success\r\n");

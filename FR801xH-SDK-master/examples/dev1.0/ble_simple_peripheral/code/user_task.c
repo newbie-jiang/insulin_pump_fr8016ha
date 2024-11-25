@@ -29,28 +29,20 @@ extern uint32_t speed_set_flag;
 
 void motor_task_fun(void *arg)
 {	
-	#ifdef demo
-    gpio_set_pin_value(GPIO_PORT_D,GPIO_BIT_5,1);
-	#else
-	gpio_set_pin_value(GPIO_PORT_D,GPIO_BIT_5,0);
-	#endif
-
-    if(speed_set_flag==1){
-      co_delay_100us(200); //20ms     
-    }else if(speed_set_flag==2){
-      co_delay_100us(500);//50ms
-    }else if(speed_set_flag ==3){
-      co_delay_100us(5000);//500ms 
-    }
-    	
-	#ifdef demo
-    gpio_set_pin_value(GPIO_PORT_D,GPIO_BIT_5,0);
-	#else
-	gpio_set_pin_value(GPIO_PORT_D,GPIO_BIT_5,1);
-	#endif
-	co_delay_100us(10000);
+	uint32_t weak_up_tim_interval_s = get_weak_up_tim_interval_s();  //基础率计算时间间隔
 	
-	adc_task_fun(NULL);
+//	calculate_wake_up_times(&rate_info,weak_up_tim_interval_s,7100); //计算所有唤醒时间并打印
+	
+    //依据时间间隔启动1次电机
+	is_motor_start(&clock_env,weak_up_tim_interval_s);
+	
+//    //依据时间启动电机测试
+//    if(clock_env.hour==12&&clock_env.min==00&&(clock_env.sec>=10&&clock_env.sec<=30))
+//	{
+//      motor_low_powre_start(200);	
+//	}
+		
+//	adc_task_fun(NULL);
 }
 
 
@@ -317,7 +309,7 @@ void adc_manage_callback(int adc_val)
         // 如果数据5 大于或等于 数据1，打印"motor block"
         if (data5 >= data1) {
 			is_potentiometer = 1;
-            printf("motor block\r\n");
+//            printf("motor block\r\n");
 //			potentiometer_block(is_potentiometer); //电位器阻塞
         }else{
 			
@@ -355,7 +347,7 @@ void adc_task_fun(void *arg)
 	int smoothing_result = median_filter(result_pd6); //中值滤波	
 	//打印时间函数
 	
-	co_printf("adc smoothing val: %d\r\n",smoothing_result);	
+//	co_printf("adc smoothing val: %d\r\n",smoothing_result);	
 		
 //	co_printf("pd6 adc vol: %d mv\r\n",(result_pd6 *33*100/1024)); // 电压 计算中有小数会造成数据错误
 	adc_manage_callback(smoothing_result);
@@ -518,7 +510,7 @@ void send_message_run(void)
 void rtc_tim_task_fun (void *arg)
 {	    
 	  clock_hdl();
-	
+	  co_printf("rtc_tim_task_fun: ");
 	  co_printf("%04d-%02d-%02d ", clock_env.year, clock_env.month, clock_env.day);
 	  co_printf("%02d:%02d:%02d \r\n", clock_env.hour, clock_env.min, clock_env.sec);
 }

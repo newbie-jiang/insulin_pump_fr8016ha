@@ -98,7 +98,7 @@ void basal_rate_cjson_process(uint8_t *data, uint32_t len, uint8_t dbg_on) {
     co_printf("  basal_rate_num: %d\n", rate_info.basal_rate_num);
 
     // 由于 co_printf 无法打印浮点数，这里扩大十倍打印
-//    co_printf("  (float)basal_rate_speed * 10 : %d\n", (uint32_t)(rate_info.basal_rate_speed * 10));
+  //co_printf("  (float)basal_rate_speed * 10 : %d\n", (uint32_t)(rate_info.basal_rate_speed * 10));
 	printf("basal_rate_speed : %f\n",rate_info.basal_rate_speed);
     co_printf("  Start time: %02d:%02d\n", rate_info.basal_rate_start_tim_hh, rate_info.basal_rate_start_tim_min);
     co_printf("  End time: %02d:%02d\n", rate_info.basal_rate_end_tim_hh, rate_info.basal_rate_end_tim_min);
@@ -210,7 +210,7 @@ void sync_tim_cjson_process(uint8_t *data, uint32_t len, uint8_t dbg_on) {
 	 s_pack_num.cjson_instruct_num = 2;
 	}
 
-    // 提取 "now_tim"
+    // 提取 " now_tim "
     cJSON *now_tim = cJSON_GetObjectItemCaseSensitive(sync_tim_obj, "now_tim");
     if (cJSON_IsString(now_tim) && (now_tim->valuestring != NULL)) {
         // 分解时间信息
@@ -242,7 +242,6 @@ void sync_tim_cjson_process(uint8_t *data, uint32_t len, uint8_t dbg_on) {
     } else {
         co_printf("now_tim not found or invalid format!\n");
     }
-
     // 清理 JSON 内存
     cJSON_Delete(root);
 }

@@ -52,7 +52,7 @@
 
 
 
-Stack_Size      EQU     0x1000   ;  4k
+;Stack_Size      EQU     0x1000   ;  4k
 
                 AREA    STACK, NOINIT, READWRITE, ALIGN=3
 

@@ -37,3 +37,4 @@
 .\objects\proj_main.o: ..\code\ble_simple_peripheral.h
 .\objects\proj_main.o: ..\..\..\..\components\ble\profiles\ble_simple_profile\simple_gatt_service.h
 .\objects\proj_main.o: ..\..\..\..\components\ble\include\gatt\gatt_sig_uuid.h
+.\objects\proj_main.o: ..\code\application.h

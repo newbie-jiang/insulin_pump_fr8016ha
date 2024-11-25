@@ -1,4 +1,4 @@
-;#<FEEDBACK># ARM Linker, 5060750: Last Updated: Mon Nov 25 09:06:58 2024
+;#<FEEDBACK># ARM Linker, 5060750: Last Updated: Mon Nov 25 14:01:50 2024
 ;VERSION 0.2
 ;FILE adpcm_ima.o
 adpcm_decode_block <= USED 0
@@ -60,9 +60,7 @@ gap_security_check_rand_ediv <= USED 0
 ;FILE app_task.o
 ;FILE application.o
 basal_rate_Instruction_legal_check <= USED 0
-basal_rate_calculate_wake_up_time <= USED 0
 calculate_wake_up_times <= USED 0
-get_weak_up_tim_interval_s <= USED 0
 instruct_legal_check_process <= USED 0
 large_doseInstruction_legal_check <= USED 0
 sync_tim_Instruction_legal_check <= USED 0
@@ -269,9 +267,7 @@ pmu_set_led1_as_pwm <= USED 0
 pmu_set_led1_value <= USED 0
 pmu_set_led2_as_pwm <= USED 0
 pmu_set_lp_clk_src <= USED 0
-pmu_set_pin_dir <= USED 0
 pmu_set_pin_to_CPU <= USED 0
-pmu_set_pin_to_PMU <= USED 0
 pmu_set_port_mux <= USED 0
 ;FILE driver_pmu_pwm.o
 __asm___16_driver_pmu_pwm_c_dcc31a5d____REV16 <= USED 0

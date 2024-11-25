@@ -35,6 +35,7 @@
 
 #include "ble_simple_peripheral.h"
 #include "simple_gatt_service.h"
+#include "application.h"
 
 const struct jump_table_version_t _jump_table_version __attribute__((section("jump_table_3"))) = 
 {
@@ -87,31 +88,68 @@ __attribute__((section("ram_code"))) void user_entry_before_sleep_imp(void)
 		
 	pmu_set_led2_value(1); 	//关闭led	
 	
-	if(gap_get_connect_status(0))  
+	if(gap_get_connect_status(0))
 	{
 	 rtc_disalarm(RTC_A); //停止rtcA 定时器
 				
 	 system_sleep_disable(); //检测到处于连接状态时关闭睡眠模式	 
 	}
+}
+
+
+
+void motor_low_powre_start(uint32_t delay_ms)
+{
+	//低功耗  io初始化
+	pmu_set_pin_to_PMU(GPIO_PORT_D,GPIO_BIT_5);	
+	pmu_set_pin_dir(GPIO_PORT_D,BIT(5), GPIO_DIR_OUT); //输出低电平 
 	
-	//睡眠前获取rtc时间
-	co_printf("%04d-%02d-%02d ", clock_env.year, clock_env.month, clock_env.day);
-	co_printf("%02d:%02d:%02d \r\n", clock_env.hour, clock_env.min, clock_env.sec);
+	co_delay_100us(delay_ms);//运动时间
 	
+	pmu_set_pin_dir(GPIO_PORT_D,BIT(5), GPIO_DIR_IN);  //输入浮空,保证不漏电
+}
+
+     uint32_t last_motor_start_time_s = 0;
+
+void is_motor_start(clock_param_t *p_clock_env, uint32_t weak_up_tim_interval_s)
+{
+    // 定义静态变量，记录上一次启动的时间（秒数）
+
 	
 
-//	//时间到了启动电机
-//	if(clock_env.hour==20&&clock_env.min==20&&(clock_env.sec>=30&&clock_env.sec<=40))
-//	{
-//	  //开启电机
-//	  gpio_set_pin_value(GPIO_PORT_D,GPIO_BIT_5,0);
-//		
-//	  co_delay_100us(200); //20ms
-//		
-//	  //关闭电机
-//	  gpio_set_pin_value(GPIO_PORT_D,GPIO_BIT_5,1);	
-//	}
+    // 计算当前时间对应的秒数
+    uint32_t  current_time_s = p_clock_env->hour * 3600 + 
+                              p_clock_env->min * 60 + 
+                              p_clock_env->sec;
+    // 处理跨天情况
+    uint32_t day_seconds = 24 * 3600;
 	
+		
+    if (current_time_s < last_motor_start_time_s) {
+        // 跨天：重置 last_motor_start_time_s
+        last_motor_start_time_s = 0;
+    }
+	
+	 co_printf("now  tim_s:%d\r\n",current_time_s);
+	 co_printf("last tim_s:%d\r\n",last_motor_start_time_s);
+
+    // 检查是否需要启动电机  标准启动时间 正负1s，因为唤醒时间为3s，  
+    if ((current_time_s - last_motor_start_time_s) >= (weak_up_tim_interval_s)&&(current_time_s - last_motor_start_time_s) <= (weak_up_tim_interval_s+2)) {
+        // 启动电机
+        motor_low_powre_start(200); // 200 表示启动时间，单位需根据电机设计定义
+
+        // 更新上次启动时间
+        last_motor_start_time_s = current_time_s;
+
+        // 打印日志信息
+        co_printf("............Motor started at %02d:%02d:%02d............s\r\n", 
+                  p_clock_env->hour, p_clock_env->min, p_clock_env->sec);
+    }
+    else {
+//        // 打印日志，表示未满足启动条件
+//        co_printf("Motor not started, current time: %02d:%02d:%02d\r\n", 
+//                  p_clock_env->hour, p_clock_env->min, p_clock_env->sec);
+    }
 }
 
 
@@ -135,8 +173,22 @@ __attribute__((section("ram_code"))) void user_entry_after_sleep_imp(void)
 	clock_hdl();
     clock_hdl();
 	clock_hdl();
-	co_printf("%04d-%02d-%02d ", clock_env.year, clock_env.month, clock_env.day);
-	co_printf("%02d:%02d:%02d \r\n", clock_env.hour, clock_env.min, clock_env.sec);
+	co_printf("\r\n%04d-%02d-%02d ", clock_env.year, clock_env.month, clock_env.day);
+	co_printf("%02d:%02d:%02d \r\n", clock_env.hour, clock_env.min, clock_env.sec);			
+	    
+    uint32_t weak_up_tim_interval_s = get_weak_up_tim_interval_s();  //基础率计算时间间隔
+//	calculate_wake_up_times(&rate_info,weak_up_tim_interval_s,7100); //计算所有唤醒时间并打印
+	
+    //依据时间间隔启动1次电机
+	is_motor_start(&clock_env,weak_up_tim_interval_s);
+	
+	
+//	//低功耗下启动电机测试   在时间段 12:00:10 - 12:00:30 将启动电机 
+//	if(clock_env.hour==12&&clock_env.min==00&&(clock_env.sec>=10&&clock_env.sec<=30))
+//	{
+//       motor_low_powre_start(200);	
+//	}
+	
 }
 
 /*********************************************************************
@@ -226,7 +278,7 @@ void user_entry_after_ble_init(void)
 //	co_printf("%04d-%02d-%02d ", clock_env.year, clock_env.month, clock_env.day);
 //	co_printf("%02d:%02d:%02d \r\n", clock_env.hour, clock_env.min, clock_env.sec);
 
-    //simple_peripheral_init();		
+//  simple_peripheral_init();		
 }
 
 
@@ -243,8 +295,6 @@ void rtc_isr_ram(uint8_t rtc_idx)
 	  co_printf("\r\n rtc weak up \r\n");
 		
 	  ble_init();
-		
-//	  rtc_disalarm(RTC_A); //停止rtcA 定时器
 		
 	  //关闭rtc
 	  
