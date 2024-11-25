@@ -21,7 +21,7 @@
 
 #include "cJSON.h"
 #include "driver_rtc.h"
-
+#include "application.h"
 //#define demo  
 
 
@@ -42,8 +42,7 @@ void motor_task_fun(void *arg)
     }else if(speed_set_flag ==3){
       co_delay_100us(5000);//500ms 
     }
-    
-	
+    	
 	#ifdef demo
     gpio_set_pin_value(GPIO_PORT_D,GPIO_BIT_5,0);
 	#else
@@ -541,5 +540,17 @@ void rtc_tim_task_fun (void *arg)
 uint32_t get_sleep_tim_s(float basal_rate)
 {
 	return (3600/(basal_rate/0.1087));
+}
+
+
+extern os_timer_t instruct_check_task;
+
+extern void stop_task(void);
+extern void start_task(void);
+
+//单次任务
+void instruct_check_task_fun(void * arg)
+{		
+	instruct_legal_check_process(); //处理当前的数据	
 }
 

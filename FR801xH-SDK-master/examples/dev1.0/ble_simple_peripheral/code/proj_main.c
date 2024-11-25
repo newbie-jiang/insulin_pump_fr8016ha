@@ -87,12 +87,31 @@ __attribute__((section("ram_code"))) void user_entry_before_sleep_imp(void)
 		
 	pmu_set_led2_value(1); 	//关闭led	
 	
-	if(gap_get_connect_status(0))
+	if(gap_get_connect_status(0))  
 	{
 	 rtc_disalarm(RTC_A); //停止rtcA 定时器
 				
 	 system_sleep_disable(); //检测到处于连接状态时关闭睡眠模式	 
 	}
+	
+	//睡眠前获取rtc时间
+	co_printf("%04d-%02d-%02d ", clock_env.year, clock_env.month, clock_env.day);
+	co_printf("%02d:%02d:%02d \r\n", clock_env.hour, clock_env.min, clock_env.sec);
+	
+	
+
+//	//时间到了启动电机
+//	if(clock_env.hour==20&&clock_env.min==20&&(clock_env.sec>=30&&clock_env.sec<=40))
+//	{
+//	  //开启电机
+//	  gpio_set_pin_value(GPIO_PORT_D,GPIO_BIT_5,0);
+//		
+//	  co_delay_100us(200); //20ms
+//		
+//	  //关闭电机
+//	  gpio_set_pin_value(GPIO_PORT_D,GPIO_BIT_5,1);	
+//	}
+	
 }
 
 
@@ -224,6 +243,8 @@ void rtc_isr_ram(uint8_t rtc_idx)
 	  co_printf("\r\n rtc weak up \r\n");
 		
 	  ble_init();
+		
+//	  rtc_disalarm(RTC_A); //停止rtcA 定时器
 		
 	  //关闭rtc
 	  

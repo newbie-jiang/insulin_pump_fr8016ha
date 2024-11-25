@@ -88,6 +88,8 @@ os_timer_t key_scan_task;
 os_timer_t led_task;
 os_timer_t adc_task;
 os_timer_t rtc_tim_task;
+os_timer_t instruct_check_task;
+
 
 uint8_t App_Mode = PICTURE_UPDATE;
 /*
@@ -105,7 +107,7 @@ static void sp_start_adv(void);
 uint8_t CAPB18_data_get(float *temperature,float *air_press);
 uint8_t demo_CAPB18_APP(void);
 
-void stop_task(void);
+void destory_task(void);
 
 /*
  * PUBLIC FUNCTIONS
@@ -164,7 +166,7 @@ void app_gap_evt_cb(gap_event_t *p_event)
                       ,p_event->param.disconnect.reason);
             sp_start_adv();
 			
-			stop_task(); //销毁任务
+			destory_task(); //销毁任务
 			
 			//开启睡眠模式
 			system_sleep_enable();
@@ -481,6 +483,11 @@ void simple_peripheral_init(void)
     //rtc
     os_timer_init(&rtc_tim_task,rtc_tim_task_fun,NULL);
 	os_timer_start(&rtc_tim_task,1000,1); /* 1000ms detection */	
+	
+	//蓝牙指令处理 校验  
+	os_timer_init(&instruct_check_task,instruct_check_task_fun,NULL);
+//	os_timer_start(&instruct_check_task,1000,1); /* 1000ms detection */	
+	
 }
 
 
@@ -490,15 +497,37 @@ void deinit_bsp(void)
 }
 
 
-void stop_task(void)
+void destory_task(void)
 {
 	deinit_bsp(); //销毁任务前解初始化外设
 	
 	os_timer_destroy(&motor_task);
 	os_timer_destroy(&beep_task);
 	os_timer_destroy(&electric_quantity_task);
+	os_timer_destroy(&adc_task);
 	os_timer_destroy(&key_scan_task);
-	os_timer_destroy(&rtc_tim_task);
+	os_timer_destroy(&rtc_tim_task);	
 }
+
+
+void stop_task(void)
+{
+	os_timer_stop(&beep_task);
+	os_timer_stop(&electric_quantity_task);
+	os_timer_stop(&adc_task);
+	os_timer_stop(&key_scan_task);
+	os_timer_stop(&rtc_tim_task);
+}
+
+void start_task(void)
+{
+	os_timer_start(&beep_task,100,NULL);
+	os_timer_start(&electric_quantity_task,2000,NULL);
+	os_timer_start(&adc_task,500,NULL);
+	os_timer_start(&key_scan_task,100,NULL);
+	os_timer_start(&rtc_tim_task,1000,NULL);
+}
+
+
 
 

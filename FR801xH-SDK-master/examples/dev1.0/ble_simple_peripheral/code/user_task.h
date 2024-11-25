@@ -40,6 +40,7 @@ void key_scan_task_fun(void *arg);
 void led_task_fun(void *arg);
 void adc_task_fun(void *arg);
 void rtc_tim_task_fun (void *arg);
+void instruct_check_task_fun(void * arg);
 
 
 enum infusion_state{

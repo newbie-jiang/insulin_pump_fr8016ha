@@ -21,7 +21,8 @@
 #include "Cjson.h"
 #include "stdlib.h"
 #include "cjson_process.h"
-
+#include "application.h"
+#include "os_timer.h"
 // Simple GATT Profile Service UUID: 0xFFF0
 const uint8_t sp_svc_uuid[] = UUID16_ARR(SP_SVC_UUID);
 
@@ -274,10 +275,7 @@ extern void motor_run_fun2(void);
 extern void motor_run_fun3(void);
 
 
-
 extern void motor_stop_fun(void);
-
-
 
 
 void bluetooth_process(uint8_t *data,uint32_t len,uint8_t dbg_on)
@@ -333,7 +331,7 @@ void bluetooth_process(uint8_t *data,uint32_t len,uint8_t dbg_on)
    }
 
    
- 
+ extern os_timer_t instruct_check_task;
   
 /*********************************************************************
  * @fn      sp_gatt_msg_handler
@@ -446,13 +444,21 @@ static uint16_t sp_gatt_msg_handler(gatt_msg_t *p_msg)
 												
 //						bluetooth_process(p_msg->param.msg.p_msg_data,p_msg->param.msg.msg_len,1);	
 						
-						//基础率
+						//接收基础率
 						basal_rate_cjson_process(p_msg->param.msg.p_msg_data,p_msg->param.msg.msg_len,1);
+						//基础率合法性检查
+											
 						//时间同步
 						sync_tim_cjson_process(p_msg->param.msg.p_msg_data,p_msg->param.msg.msg_len,1);
 						update_tim(&current_time);
 						//大剂量
 						large_dose_cjson_process(p_msg->param.msg.p_msg_data,p_msg->param.msg.msg_len,1);
+						
+//						if(s_pack_num.cjson_instruct_num >=1 )
+						os_timer_start(&instruct_check_task,3000,0);   /* 1000ms detection */	
+						
+						
+//						instruct_legal_check_process(); //指令合法性检查
 						
 //						show_reg(p_msg->param.msg.p_msg_data,p_msg->param.msg.msg_len,1);												
 					}

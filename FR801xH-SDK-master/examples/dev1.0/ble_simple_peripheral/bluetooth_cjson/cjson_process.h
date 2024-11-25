@@ -14,11 +14,11 @@ typedef struct pack_num{
 	char  basal_rate_num; //基础率段数
 	float basal_rate_speed;//基础率速度
 	
-	char basal_rate_start_tim_hh;  //起始时间hh
-	char basal_rate_start_tim_min; //起始时间min
+	uint16_t basal_rate_start_tim_hh;  //起始时间hh
+	uint16_t basal_rate_start_tim_min; //起始时间min
 	
-	char basal_rate_end_tim_hh;    //结束时间hh
-	char basal_rate_end_tim_min;   //结束时间min
+	uint16_t basal_rate_end_tim_hh;    //结束时间hh
+	uint16_t basal_rate_end_tim_min;   //结束时间min
 	
 }basal_rate_information;
   

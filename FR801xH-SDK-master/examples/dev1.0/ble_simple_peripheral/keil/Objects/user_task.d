@@ -39,3 +39,4 @@
 .\objects\user_task.o: ..\..\..\..\components\driver\include\driver_adc.h 
 .\objects\user_task.o: ..\cjson\cJSON.h
 .\objects\user_task.o: ..\..\..\..\components\driver\include\driver_rtc.h
+.\objects\user_task.o: ..\code\application.h
