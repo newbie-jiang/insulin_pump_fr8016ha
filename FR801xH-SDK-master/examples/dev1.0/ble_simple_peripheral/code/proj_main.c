@@ -111,11 +111,11 @@ void motor_low_powre_start(uint32_t delay_ms)
 
      uint32_t last_motor_start_time_s = 0;
 
-void is_motor_start(clock_param_t *p_clock_env, uint32_t weak_up_tim_interval_s)
+
+
+void is_motor_start(clock_param_t *p_clock_env, uint32_t weak_up_tim_interval_s, basal_rate_information * p_rate_info )
 {
     // 定义静态变量，记录上一次启动的时间（秒数）
-
-	
 
     // 计算当前时间对应的秒数
     uint32_t  current_time_s = p_clock_env->hour * 3600 + 
@@ -123,8 +123,13 @@ void is_motor_start(clock_param_t *p_clock_env, uint32_t weak_up_tim_interval_s)
                               p_clock_env->sec;
     // 处理跨天情况
     uint32_t day_seconds = 24 * 3600;
-	
 		
+	uint32_t get_start_tim  =  p_rate_info->basal_rate_start_tim_hh*3600 + p_rate_info->basal_rate_start_tim_min;
+	uint32_t get_end_tim    =  p_rate_info->basal_rate_end_tim_hh*3600 + p_rate_info->basal_rate_end_tim_min;
+	
+	co_printf("get_start_tim = %d\r\n",get_start_tim);
+	co_printf("get_end_tim = %d\r\n",get_end_tim);
+				
     if (current_time_s < last_motor_start_time_s) {
         // 跨天：重置 last_motor_start_time_s
         last_motor_start_time_s = 0;
@@ -132,9 +137,12 @@ void is_motor_start(clock_param_t *p_clock_env, uint32_t weak_up_tim_interval_s)
 	
 	 co_printf("now  tim_s:%d\r\n",current_time_s);
 	 co_printf("last tim_s:%d\r\n",last_motor_start_time_s);
-
-    // 检查是否需要启动电机  标准启动时间 正负1s，因为唤醒时间为3s，  
-    if ((current_time_s - last_motor_start_time_s) >= (weak_up_tim_interval_s)&&(current_time_s - last_motor_start_time_s) <= (weak_up_tim_interval_s+2)) {
+	
+	//限制运行时间
+	if(current_time_s>=get_start_tim&&current_time_s<=get_end_tim)
+	{		
+		    // 检查是否需要启动电机  标准启动时间 正负1s，因为唤醒时间为3s，  
+       if ((current_time_s - last_motor_start_time_s) >= (weak_up_tim_interval_s)&&(current_time_s - last_motor_start_time_s) <= (weak_up_tim_interval_s+2)) {
         // 启动电机
         motor_low_powre_start(200); // 200 表示启动时间，单位需根据电机设计定义
 
@@ -144,12 +152,21 @@ void is_motor_start(clock_param_t *p_clock_env, uint32_t weak_up_tim_interval_s)
         // 打印日志信息
         co_printf("............Motor started at %02d:%02d:%02d............s\r\n", 
                   p_clock_env->hour, p_clock_env->min, p_clock_env->sec);
-    }
-    else {
+       }
+      else {
 //        // 打印日志，表示未满足启动条件
 //        co_printf("Motor not started, current time: %02d:%02d:%02d\r\n", 
 //                  p_clock_env->hour, p_clock_env->min, p_clock_env->sec);
-    }
+       }
+	
+   }else{
+   
+   co_printf("not run tim......\r\n");
+   
+   }
+	
+
+
 }
 
 
@@ -180,7 +197,7 @@ __attribute__((section("ram_code"))) void user_entry_after_sleep_imp(void)
 //	calculate_wake_up_times(&rate_info,weak_up_tim_interval_s,7100); //计算所有唤醒时间并打印
 	
     //依据时间间隔启动1次电机
-	is_motor_start(&clock_env,weak_up_tim_interval_s);
+	is_motor_start(&clock_env,weak_up_tim_interval_s,&rate_info);
 	
 	
 //	//低功耗下启动电机测试   在时间段 12:00:10 - 12:00:30 将启动电机 

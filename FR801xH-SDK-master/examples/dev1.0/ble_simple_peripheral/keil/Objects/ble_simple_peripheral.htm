@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\ble_simple_peripheral.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\ble_simple_peripheral.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Mon Nov 25 14:01:50 2024
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Thu Nov 28 13:33:35 2024
 <BR><P>
 <H3>Maximum Stack Usage =        872 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -6066,8 +6066,8 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[284]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;days_of_month
 </UL>
 
-<P><STRONG><a name="[377]"></a>is_motor_start</STRONG> (Thumb, 100 bytes, Stack size 24 bytes, proj_main.o(i.is_motor_start))
-<BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = is_motor_start &rArr; motor_low_powre_start &rArr; pmu_set_pin_to_PMU &rArr; frspim_wr
+<P><STRONG><a name="[377]"></a>is_motor_start</STRONG> (Thumb, 168 bytes, Stack size 32 bytes, proj_main.o(i.is_motor_start))
+<BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = is_motor_start &rArr; motor_low_powre_start &rArr; pmu_set_pin_to_PMU &rArr; frspim_wr
 </UL>
 <BR>[Calls]<UL><LI><a href="#[19e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;co_printf (via Veneer)
 <LI><a href="#[378]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;motor_low_powre_start
@@ -6667,8 +6667,8 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[377]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;is_motor_start
 </UL>
 
-<P><STRONG><a name="[2e]"></a>motor_task_fun</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, user_task.o(i.motor_task_fun))
-<BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = motor_task_fun &rArr; is_motor_start &rArr; motor_low_powre_start &rArr; pmu_set_pin_to_PMU &rArr; frspim_wr
+<P><STRONG><a name="[2e]"></a>motor_task_fun</STRONG> (Thumb, 20 bytes, Stack size 8 bytes, user_task.o(i.motor_task_fun))
+<BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = motor_task_fun &rArr; is_motor_start &rArr; motor_low_powre_start &rArr; pmu_set_pin_to_PMU &rArr; frspim_wr
 </UL>
 <BR>[Calls]<UL><LI><a href="#[362]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_weak_up_tim_interval_s
 <LI><a href="#[377]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;is_motor_start
@@ -7995,7 +7995,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> entry.o(i.app_main)
 </UL>
-<P><STRONG><a name="[417]"></a>user_entry_after_sleep_imp</STRONG> (Thumb, 102 bytes, Stack size 8 bytes, proj_main.o(ram_code))
+<P><STRONG><a name="[417]"></a>user_entry_after_sleep_imp</STRONG> (Thumb, 104 bytes, Stack size 8 bytes, proj_main.o(ram_code))
 <BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = user_entry_after_sleep_imp &rArr; clock_hdl &rArr; days_of_month
 </UL>
 <BR>[Calls]<UL><LI><a href="#[416]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_putc_noint_no_wait (via Veneer)

@@ -34,7 +34,7 @@ void motor_task_fun(void *arg)
 //	calculate_wake_up_times(&rate_info,weak_up_tim_interval_s,7100); //计算所有唤醒时间并打印
 	
     //依据时间间隔启动1次电机
-	is_motor_start(&clock_env,weak_up_tim_interval_s);
+	is_motor_start(&clock_env,weak_up_tim_interval_s,&rate_info);
 	
 //    //依据时间启动电机测试
 //    if(clock_env.hour==12&&clock_env.min==00&&(clock_env.sec>=10&&clock_env.sec<=30))
