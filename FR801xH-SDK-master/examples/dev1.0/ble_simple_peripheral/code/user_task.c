@@ -24,24 +24,21 @@
 #include "application.h"
 //#define demo  
 
-
+extern void is_motor_start(clock_param_t *p_clock_env, uint32_t weak_up_tim_interval_s, basal_rate_information * p_rate_info );
 extern uint32_t speed_set_flag;
 
 void motor_task_fun(void *arg)
 {	
-	uint32_t weak_up_tim_interval_s = get_weak_up_tim_interval_s();  //基础率计算时间间隔
+//	uint32_t weak_up_tim_interval_s = get_weak_up_tim_interval_s();  //基础率计算时间间隔
 	
 //	calculate_wake_up_times(&rate_info,weak_up_tim_interval_s,7100); //计算所有唤醒时间并打印
 	
     //依据时间间隔启动1次电机
-	is_motor_start(&clock_env,weak_up_tim_interval_s,&rate_info);
+//	is_motor_start(&clock_env,weak_up_tim_interval_s,&rate_info);
 	
-//    //依据时间启动电机测试
-//    if(clock_env.hour==12&&clock_env.min==00&&(clock_env.sec>=10&&clock_env.sec<=30))
-//	{
-//      motor_low_powre_start(200);	
-//	}
-		
+	
+	motor_start_process();
+	
 //	adc_task_fun(NULL);
 }
 

@@ -9,6 +9,20 @@
   sync_tim                   current_time     = {0};
   large_dose_information     large_dose_info  = {0};
   pack_num                   s_pack_num       = {0};
+  
+  basal_rate_information     s_rate_info[48]  = {0}; /* 半个小时一段时间 */
+  
+   
+  //最大基础率段数
+  static uint32_t max_basal_rate_num;
+  
+  
+  //获得最大基础率段
+  uint32_t get_max_basal_rate_num(void)
+  {	  
+	return max_basal_rate_num;   
+  }
+  
 
   /* 基础率数据指令  
    {
@@ -95,14 +109,30 @@ void basal_rate_cjson_process(uint8_t *data, uint32_t len, uint8_t dbg_on) {
 
     // 打印解析结果
     co_printf("Parsed basal_rate_information:\n");
-    co_printf("  basal_rate_num: %d\n", rate_info.basal_rate_num);
-
-    // 由于 co_printf 无法打印浮点数，这里扩大十倍打印
-  //co_printf("  (float)basal_rate_speed * 10 : %d\n", (uint32_t)(rate_info.basal_rate_speed * 10));
+    co_printf("  basal_rate_num: %d\n", rate_info.basal_rate_num);   
 	printf("basal_rate_speed : %f\n",rate_info.basal_rate_speed);
     co_printf("  Start time: %02d:%02d\n", rate_info.basal_rate_start_tim_hh, rate_info.basal_rate_start_tim_min);
     co_printf("  End time: %02d:%02d\n", rate_info.basal_rate_end_tim_hh, rate_info.basal_rate_end_tim_min);
-
+	
+	
+	//信息拷贝至对应的结构体数组中
+	s_rate_info[rate_info.basal_rate_num-1] = rate_info;
+	
+	
+//	//打印拷贝的数据
+//	co_printf("copy rate_info info:\r\n");
+//	printf("copy basal_rate_num:%d\r\n",  s_rate_info[rate_info.basal_rate_num-1].basal_rate_num);
+//	printf("copy basal_rate_speed:%f\r\n",s_rate_info[rate_info.basal_rate_num-1].basal_rate_speed);
+//	co_printf("  Start time: %02d:%02d\n",s_rate_info[rate_info.basal_rate_num-1].basal_rate_start_tim_hh, s_rate_info[rate_info.basal_rate_num-1].basal_rate_start_tim_min);
+//    co_printf("  End time: %02d:%02d\n",  s_rate_info[rate_info.basal_rate_num-1].basal_rate_end_tim_hh,   s_rate_info[rate_info.basal_rate_num-1].basal_rate_end_tim_min);
+	
+	//获得最大基础率段数 一天24h 获取最后时间的段数即可知道最大多少段
+	if(rate_info.basal_rate_end_tim_hh==23&&rate_info.basal_rate_end_tim_min==59)
+	{
+	  max_basal_rate_num = rate_info.basal_rate_num;	
+      printf(" max_basal_rate_num is %d \r\n ",max_basal_rate_num);		
+	}
+	
     // 清理 JSON 内存
     cJSON_Delete(root);
 }

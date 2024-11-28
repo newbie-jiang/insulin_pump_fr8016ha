@@ -48,10 +48,12 @@ typedef struct large_dose{
 }large_dose_information;
 
 
+
  extern  basal_rate_information     rate_info;
  extern  sync_tim                   current_time;
  extern  large_dose_information     large_dose_info;
  extern  pack_num                   s_pack_num;
+ extern  basal_rate_information     s_rate_info[48];  /* 存储基础率参数，最小半个小时一段*/
 
 //基础率设定
 void basal_rate_cjson_process(uint8_t *data, uint32_t len, uint8_t dbg_on);
@@ -67,5 +69,8 @@ void ack_large_dose_cjson_process(large_dose_information * p_large_dose_info,cha
 
 
 void ack_process(void);
+
+//获得基础率有多少段
+uint32_t get_max_basal_rate_num(void);
 
 #endif

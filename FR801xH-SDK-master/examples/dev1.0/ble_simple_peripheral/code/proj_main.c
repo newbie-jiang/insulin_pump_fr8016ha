@@ -112,20 +112,70 @@ void motor_low_powre_start(uint32_t delay_ms)
      uint32_t last_motor_start_time_s = 0;
 
 
-
-void is_motor_start(clock_param_t *p_clock_env, uint32_t weak_up_tim_interval_s, basal_rate_information * p_rate_info )
+//获得当前时间运行的基础率段
+uint32_t get_now_basal_rate_info(clock_param_t *p_clock_env)
 {
-    // 定义静态变量，记录上一次启动的时间（秒数）
+	 uint32_t max_basal_rate_num;
+	
+	 uint32_t get_start_tim [48] = {0};
+	 uint32_t get_end_tim   [48] = {0};
+	
+	 //计算当前时间对应的秒数
+     uint32_t  current_time_s = p_clock_env->hour * 3600 + 
+                              p_clock_env->min * 60 + 
+                              p_clock_env->sec;
+     // 处理跨天情况
+     uint32_t day_seconds = 24 * 3600;
+					
+    if (current_time_s < last_motor_start_time_s) {
+        // 跨天：重置 last_motor_start_time_s
+        last_motor_start_time_s = 0;
+    }
+		
+	//获得最大基础率段，最大基础率段为0时则不启动电机
+	max_basal_rate_num = get_max_basal_rate_num();
+	
+	if(max_basal_rate_num == 0)
+	{
+		printf(" max_basal_rate_num == 0 ");
+	 
+	    return -1;
+	}
+		 
+	 //依据时间遍历基础率信息，获取当前时间处于第几段
+	 for(int i=0;i<max_basal_rate_num;i++)
+	 {
+        get_start_tim[i]  =  s_rate_info[i].basal_rate_start_tim_hh*3600 + s_rate_info[i].basal_rate_start_tim_min*60;
+	    get_end_tim[i]    =  s_rate_info[i].basal_rate_end_tim_hh*3600 + s_rate_info[i].basal_rate_end_tim_min*60;
+		printf("get_start_tim[%d] = %d\r\n",i,get_start_tim[i]);
+	    printf("get_end_tim[%d] = %d\r\n",i,get_end_tim[i]);
+		 
+	    if(current_time_s>=get_start_tim[i]&&current_time_s<=get_end_tim[i])
+		{
+			printf("get_now_basal_rate_info return: %d\r\n",(i+1));
+		     //返回当前时间是运行的第几段	从1开始
+		    return (i+1);
+		} 
+	 }
 
-    // 计算当前时间对应的秒数
+	 return -1;
+}
+
+
+
+
+void is_motor_start(clock_param_t *p_clock_env, uint32_t weak_up_tim_interval_s, basal_rate_information * p_rate_info)
+{
+    //计算当前时间对应的秒数
     uint32_t  current_time_s = p_clock_env->hour * 3600 + 
                               p_clock_env->min * 60 + 
                               p_clock_env->sec;
     // 处理跨天情况
     uint32_t day_seconds = 24 * 3600;
 		
-	uint32_t get_start_tim  =  p_rate_info->basal_rate_start_tim_hh*3600 + p_rate_info->basal_rate_start_tim_min;
-	uint32_t get_end_tim    =  p_rate_info->basal_rate_end_tim_hh*3600 + p_rate_info->basal_rate_end_tim_min;
+	uint32_t get_start_tim  =  p_rate_info->basal_rate_start_tim_hh*3600 + p_rate_info->basal_rate_start_tim_min*60;
+	uint32_t get_end_tim    =  p_rate_info->basal_rate_end_tim_hh*3600 + p_rate_info->basal_rate_end_tim_min*60;
+	
 	
 	co_printf("get_start_tim = %d\r\n",get_start_tim);
 	co_printf("get_end_tim = %d\r\n",get_end_tim);
@@ -161,12 +211,25 @@ void is_motor_start(clock_param_t *p_clock_env, uint32_t weak_up_tim_interval_s,
 	
    }else{
    
-   co_printf("not run tim......\r\n");
+     co_printf("not run tim......\r\n");
    
    }
 	
 
 
+}
+
+
+
+void motor_start_process(void)
+{
+	uint32_t now_basal_rate_info = get_now_basal_rate_info(&clock_env);
+	printf("now_basal_rate_info is %d \r\n",now_basal_rate_info);
+	
+	uint32_t weak_up_tim_interval_s = basal_rate_calculate_wake_up_time(&s_rate_info[now_basal_rate_info-1]);
+	printf("weak_up_tim %d \r\n",weak_up_tim_interval_s);
+	
+    is_motor_start(&clock_env,weak_up_tim_interval_s,&s_rate_info[now_basal_rate_info-1]);
 }
 
 
@@ -185,6 +248,7 @@ __attribute__((section("ram_code"))) void user_entry_after_sleep_imp(void)
     NVIC_EnableIRQ(PMU_IRQn);
 	
 	pmu_set_led2_value(0); 	//开启led		
+	
 //  system_sleep_disable();	
     //时间上增加3s
 	clock_hdl();
@@ -197,15 +261,9 @@ __attribute__((section("ram_code"))) void user_entry_after_sleep_imp(void)
 //	calculate_wake_up_times(&rate_info,weak_up_tim_interval_s,7100); //计算所有唤醒时间并打印
 	
     //依据时间间隔启动1次电机
-	is_motor_start(&clock_env,weak_up_tim_interval_s,&rate_info);
+//	is_motor_start(&clock_env,weak_up_tim_interval_s,&rate_info);
 	
-	
-//	//低功耗下启动电机测试   在时间段 12:00:10 - 12:00:30 将启动电机 
-//	if(clock_env.hour==12&&clock_env.min==00&&(clock_env.sec>=10&&clock_env.sec<=30))
-//	{
-//       motor_low_powre_start(200);	
-//	}
-	
+	motor_start_process();
 }
 
 /*********************************************************************

@@ -3,7 +3,10 @@
 #include  "co_printf.h"
 
 
-weak_up_tim  wake_up_times[3000] = {0};
+//weak_up_tim  wake_up_times[3000] = {0};
+
+
+
 
 //参数检查
 #define  MAX_TIM_HH    23
@@ -149,21 +152,22 @@ int basal_rate_Instruction_legal_check(basal_rate_information * p_basal_rate_inf
 
 
 //时间同步指令合法性检查  参数限制
-void sync_tim_Instruction_legal_check(void)
+int sync_tim_Instruction_legal_check(void)
 {
 
 
-
+   return 0;
 }
 
 
 //大剂量指令合法性检查 参数限制
-void large_doseInstruction_legal_check(void)
+int large_doseInstruction_legal_check(void)
 {
+	
 	
 
 
-
+  return 0;
 }
 
 
@@ -179,7 +183,7 @@ void instruct_legal_check_process(void)
 		case 1:
 			if(!basal_rate_Instruction_legal_check(&rate_info)) //基础率数据合法性检查通过
 			{
-			  calculate_wake_up_times(&rate_info,get_weak_up_tim_interval_s(),6100); //计算唤醒时间并存储到结构体数组中
+			  calculate_wake_up_times(&rate_info,get_weak_up_tim_interval_s(),6100); //计算唤醒时间
 			}			
 			break;
 			
