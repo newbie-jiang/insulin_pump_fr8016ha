@@ -33,10 +33,14 @@ project :  FR801xH-SDK-master\examples\dev1.0\ble_simple_peripheral\keil
 
 开机启动时，时间为12:00:00，蓝牙连接输入以下指令，将按照不同时间段不同速度运行
 
+```
   { "basal_rate": { "basal_rate_num": "1", "speed": "30", "basal_rate_tim": "00:00-12:00" } } 
   { "basal_rate": { "basal_rate_num": "2", "speed": "25", "basal_rate_tim": "12:00-12:05" } } 
   { "basal_rate": { "basal_rate_num": "3", "speed": "30", "basal_rate_tim": "12:05-12:10" } } 
   { "basal_rate": { "basal_rate_num": "4", "speed": "25", "basal_rate_tim": "12:10-23:59" } } 
+```
+
+ 
 
 
 
