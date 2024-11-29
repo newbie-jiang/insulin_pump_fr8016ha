@@ -48,12 +48,22 @@ const struct jump_table_image_t _jump_table_image __attribute__((section("jump_t
     .image_size = 0x19000,      
 };
 
+
+//pmu_gpio 中断函数
 __attribute__((section("ram_code"))) void pmu_gpio_isr_ram(void)
 {
     uint32_t gpio_value = ool_read32(PMU_REG_GPIOA_V);
+	
+	if(gpio_value)
+	{
+	 co_printf("PA0 ");
+	}
     
     button_toggle_detected(gpio_value);
+	
     ool_write32(PMU_REG_PORTA_LAST, gpio_value);
+	
+	
 }
 
 
@@ -90,7 +100,7 @@ __attribute__((section("ram_code"))) void user_entry_before_sleep_imp(void)
 	
 	if(gap_get_connect_status(0))
 	{
-	 rtc_disalarm(RTC_A); //停止rtcA 定时器
+	 rtc_disalarm(RTC_A); //停止rtcA 定时器   rtcA定时器启动一次 开启蓝牙连接
 				
 	 system_sleep_disable(); //检测到处于连接状态时关闭睡眠模式	 
 	}
@@ -214,16 +224,13 @@ void is_motor_start(clock_param_t *p_clock_env, uint32_t weak_up_tim_interval_s,
      co_printf("not run tim......\r\n");
    
    }
-	
-
-
 }
 
 
 
 void motor_start_process(void)
 {
-	uint32_t now_basal_rate_info = get_now_basal_rate_info(&clock_env);
+	uint32_t now_basal_rate_info = get_now_basal_rate_info(&clock_env); 
 	printf("now_basal_rate_info is %d \r\n",now_basal_rate_info);
 	
 	uint32_t weak_up_tim_interval_s = basal_rate_calculate_wake_up_time(&s_rate_info[now_basal_rate_info-1]);
@@ -249,7 +256,6 @@ __attribute__((section("ram_code"))) void user_entry_after_sleep_imp(void)
 	
 	pmu_set_led2_value(0); 	//开启led		
 	
-//  system_sleep_disable();	
     //时间上增加3s
 	clock_hdl();
     clock_hdl();
@@ -257,12 +263,6 @@ __attribute__((section("ram_code"))) void user_entry_after_sleep_imp(void)
 	co_printf("\r\n%04d-%02d-%02d ", clock_env.year, clock_env.month, clock_env.day);
 	co_printf("%02d:%02d:%02d \r\n", clock_env.hour, clock_env.min, clock_env.sec);			
 	    
-    uint32_t weak_up_tim_interval_s = get_weak_up_tim_interval_s();  //基础率计算时间间隔
-//	calculate_wake_up_times(&rate_info,weak_up_tim_interval_s,7100); //计算所有唤醒时间并打印
-	
-    //依据时间间隔启动1次电机
-//	is_motor_start(&clock_env,weak_up_tim_interval_s,&rate_info);
-	
 	motor_start_process();
 }
 
@@ -320,16 +320,7 @@ void user_entry_before_ble_init(void)
  * @return  None.
  */
 void user_entry_after_ble_init(void)
-{ 	
-//	rtc_init();//初始化rtc
-//	
-//	rtc_alarm(RTC_A,5000);//启动RTC定时器 5s
-//	rtc_alarm(RTC_B,1000);//启动RTC定时器 1s
-			
-//	system_sleep_disable();
-//	
-//	simple_peripheral_init();		
-	
+{ 		
 #if 0
 //    system_sleep_disable();		//disable sleep 
 #else
@@ -348,13 +339,10 @@ void user_entry_after_ble_init(void)
     pmu_set_pin_pull(GPIO_PORT_D, (1<<GPIO_BIT_4)|(1<<GPIO_BIT_5), true);
     pmu_port_wakeup_func_set(GPIO_PD4|GPIO_PD5);
 	
-//	clock_hdl();
-//	
-//	co_printf("%04d-%02d-%02d ", clock_env.year, clock_env.month, clock_env.day);
-//	co_printf("%02d:%02d:%02d \r\n", clock_env.hour, clock_env.min, clock_env.sec);
-
-//  simple_peripheral_init();		
 }
+
+
+
 
 
 void rtc_isr_ram(uint8_t rtc_idx)

@@ -5,12 +5,20 @@
 #include  <stdlib.h>
 #include  <stdio.h>
 
+  //基础率
   basal_rate_information     rate_info        = {0};
+  basal_rate_information     s_rate_info[48]  = {0}; /* 半个小时一段时间 */
+  
+  //时间同步
   sync_tim                   current_time     = {0};
+  
   large_dose_information     large_dose_info  = {0};
   pack_num                   s_pack_num       = {0};
   
-  basal_rate_information     s_rate_info[48]  = {0}; /* 半个小时一段时间 */
+  //常规大剂量
+  normal_large_dose          n_large_dose     = {0};
+  square_wave_large_dose     s_w_large_dose   = {0};
+  double_wave_large_dose     d_w_large_dose   = {0};
   
    
   //最大基础率段数
@@ -555,6 +563,306 @@ void ack_large_dose_cjson_process(large_dose_information *p_large_dose_info, cha
 }
 
 
+/*
+typedef struct normal_large_dose{	
+	
+   float large_dose_liquid; //大剂量液量
+
+}normal_large_dose;
+
+extern  normal_large_dose          n_large_dose;  
+
+
+ instruction:
+  
+{ 
+  "normal_large_dose":           //常规大剂量
+  {       
+  "large_dose_liquid": "xx.x"    //液量
+  }
+}
+
+ -----example
+
+{ 
+  "normal_large_dose": 
+  {       
+  "large_dose_liquid": "9.5"   
+  }
+}
+*/
+
+// 正常模式大剂量
+void normal_large_dose_cjson_process(uint8_t *data, uint32_t len, uint8_t dbg_on)
+{
+    if (len == 0 || dbg_on == 0) return;
+
+    // 将接收的数据转为字符串
+    char buffer[150] = {0};
+    uint32_t copy_len = (len < sizeof(buffer) - 1) ? len : (sizeof(buffer) - 1);
+    memcpy(buffer, data, copy_len);
+    buffer[copy_len] = '\0'; // 确保字符串以 null 结尾
+
+    // 打印接收的 JSON 数据
+    co_printf("Received JSON: %s\n", buffer);
+
+    // 解析 JSON 数据
+    cJSON *root = cJSON_Parse(buffer);
+    if (root == NULL) {
+        co_printf("JSON parsing failed!\n");
+        return;
+    }
+
+    // 提取 "normal_large_dose" 对象
+    cJSON *normal_large_dose = cJSON_GetObjectItemCaseSensitive(root, "normal_large_dose");
+    if (normal_large_dose == NULL) {
+        co_printf("normal_large_dose object not found!\n");
+        cJSON_Delete(root);
+        return;
+    } else {
+        //设置相关指令号或状态
+        s_pack_num.cjson_instruct_num = 4;
+    }
+
+    // 提取 "large_dose_liquid"
+    cJSON *large_dose_liquid = cJSON_GetObjectItemCaseSensitive(normal_large_dose, "large_dose_liquid");
+    if (cJSON_IsString(large_dose_liquid) && (large_dose_liquid->valuestring != NULL)) {
+        n_large_dose.large_dose_liquid = atof(large_dose_liquid->valuestring);
+    } else {
+        co_printf("large_dose_liquid is missing or not a string!\n");
+    }
+
+    // 打印解析结果
+    co_printf("Parsed normal_large_dose information:\n");
+    printf("  large_dose_liquid: %f\n", n_large_dose.large_dose_liquid);
+
+    // 清理 JSON 内存
+    cJSON_Delete(root);
+}
+
+
+/* 
+
+typedef struct square_wave_large_dose{
+	
+	 float large_dose_liquid; //大剂量液量
+	 uint16_t tim_hh;    //大剂量时间 hh
+	 uint16_t tim_min;   //大剂量时间 min
+
+}square_wave_large_dose;
+
+ extern  square_wave_large_dose     s_w_large_dose;  
+
+
+
+ instruction:
+
+  { 
+   "square_wave_large_dose": 
+   {   //方波大剂量 
+   "large_dose_liquid": "xx.x",  //液量
+   "tim_hh":"xx",                //时间 h
+   "tim_min":"xx"                //时间 min
+   }
+  }   
+
+ -----example
+ { 
+ "square_wave_large_dose":
+   {   
+   "large_dose_liquid":"10.5",
+   "tim_hh":"02",              
+   "tim_min":"30"                
+   }
+ }   
+
+*/
+
+// 方波模式大剂量
+void square_wave_large_dose_process(uint8_t *data, uint32_t len, uint8_t dbg_on)
+{
+    if (len == 0 || dbg_on == 0) return;
+
+    // 将接收的数据转为字符串
+    char buffer[150] = {0};
+    uint32_t copy_len = (len < sizeof(buffer) - 1) ? len : (sizeof(buffer) - 1);
+    memcpy(buffer, data, copy_len);
+    buffer[copy_len] = '\0'; // 确保字符串以 null 结尾
+
+    // 打印接收的 JSON 数据
+    co_printf("Received JSON: %s\n", buffer);
+
+    // 解析 JSON 数据
+    cJSON *root = cJSON_Parse(buffer);
+    if (root == NULL) {
+        co_printf("JSON parsing failed!\n");
+        return;
+    }
+
+    // 提取 "square_wave_large_dose" 对象
+    cJSON *square_wave_large_dose = cJSON_GetObjectItemCaseSensitive(root, "square_wave_large_dose");
+    if (square_wave_large_dose == NULL) {
+        co_printf("square_wave_large_dose object not found!\n");
+        cJSON_Delete(root);
+        return;
+    } else {
+        // 设置相关指令号或状态
+        s_pack_num.cjson_instruct_num = 5; // 假设指令号为5，依据实际需求调整
+    }
+
+    // 提取 "large_dose_liquid"
+    cJSON *large_dose_liquid = cJSON_GetObjectItemCaseSensitive(square_wave_large_dose, "large_dose_liquid");
+    if (cJSON_IsString(large_dose_liquid) && (large_dose_liquid->valuestring != NULL)) {
+        s_w_large_dose.large_dose_liquid = atof(large_dose_liquid->valuestring);
+    } else {
+        co_printf("large_dose_liquid is missing or not a string!\n");
+    }
+
+    // 提取 "tim_hh"
+    cJSON *tim_hh = cJSON_GetObjectItemCaseSensitive(square_wave_large_dose, "tim_hh");
+    if (cJSON_IsString(tim_hh) && (tim_hh->valuestring != NULL)) {
+        s_w_large_dose.tim_hh = (uint16_t)atoi(tim_hh->valuestring);
+    } else {
+        co_printf("tim_hh is missing or not a string!\n");
+    }
+
+    // 提取 "tim_min"
+    cJSON *tim_min = cJSON_GetObjectItemCaseSensitive(square_wave_large_dose, "tim_min");
+    if (cJSON_IsString(tim_min) && (tim_min->valuestring != NULL)) {
+        s_w_large_dose.tim_min = (uint16_t)atoi(tim_min->valuestring);
+    } else {
+        co_printf("tim_min is missing or not a string!\n");
+    }
+
+    // 打印解析结果
+    co_printf("Parsed square_wave_large_dose information:\n");
+    printf("  large_dose_liquid: %.2f\n", s_w_large_dose.large_dose_liquid);
+    printf("  tim_hh: %u\n", s_w_large_dose.tim_hh);
+    printf("  tim_min: %u\n", s_w_large_dose.tim_min);
+
+    // 清理 JSON 内存
+    cJSON_Delete(root);
+}
+
+
+
+/*
+
+typedef struct double_wave_large_dose{
+	
+	 float all_liquid;  //总的大剂量
+	
+	 uint8_t proportion;           //输注比例
+	
+	 uint16_t tim_hh;     //第二段方波时间 hh
+	 uint16_t tim_min;    //第二段方波时间 min
+	
+}double_wave_large_dose;
+
+
+ extern  double_wave_large_dose     d_w_large_dose;   
+
+
+  instruction:
+
+{
+  "double_wave_large_dose":       //双波大剂量
+  {     
+  "all_liquid":"xx.x",            //总液量
+  "proportion":"xx",              //比例
+  "tim_hh":"xx",                  //双波时间 h
+  "tim_min":"xx"                  //双波时间 min 
+  }
+}
+
+ -----example
+
+{
+  "double_wave_large_dose":       
+  {     
+  "all_liquid":"15",            
+  "proportion":"50",              
+  "tim_hh":"1",                  
+  "tim_min":"10"                  
+  }
+}
+
+*/
+
+// 双波模式大剂量
+void double_wave_large_dose_process(uint8_t *data, uint32_t len, uint8_t dbg_on)
+{
+    if (len == 0 || dbg_on == 0) return;
+
+    // 将接收的数据转为字符串
+    char buffer[150] = {0};
+    uint32_t copy_len = (len < sizeof(buffer) - 1) ? len : (sizeof(buffer) - 1);
+    memcpy(buffer, data, copy_len);
+    buffer[copy_len] = '\0'; // 确保字符串以 null 结尾
+
+    // 打印接收的 JSON 数据
+    co_printf("Received JSON: %s\n", buffer);
+
+    // 解析 JSON 数据
+    cJSON *root = cJSON_Parse(buffer);
+    if (root == NULL) {
+        co_printf("JSON parsing failed!\n");
+        return;
+    }
+
+    // 提取 "double_wave_large_dose" 对象
+    cJSON *double_wave_large_dose = cJSON_GetObjectItemCaseSensitive(root, "double_wave_large_dose");
+    if (double_wave_large_dose == NULL) {
+        co_printf("double_wave_large_dose object not found!\n");
+        cJSON_Delete(root);
+        return;
+    } else {
+        // 设置相关指令号或状态
+        s_pack_num.cjson_instruct_num = 6; // 假设指令号为6，依据实际需求调整
+    }
+
+    // 提取 "all_liquid"
+    cJSON *all_liquid = cJSON_GetObjectItemCaseSensitive(double_wave_large_dose, "all_liquid");
+    if (cJSON_IsString(all_liquid) && (all_liquid->valuestring != NULL)) {
+        d_w_large_dose.all_liquid = atof(all_liquid->valuestring);
+    } else {
+        co_printf("all_liquid is missing or not a string!\n");
+    }
+
+    // 提取 "proportion"
+    cJSON *proportion = cJSON_GetObjectItemCaseSensitive(double_wave_large_dose, "proportion");
+    if (cJSON_IsString(proportion) && (proportion->valuestring != NULL)) {
+        d_w_large_dose.proportion = (uint8_t)atoi(proportion->valuestring);
+    } else {
+        co_printf("proportion is missing or not a string!\n");
+    }
+
+    // 提取 "tim_hh"
+    cJSON *tim_hh = cJSON_GetObjectItemCaseSensitive(double_wave_large_dose, "tim_hh");
+    if (cJSON_IsString(tim_hh) && (tim_hh->valuestring != NULL)) {
+        d_w_large_dose.tim_hh = (uint16_t)atoi(tim_hh->valuestring);
+    } else {
+        co_printf("tim_hh is missing or not a string!\n");
+    }
+
+    // 提取 "tim_min"
+    cJSON *tim_min = cJSON_GetObjectItemCaseSensitive(double_wave_large_dose, "tim_min");
+    if (cJSON_IsString(tim_min) && (tim_min->valuestring != NULL)) {
+        d_w_large_dose.tim_min = (uint16_t)atoi(tim_min->valuestring);
+    } else {
+        co_printf("tim_min is missing or not a string!\n");
+    }
+
+    // 打印解析结果
+    co_printf("Parsed double_wave_large_dose information:\n");
+    printf("  all_liquid: %.2f\n", d_w_large_dose.all_liquid);
+    printf("  proportion: %u\n", d_w_large_dose.proportion);
+    printf("  tim_hh: %u\n", d_w_large_dose.tim_hh);
+    printf("  tim_min: %u\n", d_w_large_dose.tim_min);
+
+    // 清理 JSON 内存
+    cJSON_Delete(root);
+}
 
 
 

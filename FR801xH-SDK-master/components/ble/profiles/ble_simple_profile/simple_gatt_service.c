@@ -464,7 +464,16 @@ static uint16_t sp_gatt_msg_handler(gatt_msg_t *p_msg)
 						}						
 						
 						//大剂量
-						large_dose_cjson_process(p_msg->param.msg.p_msg_data,p_msg->param.msg.msg_len,1);
+//						large_dose_cjson_process(p_msg->param.msg.p_msg_data,p_msg->param.msg.msg_len,1);
+						
+						//正常模式大剂量
+						normal_large_dose_cjson_process(p_msg->param.msg.p_msg_data,p_msg->param.msg.msg_len,1);
+						
+						//方波模式大剂量
+						square_wave_large_dose_process(p_msg->param.msg.p_msg_data,p_msg->param.msg.msg_len,1);
+						
+						//双波模式大剂量 数据解析
+                        double_wave_large_dose_process(p_msg->param.msg.p_msg_data,p_msg->param.msg.msg_len,1);
 						
 //						if(s_pack_num.cjson_instruct_num >=1 )
 						os_timer_start(&instruct_check_task,3000,0);   /* 1000ms detection */
