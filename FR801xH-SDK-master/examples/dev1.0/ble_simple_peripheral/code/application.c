@@ -1,10 +1,5 @@
 #include "application.h"
-//#include  "cjson_process.h"
 #include  "co_printf.h"
-
-
-//weak_up_tim  wake_up_times[3000] = {0};
-
 
 
 
@@ -19,7 +14,7 @@
 #define  MIN_TIM_S     0
 
 
-//基础率计算唤醒时间间隔
+//基础率计算运行时间间隔
 uint32_t basal_rate_calculate_wake_up_time(basal_rate_information * p_basal_rate_info)
 {
 	static uint16_t start_hh,start_min;
@@ -201,6 +196,27 @@ void instruct_legal_check_process(void)
 		default:
 			break;
 	}
+}
+
+extern void motor_low_powre_start(uint32_t delay_ms);
+
+//正常大剂量模式启动   设置后立马启动，蓝牙处于连接状态
+void normal_large_dose_mode_start(normal_large_dose *p_n_large_dose)
+{
+	//获取剂量
+	float get_liquid  =  p_n_large_dose->large_dose_liquid;
+	printf("get_liquid is %f\r\n",get_liquid);
+		
+	/*
+	  0.1087(一步的量 20ms)
+	
+	*/
+	
+	//依据剂量计算运行时间ms  (get_liquid/0.1087) 一共要运行多少步
+	uint32_t run_ms = (get_liquid/0.1087) * 20; 
+		
+	//运行电机
+	motor_low_powre_start(run_ms*10);		
 }
 
 

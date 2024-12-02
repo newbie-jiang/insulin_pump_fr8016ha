@@ -28,6 +28,9 @@ void calculate_wake_up_times(  basal_rate_information * p_basal_rate_info,
                           	   uint32_t weak_up_tim_interval_s ,
 							   int max_size 
 						    ) ;
+							   
+							   
+void normal_large_dose_mode_start(normal_large_dose *p_n_large_dose);
 
 
 #endif  

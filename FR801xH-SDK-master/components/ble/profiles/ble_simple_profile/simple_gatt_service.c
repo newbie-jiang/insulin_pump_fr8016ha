@@ -468,6 +468,11 @@ static uint16_t sp_gatt_msg_handler(gatt_msg_t *p_msg)
 						
 						//正常模式大剂量
 						normal_large_dose_cjson_process(p_msg->param.msg.p_msg_data,p_msg->param.msg.msg_len,1);
+						if(s_pack_num.cjson_instruct_num==4)
+						{
+						  //正常模式大剂量，启动电机
+						  normal_large_dose_mode_start(&n_large_dose);
+						}	
 						
 						//方波模式大剂量
 						square_wave_large_dose_process(p_msg->param.msg.p_msg_data,p_msg->param.msg.msg_len,1);

@@ -56,13 +56,12 @@ __attribute__((section("ram_code"))) void pmu_gpio_isr_ram(void)
 	
 	if(gpio_value)
 	{
-	 co_printf("PA0 ");
+	 co_printf("PA0");
 	}
     
     button_toggle_detected(gpio_value);
 	
     ool_write32(PMU_REG_PORTA_LAST, gpio_value);
-	
 	
 }
 
@@ -119,8 +118,8 @@ void motor_low_powre_start(uint32_t delay_ms)
 	pmu_set_pin_dir(GPIO_PORT_D,BIT(5), GPIO_DIR_IN);  //输入浮空,保证不漏电
 }
 
-     uint32_t last_motor_start_time_s = 0;
 
+uint32_t last_motor_start_time_s = 0;
 
 //获得当前时间运行的基础率段
 uint32_t get_now_basal_rate_info(clock_param_t *p_clock_env)
@@ -230,13 +229,17 @@ void is_motor_start(clock_param_t *p_clock_env, uint32_t weak_up_tim_interval_s,
 
 void motor_start_process(void)
 {
+	//获取当前时间段的基础率
 	uint32_t now_basal_rate_info = get_now_basal_rate_info(&clock_env); 
 	printf("now_basal_rate_info is %d \r\n",now_basal_rate_info);
 	
+	//基础率计算运行时间间隔
 	uint32_t weak_up_tim_interval_s = basal_rate_calculate_wake_up_time(&s_rate_info[now_basal_rate_info-1]);
 	printf("weak_up_tim %d \r\n",weak_up_tim_interval_s);
 	
+	//检查基础率 此刻时间是否到了启动电机
     is_motor_start(&clock_env,weak_up_tim_interval_s,&s_rate_info[now_basal_rate_info-1]);
+		
 }
 
 

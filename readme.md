@@ -116,5 +116,12 @@ project :  FR801xH-SDK-master\examples\dev1.0\ble_simple_peripheral\keil
 
 
 
+- [x] 完成 normal 大剂量
 
+指令如下
 
+```
+{"normal_large_dose": {"large_dose_liquid": "9.5"}}   
+```
+
+将运行指定剂量
