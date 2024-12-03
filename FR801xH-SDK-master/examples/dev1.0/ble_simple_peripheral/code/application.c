@@ -1,6 +1,6 @@
 #include "application.h"
 #include  "co_printf.h"
-
+#include  "time_rtc.h"
 
 
 //参数检查
@@ -217,6 +217,114 @@ void normal_large_dose_mode_start(normal_large_dose *p_n_large_dose)
 		
 	//运行电机
 	motor_low_powre_start(run_ms*10);		
+}
+
+
+
+ uint32_t sw_last_motor_start_time_s = 0;
+
+//方波电机运行
+void sw_is_motor_start(clock_param_t *p_clock_env, uint32_t weak_up_tim_interval_s, square_wave_large_dose * p_s_w_large_dose)
+{
+    //计算当前时间对应的秒数
+    uint32_t  current_time_s = p_clock_env->hour * 3600 + 
+                              p_clock_env->min * 60 + 
+                              p_clock_env->sec;
+    // 处理跨天情况
+    uint32_t day_seconds = 24 * 3600;
+		
+	uint32_t get_run_tim  =  p_s_w_large_dose->tim_hh*3600 + p_s_w_large_dose->tim_min*60;
+	
+    // 使用 static 保证只初始化一次
+    static uint32_t get_start_tim = 0;
+    static uint32_t get_end_tim = 0;
+
+    // 判断是否为第一次初始化
+    if (get_start_tim == 0 && get_end_tim == 0) {
+        get_start_tim = current_time_s;    
+    }
+	
+	get_end_tim = get_start_tim+get_run_tim;
+	
+	co_printf("get_start_tim = %d\r\n",get_start_tim);
+	co_printf("get_end_tim = %d\r\n",get_end_tim);
+				
+    if (current_time_s < sw_last_motor_start_time_s) {
+        // 跨天：重置 last_motor_start_time_s
+        sw_last_motor_start_time_s = 0;
+    }
+	
+	 co_printf("now  tim_s:%d\r\n",current_time_s);
+	 co_printf("last tim_s:%d\r\n",sw_last_motor_start_time_s);
+	
+	//限制运行时间
+	if(current_time_s>=get_start_tim&&current_time_s<=get_end_tim)
+	{		
+		    // 检查是否需要启动电机  标准启动时间 正负1s，因为唤醒时间为3s，  
+       if ((current_time_s - sw_last_motor_start_time_s) >= (weak_up_tim_interval_s)&&(current_time_s - sw_last_motor_start_time_s) <= (weak_up_tim_interval_s+2)) {
+        // 启动电机
+        motor_low_powre_start(200); // 200 表示启动时间，单位需根据电机设计定义
+
+        // 更新上次启动时间
+        sw_last_motor_start_time_s = current_time_s;
+
+        // 打印日志信息
+        co_printf(".....sw.......Motor started at %02d:%02d:%02d............s\r\n", 
+                  p_clock_env->hour, p_clock_env->min, p_clock_env->sec);
+    }
+   else{
+//        // 打印日志，表示未满足启动条件
+//        co_printf("Motor not started, current time: %02d:%02d:%02d\r\n", 
+//                  p_clock_env->hour, p_clock_env->min, p_clock_env->sec);
+       }
+	
+     }else{
+	   
+     co_printf("not run tim......\r\n");  
+	   
+   }
+}
+
+
+
+//方波大剂量模式启动
+uint32_t square_wave_large_dose_mode_start(square_wave_large_dose  * p_s_w_large_dose)
+{
+	//获取剂量
+	float get_liquid  =  p_s_w_large_dose->large_dose_liquid;
+	printf("get_liquid is %f\r\n",get_liquid);
+	
+    //获取运行时间
+	uint16_t tim_hh = p_s_w_large_dose->tim_hh;      //大剂量时间 hh
+	uint16_t tim_min = p_s_w_large_dose->tim_min;    //大剂量时间 min
+	
+	//计算运行时间 s
+	float all_time = tim_hh + tim_min/60.0;
+		
+	//速度 = 液量/时间
+	float square_wave_speed = get_liquid / all_time;
+	printf("square_wave_speed is %fu/h \r\n",square_wave_speed);
+	
+	//计算唤醒时间间隔
+	uint32_t weak_up_tim_interval_s = (uint32_t)(3600 / (square_wave_speed / 0.1087));
+   	
+	//返回运行时间间隔
+	return weak_up_tim_interval_s;	
+}
+
+
+
+
+void sw_motor_start_process(void)
+{
+	//计算运行时间间隔
+	uint32_t weak_up_tim_interval_s = square_wave_large_dose_mode_start(&s_w_large_dose);
+	
+	co_printf("weak_up_tim_interval_s is %d\r\n",weak_up_tim_interval_s);
+	
+	//方波大剂量依据时间启动
+    sw_is_motor_start(&clock_env,weak_up_tim_interval_s,&s_w_large_dose);
+		
 }
 
 

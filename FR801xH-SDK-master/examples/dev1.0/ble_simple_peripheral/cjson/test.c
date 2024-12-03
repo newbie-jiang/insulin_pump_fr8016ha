@@ -177,7 +177,7 @@ static void create_objects(void)
     /* Print to text */
     if (print_preallocated(root) != 0) {
         cJSON_Delete(root);
-//        exit(EXIT_FAILURE);
+//      exit(EXIT_FAILURE);
     }
     cJSON_Delete(root);
 
@@ -194,8 +194,8 @@ static void create_objects(void)
     root = cJSON_CreateArray();
     for (i = 0; i < 3; i++)
     {
-        cJSON_AddItemToArray(root, cJSON_CreateIntArray(numbers[i], 3));
-    }
+       cJSON_AddItemToArray(root, cJSON_CreateIntArray(numbers[i], 3));
+    }   
 
     /* cJSON_ReplaceItemInArray(root, 1, cJSON_CreateString("Replacement")); */
 
@@ -329,7 +329,6 @@ void parse_gallery_json(const char *json_data)
             }
         }
     }
-
     // 释放内存
     cJSON_Delete(root);
 }
@@ -337,17 +336,17 @@ void parse_gallery_json(const char *json_data)
 
 int cjson_test(void)
 {
-  /* print the version */
+    /* print the version */
     printf("Version: %s\r\n", cJSON_Version());
 
-  /* Now some samplecode for building objects concisely: */
+    /* Now some samplecode for building objects concisely: */
     create_objects();
 	
- // 示例 JSON 数据
+    // 示例 JSON 数据
     const char *json_data = "{\"Image\":{\"Width\":800,\"Height\":600,\"Title\":\"View from 15th Floor\",\"Thumbnail\":{\"Url\":\"http:/*www.example.com/image/481989943\",\"Height\":125,\"Width\":\"100\"},\"IDs\":[116,943,234,38793]}}";
 
     // 解析 JSON 数据
     parse_gallery_json(json_data);
-		
+			
 	return 0;
 }

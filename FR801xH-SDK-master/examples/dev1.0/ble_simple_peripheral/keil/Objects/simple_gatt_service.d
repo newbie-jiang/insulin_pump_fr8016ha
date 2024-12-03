@@ -16,5 +16,5 @@
 .\objects\simple_gatt_service.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 .\objects\simple_gatt_service.o: ..\bluetooth_cjson\cjson_process.h
 .\objects\simple_gatt_service.o: ..\code\application.h
-.\objects\simple_gatt_service.o: ..\..\..\..\components\modules\os\include\os_timer.h
 .\objects\simple_gatt_service.o: ..\code\time_rtc.h
+.\objects\simple_gatt_service.o: ..\..\..\..\components\modules\os\include\os_timer.h

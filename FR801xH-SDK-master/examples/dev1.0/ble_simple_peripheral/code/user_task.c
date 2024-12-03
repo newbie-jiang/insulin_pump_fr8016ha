@@ -38,6 +38,8 @@ void motor_task_fun(void *arg)
 	
 	
 	motor_start_process();
+	sw_motor_start_process();
+	
 	
 //	adc_task_fun(NULL);
 }

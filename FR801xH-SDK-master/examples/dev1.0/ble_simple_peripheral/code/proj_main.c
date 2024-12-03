@@ -238,8 +238,7 @@ void motor_start_process(void)
 	printf("weak_up_tim %d \r\n",weak_up_tim_interval_s);
 	
 	//检查基础率 此刻时间是否到了启动电机
-    is_motor_start(&clock_env,weak_up_tim_interval_s,&s_rate_info[now_basal_rate_info-1]);
-		
+    is_motor_start(&clock_env,weak_up_tim_interval_s,&s_rate_info[now_basal_rate_info-1]);		
 }
 
 
@@ -267,6 +266,8 @@ __attribute__((section("ram_code"))) void user_entry_after_sleep_imp(void)
 	co_printf("%02d:%02d:%02d \r\n", clock_env.hour, clock_env.min, clock_env.sec);			
 	    
 	motor_start_process();
+	
+	sw_motor_start_process();
 }
 
 /*********************************************************************
@@ -340,8 +341,7 @@ void user_entry_after_ble_init(void)
 #endif
 	
     pmu_set_pin_pull(GPIO_PORT_D, (1<<GPIO_BIT_4)|(1<<GPIO_BIT_5), true);
-    pmu_port_wakeup_func_set(GPIO_PD4|GPIO_PD5);
-	
+    pmu_port_wakeup_func_set(GPIO_PD4|GPIO_PD5);	
 }
 
 

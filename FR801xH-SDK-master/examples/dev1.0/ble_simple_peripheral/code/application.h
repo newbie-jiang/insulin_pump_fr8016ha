@@ -3,7 +3,7 @@
 
 #include "stdint.h"
 #include "cjson_process.h"
-
+#include "time_rtc.h"
 
 
 
@@ -31,7 +31,10 @@ void calculate_wake_up_times(  basal_rate_information * p_basal_rate_info,
 							   
 							   
 void normal_large_dose_mode_start(normal_large_dose *p_n_large_dose);
+							   
+void sw_is_motor_start(clock_param_t *p_clock_env, uint32_t weak_up_tim_interval_s, square_wave_large_dose * p_s_w_large_dose);
 
+void sw_motor_start_process(void);
 
 #endif  
 

@@ -336,6 +336,7 @@ void bluetooth_process(uint8_t *data,uint32_t len,uint8_t dbg_on)
    
  extern os_timer_t instruct_check_task;
  extern   uint32_t last_motor_start_time_s;
+ extern   uint32_t sw_last_motor_start_time_s;
   
 /*********************************************************************
  * @fn      sp_gatt_msg_handler
@@ -454,7 +455,7 @@ static uint16_t sp_gatt_msg_handler(gatt_msg_t *p_msg)
 						if(s_pack_num.cjson_instruct_num==1)
 						{
 						  last_motor_start_time_s = clock_env.hour*3600+clock_env.min*60+clock_env.sec;
-						}
+						} 
 											
 						//时间同步
 						sync_tim_cjson_process(p_msg->param.msg.p_msg_data,p_msg->param.msg.msg_len,1);
@@ -476,6 +477,10 @@ static uint16_t sp_gatt_msg_handler(gatt_msg_t *p_msg)
 						
 						//方波模式大剂量
 						square_wave_large_dose_process(p_msg->param.msg.p_msg_data,p_msg->param.msg.msg_len,1);
+						if(s_pack_num.cjson_instruct_num==5){
+						   printf("....................................s_pack_num.cjson_instruct_num = 5......................\r\n ");
+						   sw_last_motor_start_time_s = clock_env.hour*3600+clock_env.min*60+clock_env.sec;			
+						}
 						
 						//双波模式大剂量 数据解析
                         double_wave_large_dose_process(p_msg->param.msg.p_msg_data,p_msg->param.msg.msg_len,1);
