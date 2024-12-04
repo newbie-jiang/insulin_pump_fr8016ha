@@ -28,18 +28,10 @@ extern void is_motor_start(clock_param_t *p_clock_env, uint32_t weak_up_tim_inte
 extern uint32_t speed_set_flag;
 
 void motor_task_fun(void *arg)
-{	
-//	uint32_t weak_up_tim_interval_s = get_weak_up_tim_interval_s();  //基础率计算时间间隔
-	
-//	calculate_wake_up_times(&rate_info,weak_up_tim_interval_s,7100); //计算所有唤醒时间并打印
-	
-    //依据时间间隔启动1次电机
-//	is_motor_start(&clock_env,weak_up_tim_interval_s,&rate_info);
-	
-	
+{			
 	motor_start_process();
 	sw_motor_start_process();
-	
+	dw_second_sw_start_process();
 	
 //	adc_task_fun(NULL);
 }
@@ -114,7 +106,7 @@ void electric_quantity_task_fun(void *arg)
 		is_lopowre = 0;
 	    lopowre_callback();		
 	}	
-  co_printf("vol_val = %dmV \r\n",vol_val);		
+//  co_printf("vol_val = %dmV \r\n",vol_val);		
 }
 
 

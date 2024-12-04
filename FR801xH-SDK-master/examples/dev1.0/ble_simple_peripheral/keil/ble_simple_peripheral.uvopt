@@ -147,23 +147,23 @@
         <Bp>
           <Number>0</Number>
           <Type>0</Type>
-          <LineNumber>66</LineNumber>
+          <LineNumber>44</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>16806788</Address>
+          <Address>0</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
           <SizeOfObject>0</SizeOfObject>
           <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>1</BreakIfRCount>
-          <Filename>C:\Users\Administrator\Desktop\鑳板矝绱犳车\FR801xH-SDK-master\examples\dev1.0\ble_simple_peripheral\code\user_task.c</Filename>
+          <BreakIfRCount>0</BreakIfRCount>
+          <Filename>..\code\user_task.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression>\\ble_simple_peripheral\../code/user_task.c\66</Expression>
+          <Expression></Expression>
         </Bp>
         <Bp>
           <Number>1</Number>
           <Type>0</Type>
-          <LineNumber>63</LineNumber>
+          <LineNumber>46</LineNumber>
           <EnabledFlag>1</EnabledFlag>
           <Address>0</Address>
           <ByteObject>0</ByteObject>
@@ -179,7 +179,7 @@
         <Bp>
           <Number>2</Number>
           <Type>0</Type>
-          <LineNumber>65</LineNumber>
+          <LineNumber>47</LineNumber>
           <EnabledFlag>1</EnabledFlag>
           <Address>0</Address>
           <ByteObject>0</ByteObject>
@@ -195,7 +195,7 @@
         <Bp>
           <Number>3</Number>
           <Type>0</Type>
-          <LineNumber>55</LineNumber>
+          <LineNumber>48</LineNumber>
           <EnabledFlag>1</EnabledFlag>
           <Address>0</Address>
           <ByteObject>0</ByteObject>
@@ -211,7 +211,7 @@
         <Bp>
           <Number>4</Number>
           <Type>0</Type>
-          <LineNumber>57</LineNumber>
+          <LineNumber>49</LineNumber>
           <EnabledFlag>1</EnabledFlag>
           <Address>0</Address>
           <ByteObject>0</ByteObject>
@@ -227,7 +227,7 @@
         <Bp>
           <Number>5</Number>
           <Type>0</Type>
-          <LineNumber>58</LineNumber>
+          <LineNumber>51</LineNumber>
           <EnabledFlag>1</EnabledFlag>
           <Address>0</Address>
           <ByteObject>0</ByteObject>
@@ -243,7 +243,7 @@
         <Bp>
           <Number>6</Number>
           <Type>0</Type>
-          <LineNumber>70</LineNumber>
+          <LineNumber>50</LineNumber>
           <EnabledFlag>1</EnabledFlag>
           <Address>0</Address>
           <ByteObject>0</ByteObject>
@@ -259,7 +259,7 @@
         <Bp>
           <Number>7</Number>
           <Type>0</Type>
-          <LineNumber>72</LineNumber>
+          <LineNumber>53</LineNumber>
           <EnabledFlag>1</EnabledFlag>
           <Address>0</Address>
           <ByteObject>0</ByteObject>
@@ -275,7 +275,7 @@
         <Bp>
           <Number>8</Number>
           <Type>0</Type>
-          <LineNumber>73</LineNumber>
+          <LineNumber>66</LineNumber>
           <EnabledFlag>1</EnabledFlag>
           <Address>0</Address>
           <ByteObject>0</ByteObject>
@@ -291,23 +291,23 @@
         <Bp>
           <Number>9</Number>
           <Type>0</Type>
-          <LineNumber>52</LineNumber>
+          <LineNumber>66</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>0</Address>
+          <Address>16806788</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
           <SizeOfObject>0</SizeOfObject>
           <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>0</BreakIfRCount>
-          <Filename>..\code\user_task.c</Filename>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>C:\Users\Administrator\Desktop\鑳板矝绱犳车\FR801xH-SDK-master\examples\dev1.0\ble_simple_peripheral\code\user_task.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression></Expression>
+          <Expression>\\ble_simple_peripheral\../code/user_task.c\66</Expression>
         </Bp>
         <Bp>
           <Number>10</Number>
           <Type>0</Type>
-          <LineNumber>54</LineNumber>
+          <LineNumber>72</LineNumber>
           <EnabledFlag>1</EnabledFlag>
           <Address>0</Address>
           <ByteObject>0</ByteObject>
@@ -323,7 +323,7 @@
         <Bp>
           <Number>11</Number>
           <Type>0</Type>
-          <LineNumber>60</LineNumber>
+          <LineNumber>73</LineNumber>
           <EnabledFlag>1</EnabledFlag>
           <Address>0</Address>
           <ByteObject>0</ByteObject>
@@ -339,7 +339,7 @@
         <Bp>
           <Number>12</Number>
           <Type>0</Type>
-          <LineNumber>61</LineNumber>
+          <LineNumber>75</LineNumber>
           <EnabledFlag>1</EnabledFlag>
           <Address>0</Address>
           <ByteObject>0</ByteObject>
@@ -355,7 +355,7 @@
         <Bp>
           <Number>13</Number>
           <Type>0</Type>
-          <LineNumber>62</LineNumber>
+          <LineNumber>76</LineNumber>
           <EnabledFlag>1</EnabledFlag>
           <Address>0</Address>
           <ByteObject>0</ByteObject>
@@ -371,7 +371,7 @@
         <Bp>
           <Number>14</Number>
           <Type>0</Type>
-          <LineNumber>67</LineNumber>
+          <LineNumber>71</LineNumber>
           <EnabledFlag>1</EnabledFlag>
           <Address>0</Address>
           <ByteObject>0</ByteObject>
@@ -387,7 +387,7 @@
         <Bp>
           <Number>15</Number>
           <Type>0</Type>
-          <LineNumber>68</LineNumber>
+          <LineNumber>74</LineNumber>
           <EnabledFlag>1</EnabledFlag>
           <Address>0</Address>
           <ByteObject>0</ByteObject>
@@ -403,134 +403,6 @@
         <Bp>
           <Number>16</Number>
           <Type>0</Type>
-          <LineNumber>69</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>0</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>0</BreakIfRCount>
-          <Filename>..\code\user_task.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression></Expression>
-        </Bp>
-        <Bp>
-          <Number>17</Number>
-          <Type>0</Type>
-          <LineNumber>75</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>0</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>0</BreakIfRCount>
-          <Filename>..\code\user_task.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression></Expression>
-        </Bp>
-        <Bp>
-          <Number>18</Number>
-          <Type>0</Type>
-          <LineNumber>76</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>0</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>0</BreakIfRCount>
-          <Filename>..\code\user_task.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression></Expression>
-        </Bp>
-        <Bp>
-          <Number>19</Number>
-          <Type>0</Type>
-          <LineNumber>56</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>0</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>0</BreakIfRCount>
-          <Filename>..\code\user_task.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression></Expression>
-        </Bp>
-        <Bp>
-          <Number>20</Number>
-          <Type>0</Type>
-          <LineNumber>59</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>0</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>0</BreakIfRCount>
-          <Filename>..\code\user_task.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression></Expression>
-        </Bp>
-        <Bp>
-          <Number>21</Number>
-          <Type>0</Type>
-          <LineNumber>64</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>0</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>0</BreakIfRCount>
-          <Filename>..\code\user_task.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression></Expression>
-        </Bp>
-        <Bp>
-          <Number>22</Number>
-          <Type>0</Type>
-          <LineNumber>71</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>0</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>0</BreakIfRCount>
-          <Filename>..\code\user_task.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression></Expression>
-        </Bp>
-        <Bp>
-          <Number>23</Number>
-          <Type>0</Type>
-          <LineNumber>74</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>0</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>0</BreakIfRCount>
-          <Filename>..\code\user_task.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression></Expression>
-        </Bp>
-        <Bp>
-          <Number>24</Number>
-          <Type>0</Type>
           <LineNumber>77</LineNumber>
           <EnabledFlag>1</EnabledFlag>
           <Address>0</Address>
@@ -545,7 +417,7 @@
           <Expression></Expression>
         </Bp>
         <Bp>
-          <Number>25</Number>
+          <Number>17</Number>
           <Type>0</Type>
           <LineNumber>78</LineNumber>
           <EnabledFlag>1</EnabledFlag>

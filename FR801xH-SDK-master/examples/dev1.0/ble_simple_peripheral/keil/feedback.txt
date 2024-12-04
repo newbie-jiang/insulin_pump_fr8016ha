@@ -1,4 +1,4 @@
-;#<FEEDBACK># ARM Linker, 5060750: Last Updated: Tue Dec 03 10:20:42 2024
+;#<FEEDBACK># ARM Linker, 5060750: Last Updated: Wed Dec 04 10:49:50 2024
 ;VERSION 0.2
 ;FILE adpcm_ima.o
 adpcm_decode_block <= USED 0
@@ -61,6 +61,7 @@ gap_security_check_rand_ediv <= USED 0
 ;FILE application.o
 basal_rate_Instruction_legal_check <= USED 0
 calculate_wake_up_times <= USED 0
+dw_motor_start_process <= USED 0
 get_weak_up_tim_interval_s <= USED 0
 instruct_legal_check_process <= USED 0
 large_doseInstruction_legal_check <= USED 0

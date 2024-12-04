@@ -171,6 +171,7 @@ uint32_t get_now_basal_rate_info(clock_param_t *p_clock_env)
 }
 
 
+//#define BASAL_RATE_DEBUG
 
 
 void is_motor_start(clock_param_t *p_clock_env, uint32_t weak_up_tim_interval_s, basal_rate_information * p_rate_info)
@@ -185,17 +186,20 @@ void is_motor_start(clock_param_t *p_clock_env, uint32_t weak_up_tim_interval_s,
 	uint32_t get_start_tim  =  p_rate_info->basal_rate_start_tim_hh*3600 + p_rate_info->basal_rate_start_tim_min*60;
 	uint32_t get_end_tim    =  p_rate_info->basal_rate_end_tim_hh*3600 + p_rate_info->basal_rate_end_tim_min*60;
 	
-	
+	#ifdef BASAL_RATE_DEBUG
 	co_printf("get_start_tim = %d\r\n",get_start_tim);
 	co_printf("get_end_tim = %d\r\n",get_end_tim);
+	#endif
 				
     if (current_time_s < last_motor_start_time_s) {
         // 跨天：重置 last_motor_start_time_s
         last_motor_start_time_s = 0;
     }
 	
+	 #ifdef BASAL_RATE_DEBUG
 	 co_printf("now  tim_s:%d\r\n",current_time_s);
 	 co_printf("last tim_s:%d\r\n",last_motor_start_time_s);
+	 #endif
 	
 	//限制运行时间
 	if(current_time_s>=get_start_tim&&current_time_s<=get_end_tim)
@@ -207,10 +211,15 @@ void is_motor_start(clock_param_t *p_clock_env, uint32_t weak_up_tim_interval_s,
 
         // 更新上次启动时间
         last_motor_start_time_s = current_time_s;
+		   
+		#ifdef BASAL_RATE_DEBUG
 
         // 打印日志信息
         co_printf("............Motor started at %02d:%02d:%02d............s\r\n", 
                   p_clock_env->hour, p_clock_env->min, p_clock_env->sec);
+		   
+		#endif
+		   
        }
       else {
 //        // 打印日志，表示未满足启动条件
@@ -219,9 +228,9 @@ void is_motor_start(clock_param_t *p_clock_env, uint32_t weak_up_tim_interval_s,
        }
 	
    }else{
-   
+     #ifdef BASAL_RATE_DEBUG
      co_printf("not run tim......\r\n");
-   
+     #endif
    }
 }
 
@@ -268,7 +277,11 @@ __attribute__((section("ram_code"))) void user_entry_after_sleep_imp(void)
 	motor_start_process();
 	
 	sw_motor_start_process();
+	
+	dw_second_sw_start_process();
 }
+
+
 
 /*********************************************************************
  * @fn      user_entry_before_ble_init

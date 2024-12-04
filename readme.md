@@ -106,7 +106,7 @@ project :  FR801xH-SDK-master\examples\dev1.0\ble_simple_peripheral\keil
 
 -----example
 
-{"double_wave_large_dose":{"all_liquid":"15","proportion":"50", "tim_hh":"1", "tim_min":"10"}}  
+{"double_wave_large_dose":{"all_liquid":"60","proportion":"50", "tim_hh":"1", "tim_min":"00"}}  
 
 ```
 
@@ -118,10 +118,19 @@ project :  FR801xH-SDK-master\examples\dev1.0\ble_simple_peripheral\keil
 
 - [x] 完成 normal 大剂量
 
-指令如下
-
 ```
 {"normal_large_dose": {"large_dose_liquid": "9.5"}}   
 ```
 
-将运行指定剂量
+- [x] 完成 方波大剂量
+
+```
+{"square_wave_large_dose":{"large_dose_liquid":"75","tim_hh":"02","tim_min":"30"}}  
+```
+
+- [x] 完成双波大剂量
+
+```
+{"double_wave_large_dose":{"all_liquid":"60","proportion":"50", "tim_hh":"1", "tim_min":"00"}} 
+```
+
