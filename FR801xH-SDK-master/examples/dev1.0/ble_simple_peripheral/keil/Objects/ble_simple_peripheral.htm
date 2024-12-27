@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\ble_simple_peripheral.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\ble_simple_peripheral.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Wed Dec 04 10:49:50 2024
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Tue Dec 10 10:38:23 2024
 <BR><P>
 <H3>Maximum Stack Usage =        872 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -516,9 +516,6 @@ Global Symbols
 <LI><a href="#[259]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_bond_check (via Veneer)
 <LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapm_cmp_evt_handler (via Veneer)
 <LI><a href="#[44]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapc_connection_req_ind_handler (via Veneer)
-<LI><a href="#[396]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_pdu_pack (via Veneer)
-<LI><a href="#[397]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_lecb_pdu_pack (via Veneer)
-<LI><a href="#[399]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_dbg_pdu_pack (via Veneer)
 <LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_write_cmd_handler (via Veneer)
 <LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_send_svc_changed_cmd_handler (via Veneer)
 <LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_sdp_svc_disc_cmd_handler (via Veneer)
@@ -606,6 +603,9 @@ Global Symbols
 <LI><a href="#[305]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapm_adv_send_hci_le_set_per_adv_data_cmd (via Veneer)
 <LI><a href="#[304]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapm_adv_send_hci_le_set_ext_scan_rsp_data_cmd (via Veneer)
 <LI><a href="#[302]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapm_adv_send_hci_le_set_ext_adv_data_cmd (via Veneer)
+<LI><a href="#[396]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_pdu_pack (via Veneer)
+<LI><a href="#[397]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_lecb_pdu_pack (via Veneer)
+<LI><a href="#[399]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_dbg_pdu_pack (via Veneer)
 </UL>
 
 <P><STRONG><a name="[224]"></a>__aeabi_memcpy4</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, syscall.txt(ABSOLUTE))
@@ -741,7 +741,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[316]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapm_smp_rand_req (via Veneer)
 </UL>
 
-<P><STRONG><a name="[543]"></a>aes_result_handler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, syscall.txt(ABSOLUTE), UNUSED)
+<P><STRONG><a name="[542]"></a>aes_result_handler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, syscall.txt(ABSOLUTE), UNUSED)
 <BR><BR>[Called By]<UL></UL>
 
 <P><STRONG><a name="[594]"></a>aes_s1</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, syscall.txt(ABSOLUTE), UNUSED)
@@ -794,8 +794,8 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;appm_init_imp (via Veneer)
 <LI><a href="#[35b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_create (via Veneer)
 <LI><a href="#[319]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapm_init (via Veneer)
-<LI><a href="#[393]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_create (via Veneer)
 <LI><a href="#[217]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;attc_send_read_ind (via Veneer)
+<LI><a href="#[393]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_create (via Veneer)
 </UL>
 
 <P><STRONG><a name="[247]"></a>co_list_insert_before</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, syscall.txt(ABSOLUTE))
@@ -807,14 +807,9 @@ Global Symbols
 <LI><a href="#[456]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sch_arb_event_start_direct (via Veneer)
 <LI><a href="#[453]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sch_arb_event_start_isr_patch (via Veneer)
 <LI><a href="#[1f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;appm_exc_activity_cmp (via Veneer)
-<LI><a href="#[243]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_process_pdu (via Veneer)
-<LI><a href="#[235]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_clear_rsp_data (via Veneer)
-<LI><a href="#[233]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_clear_prep_data (via Veneer)
 <LI><a href="#[357]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_cleanup (via Veneer)
 <LI><a href="#[358]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_operation_cleanup (via Veneer)
 <LI><a href="#[31a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapm_le_psm_cleanup (via Veneer)
-<LI><a href="#[394]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_data_send (via Veneer)
-<LI><a href="#[391]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_cleanup (via Veneer)
 <LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_write_cfm_handler (via Veneer)
 <LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_cmp_evt_handler (via Veneer)
 <LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_att_info_cfm_handler (via Veneer)
@@ -822,10 +817,15 @@ Global Symbols
 <LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_prepare_write_req (via Veneer)
 <LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_execute_write_req (via Veneer)
 <LI><a href="#[2ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapm_per_sync_clear_fragments (via Veneer)
+<LI><a href="#[243]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_process_pdu (via Veneer)
+<LI><a href="#[235]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_clear_rsp_data (via Veneer)
+<LI><a href="#[233]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_clear_prep_data (via Veneer)
 <LI><a href="#[134]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;attc_rd_rsp_handler (via Veneer)
 <LI><a href="#[339]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapm_scan_send_adv_report_ind (via Veneer)
 <LI><a href="#[336]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapm_scan_clear_fragments (via Veneer)
 <LI><a href="#[32d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapm_per_sync_send_adv_report_ind (via Veneer)
+<LI><a href="#[394]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_data_send (via Veneer)
+<LI><a href="#[391]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_cleanup (via Veneer)
 </UL>
 
 <P><STRONG><a name="[1f6]"></a>co_list_push_back</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, syscall.txt(ABSOLUTE))
@@ -934,10 +934,10 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[157]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vPortSuppressTicksAndSleep_patch (via Veneer)
 </UL>
 
-<P><STRONG><a name="[51d]"></a>flash_read_status</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, syscall.txt(ABSOLUTE), UNUSED)
+<P><STRONG><a name="[51c]"></a>flash_read_status</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, syscall.txt(ABSOLUTE), UNUSED)
 <BR><BR>[Called By]<UL></UL>
 
-<P><STRONG><a name="[51e]"></a>flash_write_status</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, syscall.txt(ABSOLUTE), UNUSED)
+<P><STRONG><a name="[51d]"></a>flash_write_status</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, syscall.txt(ABSOLUTE), UNUSED)
 <BR><BR>[Called By]<UL></UL>
 
 <P><STRONG><a name="[8]"></a>fputc</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, syscall.txt(ABSOLUTE), UNUSED)
@@ -977,8 +977,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[2c3]"></a>hci_send_2_controller</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, syscall.txt(ABSOLUTE))
-<BR><BR>[Called By]<UL><LI><a href="#[394]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_data_send (via Veneer)
-<LI><a href="#[3e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smpc_send_start_enc_cmd (via Veneer)
+<BR><BR>[Called By]<UL><LI><a href="#[3e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smpc_send_start_enc_cmd (via Veneer)
 <LI><a href="#[379]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smpc_send_ltk_req_rsp (via Veneer)
 <LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hci_le_cmd_cmp_evt_list_handler (via Veneer)
 <LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapm_set_channel_map_cmd_handler (via Veneer)
@@ -1011,6 +1010,7 @@ Global Symbols
 <LI><a href="#[303]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapm_adv_send_hci_le_set_ext_adv_en_cmd (via Veneer)
 <LI><a href="#[302]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapm_adv_send_hci_le_set_ext_adv_data_cmd (via Veneer)
 <LI><a href="#[301]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapm_adv_send_hci_le_rmv_adv_set_cmd (via Veneer)
+<LI><a href="#[394]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_data_send (via Veneer)
 </UL>
 
 <P><STRONG><a name="[3b1]"></a>hci_send_2_host</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, syscall.txt(ABSOLUTE))
@@ -1059,8 +1059,6 @@ Global Symbols
 <LI><a href="#[1e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;appm_set_per_adv_data (via Veneer)
 <LI><a href="#[203]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;appm_set_advertising_param (via Veneer)
 <LI><a href="#[1e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;appm_set_advertising_data (via Veneer)
-<LI><a href="#[235]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_clear_rsp_data (via Veneer)
-<LI><a href="#[233]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_clear_prep_data (via Veneer)
 <LI><a href="#[357]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_cleanup (via Veneer)
 <LI><a href="#[358]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_operation_cleanup (via Veneer)
 <LI><a href="#[226]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;attmdb_destroy (via Veneer)
@@ -1068,7 +1066,6 @@ Global Symbols
 <LI><a href="#[2b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapc_operation_cleanup (via Veneer)
 <LI><a href="#[2b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapc_cleanup (via Veneer)
 <LI><a href="#[262]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_bond_write_info_to_flash (via Veneer)
-<LI><a href="#[391]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_cleanup (via Veneer)
 <LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_reg_to_peer_evt_cmd_handler (via Veneer)
 <LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_find_info_req (via Veneer)
 <LI><a href="#[d5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_execute_write_req (via Veneer)
@@ -1079,12 +1076,15 @@ Global Symbols
 <LI><a href="#[346]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smpc_calc_confirm_cont (via Veneer)
 <LI><a href="#[38a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_lecb_free (via Veneer)
 <LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hci_acl_data_handler (via Veneer)
+<LI><a href="#[235]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_clear_rsp_data (via Veneer)
+<LI><a href="#[233]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_clear_prep_data (via Veneer)
 <LI><a href="#[3ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smpc_g2_complete (via Veneer)
 <LI><a href="#[3f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smpc_f6_complete (via Veneer)
 <LI><a href="#[3f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smpc_f5_complete (via Veneer)
 <LI><a href="#[3ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smpc_f4_complete (via Veneer)
 <LI><a href="#[339]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapm_scan_send_adv_report_ind (via Veneer)
 <LI><a href="#[336]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapm_scan_clear_fragments (via Veneer)
+<LI><a href="#[391]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_cleanup (via Veneer)
 </UL>
 
 <P><STRONG><a name="[1f5]"></a>ke_malloc</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, syscall.txt(ABSOLUTE))
@@ -1107,7 +1107,6 @@ Global Symbols
 <LI><a href="#[228]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;attmdb_add_service (via Veneer)
 <LI><a href="#[2be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapc_con_create (via Veneer)
 <LI><a href="#[262]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_bond_write_info_to_flash (via Veneer)
-<LI><a href="#[393]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_create (via Veneer)
 <LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_reg_to_peer_evt_cmd_handler (via Veneer)
 <LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_read_mult_req (via Veneer)
 <LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_read_by_type_req (via Veneer)
@@ -1128,6 +1127,7 @@ Global Symbols
 <LI><a href="#[33c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapm_scan_store_fragment (via Veneer)
 <LI><a href="#[337]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapm_scan_add_to_filter (via Veneer)
 <LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2c_code_le_cb_conn_req_handler (via Veneer)
+<LI><a href="#[393]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_create (via Veneer)
 </UL>
 
 <P><STRONG><a name="[384]"></a>ke_mem_init</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, syscall.txt(ABSOLUTE))
@@ -1178,7 +1178,6 @@ Global Symbols
 <LI><a href="#[43]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapc_set_dev_info_req_ind_handler (via Veneer)
 <LI><a href="#[45]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapc_param_update_req_ind_handler (via Veneer)
 <LI><a href="#[42]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapc_get_dev_info_req_ind_handler (via Veneer)
-<LI><a href="#[394]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_data_send (via Veneer)
 <LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_write_req_ind_handler (via Veneer)
 <LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_write_cmd_handler (via Veneer)
 <LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_send_svc_changed_cmd_handler (via Veneer)
@@ -1306,6 +1305,7 @@ Global Symbols
 <LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2c_code_le_flow_control_credit_handler (via Veneer)
 <LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2c_code_le_cb_conn_resp_handler (via Veneer)
 <LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2c_code_le_cb_conn_req_handler (via Veneer)
+<LI><a href="#[394]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_data_send (via Veneer)
 </UL>
 
 <P><STRONG><a name="[100]"></a>ke_msg_discard</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, syscall.txt(ABSOLUTE), UNUSED)
@@ -1323,15 +1323,11 @@ Global Symbols
 <P><STRONG><a name="[21c]"></a>ke_msg_free</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, syscall.txt(ABSOLUTE))
 <BR><BR>[Called By]<UL><LI><a href="#[3bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;os_timer_stop (via Veneer)
 <LI><a href="#[34c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gatt_msg_default_handler_imp (via Veneer)
-<LI><a href="#[243]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_process_pdu (via Veneer)
-<LI><a href="#[234]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_clear_read_cache (via Veneer)
 <LI><a href="#[357]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_cleanup (via Veneer)
 <LI><a href="#[358]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_operation_cleanup (via Veneer)
 <LI><a href="#[31c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapm_operation_cleanup (via Veneer)
 <LI><a href="#[2b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapc_operation_cleanup (via Veneer)
 <LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapc_bond_req_ind_handler (via Veneer)
-<LI><a href="#[394]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_data_send (via Veneer)
-<LI><a href="#[391]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_cleanup (via Veneer)
 <LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_write_cfm_handler (via Veneer)
 <LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_read_cfm_handler (via Veneer)
 <LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_cmp_evt_handler (via Veneer)
@@ -1342,9 +1338,13 @@ Global Symbols
 <LI><a href="#[36f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_pdu_header_check (via Veneer)
 <LI><a href="#[38c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_op_complete (via Veneer)
 <LI><a href="#[38a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_lecb_free (via Veneer)
+<LI><a href="#[243]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_process_pdu (via Veneer)
+<LI><a href="#[234]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_clear_read_cache (via Veneer)
 <LI><a href="#[217]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;attc_send_read_ind (via Veneer)
 <LI><a href="#[339]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapm_scan_send_adv_report_ind (via Veneer)
 <LI><a href="#[32d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapm_per_sync_send_adv_report_ind (via Veneer)
+<LI><a href="#[394]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_data_send (via Veneer)
+<LI><a href="#[391]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_cleanup (via Veneer)
 </UL>
 
 <P><STRONG><a name="[2d2]"></a>ke_msg_in_queue</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, syscall.txt(ABSOLUTE))
@@ -1610,7 +1610,6 @@ Global Symbols
 <LI><a href="#[c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;appm_init_imp (via Veneer)
 <LI><a href="#[349]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gatt_profile_task_add (via Veneer)
 <LI><a href="#[2a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gatt_servcie_added (via Veneer)
-<LI><a href="#[366]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattm_init (via Veneer)
 <LI><a href="#[35a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_update_state (via Veneer)
 <LI><a href="#[35b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_create (via Veneer)
 <LI><a href="#[357]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_cleanup (via Veneer)
@@ -1622,24 +1621,25 @@ Global Symbols
 <LI><a href="#[258]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapc_connection_send_cfm (via Veneer)
 <LI><a href="#[3b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapm_cmp_evt_handler (via Veneer)
 <LI><a href="#[47]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapc_disconnect_ind_handler (via Veneer)
-<LI><a href="#[393]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_create (via Veneer)
-<LI><a href="#[391]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_cleanup (via Veneer)
 <LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapc_disconnect_cmd_handler (via Veneer)
 <LI><a href="#[3a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_update_state (via Veneer)
+<LI><a href="#[366]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattm_init (via Veneer)
 <LI><a href="#[329]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapm_op_reset_continue (via Veneer)
 <LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;hci_cmd_stat_event_handler (via Veneer)
+<LI><a href="#[393]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_create (via Veneer)
+<LI><a href="#[391]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_cleanup (via Veneer)
 </UL>
 
-<P><STRONG><a name="[541]"></a>ke_task_check</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, syscall.txt(ABSOLUTE), UNUSED)
+<P><STRONG><a name="[540]"></a>ke_task_check</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, syscall.txt(ABSOLUTE), UNUSED)
 <BR><BR>[Called By]<UL></UL>
 
 <P><STRONG><a name="[1f8]"></a>ke_task_create</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, syscall.txt(ABSOLUTE))
 <BR><BR>[Called By]<UL><LI><a href="#[c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;appm_init_imp (via Veneer)
-<LI><a href="#[366]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattm_init (via Veneer)
 <LI><a href="#[35d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_init (via Veneer)
 <LI><a href="#[31b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prf_init (via Veneer)
 <LI><a href="#[319]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapm_init (via Veneer)
 <LI><a href="#[2cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapc_init (via Veneer)
+<LI><a href="#[366]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattm_init (via Veneer)
 <LI><a href="#[39a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_init (via Veneer)
 </UL>
 
@@ -1663,7 +1663,6 @@ Global Symbols
 <LI><a href="#[2f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapm_addr_init (via Veneer)
 <LI><a href="#[2d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smpc_clear_timeout_timer (via Veneer)
 <LI><a href="#[2b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapc_cleanup (via Veneer)
-<LI><a href="#[391]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_cleanup (via Veneer)
 <LI><a href="#[210]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;attc_l2cc_pdu_recv_handler (via Veneer)
 <LI><a href="#[241]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_l2cc_pdu_recv_handler (via Veneer)
 <LI><a href="#[3fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smpc_launch_rep_att_timer (via Veneer)
@@ -1675,6 +1674,7 @@ Global Symbols
 <LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2c_code_reject_handler (via Veneer)
 <LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2c_code_le_cb_conn_resp_handler (via Veneer)
 <LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2c_code_disconnection_resp_handler (via Veneer)
+<LI><a href="#[391]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_cleanup (via Veneer)
 </UL>
 
 <P><STRONG><a name="[218]"></a>ke_timer_set</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, syscall.txt(ABSOLUTE))
@@ -1914,7 +1914,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[145]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rwble_isr_patch (via Veneer)
 </UL>
 
-<P><STRONG><a name="[650]"></a>ssp_put_byte</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, syscall.txt(ABSOLUTE), UNUSED)
+<P><STRONG><a name="[651]"></a>ssp_put_byte</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, syscall.txt(ABSOLUTE), UNUSED)
 <BR><BR>[Called By]<UL></UL>
 
 <P><STRONG><a name="[3d8]"></a>system_get_pclk</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, syscall.txt(ABSOLUTE))
@@ -1965,7 +1965,7 @@ Global Symbols
 <LI><a href="#[12]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;user_entry_before_sleep_imp (via Veneer)
 </UL>
 
-<P><STRONG><a name="[520]"></a>vTaskStepTick</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, syscall.txt(ABSOLUTE), UNUSED)
+<P><STRONG><a name="[51f]"></a>vTaskStepTick</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, syscall.txt(ABSOLUTE), UNUSED)
 <BR><BR>[Called By]<UL></UL>
 
 <P><STRONG><a name="[36a]"></a>tolower</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, tolower.o(.text))
@@ -2103,7 +2103,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[294]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;get_vbat_adc_val
 </UL>
 
-<P><STRONG><a name="[651]"></a>scalbnf</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, fscalb.o(.text), UNUSED)
+<P><STRONG><a name="[652]"></a>scalbnf</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, fscalb.o(.text), UNUSED)
 
 <P><STRONG><a name="[177]"></a>__aeabi_dadd</STRONG> (Thumb, 322 bytes, Stack size 48 bytes, dadd.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 88<LI>Call Chain = __aeabi_dadd &rArr; _double_epilogue &rArr; _double_round
@@ -2166,7 +2166,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[287]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;compare_double
 </UL>
 
-<P><STRONG><a name="[652]"></a>scalbn</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, dscalb.o(.text), UNUSED)
+<P><STRONG><a name="[653]"></a>scalbn</STRONG> (Thumb, 0 bytes, Stack size 16 bytes, dscalb.o(.text), UNUSED)
 
 <P><STRONG><a name="[17e]"></a>__aeabi_i2f</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, fflti.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = __aeabi_i2f &rArr; _float_epilogue
@@ -2270,7 +2270,7 @@ Global Symbols
 <LI><a href="#[16b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_scanf_really_real
 </UL>
 
-<P><STRONG><a name="[653]"></a>__aeabi_uidiv</STRONG> (Thumb, 0 bytes, Stack size 12 bytes, uidiv.o(.text), UNUSED)
+<P><STRONG><a name="[654]"></a>__aeabi_uidiv</STRONG> (Thumb, 0 bytes, Stack size 12 bytes, uidiv.o(.text), UNUSED)
 
 <P><STRONG><a name="[196]"></a>__aeabi_uidivmod</STRONG> (Thumb, 44 bytes, Stack size 12 bytes, uidiv.o(.text), UNUSED)
 <BR><BR>[Called By]<UL><LI><a href="#[18f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
@@ -2291,7 +2291,7 @@ Global Symbols
 <LI><a href="#[18c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2ulz
 </UL>
 
-<P><STRONG><a name="[654]"></a>_ll_shift_l</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llshl.o(.text), UNUSED)
+<P><STRONG><a name="[655]"></a>_ll_shift_l</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llshl.o(.text), UNUSED)
 
 <P><STRONG><a name="[183]"></a>__aeabi_llsr</STRONG> (Thumb, 32 bytes, Stack size 0 bytes, llushr.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[184]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2uiz
@@ -2301,13 +2301,13 @@ Global Symbols
 <LI><a href="#[18c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2ulz
 </UL>
 
-<P><STRONG><a name="[655]"></a>_ll_ushift_r</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llushr.o(.text), UNUSED)
+<P><STRONG><a name="[656]"></a>_ll_ushift_r</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llushr.o(.text), UNUSED)
 
 <P><STRONG><a name="[179]"></a>__aeabi_lasr</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, llsshr.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[177]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dadd
 </UL>
 
-<P><STRONG><a name="[656]"></a>_ll_sshift_r</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llsshr.o(.text), UNUSED)
+<P><STRONG><a name="[657]"></a>_ll_sshift_r</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, llsshr.o(.text), UNUSED)
 
 <P><STRONG><a name="[166]"></a>_chval</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, _chval.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[165]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_scanf_int
@@ -2342,14 +2342,14 @@ Global Symbols
 <P><STRONG><a name="[170]"></a>strtol</STRONG> (Thumb, 112 bytes, Stack size 32 bytes, strtol.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = strtol &rArr; _strtoul
 </UL>
-<BR>[Calls]<UL><LI><a href="#[18a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_ctype_table
-<LI><a href="#[16f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_errno_addr
+<BR>[Calls]<UL><LI><a href="#[16f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_errno_addr
 <LI><a href="#[18b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_strtoul
+<LI><a href="#[18a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_ctype_table
 </UL>
 <BR>[Called By]<UL><LI><a href="#[16e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atoi
 </UL>
 
-<P><STRONG><a name="[657]"></a>__I$use$fp</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, iusefp.o(.text), UNUSED)
+<P><STRONG><a name="[658]"></a>__I$use$fp</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, iusefp.o(.text), UNUSED)
 
 <P><STRONG><a name="[173]"></a>_float_round</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, fepilogue.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[176]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fdiv
@@ -2436,7 +2436,7 @@ Global Symbols
 <BR><BR>[Calls]<UL><LI><a href="#[18f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
 </UL>
 
-<P><STRONG><a name="[658]"></a>__1printf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printfa.o(i.__0printf), UNUSED)
+<P><STRONG><a name="[659]"></a>__1printf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printfa.o(i.__0printf), UNUSED)
 
 <P><STRONG><a name="[251]"></a>__2printf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printfa.o(i.__0printf))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = __2printf
@@ -2453,15 +2453,15 @@ Global Symbols
 <LI><a href="#[280]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;calculate_wake_up_times
 </UL>
 
-<P><STRONG><a name="[659]"></a>__c89printf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printfa.o(i.__0printf), UNUSED)
+<P><STRONG><a name="[65a]"></a>__c89printf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printfa.o(i.__0printf), UNUSED)
 
-<P><STRONG><a name="[65a]"></a>printf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printfa.o(i.__0printf), UNUSED)
+<P><STRONG><a name="[65b]"></a>printf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printfa.o(i.__0printf), UNUSED)
 
 <P><STRONG><a name="[190]"></a>__0snprintf</STRONG> (Thumb, 44 bytes, Stack size 32 bytes, printfa.o(i.__0snprintf), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[18f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
 </UL>
 
-<P><STRONG><a name="[65b]"></a>__1snprintf</STRONG> (Thumb, 0 bytes, Stack size 32 bytes, printfa.o(i.__0snprintf), UNUSED)
+<P><STRONG><a name="[65c]"></a>__1snprintf</STRONG> (Thumb, 0 bytes, Stack size 32 bytes, printfa.o(i.__0snprintf), UNUSED)
 
 <P><STRONG><a name="[19b]"></a>__2snprintf</STRONG> (Thumb, 0 bytes, Stack size 32 bytes, printfa.o(i.__0snprintf))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = __2snprintf
@@ -2471,16 +2471,16 @@ Global Symbols
 <LI><a href="#[197]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ack_basal_rate_cjson_process
 </UL>
 
-<P><STRONG><a name="[65c]"></a>__c89snprintf</STRONG> (Thumb, 0 bytes, Stack size 32 bytes, printfa.o(i.__0snprintf), UNUSED)
+<P><STRONG><a name="[65d]"></a>__c89snprintf</STRONG> (Thumb, 0 bytes, Stack size 32 bytes, printfa.o(i.__0snprintf), UNUSED)
 
-<P><STRONG><a name="[65d]"></a>snprintf</STRONG> (Thumb, 0 bytes, Stack size 32 bytes, printfa.o(i.__0snprintf), UNUSED)
+<P><STRONG><a name="[65e]"></a>snprintf</STRONG> (Thumb, 0 bytes, Stack size 32 bytes, printfa.o(i.__0snprintf), UNUSED)
 
 <P><STRONG><a name="[191]"></a>__0sprintf</STRONG> (Thumb, 34 bytes, Stack size 24 bytes, printfa.o(i.__0sprintf), UNUSED)
 <BR><BR>[Calls]<UL><LI><a href="#[a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_sputc
 <LI><a href="#[18f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_core
 </UL>
 
-<P><STRONG><a name="[65e]"></a>__1sprintf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printfa.o(i.__0sprintf), UNUSED)
+<P><STRONG><a name="[65f]"></a>__1sprintf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printfa.o(i.__0sprintf), UNUSED)
 
 <P><STRONG><a name="[3d4]"></a>__2sprintf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printfa.o(i.__0sprintf))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = __2sprintf
@@ -2489,9 +2489,9 @@ Global Symbols
 <LI><a href="#[3d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;print_number
 </UL>
 
-<P><STRONG><a name="[65f]"></a>__c89sprintf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printfa.o(i.__0sprintf), UNUSED)
+<P><STRONG><a name="[660]"></a>__c89sprintf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printfa.o(i.__0sprintf), UNUSED)
 
-<P><STRONG><a name="[660]"></a>sprintf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printfa.o(i.__0sprintf), UNUSED)
+<P><STRONG><a name="[661]"></a>sprintf</STRONG> (Thumb, 0 bytes, Stack size 24 bytes, printfa.o(i.__0sprintf), UNUSED)
 
 <P><STRONG><a name="[16f]"></a>__aeabi_errno_addr</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, errno.o(i.__aeabi_errno_addr))
 <BR><BR>[Called By]<UL><LI><a href="#[170]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;strtol
@@ -2499,7 +2499,7 @@ Global Symbols
 <LI><a href="#[18b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_strtoul
 </UL>
 
-<P><STRONG><a name="[661]"></a>__rt_errno_addr</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, errno.o(i.__aeabi_errno_addr), UNUSED)
+<P><STRONG><a name="[662]"></a>__rt_errno_addr</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, errno.o(i.__aeabi_errno_addr), UNUSED)
 
 <P><STRONG><a name="[206]"></a>__read_errno</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, errno.o(i.__read_errno))
 <BR><BR>[Called By]<UL><LI><a href="#[205]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atof
@@ -3251,8 +3251,8 @@ Global Symbols
 <LI><a href="#[21e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;attmdb_get_attribute
 </UL>
 <BR>[Called By]<UL><LI><a href="#[15e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gatt_service_init
-<LI><a href="#[33e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattm_init_attr
 <LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_send_svc_changed_cmd_handler
+<LI><a href="#[33e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattm_init_attr
 </UL>
 
 <P><STRONG><a name="[220]"></a>attm_att_update_perm</STRONG> (Thumb, 102 bytes, Stack size 24 bytes, attm.o(i.attm_att_update_perm))
@@ -3304,8 +3304,8 @@ Global Symbols
 <LI><a href="#[228]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;attmdb_add_service
 </UL>
 <BR>[Called By]<UL><LI><a href="#[15e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gatt_service_init
-<LI><a href="#[33e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattm_init_attr
 <LI><a href="#[31d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapm_init_attr
+<LI><a href="#[33e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattm_init_attr
 </UL>
 
 <P><STRONG><a name="[229]"></a>attm_svc_create_db_ext</STRONG> (Thumb, 356 bytes, Stack size 56 bytes, attm.o(i.attm_svc_create_db_ext))
@@ -3478,19 +3478,19 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[1e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ke_free (via Veneer)
 <LI><a href="#[1f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;co_list_pop_front (via Veneer)
 </UL>
-<BR>[Called By]<UL><LI><a href="#[243]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_process_pdu
-<LI><a href="#[357]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_cleanup
+<BR>[Called By]<UL><LI><a href="#[357]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_cleanup
+<LI><a href="#[243]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_process_pdu
 </UL>
 
 <P><STRONG><a name="[241]"></a>atts_l2cc_pdu_recv_handler</STRONG> (Thumb, 156 bytes, Stack size 32 bytes, atts.o(i.atts_l2cc_pdu_recv_handler))
-<BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = atts_l2cc_pdu_recv_handler &rArr; atts_process_pdu &rArr; atts_clear_rsp_data
+<BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = atts_l2cc_pdu_recv_handler &rArr; gattc_send_complete_evt &rArr; gattc_update_state
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;co_list_push_back (via Veneer)
 <LI><a href="#[211]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ke_timer_clear (via Veneer)
 <LI><a href="#[242]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ke_state_get (via Veneer)
-<LI><a href="#[243]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_process_pdu
 <LI><a href="#[208]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_send_complete_evt
 <LI><a href="#[20b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_get_operation
+<LI><a href="#[243]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_process_pdu
 </UL>
 <BR>[Called By]<UL><LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_pdu_recv_ind_handler
 </UL>
@@ -4321,7 +4321,6 @@ Global Symbols
 <P><STRONG><a name="[29b]"></a>gapc_get_conhdl</STRONG> (Thumb, 32 bytes, Stack size 0 bytes, gapc.o(i.gapc_get_conhdl))
 <BR><BR>[Called By]<UL><LI><a href="#[30c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;system_latency_enable
 <LI><a href="#[299]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gap_disconnect_req
-<LI><a href="#[394]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_data_send
 <LI><a href="#[3e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smpc_send_start_enc_cmd
 <LI><a href="#[379]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;smpc_send_ltk_req_rsp
 <LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapc_set_pref_slave_latency_cmd_handler
@@ -4332,6 +4331,7 @@ Global Symbols
 <LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapc_param_update_cfm_handler
 <LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapc_get_info_cmd_handler
 <LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapc_disconnect_cmd_handler
+<LI><a href="#[394]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_data_send
 </UL>
 
 <P><STRONG><a name="[b]"></a>gapc_get_conidx_imp</STRONG> (Thumb, 46 bytes, Stack size 8 bytes, gapc.o(i.gapc_get_conidx_imp))
@@ -4984,14 +4984,14 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[209]"></a>gapm_get_max_mtu</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, gapm.o(i.gapm_get_max_mtu))
-<BR><BR>[Called By]<UL><LI><a href="#[396]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_pdu_pack
-<LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_exc_mtu_cmd_handler
+<BR><BR>[Called By]<UL><LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_exc_mtu_cmd_handler
 <LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_mtu_exc_req
 <LI><a href="#[36f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_pdu_header_check
 <LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_lecb_connect_cmd_handler
 <LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_lecb_connect_cfm_handler
 <LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_dbg_pdu_send_cmd_handler
 <LI><a href="#[12f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;attc_exc_mtu_rsp_handler
+<LI><a href="#[396]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_pdu_pack
 </UL>
 
 <P><STRONG><a name="[2ec]"></a>gapm_get_operation</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, gapm.o(i.gapm_get_operation))
@@ -5414,13 +5414,12 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> gapm_task.o(.constdata)
 </UL>
 <P><STRONG><a name="[ac]"></a>gapm_set_dev_config_cmd_handler</STRONG> (Thumb, 424 bytes, Stack size 104 bytes, gapm_cfg.o(i.gapm_set_dev_config_cmd_handler))
-<BR><BR>[Stack]<UL><LI>Max Depth = 352<LI>Call Chain = gapm_set_dev_config_cmd_handler &rArr; gattm_init_attr &rArr; attm_svc_create_db &rArr; attmdb_add_service &rArr; attmdb_svc_init &rArr; attm_uuid16_comp &rArr; attm_uuid_comp &rArr; attm_convert_to128
+<BR><BR>[Stack]<UL><LI>Max Depth = 352<LI>Call Chain = gapm_set_dev_config_cmd_handler &rArr; gapm_init_attr &rArr; attm_svc_create_db &rArr; attmdb_add_service &rArr; attmdb_svc_init &rArr; attm_uuid16_comp &rArr; attm_uuid_comp &rArr; attm_convert_to128
 </UL>
 <BR>[Calls]<UL><LI><a href="#[224]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4 (via Veneer)
 <LI><a href="#[1b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy (via Veneer)
 <LI><a href="#[33f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapm_set_max_mtu
 <LI><a href="#[340]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapm_set_max_mps
-<LI><a href="#[33e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattm_init_attr
 <LI><a href="#[226]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;attmdb_destroy
 <LI><a href="#[220]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;attm_att_update_perm
 <LI><a href="#[31b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;prf_init
@@ -5430,6 +5429,7 @@ Global Symbols
 <LI><a href="#[31d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapm_init_attr
 <LI><a href="#[2ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapm_get_att_handle
 <LI><a href="#[33d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapm_dle_val_check
+<LI><a href="#[33e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattm_init_attr
 <LI><a href="#[32b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapm_op_setup_continue
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> gapm_task.o(.constdata)
@@ -5452,8 +5452,8 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[362]"></a>gapm_svc_chg_en</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, gapm.o(i.gapm_svc_chg_en))
-<BR><BR>[Called By]<UL><LI><a href="#[33e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattm_init_attr
-<LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_send_svc_changed_cmd_handler
+<BR><BR>[Called By]<UL><LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_send_svc_changed_cmd_handler
+<LI><a href="#[33e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattm_init_attr
 </UL>
 
 <P><STRONG><a name="[32c]"></a>gapm_update_state</STRONG> (Thumb, 44 bytes, Stack size 16 bytes, gapm.o(i.gapm_update_state))
@@ -5565,11 +5565,11 @@ Global Symbols
 <LI><a href="#[211]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ke_timer_clear (via Veneer)
 <LI><a href="#[1ba]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ke_state_set (via Veneer)
 <LI><a href="#[21c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ke_msg_free (via Veneer)
+<LI><a href="#[208]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_send_complete_evt
+<LI><a href="#[358]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_operation_cleanup
 <LI><a href="#[235]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_clear_rsp_data
 <LI><a href="#[234]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_clear_read_cache
 <LI><a href="#[233]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_clear_prep_data
-<LI><a href="#[208]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_send_complete_evt
-<LI><a href="#[358]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_operation_cleanup
 </UL>
 <BR>[Called By]<UL><LI><a href="#[35d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_init
 <LI><a href="#[30e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattm_cleanup
@@ -5578,8 +5578,8 @@ Global Symbols
 <P><STRONG><a name="[314]"></a>gattc_con_enable</STRONG> (Thumb, 22 bytes, Stack size 8 bytes, gattc.o(i.gattc_con_enable))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = gattc_con_enable &rArr; atts_process_pdu &rArr; atts_clear_rsp_data
 </UL>
-<BR>[Calls]<UL><LI><a href="#[243]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_process_pdu
-<LI><a href="#[35a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_update_state
+<BR>[Calls]<UL><LI><a href="#[35a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_update_state
+<LI><a href="#[243]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_process_pdu
 </UL>
 <BR>[Called By]<UL><LI><a href="#[2c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapm_con_enable
 </UL>
@@ -6331,12 +6331,12 @@ Global Symbols
 <LI><a href="#[398]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_util_buf_acl_tx_free (via Veneer)
 <LI><a href="#[395]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ble_util_buf_acl_tx_alloc (via Veneer)
 <LI><a href="#[29b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapc_get_conhdl
-<LI><a href="#[396]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_pdu_pack
-<LI><a href="#[397]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_lecb_pdu_pack
-<LI><a href="#[399]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_dbg_pdu_pack
 <LI><a href="#[38f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cm_tx_status
 <LI><a href="#[392]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_send_cmp_evt
 <LI><a href="#[372]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_lecb_find
+<LI><a href="#[396]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_pdu_pack
+<LI><a href="#[397]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_lecb_pdu_pack
+<LI><a href="#[399]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_dbg_pdu_pack
 </UL>
 <BR>[Called By]<UL><LI><a href="#[2c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cm_l2cap_tx_handler
 </UL>
@@ -6373,8 +6373,7 @@ Global Symbols
 <P><STRONG><a name="[372]"></a>l2cc_lecb_find</STRONG> (Thumb, 58 bytes, Stack size 8 bytes, l2cc_lecb.o(i.l2cc_lecb_find))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = l2cc_lecb_find
 </UL>
-<BR>[Called By]<UL><LI><a href="#[394]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_data_send
-<LI><a href="#[36e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_pdu_rx_init
+<BR>[Called By]<UL><LI><a href="#[36e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_pdu_rx_init
 <LI><a href="#[36f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_pdu_header_check
 <LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_signaling_trans_to_ind_handler
 <LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_lecb_sdu_send_cmd_handler
@@ -6389,6 +6388,7 @@ Global Symbols
 <LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2c_code_le_cb_conn_req_handler
 <LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2c_code_disconnection_resp_handler
 <LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2c_code_disconnection_req_handler
+<LI><a href="#[394]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_data_send
 </UL>
 
 <P><STRONG><a name="[38a]"></a>l2cc_lecb_free</STRONG> (Thumb, 154 bytes, Stack size 40 bytes, l2cc_lecb.o(i.l2cc_lecb_free))
@@ -6402,13 +6402,13 @@ Global Symbols
 <LI><a href="#[325]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapm_lecb_unregister
 <LI><a href="#[392]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_send_cmp_evt
 </UL>
-<BR>[Called By]<UL><LI><a href="#[391]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_cleanup
-<LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_signaling_trans_to_ind_handler
+<BR>[Called By]<UL><LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_signaling_trans_to_ind_handler
 <LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_lecb_connect_cfm_handler
 <LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2c_code_reject_handler
 <LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2c_code_le_cb_conn_resp_handler
 <LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2c_code_disconnection_resp_handler
 <LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2c_code_disconnection_req_handler
+<LI><a href="#[391]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_cleanup
 </UL>
 
 <P><STRONG><a name="[38d]"></a>l2cc_lecb_h2l_err</STRONG> (Thumb, 56 bytes, Stack size 0 bytes, l2cc_lecb.o(i.l2cc_lecb_h2l_err))
@@ -6499,14 +6499,14 @@ Global Symbols
 <LI><a href="#[3a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_update_state
 <LI><a href="#[392]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_send_cmp_evt
 </UL>
-<BR>[Called By]<UL><LI><a href="#[391]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_cleanup
-<LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_signaling_trans_to_ind_handler
+<BR>[Called By]<UL><LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_signaling_trans_to_ind_handler
 <LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_lecb_disconnect_cmd_handler
 <LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_lecb_connect_cmd_handler
 <LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_lecb_add_cmd_handler
 <LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2c_code_reject_handler
 <LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2c_code_le_cb_conn_resp_handler
 <LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2c_code_disconnection_resp_handler
+<LI><a href="#[391]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_cleanup
 </UL>
 
 <P><STRONG><a name="[214]"></a>l2cc_pdu_alloc</STRONG> (Thumb, 44 bytes, Stack size 16 bytes, l2cc_task.o(i.l2cc_pdu_alloc))
@@ -6514,8 +6514,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ke_msg_alloc (via Veneer)
 </UL>
-<BR>[Called By]<UL><LI><a href="#[389]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_lecb_send_disc_rsp
-<LI><a href="#[21b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;attc_send_hdl_cfm
+<BR>[Called By]<UL><LI><a href="#[21b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;attc_send_hdl_cfm
 <LI><a href="#[21a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;attc_send_execute
 <LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_pdu_recv_ind_handler
 <LI><a href="#[da]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_write_cmd_handler
@@ -6546,6 +6545,7 @@ Global Symbols
 <LI><a href="#[38e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_lecb_send_con_rsp
 <LI><a href="#[39e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_lecb_send_con_req
 <LI><a href="#[132]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;attc_rd_by_type_rsp_handler
+<LI><a href="#[389]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_lecb_send_disc_rsp
 </UL>
 
 <P><STRONG><a name="[36f]"></a>l2cc_pdu_header_check</STRONG> (Thumb, 608 bytes, Stack size 48 bytes, l2cc_pdu.o(i.l2cc_pdu_header_check))
@@ -6587,8 +6587,7 @@ Global Symbols
 <P><STRONG><a name="[219]"></a>l2cc_pdu_send</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, l2cc_task.o(i.l2cc_pdu_send))
 <BR><BR>[Calls]<UL><LI><a href="#[1f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ke_msg_send (via Veneer)
 </UL>
-<BR>[Called By]<UL><LI><a href="#[389]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_lecb_send_disc_rsp
-<LI><a href="#[215]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;attc_send_att_req
+<BR>[Called By]<UL><LI><a href="#[215]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;attc_send_att_req
 <LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_pdu_recv_ind_handler
 <LI><a href="#[249]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_write_rsp_send
 <LI><a href="#[246]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_send_event
@@ -6612,6 +6611,7 @@ Global Symbols
 <LI><a href="#[39c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_lecb_send_credit_add
 <LI><a href="#[38e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_lecb_send_con_rsp
 <LI><a href="#[39e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_lecb_send_con_req
+<LI><a href="#[389]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_lecb_send_disc_rsp
 </UL>
 
 <P><STRONG><a name="[370]"></a>l2cc_pdu_unpack</STRONG> (Thumb, 656 bytes, Stack size 80 bytes, l2cc_pdu.o(i.l2cc_pdu_unpack))
@@ -6643,14 +6643,14 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[1f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ke_msg_send (via Veneer)
 <LI><a href="#[1ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ke_msg_alloc (via Veneer)
 </UL>
-<BR>[Called By]<UL><LI><a href="#[394]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_data_send
-<LI><a href="#[391]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_cleanup
-<LI><a href="#[38c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_op_complete
+<BR>[Called By]<UL><LI><a href="#[38c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_op_complete
 <LI><a href="#[38a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_lecb_free
 <LI><a href="#[39b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_process_op
 <LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_pdu_send_cmd_handler
 <LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_lecb_sdu_send_cmd_handler
 <LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_dbg_pdu_send_cmd_handler
+<LI><a href="#[394]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_data_send
+<LI><a href="#[391]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_cleanup
 </UL>
 
 <P><STRONG><a name="[3a4]"></a>l2cc_set_operation_ptr</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, l2cc.o(i.l2cc_set_operation_ptr))
@@ -6692,8 +6692,8 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[37c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ke_event_set (via Veneer)
 <LI><a href="#[239]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;co_list_size (via Veneer)
-<LI><a href="#[391]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_cleanup
 <LI><a href="#[38f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cm_tx_status
+<LI><a href="#[391]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_cleanup
 </UL>
 <BR>[Called By]<UL><LI><a href="#[30b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapm_con_cleanup
 </UL>
@@ -6733,11 +6733,11 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[37c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ke_event_set (via Veneer)
 </UL>
 <BR>[Called By]<UL><LI><a href="#[30d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cm_cleanup
-<LI><a href="#[394]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_data_send
 <LI><a href="#[59]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_pdu_send_cmd_handler
 <LI><a href="#[5a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_lecb_sdu_send_cmd_handler
 <LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_dbg_pdu_send_cmd_handler
 <LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2c_code_le_flow_control_credit_handler
+<LI><a href="#[394]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_data_send
 </UL>
 
 <P><STRONG><a name="[15a]"></a>llc_patch_1</STRONG> (Thumb, 1034 bytes, Stack size 104 bytes, patch_rf_fcc.o(i.llc_patch_1))
@@ -7187,20 +7187,20 @@ Global Symbols
 <P><STRONG><a name="[d]"></a>rwble_hl_init_imp</STRONG> (Thumb, 30 bytes, Stack size 8 bytes, rwble_hl.o(i.rwble_hl_init_imp))
 <BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = rwble_hl_init_imp &rArr; l2cm_init &rArr; l2cc_init &rArr; l2cc_cleanup &rArr; l2cc_lecb_free &rArr; l2cc_send_cmp_evt
 </UL>
-<BR>[Calls]<UL><LI><a href="#[366]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattm_init
-<LI><a href="#[225]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;attm_init
+<BR>[Calls]<UL><LI><a href="#[225]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;attm_init
 <LI><a href="#[319]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapm_init
 <LI><a href="#[3a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cm_init
+<LI><a href="#[366]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattm_init
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> entry.o(i.app_main)
 </UL>
 <P><STRONG><a name="[333]"></a>rwble_hl_reset</STRONG> (Thumb, 30 bytes, Stack size 8 bytes, rwble_hl.o(i.rwble_hl_reset))
 <BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = rwble_hl_reset &rArr; l2cm_init &rArr; l2cc_init &rArr; l2cc_cleanup &rArr; l2cc_lecb_free &rArr; l2cc_send_cmp_evt
 </UL>
-<BR>[Calls]<UL><LI><a href="#[366]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattm_init
-<LI><a href="#[225]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;attm_init
+<BR>[Calls]<UL><LI><a href="#[225]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;attm_init
 <LI><a href="#[319]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapm_init
 <LI><a href="#[3a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cm_init
+<LI><a href="#[366]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattm_init
 </UL>
 <BR>[Called By]<UL><LI><a href="#[ab]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapm_reset_cmd_handler
 </UL>
@@ -8373,16 +8373,16 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> app_boot_vectors.o(RESET)
 </UL>
-<P><STRONG><a name="[662]"></a>timer_run</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, driver_timer.o(ram_code), UNUSED)
+<P><STRONG><a name="[663]"></a>timer_run</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, driver_timer.o(ram_code), UNUSED)
 
-<P><STRONG><a name="[663]"></a>timer_stop</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, driver_timer.o(ram_code), UNUSED)
+<P><STRONG><a name="[664]"></a>timer_stop</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, driver_timer.o(ram_code), UNUSED)
 
 <P><STRONG><a name="[438]"></a>timer_clear_interrupt</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, driver_timer.o(ram_code))
 <BR><BR>[Called By]<UL><LI><a href="#[147]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer1_isr_ram
 <LI><a href="#[146]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;timer0_isr_ram
 </UL>
 
-<P><STRONG><a name="[664]"></a>timer_set_load_value</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, driver_timer.o(ram_code), UNUSED)
+<P><STRONG><a name="[665]"></a>timer_set_load_value</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, driver_timer.o(ram_code), UNUSED)
 
 <P><STRONG><a name="[146]"></a>timer0_isr_ram</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, driver_timer.o(ram_code))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = timer0_isr_ram
@@ -8820,7 +8820,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> app_boot_vectors.o(RESET)
 </UL>
-<P><STRONG><a name="[665]"></a>patch_fast_scan_set</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, patch_rf_fcc.o(ram_code), UNUSED)
+<P><STRONG><a name="[666]"></a>patch_fast_scan_set</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, patch_rf_fcc.o(ram_code), UNUSED)
 
 <P><STRONG><a name="[158]"></a>lld_con_sched_patch</STRONG> (Thumb, 1080 bytes, Stack size 48 bytes, patch_rf_fcc.o(ram_code))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = lld_con_sched_patch
@@ -8836,7 +8836,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> patch.o(.data)
 </UL>
-<P><STRONG><a name="[666]"></a>lc_update_check</STRONG> (Thumb, 32 bytes, Stack size 0 bytes, patch_rf_fcc.o(ram_code), UNUSED)
+<P><STRONG><a name="[667]"></a>lc_update_check</STRONG> (Thumb, 32 bytes, Stack size 0 bytes, patch_rf_fcc.o(ram_code), UNUSED)
 
 <P><STRONG><a name="[46b]"></a>__asm___11_sys_utils_c_415ab936__cpu_delay</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, sys_utils.o(ram_code))
 <BR><BR>[Called By]<UL><LI><a href="#[1a9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;co_delay_100us
@@ -8892,7 +8892,7 @@ Global Symbols
 <BR><BR>[Calls]<UL><LI><a href="#[46c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;kalmanFilter
 </UL>
 
-<P><STRONG><a name="[667]"></a>_system_power_off</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, sys_utils.o(ram_code), UNUSED)
+<P><STRONG><a name="[668]"></a>_system_power_off</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, sys_utils.o(ram_code), UNUSED)
 
 <P><STRONG><a name="[154]"></a>platform_reset_patch</STRONG> (Thumb, 62 bytes, Stack size 0 bytes, sys_utils.o(ram_code))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = platform_reset_patch &rArr; frspim_wr
@@ -9044,7 +9044,7 @@ Global Symbols
 <BR><BR>[Calls]<UL><LI><a href="#[47e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;llm_activity_free_get (via Veneer)
 </UL>
 
-<P><STRONG><a name="[668]"></a>calib_set_freq_config</STRONG> (Thumb, 166 bytes, Stack size 8 bytes, adv_check_mode.o(ram_code), UNUSED)
+<P><STRONG><a name="[669]"></a>calib_set_freq_config</STRONG> (Thumb, 166 bytes, Stack size 8 bytes, adv_check_mode.o(ram_code), UNUSED)
 
 <P><STRONG><a name="[454]"></a>patch_handle_lld_con_env</STRONG> (Thumb, 74 bytes, Stack size 16 bytes, patch_no_md_bit.o(ram_code))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = patch_handle_lld_con_env
@@ -10517,13 +10517,13 @@ Local Symbols
 <LI><a href="#[1b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy (via Veneer)
 <LI><a href="#[1f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ke_msg_send (via Veneer)
 <LI><a href="#[1ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ke_msg_alloc (via Veneer)
-<LI><a href="#[233]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_clear_prep_data
 <LI><a href="#[21e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;attmdb_get_attribute
 <LI><a href="#[236]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_send_error
 <LI><a href="#[237]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_get_dest_task
 <LI><a href="#[232]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_check_length_and_offset
 <LI><a href="#[219]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_pdu_send
 <LI><a href="#[214]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_pdu_alloc
+<LI><a href="#[233]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_clear_prep_data
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> atts.o(.constdata)
 </UL>
@@ -10535,12 +10535,12 @@ Local Symbols
 <LI><a href="#[1f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;co_list_push_back (via Veneer)
 <LI><a href="#[239]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;co_list_size (via Veneer)
 <LI><a href="#[216]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_get_mtu
-<LI><a href="#[234]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_clear_read_cache
 <LI><a href="#[213]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;attm_uuid_comp
 <LI><a href="#[236]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_send_error
 <LI><a href="#[238]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_find_value_by_uuid
 <LI><a href="#[219]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_pdu_send
 <LI><a href="#[214]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_pdu_alloc
+<LI><a href="#[234]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_clear_read_cache
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> atts.o(.constdata)
 </UL>
@@ -10621,9 +10621,9 @@ Local Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ke_msg_send (via Veneer)
 <LI><a href="#[1ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ke_msg_alloc (via Veneer)
-<LI><a href="#[234]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_clear_read_cache
 <LI><a href="#[222]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;attm_get_value
 <LI><a href="#[237]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_get_dest_task
+<LI><a href="#[234]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_clear_read_cache
 </UL>
 <BR>[Called By]<UL><LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_read_req
 <LI><a href="#[d0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_read_mult_req
@@ -10663,12 +10663,12 @@ Local Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy (via Veneer)
 <LI><a href="#[216]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_get_mtu
-<LI><a href="#[234]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_clear_read_cache
 <LI><a href="#[236]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_send_error
 <LI><a href="#[23d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_get_value
 <LI><a href="#[23c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_get_att_chk_perm
 <LI><a href="#[219]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_pdu_send
 <LI><a href="#[214]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_pdu_alloc
+<LI><a href="#[234]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_clear_read_cache
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> atts.o(.constdata)
 </UL>
@@ -10680,11 +10680,11 @@ Local Symbols
 <LI><a href="#[1b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy (via Veneer)
 <LI><a href="#[239]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;co_list_size (via Veneer)
 <LI><a href="#[216]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_get_mtu
-<LI><a href="#[234]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_clear_read_cache
 <LI><a href="#[236]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_send_error
 <LI><a href="#[238]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_find_value_by_uuid
 <LI><a href="#[219]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_pdu_send
 <LI><a href="#[214]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_pdu_alloc
+<LI><a href="#[234]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_clear_read_cache
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> atts.o(.constdata)
 </UL>
@@ -10696,11 +10696,11 @@ Local Symbols
 <LI><a href="#[1b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy (via Veneer)
 <LI><a href="#[239]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;co_list_size (via Veneer)
 <LI><a href="#[216]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_get_mtu
-<LI><a href="#[234]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_clear_read_cache
 <LI><a href="#[236]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_send_error
 <LI><a href="#[238]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_find_value_by_uuid
 <LI><a href="#[219]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_pdu_send
 <LI><a href="#[214]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_pdu_alloc
+<LI><a href="#[234]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_clear_read_cache
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> atts.o(.constdata)
 </UL>
@@ -10712,12 +10712,12 @@ Local Symbols
 <LI><a href="#[1b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy (via Veneer)
 <LI><a href="#[239]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;co_list_size (via Veneer)
 <LI><a href="#[216]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_get_mtu
-<LI><a href="#[234]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_clear_read_cache
 <LI><a href="#[236]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_send_error
 <LI><a href="#[23d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_get_value
 <LI><a href="#[23c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_get_att_chk_perm
 <LI><a href="#[219]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_pdu_send
 <LI><a href="#[214]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_pdu_alloc
+<LI><a href="#[234]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_clear_read_cache
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> atts.o(.constdata)
 </UL>
@@ -10726,12 +10726,12 @@ Local Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy (via Veneer)
 <LI><a href="#[216]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_get_mtu
-<LI><a href="#[234]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_clear_read_cache
 <LI><a href="#[236]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_send_error
 <LI><a href="#[23d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_get_value
 <LI><a href="#[23c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_get_att_chk_perm
 <LI><a href="#[219]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_pdu_send
 <LI><a href="#[214]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_pdu_alloc
+<LI><a href="#[234]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_clear_read_cache
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> atts.o(.constdata)
 </UL>
@@ -10812,13 +10812,13 @@ Local Symbols
 <BR>[Address Reference Count : 1]<UL><LI> gattc_task.o(.constdata)
 </UL>
 <P><STRONG><a name="[e7]"></a>gattc_att_info_cfm_handler</STRONG> (Thumb, 82 bytes, Stack size 16 bytes, gattc_task.o(i.gattc_att_info_cfm_handler))
-<BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = gattc_att_info_cfm_handler &rArr; atts_process_pdu &rArr; atts_clear_rsp_data
+<BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = gattc_att_info_cfm_handler &rArr; atts_send_error &rArr; l2cc_pdu_alloc
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;co_list_pop_front (via Veneer)
 <LI><a href="#[242]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ke_state_get (via Veneer)
 <LI><a href="#[21c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ke_msg_free (via Veneer)
-<LI><a href="#[243]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_process_pdu
 <LI><a href="#[236]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_send_error
+<LI><a href="#[243]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_process_pdu
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> gattc_task.o(.constdata)
 </UL>
@@ -10972,8 +10972,8 @@ Local Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[1f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ke_msg_send (via Veneer)
 <LI><a href="#[1ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ke_msg_alloc (via Veneer)
-<LI><a href="#[356]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattm_svc_get_start_hdl
 <LI><a href="#[361]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapc_svc_chg_ccc_get
+<LI><a href="#[356]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattm_svc_get_start_hdl
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> gattc_task.o(.constdata)
 </UL>
@@ -11004,10 +11004,10 @@ Local Symbols
 <P><STRONG><a name="[e9]"></a>gattc_send_evt_cmd_handler</STRONG> (Thumb, 78 bytes, Stack size 24 bytes, gattc_task.o(i.gattc_send_evt_cmd_handler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 160<LI>Call Chain = gattc_send_evt_cmd_handler &rArr; atts_send_event &rArr; atts_get_att_chk_perm &rArr; attmdb_att_get_permission &rArr; attmdb_get_attribute &rArr; attmdb_get_service
 </UL>
-<BR>[Calls]<UL><LI><a href="#[234]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_clear_read_cache
-<LI><a href="#[208]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_send_complete_evt
+<BR>[Calls]<UL><LI><a href="#[208]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_send_complete_evt
 <LI><a href="#[35c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_process_op
 <LI><a href="#[246]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_send_event
+<LI><a href="#[234]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_clear_read_cache
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> gattc_task.o(.constdata)
 </UL>
@@ -11019,10 +11019,10 @@ Local Symbols
 <LI><a href="#[1f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ke_msg_send (via Veneer)
 <LI><a href="#[1ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ke_msg_alloc (via Veneer)
 <LI><a href="#[21d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;attm_att_set_value
-<LI><a href="#[356]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattm_svc_get_start_hdl
 <LI><a href="#[35e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattc_send_error_evt
 <LI><a href="#[362]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapm_svc_chg_en
 <LI><a href="#[361]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gapc_svc_chg_ccc_get
+<LI><a href="#[356]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;gattm_svc_get_start_hdl
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> gattc_task.o(.constdata)
 </UL>
@@ -11043,11 +11043,11 @@ Local Symbols
 <BR>[Calls]<UL><LI><a href="#[1f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;co_list_pop_front (via Veneer)
 <LI><a href="#[242]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ke_state_get (via Veneer)
 <LI><a href="#[21c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ke_msg_free (via Veneer)
+<LI><a href="#[249]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_write_rsp_send
+<LI><a href="#[236]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_send_error
 <LI><a href="#[243]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_process_pdu
 <LI><a href="#[234]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_clear_read_cache
 <LI><a href="#[233]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_clear_prep_data
-<LI><a href="#[249]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_write_rsp_send
-<LI><a href="#[236]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;atts_send_error
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> gattc_task.o(.constdata)
 </UL>
@@ -11089,7 +11089,7 @@ Local Symbols
 <BR>[Address Reference Count : 1]<UL><LI> gattc_task.o(.constdata)
 </UL>
 <P><STRONG><a name="[ef]"></a>l2cc_pdu_recv_ind_handler</STRONG> (Thumb, 114 bytes, Stack size 24 bytes, gattc_task.o(i.l2cc_pdu_recv_ind_handler))
-<BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = l2cc_pdu_recv_ind_handler &rArr; atts_l2cc_pdu_recv_handler &rArr; atts_process_pdu &rArr; atts_clear_rsp_data
+<BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = l2cc_pdu_recv_ind_handler &rArr; atts_l2cc_pdu_recv_handler &rArr; gattc_send_complete_evt &rArr; gattc_update_state
 </UL>
 <BR>[Calls]<UL><LI><a href="#[242]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ke_state_get (via Veneer)
 <LI><a href="#[210]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;attc_l2cc_pdu_recv_handler
@@ -11123,9 +11123,9 @@ Local Symbols
 <P><STRONG><a name="[f5]"></a>l2c_code_disconnection_req_handler</STRONG> (Thumb, 62 bytes, Stack size 16 bytes, l2cc_sig.o(i.l2c_code_disconnection_req_handler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = l2c_code_disconnection_req_handler &rArr; l2cc_lecb_free &rArr; l2cc_send_cmp_evt
 </UL>
-<BR>[Calls]<UL><LI><a href="#[389]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_lecb_send_disc_rsp
-<LI><a href="#[38a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_lecb_free
+<BR>[Calls]<UL><LI><a href="#[38a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_lecb_free
 <LI><a href="#[372]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_lecb_find
+<LI><a href="#[389]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;l2cc_lecb_send_disc_rsp
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> l2cc_sig.o(.constdata)
 </UL>

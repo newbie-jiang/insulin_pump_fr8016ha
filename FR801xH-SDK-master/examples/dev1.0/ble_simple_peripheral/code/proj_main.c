@@ -208,7 +208,7 @@ void is_motor_start(clock_param_t *p_clock_env, uint32_t weak_up_tim_interval_s,
        if ((current_time_s - last_motor_start_time_s) >= (weak_up_tim_interval_s)&&(current_time_s - last_motor_start_time_s) <= (weak_up_tim_interval_s+2)) {
         // 启动电机
         motor_low_powre_start(200); // 200 表示启动时间，单位需根据电机设计定义
-
+        
         // 更新上次启动时间
         last_motor_start_time_s = current_time_s;
 		   

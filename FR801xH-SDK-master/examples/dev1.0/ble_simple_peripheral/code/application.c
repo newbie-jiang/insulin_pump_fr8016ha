@@ -442,17 +442,19 @@ void dw_is_motor_start(clock_param_t *p_clock_env, uint32_t weak_up_tim_interval
 	{		
 		    // 检查是否需要启动电机  标准启动时间 正负1s，因为唤醒时间为3s，  
        if ((current_time_s - dw_last_motor_start_time_s) >= (weak_up_tim_interval_s)&&(current_time_s - dw_last_motor_start_time_s) <= (weak_up_tim_interval_s+2)) {
-        // 启动电机
+       
+		// 启动电机
         motor_low_powre_start(200); // 200 表示启动时间，单位需根据电机设计定义
 
         // 更新上次启动时间
         dw_last_motor_start_time_s = current_time_s;
+		   
 
 		#ifdef DW_DEBUG
         // 打印日志信息
         co_printf(".....dw.......Motor started at %02d:%02d:%02d............s\r\n", 
                   p_clock_env->hour, p_clock_env->min, p_clock_env->sec);		   
-		#endif
+		#endif		   
     }
    else{
 //        // 打印日志，表示未满足启动条件
@@ -464,14 +466,12 @@ void dw_is_motor_start(clock_param_t *p_clock_env, uint32_t weak_up_tim_interval
 		 
 	 #ifdef DW_DEBUG
      co_printf("not run tim......\r\n");  
-	 #endif		 
+	 #endif
+		 
    }
 }
 
-
-
 uint8_t dw_first_run_over;
-
 
 void dw_now_start(void)
 {	
@@ -485,8 +485,7 @@ void dw_now_start(void)
 	printf("get_liquid is %f\r\n",get_liquid);
 	#endif	
 	/*
-	  0.1087(一步的量 20ms)
-	
+	  0.1087(一步的量 20ms)	
 	*/	
 	//依据剂量计算运行时间ms  (get_liquid/0.1087) 一共要运行多少步
 	uint32_t run_ms = (get_liquid/0.1087) * 20; 
@@ -513,7 +512,9 @@ void dw_second_sw_start_process(void)
 	   //方波大剂量依据时间启动
        dw_is_motor_start(&clock_env,weak_up_tim_interval_s,&d_w_large_dose);	
 	}		
-}
+}  
+
+
 
 
 

@@ -31,8 +31,8 @@
     Program header entries: 1
     Section header entries: 21
 
-    Program header offset: 877032 (0x000d61e8)
-    Section header offset: 877064 (0x000d6208)
+    Program header offset: 878908 (0x000d693c)
+    Section header offset: 878940 (0x000d695c)
 
     Section header string table index: 20
 
@@ -49613,13 +49613,13 @@
 
 
 ** Section #16 '.symtab' (SHT_SYMTAB)
-    Size   : 84400 bytes (alignment 4)
+    Size   : 84416 bytes (alignment 4)
     String table #17 '.strtab'
-    Last local symbol no. 3050
+    Last local symbol no. 3051
 
 
 ** Section #17 '.strtab' (SHT_STRTAB)
-    Size   : 88564 bytes
+    Size   : 88580 bytes
 
 
 ** Section #18 '.note' (SHT_NOTE)
@@ -49627,7 +49627,7 @@
 
 
 ** Section #19 '.comment' (SHT_PROGBITS)
-    Size   : 316832 bytes
+    Size   : 318676 bytes
 
 
 ** Section #20 '.shstrtab' (SHT_STRTAB)

@@ -1,4 +1,4 @@
-;#<FEEDBACK># ARM Linker, 5060750: Last Updated: Wed Dec 04 10:49:50 2024
+;#<FEEDBACK># ARM Linker, 5060750: Last Updated: Tue Dec 10 10:38:23 2024
 ;VERSION 0.2
 ;FILE adpcm_ima.o
 adpcm_decode_block <= USED 0
@@ -61,7 +61,6 @@ gap_security_check_rand_ediv <= USED 0
 ;FILE application.o
 basal_rate_Instruction_legal_check <= USED 0
 calculate_wake_up_times <= USED 0
-dw_motor_start_process <= USED 0
 get_weak_up_tim_interval_s <= USED 0
 instruct_legal_check_process <= USED 0
 large_doseInstruction_legal_check <= USED 0
@@ -494,6 +493,13 @@ __asm___5_lcd_c_Hzk32____REVSH <= USED 0
 __asm___5_lcd_c_Hzk32____RRX <= USED 0
 demo_LCD_APP <= USED 0
 lcd_show_logo <= USED 0
+;FILE log.o
+char_turn_int <= USED 0
+get_log_address <= USED 0
+get_page_start_address <= USED 0
+int_turn_char_param <= USED 0
+log__buff <= USED 0
+wright_log <= USED 0
 ;FILE m_al_activity.o
 gapm_activity_created_ind_handler <= USED 0
 gapm_activity_stopped_ind_handler <= USED 0
